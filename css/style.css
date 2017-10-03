@@ -4,26 +4,41 @@ body {
     color: #1F1A21;
     margin: 0px;
 }
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 590px;
+}
+
 p {
     margin-left: 15px;
     margin-right: 15px;
 }
+
+h2 {
+    margin-left: 15px;
+}
+
 /* Menu et entête */
 #menu-mobile {
     display: none;
 }
 
 .title {
-    margin:1px;
-    margin-left:40px;
+    margin: 1px;
+    margin-left: 40px;
     color: white;
 }
+
 h1 {
-    margin:0px;
+    margin: 0px;
 }
+
 .center {
     text-align: center;
 }
+
 a {
     text-decoration: none;
     color: #1f1a21;
@@ -56,7 +71,6 @@ li a:hover {
     right: 0px;
 }
 
-
 #menu-header-scrollBas {
     display: none;
     position: fixed;
@@ -71,50 +85,56 @@ li a:hover {
 
 /* slide */
 #img-slide1 {
-    display:flex; /* pour que le texte rentre dans l'image slide */
+    display: flex; /* pour que le texte rentre dans l'image slide */
     background-image: url('../images/Randonnee-en-famille-entre-le-barrage-de-Saint-Guerin-et-le-lac-des-Fees-dans-le-Beaufortain-1_default_format4.jpg');
     background-size: cover;
     height: 550px;
     box-shadow: inset 2050px 0 0 #0004;
 }
+
 #img-slide2 {
     background-image: url('../images/1533126-3.jpg');
-    display:none;
-    background-size:cover;
+    display: none;
+    background-size: cover;
     height: 550px;
     box-shadow: inset 2050px 0 0 #0004;
 }
 
 .texte-slide1 {
-    margin-top:200px;
-    margin-left:auto;
-    margin-right:auto;
-    color:white;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
     font-size: x-large;
     width: 80%;
 }
+
 .texte-slide2 {
-    margin-top:200px;
-    margin-left:auto;
-    margin-right:auto;
-    color:white;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
     font-size: x-large;
     width: 80%;
 }
+
 .boutons {
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    color:white;
+    color: white;
     font-size: x-large;
-    margin-top:-300px;
+    margin-top: -300px;
 }
+
 .fa {
     font-size: 33px;
 }
+
 .fa-min {
     font-size: 15px;
     color: #0006;
 }
+
 #bouton-slide-left {
     padding: 14px;
     cursor: pointer;
@@ -127,14 +147,16 @@ li a:hover {
 
 .rectangle {
     background-color: #00BFFF;
-    padding:10px;
+    padding: 10px;
     width: 110px;
 }
+
 .rectangle:hover {
     background-color: #193D5A;
     cursor: pointer;
     color: white;
 }
+
 /* Formulaire de recherche section 2 */
 #formulaire-recherche {
     margin-top: 160px;
@@ -144,6 +166,7 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
 input {
     margin-top: 25px;
     margin-left: 15px;
@@ -153,10 +176,12 @@ input {
     border-color: #cbcbcbb3;
     border-style: solid;
 }
-input:hover:not(.recherche) {
+
+input:focus:not(.recherche) {
     border-color: rgba(31, 26, 33, 0.36);
     border-style: ridge;
 }
+
 .recherche {
     background-color: #00BFFF;
     color: white;
@@ -169,16 +194,17 @@ input:hover:not(.recherche) {
 .recherche:hover {
     background-color: #193D5A;
     cursor: pointer;
-    color:white;
+    color: white;
 }
 
 /* Main section 3 */
 #main {
-    margin-top:150px;
+    margin-top: 150px;
     margin-bottom: 100px;
     margin-left: 10%;
 
 }
+
 .liste-main {
     display: inline-block;
     width: 390px;
@@ -186,33 +212,39 @@ input:hover:not(.recherche) {
     margin-right: 40px;
     margin-bottom: 40px;
 }
+
 .liste-main:hover {
     background-color: #0000001a;
 }
+
 .liste-main-resultat {
     display: inline-block;
     width: 220px;
     background-color: #F6F7F8;
     margin-right: 40px;
 }
+
 .liste-resultat {
-    display:inline-flex;
+    display: inline-flex;
     margin-bottom: 20px;
     background-color: #F6F7F8;
 }
+
 .liste-resultat:hover {
     background-color: #0000001a;
 }
+
 .prix {
-    margin-bottom:30px;
+    margin-bottom: 30px;
     height: 60px;
     text-align: right;
     color: #00BFFF;
 }
 
 #none {
-    display:none;
+    display: none;
 }
+
 /*Formats mobile*/
 @media screen and (max-width: 780px) {
 
@@ -228,9 +260,11 @@ input:hover:not(.recherche) {
         right: 0;
         height: 48px;
     }
+
     .texte-slide1 {
         margin-top: 20px;
     }
+
     .texte-slide2 {
         margin-top: 20px;
     }
@@ -252,10 +286,11 @@ input:hover:not(.recherche) {
     }
 
     .fa-bars {
-        color:white;
+        color: white;
     }
+
     .fa-times {
-        color:white;
+        color: white;
     }
 
     ul {
@@ -275,6 +310,7 @@ input:hover:not(.recherche) {
     .texte-slide1 {
         width: 100%;
     }
+
     .texte-slide2 {
         width: 100%;
     }

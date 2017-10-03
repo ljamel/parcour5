@@ -15,10 +15,10 @@ function Menu() {
 
     };
 
-    this.mobile = function() {
-            document.getElementById('deroul-menu').style.display = "block";
-            document.getElementById('menu-mobile').style.display = "none";
-            document.getElementById('menu-close').style.display = "block";
+    this.mobile = function () {
+        document.getElementById('deroul-menu').style.display = "block";
+        document.getElementById('menu-mobile').style.display = "none";
+        document.getElementById('menu-close').style.display = "block";
     };
 
     this.closeMenu = function () {
@@ -28,6 +28,7 @@ function Menu() {
     };
 
 }
+
 var menuAccueil = new Menu();
 
 window.addEventListener('scroll', menuAccueil.scroll, false);

@@ -1,7 +1,7 @@
 function Slide() {
     this.nbimage = '';
 
-    this.image = function() {
+    this.image = function () {
         if (this.nbimage != 'a') {
             document.getElementById('img-slide2').style.display = 'flex';
             document.getElementById('img-slide1').style.display = 'none';
@@ -15,7 +15,7 @@ function Slide() {
         }
     };
 
-    this.autoplay = function() {
+    this.autoplay = function () {
         setInterval(cursor.image, 18500);
 
     }
