@@ -9,6 +9,22 @@ body {
  * element that contains the map. */
 #map {
     height: 590px;
+    width: 100%;
+}
+
+#mapInfo {
+    display: flex;
+}
+
+#infoLoisirs {
+    display: none;
+    width: 30%;
+    border-color: #E5E5E5;
+    border-style: solid;
+}
+
+#imageMap {
+    width: 100%;
 }
 
 p {
@@ -19,6 +35,19 @@ p {
 h2 {
     margin-left: 15px;
 }
+
+.reserver {
+    background-color: #00FFC2;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 290px;
+}
+.reserver:hover {
+    background-color: #07C18E;
+    cursor: pointer;
+    color: white;
+}
+
 
 /* Menu et entête */
 #menu-mobile {
@@ -78,7 +107,7 @@ li a:hover {
     left: 0px;
     right: 0px;
     height: 30px;
-    background-color: #0000001a;
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Section 1 */
@@ -86,22 +115,22 @@ li a:hover {
 /* slide */
 #img-slide1 {
     display: flex; /* pour que le texte rentre dans l'image slide */
-    background-image: url('../images/Randonnee-en-famille-entre-le-barrage-de-Saint-Guerin-et-le-lac-des-Fees-dans-le-Beaufortain-1_default_format4.jpg');
+    background-image: url('../images/panorama-vert.jpg');
     background-size: cover;
-    height: 550px;
-    box-shadow: inset 2050px 0 0 #0004;
+    height: 460px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
 }
 
 #img-slide2 {
-    background-image: url('../images/1533126-3.jpg');
+    background-image: url('../images/bateau.jpg');
     display: none;
     background-size: cover;
-    height: 550px;
-    box-shadow: inset 2050px 0 0 #0004;
+    height: 460px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.18);
 }
 
 .texte-slide1 {
-    margin-top: 200px;
+    margin-top: 140px;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -110,7 +139,7 @@ li a:hover {
 }
 
 .texte-slide2 {
-    margin-top: 200px;
+    margin-top: 140px;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -148,7 +177,8 @@ li a:hover {
 .rectangle {
     background-color: #00BFFF;
     padding: 10px;
-    width: 110px;
+    width: 60px;
+    cursor:pointer;
 }
 
 .rectangle:hover {
@@ -184,7 +214,6 @@ input:focus:not(.recherche) {
 
 .recherche {
     background-color: #00BFFF;
-    color: white;
     border: none;
     width: 130px;
     margin-left: 12px;
@@ -199,7 +228,7 @@ input:focus:not(.recherche) {
 
 /* Main section 3 */
 #main {
-    margin-top: 150px;
+    margin-top: 15px;
     margin-bottom: 100px;
     margin-left: 10%;
 
@@ -210,7 +239,6 @@ input:focus:not(.recherche) {
     width: 390px;
     background-color: #F6F7F8;
     margin-right: 40px;
-    margin-bottom: 40px;
 }
 
 .liste-main:hover {
@@ -244,6 +272,9 @@ input:focus:not(.recherche) {
 #none {
     display: none;
 }
+
+
+
 
 /*Formats mobile*/
 @media screen and (max-width: 780px) {
