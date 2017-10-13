@@ -2,7 +2,8 @@ function Menu() {
 
     this.scroll = function () {
 
-        if (window.screen.width > 700) {
+        // Le menu scrollbas apparait que que lorsque l'utilisateur est sur un ordinateur
+        if (window.innerWidth > 700) {
             if (window.scrollY > 50) {
                 document.getElementById('menu-header').style.display = "none";
                 document.getElementById('menu-header-scrollBas').style.display = "block";

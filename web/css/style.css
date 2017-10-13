@@ -5,6 +5,19 @@ body {
     margin: 0px;
 }
 
+.black {
+    color: #1F1A21;
+}
+
+a:hover {
+    color: black;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
@@ -107,7 +120,6 @@ li a:hover {
     left: 0px;
     right: 0px;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Section 1 */
@@ -156,12 +168,16 @@ li a:hover {
 }
 
 .fa {
-    font-size: 33px;
+    font-size: 40px;
 }
 
 .fa-min {
     font-size: 15px;
     color: #0006;
+}
+
+.fa-moyen {
+    font-size: 21px;
 }
 
 #bouton-slide-left {
@@ -189,9 +205,10 @@ li a:hover {
 
 /* Formulaire de recherche section 2 */
 #formulaire-recherche {
-    margin-top: 160px;
-    background-color: #FFFFFFE6;
-    height: 90px;
+    margin-top: 127px;
+    margin-bottom: 35px;
+    background-color: rgba(255, 255, 255, 0.59);
+    height: 84px;
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
@@ -204,13 +221,9 @@ input {
     text-align: center;
     width: 110px;
     border-color: #cbcbcbb3;
-    border-style: solid;
+    border-style: inset;
 }
 
-input:focus:not(.recherche) {
-    border-color: rgba(31, 26, 33, 0.36);
-    border-style: ridge;
-}
 
 .recherche {
     background-color: #00BFFF;
@@ -238,9 +251,14 @@ input:focus:not(.recherche) {
     display: inline-block;
     width: 390px;
     background-color: #F6F7F8;
-    margin-right: 40px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.34);
 }
 
+.shadow-none:hover {
+    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
+}
 .liste-main:hover {
     background-color: #0000001a;
 }
@@ -317,11 +335,12 @@ input:focus:not(.recherche) {
     }
 
     .fa-bars {
-        color: white;
+        margin: 5px;
+        color: #00BFFF;
     }
 
     .fa-times {
-        color: white;
+        color: #00BFFF;
     }
 
     ul {
@@ -337,6 +356,15 @@ input:focus:not(.recherche) {
         text-align: center;
     }
 
+    ul#deroul-menu {
+        background-color: rgba(0, 0, 0, 0.70);
+        width: 230px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        z-index: 20000; /* pour que le menu ne soit pas cacher par google map qui a mis un z-index 2000  */
+    }
+
     /* slide */
     .texte-slide1 {
         width: 100%;
@@ -349,6 +377,19 @@ input:focus:not(.recherche) {
     /* formulaire de recherche */
     #formulaire-recherche {
         height: 260px;
+    }
+
+    #main {
+        margin-left: 0px;
+    }
+
+    .liste-main {
+        max-width: 345px;
+        margin-right: 0px;
+    }
+
+    .reserver {
+        margin-left: 245px;
     }
 
 }

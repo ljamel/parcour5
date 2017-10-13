@@ -2,17 +2,16 @@
 
 require_once __DIR__ . './vendor/autoload.php';
 
-$app = new Silex\Application();
+$loisirs = new Silex\Application();
 
-$app->get('/', function () {
+$loisirs->get('/', function () {
     return 'Hello world';
 });
 
 
-
 // chercher la solution pour afficher le contenue de la page modules/pages/loisirs.php
-$app->get('/loisirs.html', function () {
-    echo 'loisssiiiir';
-});
+// $app->get('/loisirs2.html', function () {
+//    echo 'loisssiiiir';
+// });
 
-$app->run();
+$loisirs->run();
