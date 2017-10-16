@@ -1,3 +1,5 @@
 RewriteEngine On
 
+RewriteRule ^web/ web/index.php [QSA,L]
+
 

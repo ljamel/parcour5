@@ -6,7 +6,7 @@ function Menu() {
         if (window.innerWidth > 700) {
             if (window.scrollY > 50) {
                 document.getElementById('menu-header').style.display = "none";
-                document.getElementById('menu-header-scrollBas').style.display = "block";
+                document.getElementById('menu-header-scrollBas').style.display = "flex";
             }
             if (window.scrollY < 50) {
                 document.getElementById('menu-header').style.display = "block";

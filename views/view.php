@@ -8,13 +8,13 @@
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="http://localhost/parcour-5/web/css/style.css">
 
 </head>
 <div id="menu-header">
     <h1>
         <a class="title" href="#slide">
-            <img src="../web/images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
+            <img src="./images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
         </a>
     </h1>
     <nav>
@@ -28,11 +28,12 @@
     </nav>
 </div>
 <div id="menu-header-scrollBas">
+    <p>Loisirs et Vacances</p>
     <nav>
         <ul >
-            <li><a class="black" href="/parcour5/"> Accueil </a></li>
-            <li><a class="black" href="loisirs.php"> Idée loisirs </a></li>
-            <li><a class="black" href="contacte.html"> contacte </a></li>
+            <li><a class="blue" href="/parcour5/"> Accueil </a></li>
+            <li><a class="blue" href="loisirs.php"> Idée loisirs </a></li>
+            <li><a class="blue" href="contacte.html"> contacte </a></li>
 
         </ul>
     </nav>
@@ -87,14 +88,16 @@
 </div>
 <div id="main">
 
-    <div class="display"><h1> BON PLANS </h1> <P><a href="./loisirs.php"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+    <div class="display"><h1> BON PLANS </h1> <P><a href="loisirs.php"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
     <div class="liste-main shadow-none">
         <img class="liste-main" src="./images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
-        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-        <P class="prix">Prix 120 €</P>
+        <div class="display">
+            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
+            <P class="prix">Prix 120 €</P>
+        </div>
         <p class="reserver">Réserver</p>
     </div>
 
@@ -102,8 +105,10 @@
         <img class="liste-main" src="./images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
-        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-        <P class="prix">Prix 120 €</P>
+        <div class="display">
+            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
+            <P class="prix">Prix 120 €</P>
+        </div>
         <p class="reserver">Réserver</p>
     </div>
 
@@ -111,14 +116,25 @@
         <img class="liste-main" src="./images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
-        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-        <P class="prix">Prix 120 €</P>
+        <div class="display">
+            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
+            <P class="prix">Prix 120 €</P>
+        </div>
         <p class="reserver">Réserver</p>
     </div>
 
 
 
 </div>
+
+<?php foreach ($articles as $article):  // geteur du fichier Domain/article.php permet d'afficher ce qui a était envoyer au seteur?>
+    <article>
+        <h2><?php echo $article->getTitle() ?></h2>
+        <p><?php echo $article->getContent() ?></p>
+        <p><?php echo $article->getId() ?></p>
+    </article>
+<?php endforeach ?>
+
 
 <div id="mapInfo">
     <div id="map"></div>

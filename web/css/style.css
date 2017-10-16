@@ -5,8 +5,8 @@ body {
     margin: 0px;
 }
 
-.black {
-    color: #1F1A21;
+.blue {
+    color: rgb(18, 159, 250);
 }
 
 a:hover {
@@ -43,20 +43,24 @@ a:hover {
 p {
     margin-left: 15px;
     margin-right: 15px;
+    margin-top: 5px;
 }
 
 h2 {
     margin-left: 15px;
+    margin-top: 1px;
+    margin-bottom: 10px;
 }
 
 .reserver {
-    background-color: #00FFC2;
+    background-color: #07C18E;
     padding: 10px;
     cursor: pointer;
     margin-left: 290px;
+    color: white;
 }
 .reserver:hover {
-    background-color: #07C18E;
+    background-color: #00FFC2;
     cursor: pointer;
     color: white;
 }
@@ -75,6 +79,7 @@ h2 {
 
 h1 {
     margin: 0px;
+    margin-top: 2px;
 }
 
 .center {
@@ -115,11 +120,14 @@ li a:hover {
 
 #menu-header-scrollBas {
     display: none;
+    justify-content: space-between;
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     height: 30px;
+    background-color: white;
+    box-shadow: 0px 1px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Section 1 */
@@ -192,6 +200,7 @@ li a:hover {
 
 .rectangle {
     background-color: #00BFFF;
+    color: white;
     padding: 10px;
     width: 60px;
     cursor:pointer;
@@ -227,10 +236,13 @@ input {
 
 .recherche {
     background-color: #00BFFF;
+    color: white;
     border: none;
     width: 130px;
     margin-left: 12px;
     font-weight: 600;
+    font-size: 18px;
+    padding-top: 7px;
 }
 
 .recherche:hover {
@@ -251,8 +263,8 @@ input {
     display: inline-block;
     width: 390px;
     background-color: #F6F7F8;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin-right: 15px;
+    margin-bottom: 15px;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.34);
 }
 
@@ -281,8 +293,6 @@ input {
 }
 
 .prix {
-    margin-bottom: 30px;
-    height: 60px;
     text-align: right;
     color: #00BFFF;
 }
