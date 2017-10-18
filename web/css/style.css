@@ -5,6 +5,7 @@ body {
     margin: 0px;
 }
 
+
 .blue {
     color: rgb(18, 159, 250);
 }
@@ -103,7 +104,7 @@ li {
     margin: 5px;
 }
 
-li a {
+div#menu-header li a {
     color: white;
 }
 
@@ -230,7 +231,7 @@ input {
     text-align: center;
     width: 110px;
     border-color: #cbcbcbb3;
-    border-style: inset;
+    border-style: none;
 }
 
 
@@ -252,12 +253,22 @@ input {
 }
 
 /* Main section 3 */
+
 #main {
-    margin-top: 15px;
+    margin-top: 80px;
     margin-bottom: 100px;
     margin-left: 10%;
+}
+
+#unique {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
 
 }
+
 
 .liste-main {
     display: inline-block;
@@ -272,14 +283,13 @@ input {
     box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
 }
 .liste-main:hover {
-    background-color: #0000001a;
+    background-color: rgba(0, 0, 0, 0.13);
 }
 
 .liste-main-resultat {
     display: inline-block;
-    width: 220px;
     background-color: #F6F7F8;
-    margin-right: 40px;
+    height: 100px;
 }
 
 .liste-resultat {
@@ -289,7 +299,7 @@ input {
 }
 
 .liste-resultat:hover {
-    background-color: #0000001a;
+    background-color: rgba(0, 0, 0, 0.13);
 }
 
 .prix {
@@ -297,11 +307,25 @@ input {
     color: #00BFFF;
 }
 
+div#page {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+    background-color: white;
+    box-shadow: 0px 1px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
 #none {
     display: none;
 }
 
-
+.block {
+    display: block;
+}
 
 
 /*Formats mobile*/
@@ -351,6 +375,7 @@ input {
 
     .fa-times {
         color: #00BFFF;
+        margin-bottom: -40px;
     }
 
     ul {
@@ -360,19 +385,24 @@ input {
 
     li {
         display: block;
-        background-color: #1F1A21CC;
+        background-color: rgba(31, 26, 33, 0.8);
         font-size: 30px;
         margin: 0px;
         text-align: center;
     }
 
+    li a {
+        color: white;
+    }
+
     ul#deroul-menu {
-        background-color: rgba(0, 0, 0, 0.70);
-        width: 230px;
         margin-left: auto;
         margin-right: auto;
-        padding: 20px;
         z-index: 20000; /* pour que le menu ne soit pas cacher par google map qui a mis un z-index 2000  */
+    }
+
+    div#page {
+        display: none;
     }
 
     /* slide */
@@ -400,6 +430,11 @@ input {
 
     .reserver {
         margin-left: 245px;
+    }
+
+    .liste-resultat {
+        display: inline-block;
+        max-width: 260px;
     }
 
 }

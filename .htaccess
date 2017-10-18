@@ -1,5 +1,7 @@
 RewriteEngine On
 
-RewriteRule ^web/ web/index.php [QSA,L]
+
+RewriteCond %{REQUEST_URI} !web/
+RewriteRule (.*) web/index.php
 
 

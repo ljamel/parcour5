@@ -41,6 +41,11 @@ class ArticleDAO
         return $articles;
     }
 
+    public function delete($id)
+    {
+        $this->dao->exec('DELETE FROM news WHERE id = ' . (int)$id);
+    }
+
     /**
      * Creates an Article object based on a DB row.
      *

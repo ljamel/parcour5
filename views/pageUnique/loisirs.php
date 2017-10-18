@@ -11,29 +11,14 @@
     <link rel="stylesheet" href="http://localhost/parcour-5/web/css/style.css">
 
 </head>
-<div id="menu-header">
-    <h1>
-        <a class="title" href="#slide">
-            Loisirs et Vacances
-        </a>
-    </h1>
-    <nav>
-        <div class="title"></div>
-        <ul> <!-- Penser a ajouter des images pour que l'écrivain puisse ajouter des images -->
-            <li><a href="/parcour5/"> Accueil </a></li>
-            <li><a href="Loisirs.php"> Idée loisirs </a></li>
-            <li><a href="contacte.html"> contacte </a></li>
 
-        </ul>
-    </nav>
-</div>
-<div id="menu-header-scrollBas">
+<div id="page">
+    <p>Loisirs et Vacances</p>
     <nav>
         <ul>
             <li><a href="/parcour5/"> Accueil </a></li>
             <li><a href="loisirs.php"> Idée loisirs </a></li>
-            <li><a href="contacte.html"> contacte </a></li>
-
+            <li><a href="../../web/index.php"> contacte </a></li>
         </ul>
     </nav>
 </div>
@@ -56,9 +41,9 @@
 <body>
 
 
-<section id="main">
+<section id="unique">
     <div class="liste-resultat">
-        <img class="liste-main-resultat" src="../../../../../../../../../images/1533126-3.jpg">
+        <img class="liste-main-resultat" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <P>Séjours de rêve a petit prix</P>
         <P>Plus qu'une semaine pour résérver</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
@@ -66,7 +51,7 @@
     </div>
 
     <div class="liste-resultat">
-        <img class="liste-main-resultat" src="../../../../../../../../../images/1533126-3.jpg">
+        <img class="liste-main-resultat" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <P>Séjours de rêve a petit prix</P>
         <P>Plus qu'une semaine pour résérver</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
@@ -74,7 +59,7 @@
     </div>
 
     <div class="liste-resultat">
-        <img class="liste-main-resultat" src="../../../../../../../../../images/1533126-3.jpg">
+        <img class="liste-main-resultat" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <P>Séjours de rêve a petit prix</P>
         <P>Plus qu'une semaine pour résérver</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
@@ -82,7 +67,7 @@
     </div>
 
     <div class="liste-resultat">
-        <img class="liste-main-resultat" src="../../../../../../../../../images/1533126-3.jpg">
+        <img class="liste-main-resultat" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <P>Séjours de rêve a petit prix</P>
         <P>Plus qu'une semaine pour résérver</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
@@ -91,10 +76,16 @@
 
 </section>
 
+<?php   foreach ($articles as $article) {
+  var_dump($article->getTitle());
+}
+
+?>
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="web/js/ajax.js"></script>
-<script src="web/js/menu.js"></script>
-<script src="web/js/slide.js"></script>
-<script src="web/js/date.js"></script>
+<script src="http://localhost/parcour-5/web/js/ajax.js"></script>
+<script src="http://localhost/parcour-5/web/js/menu.js"></script>
+<script src="http://localhost/parcour-5/web/js/date.js"></script>

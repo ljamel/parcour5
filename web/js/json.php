@@ -6,6 +6,7 @@
  * Time: 09:51
  */
 
+
 $nam = 'je suis laaa';
 
 echo <<<END

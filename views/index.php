@@ -14,7 +14,7 @@
 <div id="menu-header">
     <h1>
         <a class="title" href="#slide">
-            <img src="./images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
+            <img src="http://localhost/parcour-5/web/images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
         </a>
     </h1>
     <nav>
@@ -31,9 +31,9 @@
     <p>Loisirs et Vacances</p>
     <nav>
         <ul >
-            <li><a class="blue" href="/parcour5/"> Accueil </a></li>
-            <li><a class="blue" href="loisirs.php"> Idée loisirs </a></li>
-            <li><a class="blue" href="contacte.html"> contacte </a></li>
+            <li><a href="/parcour5/"> Accueil </a></li>
+            <li><a href="pageUnique/loisirs.php"> Idée loisirs </a></li>
+            <li><a href="contacte.html"> contacte </a></li>
 
         </ul>
     </nav>
@@ -48,7 +48,7 @@
 
         <ul id="deroul-menu">
             <li><a href="/parcour5/"> Accueil </a></li>
-            <li><a href="loisirs.php"> Idée loisirs </a></li>
+            <li><a href="pageUnique/loisirs.php"> Idée loisirs </a></li>
             <li><a href="/parcour5/contacte.html"> contacte </a></li>
 
         </ul>
@@ -88,10 +88,10 @@
 </div>
 <div id="main">
 
-    <div class="display"><h1> BON PLANS </h1> <P><a href="loisirs.php"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+    <div class="display"><h1> BON PLANS </h1> <P><a href="pageUnique/loisirs.php"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
     <div class="liste-main shadow-none">
-        <img class="liste-main" src="./images/1533126-3.jpg">
+        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
         <div class="display">
@@ -102,7 +102,7 @@
     </div>
 
     <div class="liste-main shadow-none">
-        <img class="liste-main" src="./images/1533126-3.jpg">
+        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
         <div class="display">
@@ -113,7 +113,7 @@
     </div>
 
     <div class="liste-main shadow-none">
-        <img class="liste-main" src="./images/1533126-3.jpg">
+        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
         <h2>Séjours de rêve a petit prix</h2>
         <P>Plus qu'une semaine pour réserver</P>
         <div class="display">
@@ -144,11 +144,11 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-<script src="./js/ajax.js"></script>
-<script src="./js/map.js"></script>
-<script src="./js/menu.js"></script>
-<script src="./js/slide.js"></script>
-<script src="./js/date.js"></script>
+<script src="http://localhost/parcour-5/web/js/ajax.js"></script>
+<script src="http://localhost/parcour-5/web/js/map.js"></script>
+<script src="http://localhost/parcour-5/web/js/menu.js"></script>
+<script src="http://localhost/parcour-5/web/js/slide.js"></script>
+<script src="http://localhost/parcour-5/web/js/date.js"></script>
 
 
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

@@ -46,6 +46,13 @@ interface ObjectRepository
     public function findAll();
 
     /**
+     * @return int
+     * Effacer un article
+     */
+
+    public function delete($id);
+
+    /**
      * Finds objects by a set of criteria.
      *
      * Optionally sorting and limiting details can be passed. An implementation may throw

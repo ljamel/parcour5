@@ -50,7 +50,7 @@ function initMap() {
                     // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map
                     // JAI REUSSI A UTILISER API EN LOCAL "json.js"
                     // JAI REUSSI A GENERER UN FICHIER JSON AVEC PHP "json.php"
-                    ajaxGet("./js/json.php", function (reponse) {
+                    ajaxGet("http://parcour-5/api", function (reponse) {
 
                         // Transforme la réponse en un tableau d'adresses
                         var objects = JSON.parse(reponse);
