@@ -10,6 +10,13 @@ body {
     color: rgb(18, 159, 250);
 }
 
+.white {
+    color: white;
+}
+.white:hover {
+    color: white;
+}
+
 a:hover {
     color: black;
 }
@@ -73,7 +80,7 @@ h2 {
 }
 
 .title {
-    margin: 1px;
+    margin: 15px;
     margin-left: 40px;
     color: white;
 }
@@ -109,10 +116,14 @@ div#menu-header li a {
 }
 
 li a:hover {
-    color: black;
+    border-top-color: #00BFFF;
+    border-top-style: solid;
+    padding-top: 13px;
 }
 
 #menu-header {
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -155,7 +166,7 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
     color: white;
-    font-size: x-large;
+    font-size: large;
     width: 80%;
 }
 
@@ -164,7 +175,7 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
     color: white;
-    font-size: x-large;
+    font-size: large;
     width: 80%;
 }
 
@@ -203,7 +214,7 @@ li a:hover {
     background-color: #00BFFF;
     color: white;
     padding: 10px;
-    width: 60px;
+    width: 85px;
     cursor:pointer;
 }
 
@@ -225,7 +236,7 @@ li a:hover {
 }
 
 input {
-    margin-top: 25px;
+    margin-top: 10px;
     margin-left: 15px;
     padding: 10px;
     text-align: center;
@@ -234,6 +245,9 @@ input {
     border-style: none;
 }
 
+.queFaire {
+    margin-bottom: 0px;
+}
 
 .recherche {
     background-color: #00BFFF;
@@ -241,7 +255,6 @@ input {
     border: none;
     width: 130px;
     margin-left: 12px;
-    font-weight: 600;
     font-size: 18px;
     padding-top: 7px;
 }
@@ -319,6 +332,39 @@ div#page {
     box-shadow: 0px 1px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* administration */
+
+.bouton {
+    width: 190px;
+}
+
+.form-connection {
+    background-color: #bdbdbd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Footer */
+
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #212121;
+    color: white;
+}
+
+.texte-footer {
+    width: 205px;
+    text-align: justify;
+}
+
+#copyright {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
 #none {
     display: none;
 }
@@ -345,11 +391,11 @@ div#page {
     }
 
     .texte-slide1 {
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     .texte-slide2 {
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     #menu-header {
@@ -424,12 +470,12 @@ div#page {
     }
 
     .liste-main {
-        max-width: 345px;
+        max-width: 300px;
         margin-right: 0px;
     }
 
     .reserver {
-        margin-left: 245px;
+        margin-left: 200px;
     }
 
     .liste-resultat {

@@ -9,7 +9,7 @@ function Menu() {
                 document.getElementById('menu-header-scrollBas').style.display = "flex";
             }
             if (window.scrollY < 50) {
-                document.getElementById('menu-header').style.display = "block";
+                document.getElementById('menu-header').style.display = "flex";
                 document.getElementById('menu-header-scrollBas').style.display = "none";
             }
         }

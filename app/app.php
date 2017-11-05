@@ -3,16 +3,17 @@
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 
-// Gestion des erreurs
 // Register global error and exception handlers
 ErrorHandler::register();
 ExceptionHandler::register();
 
-// Le service$app['db'] est défini automatiquement lors de l'enregistrement du fournisseurDoctrineServiceProvider.
 // Register service providers.
 $app->register(new Silex\Provider\DoctrineServiceProvider());
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../views', // la page ou twig est lancer. PS penser a rajouter des lignes
+));
 
-// Ajout de services DAO qui est ensuite utiliser.
+// Register services.
 $app['dao.article'] = function ($app) {
     return new MicroCMS\DAO\ArticleDAO($app['db']);
 };

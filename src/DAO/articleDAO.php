@@ -41,7 +41,20 @@ class ArticleDAO
         return $articles;
     }
 
-    public function delete($id)
+    public function find($id) {
+        $sql = "select * from t_log";
+        $result = $this->db->fetchAll($sql);
+
+        $log = array();
+
+        foreach ($result as $row) {
+
+        }
+
+        return $log;
+    }
+
+    public function delete($id) // pas encor utiliser PS penser à l'essayer
     {
         $this->dao->exec('DELETE FROM news WHERE id = ' . (int)$id);
     }
