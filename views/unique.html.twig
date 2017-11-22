@@ -69,12 +69,23 @@
 
 </section>
 
-{% for article in articles %}
-<article>
-    <h2>{{ article.title|upper }}</h2>
+
+
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <p>
+    <h2>{{ article.title }}</h2>
     <p>{{ article.content }}</p>
-</article>
-{% endfor %}
+    <h3>Comments</h3>
+    {% for comment in comments %}
+        <strong>{{ comment.author }}</strong> said : {{ comment.content }}<br>
+    {% else %}
+        No comments yet.
+    {% endfor %}
+    </p>
+{% endblock %}
 
 
 
@@ -83,12 +94,10 @@
     <div id="infoLoisirs">essai</div>
 </div>
 
-
+{{ include('footer.html.twig') }}
 <!-- script qui appel la map -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap"></script>
 <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
 <script src="http://localhost/parcour-5/web/js/map.js"></script>
 
-
-{{ include('footer.html.twig') }}
