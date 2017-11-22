@@ -1,137 +1,26 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Voyage</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="http://localhost/parcour-5/web/css/style.css">
-
-</head>
-<div id="menu-header">
-    <h1>
-        <a class="title" href="#slide">
-            <img src="http://localhost/parcour-5/web/images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
-        </a>
-    </h1>
-    <nav>
-        <div class="title"></div>
-        <ul> <!-- Penser a ajouter des images pour que l'écrivain puisse ajouter des images -->
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<div id="menu-header-scrollBas">
-    <p>Loisirs et Vacances</p>
-    <nav>
-        <ul >
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<div id="none">
-    <nav>
-
-        <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i> <i id="menu-close"
-                                                                                class="fa fa-times fa-3x none"
-                                                                                aria-hidden="true"></i>
+{% extends "layout.html.twig" %}
 
 
-        <ul id="deroul-menu">
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<body>
+{% block content %}
+    {% for article in articles %}
 
-<!-- Section 1 slide -->
-<div id="slide">
-    <div id="img-slide1">
-
-        <div class="texte-slide1">
-            <h2>Vous chercher une idée sortie</h2>
-            <p>Vous êtes au bon endroit.<br />
-            Mise a jours régulière des sorties et événement. </p>
-            <a href="loisirs"><p class="rectangle">PLANS <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
+        <div class="liste-main shadow-none">
+            <a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
+                <img class="liste-main" src="{{ article.image }}">
+                <h2><a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}">{{ article.title }}</a></h2>
+                <p>{{ article.content[:180] }}... </p>
+                <div class="display">
+                    <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ article.position }}</P>
+                    <P class="prix">Prix {{ article.prix|replace({0: "GRATUIT"}) }}</P>
+                </div>
+                <a  href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
+                    <p class="reserver">Plus d'info</p></a>
+            </a>
         </div>
-    </div>
-
-    <div id="img-slide2">
-        <div class="texte-slide2">
-            <h2>Trois clics et c'est partie</h2>
-            <p>Remplissez le formulaire si dessous et découvrez les loisirs, lieux touristiques et séjours.<br />
-            Une liste de suggestion de loisirs et vacances via le lien si dessous.</p>
-            <a href="#main"><p class="rectangle">LISTE <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
-        </div>
-    </div>
-
-    <div class="boutons">
-        <div id="bouton-slide-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div id="bouton-slide-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-    </div>
-</div>
-
-<div id="formulaire-recherche">
-    <p class="queFaire">QUE FAIRE  <i class="fa fa-bicycle fa-min" aria-hidden="true" title="Loisirs"></i> <i class="fa fa-map-o fa-min" aria-hidden="true" title="Plans"></i> <i class="fa fa-map-signs fa-min" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
-    <input placeholder="Départ"><input placeholder="Budget" ><input type="text" id="datepicker" id="from" name="from" placeholder="Du"> <input type="text" id="to" name="to" placeholder="Au"> <input class="recherche" value="Chercher" type="button">
-</div>
-<div id="main">
-
-    <div class="display"><h1> BON PLANS </h1> <P><a href="pageUnique/loisirs.php" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
-
-    <div class="liste-main shadow-none">
-        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
-        <h2>Séjours de rêve a petit prix</h2>
-        <P>Plus qu'une semaine pour réserver</P>
-        <div class="display">
-            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-            <P class="prix">Prix 120 €</P>
-        </div>
-        <p class="reserver">Réserver</p>
-    </div>
-
-    <div class="liste-main shadow-none">
-        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
-        <h2>Séjours de rêve a petit prix</h2>
-        <P>Plus qu'une semaine pour réserver</P>
-        <div class="display">
-            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-            <P class="prix">Prix 120 €</P>
-        </div>
-        <p class="reserver">Réserver</p>
-    </div>
-
-    <div class="liste-main shadow-none">
-        <img class="liste-main" src="http://localhost/parcour-5/web/images/1533126-3.jpg">
-        <h2>Séjours de rêve a petit prix</h2>
-        <P>Plus qu'une semaine pour réserver</P>
-        <div class="display">
-            <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Maroc</P>
-            <P class="prix">Prix 120 €</P>
-        </div>
-        <p class="reserver">Réserver</p>
-    </div>
+    {% endfor %}
 
 
+    <script src="http://localhost/parcour-5/web/js/auto-complete.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete" async defer></script>
 
-</div>
-
-{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }} <!-- Affiche la date -->
-
-{% for article in articles %}
-    <article>
-        <h2>{{ article.title|upper }}</h2>
-        <p>{{ article.content }}</p>
-    </article>
-{% endfor %}
-
-
-
-
-<script src="http://localhost/parcour-5/web/js/slide.js"></script>
-<script src="http://localhost/parcour-5/web/js/menu.js"></script>
-{{ include('footer.html.twig') }}
+{% endblock %}

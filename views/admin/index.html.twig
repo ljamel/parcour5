@@ -35,19 +35,13 @@
 </div>
 <body>
 
-{% for article in articles %}
-    <article>
-        <h2>{{ article.title|upper }}</h2>
-        <p>{{ article.content }}</p>
-    </article>
-{% endfor %}
 
 <section id="unique">
 
 <div class="form-connection">
 
     Connexion à l'administration
-    <form action="" method="post">
+    <form action="connect" method="post">
         <label>Pseudo:</label>
         <input type="text" name="login" />
         <br />
@@ -59,8 +53,6 @@
 </div>
 
 </section>
-
-
 
 
 

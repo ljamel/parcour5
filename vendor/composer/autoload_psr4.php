@@ -7,16 +7,18 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
-    'Symfony\\Polyfill\\Php55\\' => array($vendorDir . '/symfony/polyfill-php55'),
-    'Symfony\\Polyfill\\Php54\\' => array($vendorDir . '/symfony/polyfill-php54'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
+    'Symfony\\Component\\Asset\\' => array($vendorDir . '/symfony/asset'),
+    'Symfony\\Bridge\\Twig\\' => array($vendorDir . '/symfony/twig-bridge'),
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'MicroCMS\\' => array($baseDir . '/src'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
+    'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
 );

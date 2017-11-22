@@ -1,38 +1,37 @@
 <?php
 
 // Home page
-// Home page PS penser a remplacer tous les routes pas pour twig si dessous sa améliore la sécurité
 $app->get('/', function () use ($app) {
     $articles = $app['dao.article']->findAll();
     return $app['twig']->render('index.html.twig', array('articles' => $articles));
-});
+})->bind('home');
 
-// Home page PS penser a remplacer tous les routes pas pour twig si dessous sa améliore la sécurité
-$app->get('/parcour-5/', function () use ($app) {
-    $articles = $app['dao.article']->findAll();
-    return $app['twig']->render('index.html.twig', array('articles' => $articles));
-});
+// Article details with comments
+$app->get('/sejours/{id}', function ($id) use ($app) {
+    $article = $app['dao.article']->find($id);
+    $comments = $app['dao.comment']->findAllByArticle($id);
+    return $app['twig']->render('unique.html.twig', array('article' => $article, 'comments' => $comments));
+})->bind('sejours/');
 
-$app->get('/loisirs', function () use ($app) {
-    $articles = $app['dao.article']->findAll(); // Variable $articles utiliser dans la boucle foreach du fichier view.php
+// Article details with comments
+$app->get('/liste/', function () use ($app) {
+    $article = $app['dao.article']->findAll();
+    return $app['twig']->render('liste.html.twig', array('article' => $article));
+})->bind('liste/');
 
-    return $app['twig']->render('pageUnique/loisirs.html.twig', array('articles' => $articles));
-});
-
+// Article details with comments
 $app->get('/admin', function () use ($app) {
-    $articles = $app['dao.article']->findAll(); // Variable $articles utiliser dans la boucle foreach du fichier view.php
+    $article = $app['dao.article']->findAll();
+    return $app['twig']->render('admin/index.html.twig');
+})->bind('admin');
+// Article details with comments
+$app->post('/connect', function () use ($app) {
+    $article = $app['dao.article']->findAll();
+    return $app['twig']->render('admin/index.html.twig');
+})->bind('connect');
 
-    return $app['twig']->render('admin/index.html.twig', array('articles' => $articles));
-});
 
-$app->post('/admin', function () use ($app) {
-    $articles = $app['dao.article']->findAll(); // Variable $articles utiliser dans la boucle foreach du fichier view.php
-
-    return $app['twig']->render('admin/index.html.twig', array('articles' => $articles));
-});
-
-$app->get('/api', function () use ($app) {
-    $articles = $app['dao.article']->findAll(); // Variable $articles utiliser dans la boucle foreach du fichier view.php
-
+$app->get('/api/', function () use ($app) {
+    $articles = $app['dao.article']->findAll();
     return $app['twig']->render('api/api.html.twig', array('articles' => $articles));
-});
+})->bind('api/');

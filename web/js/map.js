@@ -5,20 +5,22 @@ function initMap() {
         zoom: 6
     });
 
+
             // Try HTML5 geolocation.
-            if (navigator.geolocation) {
+            if (navigator.geolocation || $_GET('position')) {
 
                 var infoWindow = new google.maps.InfoWindow({map: map});
 
                 navigator.geolocation.getCurrentPosition(function (position) {
 
-                    // redirection pour pointer en dans la section map
+                    // redirection pour pointer dans la section map
                     document.location.href = "#map";
 
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
+                        // Pour afficher ma position actuel
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
 
                     var map = new google.maps.Map(document.getElementById('map'), {
                         center: pos,
@@ -48,8 +50,6 @@ function initMap() {
 
 
                     // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map
-                    // JAI REUSSI A UTILISER API EN LOCAL "json.js"
-                    // JAI REUSSI A GENERER UN FICHIER JSON AVEC PHP "json.php"
                     ajaxGet("http://parcour-5/api", function (reponse) {
 
                         // Transforme la réponse en un tableau d'adresses

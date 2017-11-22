@@ -25,6 +25,12 @@ class Article
      */
     private $content;
 
+    private $position;
+
+    private $image;
+
+    private $prix;
+
     public function getId() {
         return $this->id;
     }
@@ -49,6 +55,31 @@ class Article
 
     public function setContent($content) {
         $this->content = $content;
+        return $this;
+    }
+
+    public function getPosition(){
+        return $this->position;
+    }
+
+    public function setPostion($position) {
+        $this->position = $position;
+        return $this;
+    }
+
+    public function getImage(){
+        return $this->image;
+    }
+    public function setImage($image){
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getPrix() {
+        return $this->prix;
+    }
+    public function setPrix($prix) {
+        $this->prix = $prix;
         return $this;
     }
 }

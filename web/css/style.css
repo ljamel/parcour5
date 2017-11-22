@@ -17,10 +17,6 @@ body {
     color: white;
 }
 
-a:hover {
-    color: black;
-}
-
 .display {
     display: flex;
     justify-content: space-between;
@@ -64,7 +60,7 @@ h2 {
     background-color: #07C18E;
     padding: 10px;
     cursor: pointer;
-    margin-left: 290px;
+    margin-left: 275px;
     color: white;
 }
 .reserver:hover {
@@ -198,6 +194,7 @@ li a:hover {
 
 .fa-moyen {
     font-size: 21px;
+    margin-left: 12px;
 }
 
 #bouton-slide-left {
@@ -244,6 +241,15 @@ input {
     border-color: #cbcbcbb3;
     border-style: none;
 }
+select {
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 125px;
+    border-color: #cbcbcbb3;
+    border-style: none;
+}
 
 .queFaire {
     margin-bottom: 0px;
@@ -279,9 +285,17 @@ input {
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
-
 }
-
+.title-show {
+    margin-top: 80px;
+    width: 75%;
+}
+article {
+    margin-top: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .liste-main {
     display: inline-block;
@@ -290,6 +304,13 @@ input {
     margin-right: 15px;
     margin-bottom: 15px;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.34);
+}
+img.liste-main {
+    height: 300px;
+}
+img.liste-main-unique {
+    height: 300px;
+    margin-left: 15px;
 }
 
 .shadow-none:hover {
@@ -309,6 +330,11 @@ input {
     display: inline-flex;
     margin-bottom: 20px;
     background-color: #F6F7F8;
+}
+
+.fa.fa-map-marker.fa-min.ico-recherche {
+    position: relative;
+    left: 30px;
 }
 
 .liste-resultat:hover {
@@ -356,6 +382,8 @@ div#page {
 .texte-footer {
     width: 205px;
     text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #copyright {
