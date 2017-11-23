@@ -39,6 +39,7 @@ class ArticleDAO extends DAO
         $article->setPostion($row['art_position']);
         $article->setImage($row['art_image']);
         $article->setPrix($row['prix']);
+        $article->setType($row['type']);
         return $article;
     }
 

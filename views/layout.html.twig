@@ -58,7 +58,7 @@
             <h2>Vous chercher une idée sortie</h2>
             <p>Vous êtes au bon endroit.<br />
             Mise a jours régulière des sorties et événement. </p>
-            <a href="loisirs"><p class="rectangle">PLANS <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
+            <a href="geoloc"><p class="rectangle">PLANS <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
         </div>
     </div>
 
@@ -79,12 +79,13 @@
 
 <div id="formulaire-recherche">
     <form action="liste/" method="get">
-        <p class="queFaire">QUE FAIRE  <i class="fa fa-bicycle fa-min" aria-hidden="true" title="Loisirs"></i> <i class="fa fa-map-o fa-min" aria-hidden="true" title="Plans"></i> <i class="fa fa-map-signs fa-min" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+        <p class="queFaire">QUE FAIRE  <i class="fa fa-bicycle fa-min fa-cat" aria-hidden="true" title="Loisirs"></i> <i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
         <input type="hidden"  name="page" value="2" >
 
         <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
 
-        <select placeholder="Budget" name="budget" >
+        <span class="custom-dropdown custom-dropdown--white">
+        <select placeholder="Budget" name="budget" class="custom-dropdown__select custom-dropdown__select--white">
             <option value="0">GRATUIT</option>
             <option value="50">Moins de 50 €</option>
             <option value="100">Moins de 100 €</option>
@@ -92,14 +93,17 @@
             <option value="400">Moins de 400 €</option>
             <option value="9999999">Voir tous</option>
         </select>
+        </span>
 
-        <input type="text" id="datepicker" id="from" name="from" placeholder="Du"> <input type="text" id="to" name="to" placeholder="Au">
+        <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="datepicker" id="from" name="from" placeholder="Du">
+        <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="to" name="to" placeholder="Au">
+
         <input class="recherche" type="submit" value="Chercher" type="button">
     </form>
 </div>
 <div id="main">
 
-    <div class="display"><h1> BON PLANS </h1> <P><a href="pageUnique/loisirs.php" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+    <div class="display"><h1> BON PLANS </h1> <P><a href="/liste/?page=2&depart=&budget=0&from=&to=" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
     {% block content %}
         {% for article in articles %}

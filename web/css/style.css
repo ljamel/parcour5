@@ -27,6 +27,9 @@ body {
 #map {
     height: 590px;
     width: 100%;
+    display: inline-table;
+    margin-top: 210px;
+    margin-bottom: 240px;
 }
 
 #mapInfo {
@@ -226,15 +229,29 @@ li a:hover {
     margin-top: 127px;
     margin-bottom: 35px;
     background-color: rgba(255, 255, 255, 0.59);
-    height: 84px;
-    max-width: 760px;
+    height: 100px;
+    max-width: 770px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 17px;
+}
+
+.fa-cat {
+    padding: 9px;
+    padding-right: 13px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: white;
+    width: 19px;
+    margin-left: 5px;
+    color: black;
+    font-size: 20px;
+    border-radius: 3px;
 }
 
 input {
-    margin-top: 10px;
-    margin-left: 15px;
+    margin-top: 20px;
+    margin-left: 7px;
     padding: 10px;
     text-align: center;
     width: 110px;
@@ -244,8 +261,7 @@ input {
 select {
     margin-top: 10px;
     margin-left: 15px;
-    padding: 10px;
-    text-align: center;
+    padding: 7px;
     width: 125px;
     border-color: #cbcbcbb3;
     border-style: none;
@@ -262,9 +278,96 @@ select {
     width: 130px;
     margin-left: 12px;
     font-size: 18px;
-    padding-top: 7px;
+    padding-top: 4px;
 }
 
+/* Menu déroulant */
+.custom-dropdown--large {
+    font-size: 1.5em;
+}
+
+.custom-dropdown--small {
+    font-size: .7em;
+}
+
+.custom-dropdown__select{
+    font-size: inherit; /* inherit size from .custom-dropdown */
+    margin: 0; /* remove default margins */
+}
+
+.custom-dropdown__select--white {
+    background-color: #fff;
+    color: #444;
+}
+
+@supports (pointer-events: none) and
+      ((-webkit-appearance: none) or
+      (-moz-appearance: none) or
+      (appearance: none)) {
+
+    .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 2px;
+    }
+
+    .custom-dropdown__select {
+        padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
+        border: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin-left: 20px;
+    }
+
+    .custom-dropdown::before,
+    .custom-dropdown::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-dropdown::after { /*  Custom dropdown arrow */
+        content: "\25BC";
+        height: 1em;
+        font-size: .625em;
+        line-height: 1;
+        right: 1.2em;
+        top: 50%; margin-top: -.5em;
+    }
+
+    .custom-dropdown::before { /*  Custom dropdown arrow cover */
+        width: 2em;
+        right: 0; top: 0; bottom: 0;
+        border-radius: 0 3px 3px 0;
+    }
+
+    .custom-dropdown__select[disabled] {
+        color: rgba(0,0,0,.3);
+    }
+
+    .custom-dropdown.custom-dropdown--disabled::after {
+        color: rgba(0,0,0,.1);
+    }
+
+    /* White dropdown style */
+    .custom-dropdown--white::before {
+        top: .5em; bottom: .5em;
+        background-color: #fff;
+        border-left: 1px solid rgba(0,0,0,.1);
+    }
+
+    .custom-dropdown--white::after {
+        color: rgba(0,0,0,.9);
+    }
+
+    /* FF only temp fix */
+    @-moz-document url-prefix() {
+        .custom-dropdown--large .custom-dropdown__select { padding-right: 1.3em }
+        .custom-dropdown--small .custom-dropdown__select { padding-right: .5em }
+    }
+}
 .recherche:hover {
     background-color: #193D5A;
     cursor: pointer;
@@ -289,6 +392,10 @@ select {
 .title-show {
     margin-top: 80px;
     width: 75%;
+}
+.type {
+    margin-left: 50px;
+    font-size: 20px;
 }
 article {
     margin-top: 50px;
@@ -332,9 +439,9 @@ img.liste-main-unique {
     background-color: #F6F7F8;
 }
 
-.fa.fa-map-marker.fa-min.ico-recherche {
+.ico-recherche {
     position: relative;
-    left: 30px;
+    left: 35px;
 }
 
 .liste-resultat:hover {

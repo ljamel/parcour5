@@ -31,6 +31,8 @@ class Article
 
     private $prix;
 
+    private $type;
+
     public function getId() {
         return $this->id;
     }
@@ -80,6 +82,14 @@ class Article
     }
     public function setPrix($prix) {
         $this->prix = $prix;
+        return $this;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+    public function setType($type) {
+        $this->type = $type;
         return $this;
     }
 }

@@ -20,6 +20,12 @@ $app->get('/liste/', function () use ($app) {
 })->bind('liste/');
 
 // Article details with comments
+$app->get('/geoloc', function () use ($app) {
+    $article = $app['dao.article']->findAll();
+    return $app['twig']->render('geoloc.html.twig', array('article' => $article));
+})->bind('geoloc');
+
+// Article details with comments
 $app->get('/admin', function () use ($app) {
     $article = $app['dao.article']->findAll();
     return $app['twig']->render('admin/index.html.twig');

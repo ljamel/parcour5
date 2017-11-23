@@ -2,165 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="398f53d8-3825-43b8-b6d3-b947092232f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DAO/DAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DAO/commentDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/structure.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/liste.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/auto-complete.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/map-liste.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/map-unique.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/.gitmodules" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/build.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/build.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/phpunit.xml.dist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ClassA.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ClassB.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ClassC.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ClassD.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ClassE.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/EmptyFile.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/ExternalLoader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/InterfaceA.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/ClassLoaderTest/TraitA.class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/DoctrineExceptionTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/EventManagerTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/ManagerRegistryTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/AnnotationDriverTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/ChainDriverTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/ClassMetadataFactoryTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/DefaultFileLocatorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/FileDriverTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/PHPDriverTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/RuntimeReflectionServiceTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/StaticPHPDriverTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/StaticReflectionServiceTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/SymfonyFileLocatorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dir/stdClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dir/sub/subClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dir/sub/subsub/subSubClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dot/stdClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dot/sub.subClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_custom_ns/dot/sub.subsub.subSubClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_files/Bar/subDirClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_files/TestEntity.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_files/annotation/TestClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_files/global.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_files/stdClass.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_match_ns/Bar/barEntity.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/Mapping/_match_ns/testEntity.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/ObjectManagerDecoratorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Persistence/PersistentObjectTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/AbstractProxyFactoryTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/AutoloaderTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/CallableTypeHintClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/InvalidTypeHintClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/LazyLoadableObject.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/LazyLoadableObjectClassMetadata.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicCloneClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicGetByRefClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicGetClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicIssetClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicSetClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicSleepClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/MagicWakeupClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/ProxyClassGeneratorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/ProxyLogicTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/ProxyMagicMethodsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/SerializedClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/SleepClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/StaticPropertyClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Proxy/VariadicTypeHintClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/DeeperNamespaceParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/Dummies/NoParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/ExampleAnnotationClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/FullyClassifiedParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/NoParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/RuntimePublicReflectionPropertyTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/SameNamespaceParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/StaticReflectionParserTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Reflection/UseParent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Util/ClassUtilsTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/Common/Util/DebugTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/DoctrineTestCase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/Doctrine/Tests/TestInit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/doctrine/common/tests/README.markdown" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/ircmaxell/password-compat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php54" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/symfony/polyfill-php55" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/pageUnique/loisirs.html.twig" afterPath="$PROJECT_DIR$/views/unique.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/pimple/pimple" afterPath="$PROJECT_DIR$/vendor/pimple/pimple" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex" afterPath="$PROJECT_DIR$/vendor/silex/silex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug" afterPath="$PROJECT_DIR$/vendor/symfony/debug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing" afterPath="$PROJECT_DIR$/vendor/symfony/routing" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/geoloc.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.php" afterPath="$PROJECT_DIR$/app/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/articleDAO.php" afterPath="$PROJECT_DIR$/src/DAO/articleDAO.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Domain/article.php" afterPath="$PROJECT_DIR$/src/Domain/article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/.travis.yml" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Version.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Version.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/ApcCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/ApcCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/ArrayCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/ArrayCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/BaseFileCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/BaseFileCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/CacheProviderTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/CacheProviderTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/CacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/CacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/FileCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/FileCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/MongoDBCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/MongoDBCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/PhpFileCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/PhpFileCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/RedisCacheTest.php" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/tests/Doctrine/Tests/Common/Cache/RedisCacheTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/LICENSE" afterPath="$PROJECT_DIR$/vendor/doctrine/common/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/common/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/EventManager.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/EventManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/PersistentObject.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/PersistentObject.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyGenerator.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionClass.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionClass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionParser.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionProperty.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionProperty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Util/Debug.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Util/Debug.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Version.php" afterPath="$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Version.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/index.html.twig" afterPath="$PROJECT_DIR$/views/admin/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/api/api.html.twig" afterPath="$PROJECT_DIR$/views/api/api.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html.twig" afterPath="$PROJECT_DIR$/views/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.html.twig" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/liste.html.twig" afterPath="$PROJECT_DIR$/views/liste.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/auto-complete.js" afterPath="$PROJECT_DIR$/web/js/auto-complete.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map-unique.js" afterPath="$PROJECT_DIR$/web/js/map-unique.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map.js" afterPath="$PROJECT_DIR$/web/js/map.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -176,30 +28,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="58" column="16" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto-complete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/auto-complete.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="9" column="137" lean-forward="false" selection-start-line="9" selection-start-column="137" selection-end-line="9" selection-end-column="137" />
               <folding />
             </state>
           </provider>
@@ -208,18 +40,8 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-145">
-              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="152">
+              <caret line="81" column="432" lean-forward="false" selection-start-line="81" selection-start-column="432" selection-end-line="81" selection-end-column="432" />
               <folding />
             </state>
           </provider>
@@ -228,18 +50,61 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="336" column="12" lean-forward="false" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
+            <state relative-caret-position="531">
+              <caret line="399" column="9" lean-forward="true" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/footer.html.twig">
+      <file leaf-file-name="article.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Domain/article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="467">
+              <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articleDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding>
+                <marker date="1511465929385" expanded="true" signature="284:328" ph="select * fro... t_article" />
+                <marker date="1511465929385" expanded="true" signature="1326:1364" ph="select * fro... t_article" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto-complete.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/auto-complete.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map-unique.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/map-unique.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -248,28 +113,18 @@
       <file leaf-file-name="liste.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/liste.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="618">
+              <caret line="83" column="70" lean-forward="true" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unique.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/unique.html.twig">
+      <file leaf-file-name="geoloc.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/geoloc.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map-liste.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/map-liste.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2759">
-              <caret line="107" column="61" lean-forward="false" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
+            <state relative-caret-position="492">
+              <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -331,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../portfolio/contact.php" />
         <option value="$PROJECT_DIR$/loisirs.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/menu.js" />
@@ -367,20 +221,21 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/views/article.html.twig" />
         <option value="$PROJECT_DIR$/views/admin/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/DAO/articleDAO.php" />
-        <option value="$PROJECT_DIR$/src/Domain/article.php" />
-        <option value="$PROJECT_DIR$/web/js/map.js" />
-        <option value="$PROJECT_DIR$/web/js/map-unique.js" />
         <option value="$PROJECT_DIR$/views/api/api.xml" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/views/api/api.html.twig" />
-        <option value="$PROJECT_DIR$/views/liste.html.twig" />
         <option value="$PROJECT_DIR$/web/js/map-liste.js" />
         <option value="$PROJECT_DIR$/views/unique.html.twig" />
         <option value="$PROJECT_DIR$/views/footer.html.twig" />
-        <option value="$PROJECT_DIR$/views/index.html.twig" />
+        <option value="$PROJECT_DIR$/views/liste.html.twig" />
         <option value="$PROJECT_DIR$/web/js/auto-complete.js" />
+        <option value="$PROJECT_DIR$/web/js/map.js" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/views/geoloc.html.twig" />
+        <option value="$PROJECT_DIR$/web/js/map-unique.js" />
         <option value="$PROJECT_DIR$/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Domain/article.php" />
+        <option value="$PROJECT_DIR$/src/DAO/articleDAO.php" />
+        <option value="$PROJECT_DIR$/views/index.html.twig" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
       </list>
     </option>
@@ -508,8 +363,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MAMP\htdocs\parcour-5\web\css" />
       <recent name="C:\MAMP\htdocs\parcour-5\views" />
+      <recent name="C:\MAMP\htdocs\parcour-5\web\css" />
       <recent name="C:\MAMP\htdocs\parcour-5\web" />
       <recent name="C:\MAMP\htdocs\parcour-5\src" />
       <recent name="C:\MAMP\htdocs\parcour-5\app" />
@@ -554,12 +409,12 @@
       <workItem from="1509869849566" duration="18208000" />
       <workItem from="1509973917967" duration="6338000" />
       <workItem from="1510062932914" duration="10932000" />
-      <workItem from="1510739351069" duration="57605000" />
+      <workItem from="1510739351069" duration="77030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304276000" />
+    <option name="totallyTimeSpent" value="323701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -572,6 +427,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13426423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -581,7 +437,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18792711" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18792711" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -603,13 +459,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loisirs.php" />
     <entry file="file://$PROJECT_DIR$/vendor/pimple/pimple/tests/bootstrap.php" />
     <entry file="file://$PROJECT_DIR$/vendor/twig/twig/doc/templates.rst">
@@ -701,13 +550,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.php" />
-    <entry file="file://$PROJECT_DIR$/web/js/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="11" column="78" lean-forward="false" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/structure.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -750,26 +592,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/json.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="13" column="189" lean-forward="false" selection-start-line="13" selection-start-column="189" selection-end-line="13" selection-end-column="189" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/map-unique.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -811,42 +637,7 @@
         <state relative-caret-position="6">
           <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1550">
-          <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-          <folding>
-            <marker date="1511170681960" expanded="true" signature="284:328" ph="select * fro... t_article" />
-            <marker date="1511170681960" expanded="true" signature="1285:1323" ph="select * fro... t_article" />
+            <element signature="e#7#48#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -864,24 +655,8 @@
         <state relative-caret-position="-6457">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/liste.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/map-liste.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2759">
-          <caret line="107" column="61" lean-forward="false" selection-start-line="107" selection-start-column="61" selection-end-line="107" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,42 +684,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/js/json.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="78" />
+        <state relative-caret-position="216">
+          <caret line="13" column="189" lean-forward="false" selection-start-line="13" selection-start-column="189" selection-end-line="13" selection-end-column="189" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/map-liste.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2382">
+          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/geoloc.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/liste.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="83" column="70" lean-forward="true" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/auto-complete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/map-unique.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="84" column="39" lean-forward="true" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+        <state relative-caret-position="152">
+          <caret line="81" column="432" lean-forward="false" selection-start-line="81" selection-start-column="432" selection-end-line="81" selection-end-column="432" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <marker date="1511465929385" expanded="true" signature="284:328" ph="select * fro... t_article" />
+            <marker date="1511465929385" expanded="true" signature="1326:1364" ph="select * fro... t_article" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="9" column="137" lean-forward="false" selection-start-line="9" selection-start-column="137" selection-end-line="9" selection-end-column="137" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="336" column="12" lean-forward="false" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
+        <state relative-caret-position="531">
+          <caret line="399" column="9" lean-forward="true" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
           <folding />
         </state>
       </provider>

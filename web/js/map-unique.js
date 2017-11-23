@@ -1,5 +1,6 @@
 function initMap() {
     // Fonction qui récupère les variables GET dans une url
+    // Permet d'afficher le resultat de toute la base de données via google map
     function $_GET(param) {
         var vars = {};
         window.location.href.replace( location.hash, '' ).replace(
