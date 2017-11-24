@@ -3,7 +3,9 @@
 // Home page
 $app->get('/', function () use ($app) {
     $articles = $app['dao.article']->findAll();
-    return $app['twig']->render('index.html.twig', array('articles' => $articles));
+    // la méthode find me permet d'afficher un article en particulier ex: find(1) ou find($id)
+    $article = $app['dao.article']->find(1);
+    return $app['twig']->render('index.html.twig', array('articles' => $articles, 'article' => $article));
 })->bind('home');
 
 // Article details with comments

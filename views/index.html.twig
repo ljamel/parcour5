@@ -5,19 +5,34 @@
     {% for article in articles %}
 
         <div class="liste-main shadow-none">
-            <a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
+            <a class="articleTitle"
+               href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
                 <img class="liste-main" src="{{ article.image }}">
-                <h2><a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}">{{ article.title }}</a> <span class="type">{{ article.type|upper }}</span></h2>
+                <h2><a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}">{{ article.title }}</a>
+                    <span class="type">{{ article.type|upper }}</span></h2>
                 <p>{{ article.content[:180] }}... </p>
                 <div class="display">
-                    <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ article.position }}</P>
+                    <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ article.position }}
+                    </P>
                     <P class="prix">{{ article.prix|replace({0: "GRATUIT"}) }}</P>
                 </div>
-                <a  href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
+                <a href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
                     <p class="reserver">Plus d'info</p></a>
             </a>
         </div>
+
+
     {% endfor %}
+    </div>
+    <div class="liste-resultat">
+        <img class="promo-acceuil" src="{{ article.image }}">
+        <P>{{ article.title }}</P>
+        <P>{{ article.content }}</P>
+        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Voir sur le plans</P>
+        <P class="prix">{{ article.prix|replace({0: "GRATUIT"}) }}</P>
+    </div>
+
+
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
@@ -25,6 +40,8 @@
     <script src="http://localhost/parcour-5/web/js/map-liste.js"></script>
 
     <script src="http://localhost/parcour-5/web/js/auto-complete.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete" async defer></script>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete"
+            async defer></script>
 
 {% endblock %}
