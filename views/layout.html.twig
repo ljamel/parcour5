@@ -5,14 +5,12 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <title>Voyage</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="http://localhost/parcour-5/web/css/style.css">
     <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/microcms.css') }}" rel="stylesheet">
-
 </head>
 <div id="menu-header">
     <h1>
@@ -38,10 +36,7 @@
 <div id="none">
     <nav>
 
-        <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i> <i id="menu-close"
-                                                                                class="fa fa-times fa-3x none"
-                                                                                aria-hidden="true"></i>
-
+        <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i> <i id="menu-close" class="fa fa-times fa-3x none" aria-hidden="true"></i>
 
         <ul id="deroul-menu">
             {{ include('menu.html.twig') }}
@@ -79,7 +74,8 @@
 
 <div id="formulaire-recherche">
     <form action="liste/" method="get">
-        <p class="queFaire">QUE FAIRE  <A HREF="liste/" title="activités"> <i class="fa fa-bicycle fa-min fa-cat" aria-hidden="true" title="Loisirs"></i></A> <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+        <p class="queFaire">QUE FAIRE</p>
+            <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png">  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
         <input type="hidden"  name="page" value="2" >
 
         <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
@@ -94,7 +90,6 @@
             <option value="9999999">Voir tous</option>
         </select>
         </span>
-
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="datepicker" id="from" name="from" placeholder="Du">
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="to" name="to" placeholder="Au">
 
@@ -102,7 +97,6 @@
     </form>
 </div>
 <div id="main">
-
     <div class="display"><h1> BON PLANS </h1> <P><a href="/liste/?page=2&depart=&budget=0&from=&to=" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
     {% block content %}
@@ -112,14 +106,6 @@
 
         {% endfor %}
     {% endblock %}
-
-
-
-
-
-
-
-
 
 <script src="http://localhost/parcour-5/web/js/slide.js"></script>
 <script src="http://localhost/parcour-5/web/js/menu.js"></script>

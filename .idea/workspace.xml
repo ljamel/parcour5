@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="398f53d8-3825-43b8-b6d3-b947092232f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/articleDAO.php" afterPath="$PROJECT_DIR$/src/DAO/articleDAO.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html.twig" afterPath="$PROJECT_DIR$/views/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.html.twig" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
@@ -44,8 +42,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="-46">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -71,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="81" column="157" lean-forward="false" selection-start-line="81" selection-start-column="157" selection-end-line="81" selection-end-column="157" />
+            <state relative-caret-position="162">
+              <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="444" column="13" lean-forward="false" selection-start-line="444" selection-start-column="13" selection-end-line="444" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="298" column="21" lean-forward="false" selection-start-line="298" selection-start-column="21" selection-end-line="298" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -94,33 +92,21 @@
       <file leaf-file-name="articleDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+            <state relative-caret-position="278">
+              <caret line="18" column="131" lean-forward="true" selection-start-line="18" selection-start-column="131" selection-end-line="18" selection-end-column="131" />
               <folding>
-                <marker date="1511522433297" expanded="true" signature="284:350" ph="SELECT * fro... t_article" />
-                <marker date="1511522433297" expanded="true" signature="284:365" ph="SELECT * FRO... t_article" />
-                <marker date="1511522433297" expanded="true" signature="1363:1401" ph="select * fro... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:441" ph="SELECT * fro... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:446" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:447" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:454" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:455" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:479" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:481" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:483" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:485" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="375:514" ph="SELECT * FRO... t_article" />
+                <marker date="1511634122381" expanded="true" signature="1511:1549" ph="select * fro... t_article" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="liste.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/liste.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unique.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/unique.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,8 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>paris</find>
-      <find>markerCluster</find>
       <find>location</find>
       <find>initM</find>
       <find>rect</find>
@@ -167,6 +151,8 @@
       <find>unique</find>
       <find>render</find>
       <find>&quot;</find>
+      <find>position</find>
+      <find>que</find>
     </findStrings>
     <replaceStrings>
       <replace>progfacil</replace>
@@ -228,10 +214,10 @@
         <option value="$PROJECT_DIR$/web/js/map-unique.js" />
         <option value="$PROJECT_DIR$/src/Domain/article.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/views/index.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/DAO/articleDAO.php" />
+        <option value="$PROJECT_DIR$/views/index.html.twig" />
         <option value="$PROJECT_DIR$/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
       </list>
     </option>
   </component>
@@ -404,12 +390,12 @@
       <workItem from="1509869849566" duration="18208000" />
       <workItem from="1509973917967" duration="6338000" />
       <workItem from="1510062932914" duration="10932000" />
-      <workItem from="1510739351069" duration="85347000" />
+      <workItem from="1510739351069" duration="109828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332018000" />
+    <option name="totallyTimeSpent" value="356499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,13 +412,13 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13426423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18792711" sideWeight="0.083243825" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18792711" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18792711" sideWeight="0.91675615" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -454,15 +440,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/loisirs.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/pimple/pimple/tests/bootstrap.php" />
-    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/doc/templates.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18925">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -767,38 +744,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../Sources_TP_App/tp-app-poo/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Sources_TP_App/tp-app-poo/Web/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Sources_TP_App/tp-app-poo/lib/vendors/Model/NewsManagerPDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="54" column="57" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="71" />
+          <folding>
+            <marker date="1508426028076" expanded="true" signature="420:547" ph="INSERT INTO news... " />
+            <marker date="1508426028076" expanded="true" signature="1653:1678" ph="SELECT COUNT... news" />
+            <marker date="1508426028076" expanded="true" signature="1768:1796" ph="DELETE FROM " />
+            <marker date="1508426028076" expanded="true" signature="1959:2048" ph="SELECT id, a... news" />
+            <marker date="1508426028076" expanded="true" signature="2844:2921" ph="SELECT id, n... " />
+            <marker date="1508426028076" expanded="true" signature="3391:3478" ph="SELECT id, a... news" />
+            <marker date="1508426028076" expanded="true" signature="3999:4101" ph="UPDATE news " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="18" column="131" lean-forward="true" selection-start-line="18" selection-start-column="131" selection-end-line="18" selection-end-column="131" />
+          <folding>
+            <marker date="1511634122381" expanded="true" signature="375:441" ph="SELECT * fro... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:446" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:447" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:454" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:455" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:479" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:481" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:483" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:485" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="375:514" ph="SELECT * FRO... t_article" />
+            <marker date="1511634122381" expanded="true" signature="1511:1549" ph="select * fro... t_article" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="-46">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="444" column="13" lean-forward="false" selection-start-line="444" selection-start-column="13" selection-end-line="444" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/articleDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
-          <folding>
-            <marker date="1511522433297" expanded="true" signature="284:350" ph="SELECT * fro... t_article" />
-            <marker date="1511522433297" expanded="true" signature="284:365" ph="SELECT * FRO... t_article" />
-            <marker date="1511522433297" expanded="true" signature="1363:1401" ph="select * fro... t_article" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="81" column="157" lean-forward="false" selection-start-line="81" selection-start-column="157" selection-end-line="81" selection-end-column="157" />
+        <state relative-caret-position="268">
+          <caret line="298" column="21" lean-forward="false" selection-start-line="298" selection-start-column="21" selection-end-line="298" selection-end-column="21" />
           <folding />
         </state>
       </provider>

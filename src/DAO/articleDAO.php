@@ -13,7 +13,10 @@ class ArticleDAO extends DAO
      * @return array A list of all articles.
      */
     public function findAll() {
-        $sql = "SELECT * FROM t_article WHERE prix BETWEEN 0 AND 2 ORDER BY art_id DESC LIMIT 0,6";
+
+        if(isset($_GET["page"])){} else { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
+
+        $sql = 'SELECT * FROM t_article WHERE prix BETWEEN 0 AND 2 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects

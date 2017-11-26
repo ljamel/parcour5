@@ -10,7 +10,7 @@
                 <img class="liste-main" src="{{ article.image }}">
                 <h2><a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}">{{ article.title }}</a>
                     <span class="type">{{ article.type|upper }}</span></h2>
-                <p>{{ article.content[:180] }}... </p>
+                <p>{{ article.content[:178] }}... </p>
                 <div class="display">
                     <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ article.position }}
                     </P>
@@ -21,8 +21,11 @@
             </a>
         </div>
 
-
     {% endfor %}
+
+    {% set page, pageSuivant = 6, 12 %}
+    <a href="?page={{ page }}&pageSuivant={{ pageSuivant }}&#main" class="suivant">Page suivante >> </a>
+
     </div>
     <div class="liste-resultat">
         <img class="promo-acceuil" src="{{ article.image }}">

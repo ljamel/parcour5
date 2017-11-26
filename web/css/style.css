@@ -93,6 +93,10 @@ h1 {
     text-align: center;
 }
 
+.suivant {
+    display: flex;
+}
+
 a {
     text-decoration: none;
     color: #1f1a21;
@@ -200,6 +204,29 @@ li a:hover {
     margin-left: 12px;
 }
 
+.sous-cat {
+    display: none;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    background-color: honeydew;
+    position: relative;
+}
+
+.img-sous-menu {
+    width: 110px;
+}
+
+.sous-cat:hover {
+    display: block;
+}
+
+.fa.fa-bicycle.fa-min.fa-cat:hover + .sous-cat {
+    display: block;
+}
+
+
+
 #bouton-slide-left {
     padding: 14px;
     cursor: pointer;
@@ -237,10 +264,10 @@ li a:hover {
 }
 
 .fa-cat {
+    display: initial;
     padding: 9px;
     padding-right: 13px;
     padding-bottom: 5px;
-    padding-top: 5px;
     background-color: white;
     width: 19px;
     margin-left: 5px;
@@ -269,6 +296,7 @@ select {
 
 .queFaire {
     margin-bottom: 0px;
+    display: initial;
 }
 
 .recherche {
@@ -310,6 +338,7 @@ select {
         display: inline-block;
         vertical-align: middle;
         margin-bottom: 2px;
+        z-index: 0;
     }
 
     .custom-dropdown__select {
@@ -326,6 +355,7 @@ select {
         content: "";
         position: absolute;
         pointer-events: none;
+        z-index: 0;
     }
 
     .custom-dropdown::after { /*  Custom dropdown arrow */
@@ -435,8 +465,9 @@ img.liste-main-unique {
 
 .liste-resultat {
     display: flex;
-    margin-bottom: 20px;
     background-color: #F6F7F8;
+    margin: 105px;
+    margin-right: 150px;
 }
 
 .promo-acceuil {
@@ -604,6 +635,7 @@ div#page {
     /* formulaire de recherche */
     #formulaire-recherche {
         height: 260px;
+        max-width: 300px;
     }
 
     #main {
@@ -622,7 +654,13 @@ div#page {
     .liste-resultat {
         display: inline-block;
         max-width: 260px;
+        margin: 0px;
     }
+    .queFaire {
+        margin-bottom: 0px;
+        display: table-column;
+    }
+
 
 }
 
