@@ -64,9 +64,9 @@ class CommentDAO extends DAO
 
         if (array_key_exists('art_id', $row)) {
             // Find and set the associated article
-            $articleId = $row['art_id'];
-            $article = $this->LoisirsDAO->find($articleId);
-            $comment->setLoisir($article);
+            $loisirId = $row['art_id'];
+            $loisir = $this->LoisirsDAO->find($loisirId);
+            $comment->setLoisir($loisir);
         }
 
         return $comment;

@@ -37,7 +37,7 @@ class Comment
      *
      * @var \MicroCMS\Domain\Article
      */
-    private $article;
+    private $loisir;
 
     public function getId() {
         return $this->id;
@@ -67,7 +67,7 @@ class Comment
     }
 
     public function getLoisir() {
-        return $this->article;
+        return $this->loisir;
     }
 
     public function setLoisir(Loisir $loisir) {
