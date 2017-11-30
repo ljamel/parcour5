@@ -2,7 +2,7 @@
 
 namespace MicroCMS\Domain;
 
-class Article
+class Loisir
 {
     /**
      * Article id.

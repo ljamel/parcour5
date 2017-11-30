@@ -2,21 +2,21 @@
 
 
 {% block content %}
-    {% for article in articles %}
+    {% for loisir in loisirs %}
 
         <div class="liste-main shadow-none">
             <a class="articleTitle"
-               href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
-                <img class="liste-main" src="{{ article.image }}">
-                <h2><a class="articleTitle" href="{{ path('sejours/', { 'id': article.id }) }}">{{ article.title }}</a>
-                    <span class="type">{{ article.type|upper }}</span></h2>
-                <p>{{ article.content[:178] }}... </p>
+               href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.position|replace({",": "&positionN=", '%that%':80}) }}">
+                <img class="liste-main" src="{{ loisir.image }}">
+                <h2><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}">{{ loisir.title }}</a>
+                    <span class="type">{{ loisir.type|upper }}</span></h2>
+                <p>{{ loisir.content[:178] }}... </p>
                 <div class="display">
-                    <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ article.position }}
+                    <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position }}
                     </P>
-                    <P class="prix">{{ article.prix|replace({0: "GRATUIT"}) }}</P>
+                    <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }}</P>
                 </div>
-                <a href="{{ path('sejours/', { 'id': article.id }) }}?positionL={{ article.position|replace({",": "&positionN=", '%that%':80}) }}">
+                <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.position|replace({",": "&positionN=", '%that%':80}) }}">
                     <p class="reserver">Plus d'info</p></a>
             </a>
         </div>
@@ -28,11 +28,11 @@
 
     </div>
     <div class="liste-resultat">
-        <img class="promo-acceuil" src="{{ article.image }}">
-        <P>{{ article.title }}</P>
-        <P>{{ article.content }}</P>
+        <img class="promo-acceuil" src="{{ loisir.image }}">
+        <P>{{ loisir.title }}</P>
+        <P>{{ loisir.content }}</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Voir sur le plans</P>
-        <P class="prix">{{ article.prix|replace({0: "GRATUIT"}) }}</P>
+        <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }}</P>
     </div>
 
 

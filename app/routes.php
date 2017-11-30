@@ -2,44 +2,35 @@
 
 // Home page
 $app->get('/', function () use ($app) {
-    $articles = $app['dao.article']->findAll();
-    // la méthode find me permet d'afficher un article en particulier ex: find(1) ou find($id)
-    $article = $app['dao.article']->find(1);
-    return $app['twig']->render('index.html.twig', array('articles' => $articles, 'article' => $article));
+    $loisirs = $app['dao.loisir']->findAll();
+    // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
+    $loisir = $app['dao.loisir']->find(1);
+    return $app['twig']->render('index.html.twig', array('loisirs' => $loisirs, 'loisir' => $loisir));
 })->bind('home');
 
-// Article details with comments
+// loisir details with comments
 $app->get('/sejours/{id}', function ($id) use ($app) {
-    $article = $app['dao.article']->find($id);
-    $comments = $app['dao.comment']->findAllByArticle($id);
-    return $app['twig']->render('unique.html.twig', array('article' => $article, 'comments' => $comments));
+    $loisir = $app['dao.loisir']->find($id);
+    $comments = $app['dao.comment']->findAllByLoisir($id);
+    return $app['twig']->render('unique.html.twig', array('loisir' => $loisir, 'comments' => $comments));
 })->bind('sejours/');
 
-// Article details with comments
+// loisir details with comments
 $app->get('/liste/', function () use ($app) {
-    $article = $app['dao.article']->findAll();
-    return $app['twig']->render('liste.html.twig', array('article' => $article));
+    $loisir = $app['dao.loisir']->findAll();
+    return $app['twig']->render('liste.html.twig', array('loisir' => $loisir));
 })->bind('liste/');
 
-// Article details with comments
-$app->get('/geoloc', function () use ($app) {
-    $article = $app['dao.article']->findAll();
-    return $app['twig']->render('geoloc.html.twig', array('article' => $article));
-})->bind('geoloc');
 
-// Article details with comments
+// loisir details with comments
 $app->get('/admin', function () use ($app) {
-    $article = $app['dao.article']->findAll();
-    return $app['twig']->render('admin/index.html.twig');
+
+    return $app['twig']->render('admin.html.twig');
 })->bind('admin');
-// Article details with comments
-$app->post('/connect', function () use ($app) {
-    $article = $app['dao.article']->findAll();
-    return $app['twig']->render('admin/index.html.twig');
-})->bind('connect');
+
 
 
 $app->get('/api/', function () use ($app) {
-    $articles = $app['dao.article']->findAll();
-    return $app['twig']->render('api/api.html.twig', array('articles' => $articles));
+    $loisirs = $app['dao.loisir']->findAll();
+    return $app['twig']->render('api/api.html.twig', array('loisirs' => $loisirs));
 })->bind('api/');

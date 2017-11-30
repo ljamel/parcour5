@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+
+
+{% block content %}
+
+    <section id="unique">
+
+        <div class="form-connection">
+
+            Connexion à l'administration
+            <form action="connect" method="post">
+                <label>Pseudo:</label>
+                <input type="text" name="login" />
+                <br />
+                <label>Passe: &nbsp;</label>
+                <input type="password" name="password" />
+                <br />
+                <input class="bouton" type="submit" value="Connexion" />
+            </form>
+        </div>
+
+    </section>
+
+{% endblock %}

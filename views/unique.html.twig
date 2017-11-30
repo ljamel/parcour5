@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-
-<head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Voyage</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="http://localhost/parcour-5/web/css/style.css">
-
-</head>
-
-<div id="page">
-    <p>Loisirs et Vacances</p>
-    <nav>
-        <ul>
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<div id="none">
-    <nav>
-
-        <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i>
-        <i id="menu-close" class="fa fa-times fa-3x none" aria-hidden="true"></i>
-
-        <ul id="deroul-menu">
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<body>
-
+{% extends "layout.html.twig" %}
 
 {% block content %}
 
     <div class="title-show">
-        <h2>{{ article.title }}</h2>
-        <img class="liste-main-unique" src="{{ article.image }}">
-        <p>{{ article.content }}</p>
+        <h2>{{ loisir.title }}</h2>
+        <img class="liste-main-unique" src="{{ loisir.image }}">
+        <p>{{ loisir.content }}</p>
         <h3>Comments</h3>
         {% for comment in comments %}
             <strong>{{ comment.author }}</strong> said : {{ comment.content }}<br>
@@ -48,19 +14,15 @@
         {% endfor %}
     </div>
 
-{% endblock %}
-
-
-
 <div id="mapInfo">
     <div id="map"></div>
     <div id="infoLoisirs">essai</div>
 </div>
 
-{{ include('footer.html.twig') }}
 <!-- script qui appel la map -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap&posi=lat:{{ article.position|replace({",": ", lng: ", '%that%': 48}) }}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap&posi=lat:{{ loisir.position|replace({",": ", lng: ", '%that%': 48}) }}"></script>
 <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
 <script src="http://localhost/parcour-5/web/js/map-unique.js"></script>
 
+{% endblock %}

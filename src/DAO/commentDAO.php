@@ -14,12 +14,12 @@ use MicroCMS\Domain\Comment;
 class CommentDAO extends DAO
 {
     /**
-     * @var \MicroCMS\DAO\ArticleDAO
+     * @var \MicroCMS\DAO\LoisirsDAO
      */
-    private $articleDAO;
+    private $LoisirsDAO;
 
-    public function setArticleDAO(ArticleDAO $articleDAO) {
-        $this->articleDAO = $articleDAO;
+    public function setLoisirsDAO(LoisirsDAO $LoisirsDAO) {
+        $this->LoisirsDAO = $LoisirsDAO;
     }
 
     /**
@@ -29,14 +29,14 @@ class CommentDAO extends DAO
      *
      * @return array A list of all comments for the article.
      */
-    public function findAllByArticle($articleId) {
+    public function findAllByLoisir($loisirId) {
         // The associated article is retrieved only once
-        $article = $this->articleDAO->find($articleId);
+        $loisir = $this->LoisirsDAO->find($loisirId);
 
         // art_id is not selected by the SQL query
         // The article won't be retrieved during domain objet construction
         $sql = "select com_id, com_content, com_author from t_comment where art_id=? order by com_id";
-        $result = $this->getDb()->fetchAll($sql, array($articleId));
+        $result = $this->getDb()->fetchAll($sql, array($loisirId));
 
         // Convert query result to an array of domain objects
         $comments = array();
@@ -44,7 +44,7 @@ class CommentDAO extends DAO
             $comId = $row['com_id'];
             $comment = $this->buildDomainObject($row);
             // The associated article is defined for the constructed comment
-            $comment->setArticle($article);
+            $comment->setLoisir($loisir);
             $comments[$comId] = $comment;
         }
         return $comments;
@@ -65,8 +65,8 @@ class CommentDAO extends DAO
         if (array_key_exists('art_id', $row)) {
             // Find and set the associated article
             $articleId = $row['art_id'];
-            $article = $this->articleDAO->find($articleId);
-            $comment->setArticle($article);
+            $article = $this->LoisirsDAO->find($articleId);
+            $comment->setLoisir($article);
         }
 
         return $comment;

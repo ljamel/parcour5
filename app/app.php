@@ -17,11 +17,11 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 ));
 
 // Register services
-$app['dao.article'] = function ($app) {
-    return new MicroCMS\DAO\ArticleDAO($app['db']);
+$app['dao.loisir'] = function ($app) {
+    return new MicroCMS\DAO\LoisirsDAO($app['db']);
 };
 $app['dao.comment'] = function ($app) {
     $commentDAO = new MicroCMS\DAO\CommentDAO($app['db']);
-    $commentDAO->setArticleDAO($app['dao.article']);
+    $commentDAO->setLoisirsDAO($app['dao.loisir']);
     return $commentDAO;
 };

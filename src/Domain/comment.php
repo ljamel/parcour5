@@ -66,12 +66,12 @@ class Comment
         return $this;
     }
 
-    public function getArticle() {
+    public function getLoisir() {
         return $this->article;
     }
 
-    public function setArticle(Article $article) {
-        $this->article = $article;
+    public function setLoisir(Loisir $loisir) {
+        $this->loisir = $loisir;
         return $this;
     }
 }

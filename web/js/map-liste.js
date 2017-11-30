@@ -46,37 +46,6 @@ function initMap() {
                             // ordinateur
                             document.getElementById('map').style.width = 65 + "%";
                         }
-                        // extraction des donnÃ©es de la station
-                        var station = object.address;
-                        sessionStorage.nameStation = object.name; // Appel la fonction affiche le nom de la station
-                        var stre = object.status;
-                        var veloDispo = object.available_bikes;
-                        var placeDispo = object.available_bike_stands;
-                        var statusFr = stre.replace("CLOSED", "Fermer");
-
-                        if (stre === 'OPEN') {
-                            var statusFr = stre.replace("OPEN", "Ouvert");
-                        }
-                        if (veloDispo > 0) {
-                            if (window.matchMedia("(max-width: 700px)").matches) {
-                                // Mobile
-
-                                res = "<a href=#mob><button onclick='Signature.reservation();' id='louer'>RÃ©sÃ©rver</button></a>";
-                            } else {
-                                // ordinateur
-
-                                res = "<a href=#footer><button onclick='Signature.reservation()' id='louer'>RÃ©sÃ©rver</button></a>";
-                            }
-                        }
-                        if (veloDispo <= 0 || object.status === "CLOSED") {
-                            res = "Nombres de vÃ©los disponible insuffisant. Oo station fermer<br /> Choisisser une autre station";
-                        }
-                        document.getElementById('reservation').style.display = "block";
-                        // affiche une fenÃªte d'info sur la station
-                        document.getElementById('reservation').innerHTML = "DÃ©tail de la station:<br />" + "<br /><strong>Nom de la station</strong><br />" + sessionStorage.nameStation + "<br /><br /><strong>adresse de la station</strong><br />" + station + "<br /><br /><strong>La station est</strong> " + statusFr + "<br /><br /><strong>Nombre de vÃ©los disponible</strong> " + veloDispo + "<br /><strong>nombre de places disponible </strong>" + placeDispo + "<br /><p></p>" + res + "<br />";
-
-                        var contentString = '<div id="content">' + '<strong>La station est </strong>' + statusFr +
-                            '</div>';
 
 
                     });

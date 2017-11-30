@@ -12,34 +12,21 @@
     <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/microcms.css') }}" rel="stylesheet">
 </head>
+
 <div id="menu-header">
-    <h1>
-        <a class="title" href="#slide">
-            <img src="http://localhost/parcour-5/web/images/parasol-icon.png" alt="parasol" style="width: 40px;"> Loisirs et Vacances
-        </a>
-    </h1>
-    <nav>
-        <div class="title"></div>
-        <ul> <!-- Penser a ajouter des images pour que l'écrivain puisse ajouter des images -->
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<div id="menu-header-scrollBas">
-    <p>Loisirs et Vacances</p>
-    <nav>
-        <ul >
-            {{ include('menu.html.twig') }}
-        </ul>
-    </nav>
-</div>
-<div id="none">
     <nav>
 
         <i id="menu-mobile" class="fa fa-bars fa-3x" aria-hidden="true"></i> <i id="menu-close" class="fa fa-times fa-3x none" aria-hidden="true"></i>
-
+        <h1>
+            <a class="title" href="#slide">
+                <img class="parasol" src="http://localhost/parcour-5/web/images/parasol-icon.png" alt="parasol" > Loisirs et Vacances
+            </a>
+        </h1>
         <ul id="deroul-menu">
-            {{ include('menu.html.twig') }}
+            <li><a href="/"> Accueil </a></li>
+            <li><a href="liste"> Idée loisirs </a></li>
+            <li><a href=""> Contact </a></li>
+            <li><a href=""> Aide </a></li>
         </ul>
     </nav>
 </div>
@@ -75,7 +62,7 @@
 <div id="formulaire-recherche">
     <form action="liste/" method="get">
         <p class="queFaire">QUE FAIRE</p>
-            <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png">  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+        <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"></a>  <a href="" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
         <input type="hidden"  name="page" value="2" >
 
         <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
@@ -97,16 +84,33 @@
     </form>
 </div>
 <div id="main">
-    <div class="display"><h1> BON PLANS </h1> <P><a href="/liste/?page=2&depart=&budget=0&from=&to=" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+    <div class="display"><h1> BON PLANS </h1> <P><a href="/liste/?page=0&pageSuivant=50&depart=&budget=0&from=&to=" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
-    {% block content %}
-        {% for article in articles %}
+    {% block content %}{% endblock %}
 
-            // le contenue de se block se trouve dans une autre page ex: index.html.twig
+    <section id="footer">
+        <div class="texte-footer"><h2>Remerciement</h2><p>Site web réaliser avec l'aide <a href="https://openclassrooms.com/referral/lamlaam" class="white" title="Formation de professionnelle en ligne"> d'OpenClassrooms </a></p> <p> Grâce à OpenClassroom j'ai pu réaliser mon rêve, de devenir développeur d'applications web.</p> </div>
+        <div class="texte-footer"><h2>Mon footer 11</h2> <p> Mon texte presentation</p> <p> <a href="" class="white">suivre le lien <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i></a></p> </div>
+        <div class="texte-footer"><h2>Mon footer 11</h2> <p> Mon texte presentation</p> <p> <a href="" class="white">suivre le lien <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i></a></p> </div>
+        <div class="texte-footer"><h2>Lien sociaux </h2>
+            <p>
+                <a href="https://twitter.com/lamridjamal_off"><i class="fa fa-twitter fa-moyen white" title="Twitter"></i></a>
+                <a href="https://www.linkedin.com/in/djamal-lamri-5111a8128/"><i class="fa fa-linkedin fa-moyen white" title="LinkedIn"></i></a>
+            </p>
+        </div>
+        <div id="copyright"> copyright 2017 progfacil.com | <a href="https://www.progfacil.com/condition.html" target="_blank" class="white">Mention légales</a> </div>
+    </section>
+</div>
 
-        {% endfor %}
-    {% endblock %}
 
-<script src="http://localhost/parcour-5/web/js/slide.js"></script>
-<script src="http://localhost/parcour-5/web/js/menu.js"></script>
-{{ include('footer.html.twig') }}
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="http://localhost/parcour-5/web/js/date.js"></script>
+    <script src="http://localhost/parcour-5/web/js/menu.js"></script>
+    <script src="http://localhost/parcour-5/web/js/slide.js"></script>
+
+
+
+</body>
+</html>
