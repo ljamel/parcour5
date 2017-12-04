@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "/layout.html.twig" %}
 
 
 {% block content %}
@@ -8,7 +8,7 @@
         <div class="form-connection">
 
             Connexion à l'administration
-            <form action="connect" method="post">
+            <form action="../../web/index.php" method="post">
                 <label>Pseudo:</label>
                 <input type="text" name="login" />
                 <br />
@@ -20,5 +20,7 @@
         </div>
 
     </section>
+
+    <script src="http://localhost/parcour-5/web/js/menu.js"></script>
 
 {% endblock %}

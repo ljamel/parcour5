@@ -79,7 +79,7 @@ class FormExtensionBootstrap3LayoutTest extends AbstractBootstrap3LayoutTest
 
     protected function renderLabel(FormView $view, $label = null, array $vars = array())
     {
-        if (null !== $label) {
+        if ($label !== null) {
             $vars += array('label' => $label);
         }
 

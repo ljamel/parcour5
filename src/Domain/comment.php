@@ -35,7 +35,7 @@ class Comment
     /**
      * Associated article.
      *
-     * @var \MicroCMS\Domain\Article
+     * @var \MicroCMS\Domain\Loisir
      */
     private $loisir;
 
@@ -52,7 +52,7 @@ class Comment
         return $this->author;
     }
 
-    public function setAuthor($author) {
+    public function setAuthor(User $author) {
         $this->author = $author;
         return $this;
     }

@@ -27,8 +27,6 @@ body {
 #map {
     height: 590px;
     width: 100%;
-    display: inline-table;
-    margin-top: 210px;
     margin-bottom: 240px;
 }
 
@@ -128,6 +126,10 @@ li a:hover {
     border-top-style: solid;
     padding-top: 13px;
 }
+a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
 
 #menu-header {
     display: flex;
@@ -136,10 +138,12 @@ li a:hover {
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 2;
 }
 
 nav {
     display: contents;
+    margin-top: 16px;
 }
 
 /* Section 1 */
@@ -242,7 +246,7 @@ nav {
     background-color: #00BFFF;
     color: white;
     padding: 10px;
-    width: 85px;
+    width: 102px;
     cursor:pointer;
 }
 
@@ -420,7 +424,15 @@ select {
     max-width: 800px;
 }
 .title-show {
-    width: 75%;
+    text-align: justify;
+    display: flex;
+    margin: 70px;
+}
+.texte-show {
+    width: 450px;
+}
+.info-unique {
+    margin-top: 38px;
 }
 .type {
     margin-left: 50px;
@@ -435,7 +447,7 @@ article {
 
 .liste-main {
     display: inline-block;
-    width: 390px;
+    width: 425px;
     background-color: #F6F7F8;
     margin-right: 15px;
     margin-bottom: 15px;

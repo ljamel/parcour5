@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "/layout.html.twig" %}
 
 {% block content %}
 
@@ -9,8 +9,8 @@
 
 <!-- script qui appel la map -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap"></script>
 <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
 <script src="http://localhost/parcour-5/web/js/map-liste.js"></script>
-
+<script src="http://localhost/parcour-5/web/js/menu.js"></script>
 {% endblock %}

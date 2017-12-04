@@ -33,6 +33,13 @@ class Loisir
 
     private $type;
 
+    private $note;
+
+    /*
+     * $etat Permet de savoir l'etat du loisirs poster 0 = en attente, 1 = publier, 3 = signaler
+     */
+    private $etat;
+
     public function getId() {
         return $this->id;
     }
@@ -90,6 +97,22 @@ class Loisir
     }
     public function setType($type) {
         $this->type = $type;
+        return $this;
+    }
+
+    public function getNote() {
+        return $this->note;
+    }
+    public function setNote($note) {
+        $this->note = $note;
+        return $this;
+    }
+
+    public function getEtat() {
+        return $this->etat;
+    }
+    public function setEtat($etat) {
+        $this->etat = $etat;
         return $this;
     }
 }

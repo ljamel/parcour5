@@ -20,19 +20,16 @@ use Twig\Environment;
  */
 class TwigRenderer extends FormRenderer implements TwigRendererInterface
 {
+    /**
+     * @var TwigRendererEngineInterface
+     */
+    private $engine;
+
     public function __construct(TwigRendererEngineInterface $engine, CsrfTokenManagerInterface $csrfTokenManager = null)
     {
         parent::__construct($engine, $csrfTokenManager);
-    }
 
-    /**
-     * Returns the engine used by this renderer.
-     *
-     * @return TwigRendererEngineInterface The renderer engine
-     */
-    public function getEngine()
-    {
-        return parent::getEngine();
+        $this->engine = $engine;
     }
 
     /**
@@ -40,6 +37,6 @@ class TwigRenderer extends FormRenderer implements TwigRendererInterface
      */
     public function setEnvironment(Environment $environment)
     {
-        $this->getEngine()->setEnvironment($environment);
+        $this->engine->setEnvironment($environment);
     }
 }

@@ -176,7 +176,7 @@ EOF
             }
         }
 
-        if (0 === $errors) {
+        if ($errors === 0) {
             $io->success(sprintf('All %d Twig files contain valid syntax.', count($filesInfo)));
         } else {
             $io->warning(sprintf('%d Twig files have valid syntax and %d contain errors.', count($filesInfo) - $errors, $errors));

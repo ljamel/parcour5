@@ -7,7 +7,7 @@ function map() {
 
 
     // Try HTML5 geolocation.
-    if (navigator.geolocation || $_GET('position')) {
+    if (navigator.geolocation) {
 
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -50,7 +50,7 @@ function map() {
 
 
             // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map
-            ajaxGet("http://parcour-5/api", function (reponse) {
+            ajaxGet("http://parcour-5/clustersAll/", function (reponse) {
 
                 // Transforme la réponse en un tableau d'adresses
                 var objects = JSON.parse(reponse);

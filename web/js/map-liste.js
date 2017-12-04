@@ -12,7 +12,7 @@ function initMap() {
     // Modifi le cluster
     var image = 'http://localhost/parcour-5/web/images/cycles.png';
     var image1 = '../images/Calque0.png';
-    ajaxGet("http://parcour-5/api/", function (reponse) {
+    ajaxGet("http://parcour-5/clustersAll/", function (reponse) {
 
         // Transforme la rÃ©ponse en un tableau d'adresses
         var objects = JSON.parse(reponse);

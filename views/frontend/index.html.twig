@@ -1,7 +1,8 @@
-{% extends "layout.html.twig" %}
+{% extends "/layout.html.twig" %}
 
 
 {% block content %}
+    {{ include('frontend/_slide.html.twig') }}
     {% for loisir in loisirs %}
 
         <div class="liste-main shadow-none">
@@ -43,5 +44,7 @@
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
             async defer></script>
+    <script src="http://localhost/parcour-5/web/js/menuIndex.js"></script>
 
+    <script src="http://localhost/parcour-5/web/js/slide.js"></script>
 {% endblock %}

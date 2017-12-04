@@ -72,13 +72,6 @@ class HttpFoundationExtension extends AbstractExtension
                     $port = ':'.$this->requestContext->getHttpsPort();
                 }
 
-                if ('#' === $path[0]) {
-                    $queryString = $this->requestContext->getQueryString();
-                    $path = $this->requestContext->getPathInfo().($queryString ? '?'.$queryString : '').$path;
-                } elseif ('?' === $path[0]) {
-                    $path = $this->requestContext->getPathInfo().$path;
-                }
-
                 if ('/' !== $path[0]) {
                     $path = rtrim($this->requestContext->getBaseUrl(), '/').'/'.$path;
                 }
@@ -87,12 +80,6 @@ class HttpFoundationExtension extends AbstractExtension
             }
 
             return $path;
-        }
-
-        if ('#' === $path[0]) {
-            $path = $request->getRequestUri().$path;
-        } elseif ('?' === $path[0]) {
-            $path = $request->getPathInfo().$path;
         }
 
         if (!$path || '/' !== $path[0]) {

@@ -1,0 +1,55 @@
+
+<!-- Section 1 slide -->
+<div id="slide">
+    <div id="img-slide1">
+
+        <div class="texte-slide1">
+            <h2>Vous chercher une idée sortie</h2>
+            <p>Vous êtes au bon endroit.<br />
+                Mise a jours régulière des sorties et événement. </p>
+            <a href="geoloc"><p class="rectangle">PLANS <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
+        </div>
+    </div>
+
+    <div id="img-slide2">
+        <div class="texte-slide2">
+            <h2>Trois clics et c'est partie</h2>
+            <p>Remplissez le formulaire si dessous et découvrez les loisirs, lieux touristiques et séjours.<br />
+                Une liste de suggestion de loisirs et vacances via le lien si dessous.</p>
+            <a href="#main"><p class="rectangle">LISTE <i class="fa fa-angle-right fa-moyen" aria-hidden="true"></i></p></a>
+        </div>
+    </div>
+
+    <div class="boutons">
+        <div id="bouton-slide-left"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+        <div id="bouton-slide-right"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    </div>
+</div>
+
+<div id="formulaire-recherche">
+    <form action="liste/" method="get">
+        <p class="queFaire">QUE FAIRE</p>
+        <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"> <img class="img-sous-menu" src="https://www.progfacil.com/imageP5/tourist-2954034_640.png"></a>  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+        <input type="hidden"  name="page" value="2" >
+
+        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
+
+        <span class="custom-dropdown custom-dropdown--white">
+        <select placeholder="Budget" name="budget" class="custom-dropdown__select custom-dropdown__select--white">
+            <option value="0">GRATUIT</option>
+            <option value="50">Moins de 50 €</option>
+            <option value="100">Moins de 100 €</option>
+            <option value="200">Moins de 200 €</option>
+            <option value="400">Moins de 400 €</option>
+            <option value="9999999">Voir tous</option>
+        </select>
+        </span>
+        <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="datepicker" id="from" name="from" placeholder="Du">
+        <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="to" name="to" placeholder="Au">
+
+        <input class="recherche" type="submit" value="Chercher" type="button">
+    </form>
+</div>
+
+<div id="main">
+    <div class="display"><h1> BON PLANS </h1> <P><a href="/liste/?page=0&pageSuivant=50&depart=&budget=0&from=&to=" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
