@@ -12,7 +12,11 @@ class LoisirType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('etat', TextType::class)
             ->add('title', TextType::class)
+            ->add('lien', TextType::class)
+            ->add('position', TextType::class)
+            ->add('image', TextType::class)
             ->add('content', TextareaType::class);
     }
 

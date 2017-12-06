@@ -14,12 +14,57 @@
     <div class="well">
         {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
         <div class="form-group">
+            {{ form_label(loisirForm.etat, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.etat) }}
+                {{ form_widget(loisirForm.etat, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
             {{ form_label(loisirForm.title, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
             <div class="col-sm-6">
                 {{ form_errors(loisirForm.title) }}
                 {{ form_widget(loisirForm.title, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(loisirForm.position, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.position) }}
+                {{ form_widget(loisirForm.position, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(loisirForm.image, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.image) }}
+                {{ form_widget(loisirForm.image, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(loisirForm.lien, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.lien) }}
+                {{ form_widget(loisirForm.lien, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>

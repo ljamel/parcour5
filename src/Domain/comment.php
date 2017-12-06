@@ -32,6 +32,8 @@ class Comment
      */
     private $content;
 
+    private $signal;
+
     /**
      * Associated article.
      *
@@ -72,6 +74,14 @@ class Comment
 
     public function setLoisir(Loisir $loisir) {
         $this->loisir = $loisir;
+        return $this;
+    }
+
+    public function getSignal() {
+        return $this->signal;
+    }
+    public function setSignal($signal) {
+        $this->signal = $signal;
         return $this;
     }
 }

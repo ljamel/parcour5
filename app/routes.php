@@ -114,7 +114,7 @@ $app->match('/admin/loisir/{id}/edit', function($id, Request $request) use ($app
     $loisirForm = $app['form.factory']->create(LoisirType::class, $loisir);
     $loisirForm->handleRequest($request);
     if ($loisirForm->isSubmitted() && $loisirForm->isValid()) {
-        $app['dao.losir']->save($loisir);
+        $app['dao.loisir']->save($loisir);
         $app['session']->getFlashBag()->add('success', 'The losir was successfully updated.');
     }
     return $app['twig']->render('backend/loisir_form.html.twig', array(
@@ -154,6 +154,11 @@ $app->get('/admin/comment/{id}/delete', function($id, Request $request) use ($ap
     // Redirect to admin home page
     return $app->redirect($app['url_generator']->generate('admin'));
 })->bind('admin_comment_delete');
+
+$app->get('/comment/{id}/signal', function($id, Request $request) use ($app) {
+    $app['dao.comment']->signal($id);
+    $app['session']->getFlashBag()->add('success', 'Commentaire signalé.');
+})->bind('signal');
 
 // Add a user
 $app->match('/admin/user/add', function(Request $request) use ($app) {

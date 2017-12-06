@@ -5,7 +5,6 @@ body {
     margin: 0px;
 }
 
-
 .blue {
     color: rgb(18, 159, 250);
 }
@@ -13,6 +12,7 @@ body {
 .white {
     color: white;
 }
+
 .white:hover {
     color: white;
 }
@@ -49,6 +49,7 @@ p {
     margin-left: 15px;
     margin-right: 15px;
     margin-top: 5px;
+    text-align: justify;
 }
 
 h2 {
@@ -64,17 +65,18 @@ h2 {
     margin-left: 275px;
     color: white;
 }
+
 .reserver:hover {
     background-color: #00FFC2;
     cursor: pointer;
     color: white;
 }
 
-
 /* Menu et entête */
 #menu-mobile {
     display: none;
 }
+
 #menu-close {
     display: none;
 }
@@ -126,6 +128,7 @@ li a:hover {
     border-top-style: solid;
     padding-top: 13px;
 }
+
 a:focus, a:hover {
     color: #23527c;
     text-decoration: none;
@@ -230,8 +233,6 @@ nav {
     display: block;
 }
 
-
-
 #bouton-slide-left {
     padding: 14px;
     cursor: pointer;
@@ -247,7 +248,7 @@ nav {
     color: white;
     padding: 10px;
     width: 102px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .rectangle:hover {
@@ -290,6 +291,7 @@ input {
     border-color: #cbcbcbb3;
     border-style: none;
 }
+
 select {
     margin-top: 10px;
     margin-left: 15px;
@@ -323,7 +325,7 @@ select {
     font-size: .7em;
 }
 
-.custom-dropdown__select{
+.custom-dropdown__select {
     font-size: inherit; /* inherit size from .custom-dropdown */
     margin: 0; /* remove default margins */
 }
@@ -369,40 +371,49 @@ select {
         font-size: .625em;
         line-height: 1;
         right: 1.2em;
-        top: 50%; margin-top: -.5em;
+        top: 50%;
+        margin-top: -.5em;
     }
 
     .custom-dropdown::before { /*  Custom dropdown arrow cover */
         width: 2em;
-        right: 0; top: 0; bottom: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         border-radius: 0 3px 3px 0;
     }
 
     .custom-dropdown__select[disabled] {
-        color: rgba(0,0,0,.3);
+        color: rgba(0, 0, 0, .3);
     }
 
     .custom-dropdown.custom-dropdown--disabled::after {
-        color: rgba(0,0,0,.1);
+        color: rgba(0, 0, 0, .1);
     }
 
     /* White dropdown style */
     .custom-dropdown--white::before {
-        top: .5em; bottom: .5em;
+        top: .5em;
+        bottom: .5em;
         background-color: #fff;
-        border-left: 1px solid rgba(0,0,0,.1);
+        border-left: 1px solid rgba(0, 0, 0, .1);
     }
 
     .custom-dropdown--white::after {
-        color: rgba(0,0,0,.9);
+        color: rgba(0, 0, 0, .9);
     }
 
     /* FF only temp fix */
     @-moz-document url-prefix() {
-        .custom-dropdown--large .custom-dropdown__select { padding-right: 1.3em }
-        .custom-dropdown--small .custom-dropdown__select { padding-right: .5em }
+        .custom-dropdown--large .custom-dropdown__select {
+            padding-right: 1.3em
+        }
+        .custom-dropdown--small .custom-dropdown__select {
+            padding-right: .5em
+        }
     }
 }
+
 .recherche:hover {
     background-color: #193D5A;
     cursor: pointer;
@@ -423,21 +434,26 @@ select {
     margin-right: auto;
     max-width: 800px;
 }
+
 .title-show {
     text-align: justify;
     display: flex;
     margin: 70px;
 }
+
 .texte-show {
-    width: 450px;
+    width: 400px;
 }
+
 .info-unique {
     margin-top: 38px;
 }
+
 .type {
     margin-left: 50px;
     font-size: 20px;
 }
+
 article {
     margin-top: 50px;
     width: 80%;
@@ -453,9 +469,11 @@ article {
     margin-bottom: 15px;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.34);
 }
+
 img.liste-main {
     height: 300px;
 }
+
 img.liste-main-unique {
     height: 300px;
     margin-left: 15px;
@@ -464,6 +482,7 @@ img.liste-main-unique {
 .shadow-none:hover {
     box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
 }
+
 .liste-main:hover {
     background-color: rgba(0, 0, 0, 0.13);
 }
@@ -477,8 +496,8 @@ img.liste-main-unique {
 .liste-resultat {
     display: flex;
     background-color: #F6F7F8;
-    margin: 105px;
-    margin-right: 150px;
+    margin-left: 10%;
+    margin-right: 71px;
 }
 
 .promo-acceuil {
@@ -548,11 +567,9 @@ div#page {
     text-align: center;
 }
 
-
 .block {
     display: block;
 }
-
 
 /*Formats mobile*/
 @media screen and (max-width: 780px) {
@@ -561,6 +578,7 @@ div#page {
     .title {
         display: none;
     }
+
     nav {
         position: fixed;
         top: 0;
@@ -576,7 +594,6 @@ div#page {
     .texte-slide2 {
         margin-top: 40px;
     }
-
 
     #menu-mobile {
         display: block;
@@ -657,11 +674,11 @@ div#page {
         max-width: 260px;
         margin: 0px;
     }
+
     .queFaire {
         margin-bottom: 0px;
         display: table-column;
     }
-
 
 }
 

@@ -28,13 +28,16 @@
                         <tr>
                             <th>Title</th>
                             <th>Content</th>
-                            <th></th>  <!-- Actions column -->
+                            <th>Liens</th>
+                            <th>Etat</th>
                         </tr>
                         </thead>
                         {% for loisir in loisirs %}
                             <tr>
                                 <td><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}">{{ loisir.title }}</a></td>
                                 <td>{{ loisir.content | truncate(60) }}</td>
+                                <td> {{ loisir.lien }}</td>
+                                <td>{{ loisir.etat|replace({0: "En Attente", 1: "Publier", 3: "Signaler"}) }}</td>
                                 <td>
                                     <a href="{{ path('admin_loisir_edit', { 'id': loisir.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#loisirDialog{{ loisir.id }}"><span class="glyphicon glyphicon-remove"></span>
@@ -75,6 +78,7 @@
                             <th>Article</th>
                             <th>Author</th>
                             <th>Content</th>
+                            <th>Signalement</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
@@ -83,6 +87,7 @@
                                 <td><a class="loisirTitle" href="{{ path('sejours/', { 'id': comment.loisir.id }) }}">{{ comment.loisir.title }}</a></td>
                                 <td>{{ comment.author.username }}</td>
                                 <td>{{ comment.content | truncate(60) }}</td>
+                                <td>{{ comment.signal }}</td>
                                 <td>
                                     <a href="{{ path('admin_comment_edit', { 'id': comment.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}"><span class="glyphicon glyphicon-remove"></span>

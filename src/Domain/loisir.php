@@ -35,6 +35,8 @@ class Loisir
 
     private $note;
 
+    private $lien;
+
     /*
      * $etat Permet de savoir l'etat du loisirs poster 0 = en attente, 1 = publier, 3 = signaler
      */
@@ -71,7 +73,7 @@ class Loisir
         return $this->position;
     }
 
-    public function setPostion($position) {
+    public function setPosition($position) {
         $this->position = $position;
         return $this;
     }
@@ -113,6 +115,14 @@ class Loisir
     }
     public function setEtat($etat) {
         $this->etat = $etat;
+        return $this;
+    }
+
+    public function getLien() {
+        return $this->lien;
+    }
+    public function setLien($lien) {
+        $this->lien = $lien;
         return $this;
     }
 }

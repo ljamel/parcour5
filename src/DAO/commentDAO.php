@@ -37,7 +37,7 @@ class CommentDAO extends DAO
 
         // art_id is not selected by the SQL query
         // The loisir won't be retrieved during domain objet construction
-        $sql = "select com_id, com_content, usr_id from t_comment where art_id=? order by com_id";
+        $sql = "select * from t_comment where art_id=? order by com_id";
         $result = $this->getDb()->fetchAll($sql, array($loisirId));
 
         // Convert query result to an array of domain objects
@@ -62,6 +62,7 @@ class CommentDAO extends DAO
         $comment = new Comment();
         $comment->setId($row['com_id']);
         $comment->setContent($row['com_content']);
+        $comment->setSignal($row['signal']);
 
         if (array_key_exists('art_id', $row)) {
             // Find and set the associated
@@ -81,14 +82,15 @@ class CommentDAO extends DAO
 
     public function save(Comment $comment) {
         $commentData = array(
+            'com_content' => $comment->getContent(),
             'art_id' => $comment->getLoisir()->getId(),
             'usr_id' => $comment->getAuthor()->getId(),
-            'com_content' => $comment->getContent()
         );
-
         if ($comment->getId()) {
             // The comment has already been saved : update it
             $this->getDb()->update('t_comment', $commentData, array('com_id' => $comment->getId()));
+
+
         } else {
             // The comment has never been saved : insert it
             $this->getDb()->insert('t_comment', $commentData);
@@ -140,4 +142,5 @@ class CommentDAO extends DAO
     public function deleteAllByUser($userId) {
         $this->getDb()->delete('t_comment', array('usr_id' => $userId));
     }
+
 }

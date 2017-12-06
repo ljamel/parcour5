@@ -46,9 +46,8 @@ class LoisirsDAO extends DAO
 
     public function findAll() {
 
-        $debut = 0; $limit = 100;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs  ORDER BY art_id DESC ';
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -71,17 +70,18 @@ class LoisirsDAO extends DAO
         $loisir->setId($row['art_id']);
         $loisir->setTitle($row['art_title']);
         $loisir->setContent($row['art_content']);
-        $loisir->setPostion($row['art_position']);
+        $loisir->setPosition($row['art_position']);
         $loisir->setImage($row['art_image']);
         $loisir->setPrix($row['prix']);
         $loisir->setType($row['type']);
         $loisir->setNote($row['note']);
         $loisir->setEtat($row['etat']);
+        $loisir->setLien($row['lien']);
         return $loisir;
     }
 
     public function find($id) {
-        $sql = "select * from t_loisirs where art_id=? AND etat = 1";
+        $sql = "select * from t_loisirs where art_id=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id));
 
         if ($row)
@@ -94,6 +94,10 @@ class LoisirsDAO extends DAO
         $loisirData = array(
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
+            'lien' => $article->getLien(),
+            'art_image' => $article->getImage(),
+            'etat' => $article->getEtat(),
+            'art_position' => $article->getPosition(),
         );
 
         if ($article->getId()) {
