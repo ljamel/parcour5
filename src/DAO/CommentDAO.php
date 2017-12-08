@@ -62,7 +62,7 @@ class CommentDAO extends DAO
         $comment = new Comment();
         $comment->setId($row['com_id']);
         $comment->setContent($row['com_content']);
-        $comment->setSignal($row['signal']);
+        $comment->setSignale($row['signale']);
 
         if (array_key_exists('art_id', $row)) {
             // Find and set the associated
@@ -82,10 +82,12 @@ class CommentDAO extends DAO
 
     public function save(Comment $comment) {
         $commentData = array(
+            'signale' => "1",
             'com_content' => $comment->getContent(),
             'art_id' => $comment->getLoisir()->getId(),
             'usr_id' => $comment->getAuthor()->getId(),
         );
+        var_dump($commentData);
         if ($comment->getId()) {
             // The comment has already been saved : update it
             $this->getDb()->update('t_comment', $commentData, array('com_id' => $comment->getId()));
@@ -143,4 +145,11 @@ class CommentDAO extends DAO
         $this->getDb()->delete('t_comment', array('usr_id' => $userId));
     }
 
+    public function signale($id) {
+        $comment = $this->find($id);
+        $commentData = array(
+            'signale' => $comment->getSignale() + 1
+        );
+        $this->getDb()->update('t_comment', $commentData, array('com_id' => $id));
+    }
 }

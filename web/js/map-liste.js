@@ -20,13 +20,15 @@ function initMap() {
 
             // Les markers individuel ne sont afficher qu'aprÃ¨s l'Ã©vÃ©nement du changement de zoom.
             google.maps.event.addListener(map, 'zoom_changed', function () {
-
-                if (map.zoom > 14) {
+                console.log(map.zoom);
+                if (map.zoom > 12) {
                     // position pour cluster individuel
                     var paris = {
                         lat: object.position.lat,
                         lng: object.position.lng
                     }
+                }
+
                     var marker = new google.maps.Marker({
                         position: paris,
                         icon: image,
@@ -38,7 +40,7 @@ function initMap() {
                     // affiche les infos de la station au clique
                     marker.addListener('click', function () {
 
-
+                        console.log('ok');
                         if (window.matchMedia("(max-width: 700px)").matches) {
                             // Mobile
                             document.getElementById('map').style.width = 100 + "%";
@@ -47,19 +49,13 @@ function initMap() {
                             document.getElementById('map').style.width = 65 + "%";
                         }
 
-
                     });
-
-                }
-
-
             });
-
-            // position pour groupe de clusters
-            locations.push({
-                lat: object.position.lat,
-                lng: object.position.lng,
-            });
+                    // position pour groupe de clusters
+                    locations.push({
+                        lat: object.position.lat,
+                        lng: object.position.lng,
+                    });
 
 
         });

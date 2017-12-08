@@ -475,8 +475,8 @@ img.liste-main {
 }
 
 img.liste-main-unique {
-    height: 300px;
     margin-left: 15px;
+    width: 400px;
 }
 
 .shadow-none:hover {

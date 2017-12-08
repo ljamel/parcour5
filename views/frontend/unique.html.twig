@@ -15,7 +15,8 @@
 
             <h3>Commentaires</h3>
             {% for comment in comments %}
-                <strong>{{ comment.author.username }}</strong> : {{ comment.content }}<br>
+                <strong>{{ comment.author.username }}</strong> : {{ comment.content }} <a href="/comment/{{ comment.id }}/signale">: Signaler le commentaire</a><br>
+
             {% else %}
                 Aucun commentaire trouvez.
             {% endfor %}

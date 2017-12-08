@@ -119,7 +119,9 @@ $app->match('/admin/loisir/{id}/edit', function($id, Request $request) use ($app
     }
     return $app['twig']->render('backend/loisir_form.html.twig', array(
         'title' => 'Edit loisir',
+        'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));
+
 })->bind('admin_loisir_edit');
 
 // Remove
@@ -155,10 +157,11 @@ $app->get('/admin/comment/{id}/delete', function($id, Request $request) use ($ap
     return $app->redirect($app['url_generator']->generate('admin'));
 })->bind('admin_comment_delete');
 
-$app->get('/comment/{id}/signal', function($id, Request $request) use ($app) {
-    $app['dao.comment']->signal($id);
+$app->get('/comment/{id}/signale/', function($id, Request $request) use ($app) {
+    $app['dao.comment']->signale($id);
     $app['session']->getFlashBag()->add('success', 'Commentaire signalé.');
-})->bind('signal');
+    return $app->redirect($app['url_generator']->generate('home'));
+})->bind('signale');
 
 // Add a user
 $app->match('/admin/user/add', function(Request $request) use ($app) {

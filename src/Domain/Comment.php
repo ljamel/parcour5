@@ -32,7 +32,7 @@ class Comment
      */
     private $content;
 
-    private $signal;
+    private $signale;
 
     /**
      * Associated article.
@@ -77,11 +77,11 @@ class Comment
         return $this;
     }
 
-    public function getSignal() {
-        return $this->signal;
+    public function getSignale() {
+        return $this->signale;
     }
-    public function setSignal($signal) {
-        $this->signal = $signal;
+    public function setSignale($signale) {
+        $this->signale = $signale;
         return $this;
     }
 }

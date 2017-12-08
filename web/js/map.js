@@ -84,24 +84,6 @@ function map() {
 
                 });
 
-                /* Trouver une solution pour que les groupes de markers ne cache pas les markers individuels
-                    console.log(map.zoom);
-                    // Add some markers to the map.
-                    // Note: The code uses the JavaScript Array.prototype.map() method to
-                    // The map() method here has nothing to do with the Google Maps API.
-                    var markers = locations.map(function (location, i) {
-                        return new google.maps.Marker({
-                            position: location,
-                            label: labels[i % labels.length],
-                            zIndex: 0,
-                        });
-                    });
-
-                    // Add a marker clusterer to manage the markers.
-                    var markerCluster = new MarkerClusterer(map, markers,
-                        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-
-                */
 
             });
         });

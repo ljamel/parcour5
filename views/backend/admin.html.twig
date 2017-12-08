@@ -87,7 +87,7 @@
                                 <td><a class="loisirTitle" href="{{ path('sejours/', { 'id': comment.loisir.id }) }}">{{ comment.loisir.title }}</a></td>
                                 <td>{{ comment.author.username }}</td>
                                 <td>{{ comment.content | truncate(60) }}</td>
-                                <td>{{ comment.signal }}</td>
+                                <td>{{ comment.signale }}</td>
                                 <td>
                                     <a href="{{ path('admin_comment_edit', { 'id': comment.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#commentDialog{{ comment.id }}"><span class="glyphicon glyphicon-remove"></span>
