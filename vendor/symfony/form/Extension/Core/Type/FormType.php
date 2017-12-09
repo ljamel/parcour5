@@ -24,9 +24,6 @@ use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 
 class FormType extends BaseType
 {
-    /**
-     * @var PropertyAccessorInterface
-     */
     private $propertyAccessor;
 
     public function __construct(PropertyAccessorInterface $propertyAccessor = null)
@@ -142,6 +139,13 @@ class FormType extends BaseType
             };
         };
 
+        // Wrap "post_max_size_message" in a closure to translate it lazily
+        $uploadMaxSizeMessage = function (Options $options) {
+            return function () use ($options) {
+                return $options['post_max_size_message'];
+            };
+        };
+
         // For any form that is not represented by a single HTML control,
         // errors should bubble up by default
         $errorBubbling = function (Options $options) {
@@ -172,9 +176,11 @@ class FormType extends BaseType
             'action' => '',
             'attr' => array(),
             'post_max_size_message' => 'The uploaded file was too large. Please try to upload a smaller file.',
+            'upload_max_size_message' => $uploadMaxSizeMessage, // internal
         ));
 
         $resolver->setAllowedTypes('label_attr', 'array');
+        $resolver->setAllowedTypes('upload_max_size_message', array('callable'));
     }
 
     /**

@@ -58,7 +58,7 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      * @param string $name    The name of the button
      * @param array  $options The button's options
      *
-     * @throws InvalidArgumentException If the name is empty.
+     * @throws InvalidArgumentException if the name is empty
      */
     public function __construct($name, array $options = array())
     {
@@ -184,8 +184,6 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * This method should not be invoked.
      *
-     * @param EventSubscriberInterface $subscriber
-     *
      * @throws BadMethodCallException
      */
     public function addEventSubscriber(EventSubscriberInterface $subscriber)
@@ -272,8 +270,6 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * This method should not be invoked.
      *
-     * @param DataMapperInterface $dataMapper
-     *
      * @throws BadMethodCallException
      */
     public function setDataMapper(DataMapperInterface $dataMapper = null)
@@ -286,7 +282,7 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * @param bool $disabled Whether the button is disabled
      *
-     * @return ButtonBuilder The button builder
+     * @return $this
      */
     public function setDisabled($disabled)
     {
@@ -396,9 +392,7 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
     /**
      * Sets the type of the button.
      *
-     * @param ResolvedFormTypeInterface $type The type of the button
-     *
-     * @return ButtonBuilder The button builder
+     * @return $this
      */
     public function setType(ResolvedFormTypeInterface $type)
     {
@@ -440,8 +434,6 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * This method should not be invoked.
      *
-     * @param FormFactoryInterface $formFactory
-     *
      * @throws BadMethodCallException
      */
     public function setFormFactory(FormFactoryInterface $formFactory)
@@ -476,8 +468,6 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
     /**
      * Unsupported method.
      *
-     * @param RequestHandlerInterface $requestHandler
-     *
      * @throws BadMethodCallException
      */
     public function setRequestHandler(RequestHandlerInterface $requestHandler)
@@ -490,7 +480,7 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * @param bool $initialize
      *
-     * @return ButtonBuilder
+     * @return $this
      *
      * @throws BadMethodCallException
      */

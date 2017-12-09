@@ -12,11 +12,12 @@
 namespace Symfony\Component\Form\Tests\Extension\Core\EventListener;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\EventListener\ResizeFormListener;
 use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\Form\FormEvent;
 
-class ResizeFormListenerTest extends \PHPUnit_Framework_TestCase
+class ResizeFormListenerTest extends TestCase
 {
     private $dispatcher;
     private $factory;
@@ -24,8 +25,8 @@ class ResizeFormListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
-        $this->factory = $this->getMock('Symfony\Component\Form\FormFactoryInterface');
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
         $this->form = $this->getBuilder()
             ->setCompound(true)
             ->setDataMapper($this->getDataMapper())
@@ -54,12 +55,12 @@ class ResizeFormListenerTest extends \PHPUnit_Framework_TestCase
      */
     private function getDataMapper()
     {
-        return $this->getMock('Symfony\Component\Form\DataMapperInterface');
+        return $this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock();
     }
 
     protected function getMockForm()
     {
-        return $this->getMock('Symfony\Component\Form\Test\FormInterface');
+        return $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
     }
 
     public function testPreSetDataResizesForm()
@@ -273,5 +274,52 @@ class ResizeFormListenerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertArrayNotHasKey(0, $event->getData());
         $this->assertArrayNotHasKey(2, $event->getData());
+    }
+
+    public function testOnSubmitDeleteEmptyNotCompoundEntriesIfAllowDelete()
+    {
+        $this->form->setData(array('0' => 'first', '1' => 'second'));
+        $this->form->add($this->getForm('0'));
+        $this->form->add($this->getForm('1'));
+
+        $data = array(0 => 'first', 1 => '');
+        foreach ($data as $child => $dat) {
+            $this->form->get($child)->setData($dat);
+        }
+        $event = new FormEvent($this->form, $data);
+        $listener = new ResizeFormListener('text', array(), false, true, true);
+        $listener->onSubmit($event);
+
+        $this->assertEquals(array(0 => 'first'), $event->getData());
+    }
+
+    public function testOnSubmitDeleteEmptyCompoundEntriesIfAllowDelete()
+    {
+        $this->form->setData(array('0' => array('name' => 'John'), '1' => array('name' => 'Jane')));
+        $form1 = $this->getBuilder('0')
+            ->setCompound(true)
+            ->setDataMapper($this->getDataMapper())
+            ->getForm();
+        $form1->add($this->getForm('name'));
+        $form2 = $this->getBuilder('1')
+            ->setCompound(true)
+            ->setDataMapper($this->getDataMapper())
+            ->getForm();
+        $form2->add($this->getForm('name'));
+        $this->form->add($form1);
+        $this->form->add($form2);
+
+        $data = array('0' => array('name' => 'John'), '1' => array('name' => ''));
+        foreach ($data as $child => $dat) {
+            $this->form->get($child)->setData($dat);
+        }
+        $event = new FormEvent($this->form, $data);
+        $callback = function ($data) {
+            return '' === $data['name'];
+        };
+        $listener = new ResizeFormListener('text', array(), false, true, $callback);
+        $listener->onSubmit($event);
+
+        $this->assertEquals(array('0' => array('name' => 'John')), $event->getData());
     }
 }
