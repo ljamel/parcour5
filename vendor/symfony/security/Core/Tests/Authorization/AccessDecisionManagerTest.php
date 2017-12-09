@@ -11,10 +11,14 @@
 
 namespace Symfony\Component\Security\Core\Tests\Authorization;
 
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AccessDecisionManager;
 use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
+use Symfony\Component\Security\Core\Exception\LogicException;
+use Symfony\Component\Security\Core\Tests\Authorization\Stub\VoterWithoutInterface;
 
-class AccessDecisionManagerTest extends \PHPUnit_Framework_TestCase
+class AccessDecisionManagerTest extends TestCase
 {
     /**
      * @expectedException \InvalidArgumentException
@@ -29,7 +33,7 @@ class AccessDecisionManagerTest extends \PHPUnit_Framework_TestCase
      */
     public function testStrategies($strategy, $voters, $allowIfAllAbstainDecisions, $allowIfEqualGrantedDeniedDecisions, $expected)
     {
-        $token = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
+        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
         $manager = new AccessDecisionManager($voters, $strategy, $allowIfAllAbstainDecisions, $allowIfEqualGrantedDeniedDecisions);
 
         $this->assertSame($expected, $manager->decide($token, array('ROLE_FOO')));
@@ -47,7 +51,7 @@ class AccessDecisionManagerTest extends \PHPUnit_Framework_TestCase
 
     public function getStrategiesWith2RolesTests()
     {
-        $token = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
+        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
 
         return array(
             array($token, 'affirmative', $this->getVoter(VoterInterface::ACCESS_DENIED), false),
@@ -65,7 +69,7 @@ class AccessDecisionManagerTest extends \PHPUnit_Framework_TestCase
 
     protected function getVoterFor2Roles($token, $vote1, $vote2)
     {
-        $voter = $this->getMock('Symfony\Component\Security\Core\Authorization\Voter\VoterInterface');
+        $voter = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\Voter\VoterInterface')->getMock();
         $voter->expects($this->any())
               ->method('vote')
               ->will($this->returnValueMap(array(
@@ -130,11 +134,41 @@ class AccessDecisionManagerTest extends \PHPUnit_Framework_TestCase
 
     protected function getVoter($vote)
     {
-        $voter = $this->getMock('Symfony\Component\Security\Core\Authorization\Voter\VoterInterface');
+        $voter = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\Voter\VoterInterface')->getMock();
         $voter->expects($this->any())
               ->method('vote')
               ->will($this->returnValue($vote));
 
         return $voter;
+    }
+
+    public function testVotingWrongTypeNoVoteMethod()
+    {
+        $exception = LogicException::class;
+        $message = sprintf('stdClass should implement the %s interface when used as voter.', VoterInterface::class);
+
+        if (method_exists($this, 'expectException')) {
+            $this->expectException($exception);
+            $this->expectExceptionMessage($message);
+        } else {
+            $this->setExpectedException($exception, $message);
+        }
+
+        $adm = new AccessDecisionManager(array(new \stdClass()));
+        $token = $this->getMockBuilder(TokenInterface::class)->getMock();
+
+        $adm->decide($token, array('TEST'));
+    }
+
+    /**
+     * @group legacy
+     * @expectedDeprecation Calling vote() on an voter without Symfony\Component\Security\Core\Authorization\Voter\VoterInterface is deprecated as of 3.4 and will be removed in 4.0. Implement the Symfony\Component\Security\Core\Authorization\Voter\VoterInterface on your voter.
+     */
+    public function testVotingWrongTypeWithVote()
+    {
+        $adm = new AccessDecisionManager(array(new VoterWithoutInterface()));
+        $token = $this->getMockBuilder(TokenInterface::class)->getMock();
+
+        $adm->decide($token, array('TEST'));
     }
 }

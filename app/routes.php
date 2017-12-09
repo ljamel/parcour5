@@ -31,7 +31,6 @@ $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
         // A user is fully authenticated : he can add comments
         $comment = new Comment();
         $comment->setLoisir($loisir);
-        $user = $app['user'];
         $commentForm = $app['form.factory']->create(CommentType::class, $comment);
         $commentForm->handleRequest($request);
         if ($commentForm->isSubmitted() && $commentForm->isValid()) {
