@@ -1,7 +1,6 @@
 {
   "name": "vendor/loisir",
   "description": "Composant pour le projet Loisir",
-  "proprietary": "djamal lamri",
 
   "require": {
     "silex/silex": "2.0.*",
