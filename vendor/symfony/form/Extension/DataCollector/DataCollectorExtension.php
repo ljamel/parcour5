@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\Form\Extension\DataCollector;
 
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\AbstractExtension;
 
 /**
@@ -21,6 +22,9 @@ use Symfony\Component\Form\AbstractExtension;
  */
 class DataCollectorExtension extends AbstractExtension
 {
+    /**
+     * @var EventSubscriberInterface
+     */
     private $dataCollector;
 
     public function __construct(FormDataCollectorInterface $dataCollector)

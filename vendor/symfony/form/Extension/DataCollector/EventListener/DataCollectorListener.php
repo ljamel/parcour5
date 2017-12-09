@@ -24,6 +24,9 @@ use Symfony\Component\Form\FormEvents;
  */
 class DataCollectorListener implements EventSubscriberInterface
 {
+    /**
+     * @var FormDataCollectorInterface
+     */
     private $dataCollector;
 
     public function __construct(FormDataCollectorInterface $dataCollector)
@@ -46,6 +49,8 @@ class DataCollectorListener implements EventSubscriberInterface
 
     /**
      * Listener for the {@link FormEvents::POST_SET_DATA} event.
+     *
+     * @param FormEvent $event The event object
      */
     public function postSetData(FormEvent $event)
     {
@@ -60,6 +65,8 @@ class DataCollectorListener implements EventSubscriberInterface
 
     /**
      * Listener for the {@link FormEvents::POST_SUBMIT} event.
+     *
+     * @param FormEvent $event The event object
      */
     public function postSubmit(FormEvent $event)
     {

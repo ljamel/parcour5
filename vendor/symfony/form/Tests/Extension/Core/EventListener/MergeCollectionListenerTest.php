@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Form\Tests\Extension\Core\EventListener;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\Extension\Core\EventListener\MergeCollectionListener;
 
-abstract class MergeCollectionListenerTest extends TestCase
+abstract class MergeCollectionListenerTest extends \PHPUnit_Framework_TestCase
 {
     protected $dispatcher;
     protected $factory;
@@ -23,8 +22,8 @@ abstract class MergeCollectionListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
+        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->factory = $this->getMock('Symfony\Component\Form\FormFactoryInterface');
         $this->form = $this->getForm('axes');
     }
 
@@ -46,7 +45,7 @@ abstract class MergeCollectionListenerTest extends TestCase
 
     protected function getMockForm()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        return $this->getMock('Symfony\Component\Form\Test\FormInterface');
     }
 
     public function getBooleanMatrix1()

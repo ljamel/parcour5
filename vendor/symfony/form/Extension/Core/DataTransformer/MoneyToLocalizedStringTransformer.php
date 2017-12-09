@@ -49,16 +49,17 @@ class MoneyToLocalizedStringTransformer extends NumberToLocalizedStringTransform
      *
      * @return string Localized money string
      *
-     * @throws TransformationFailedException if the given value is not numeric or
-     *                                       if the value can not be transformed
+     * @throws TransformationFailedException If the given value is not numeric or
+     *                                       if the value can not be transformed.
      */
     public function transform($value)
     {
-        if (null !== $value && 1 !== $this->divisor) {
+        if (null !== $value) {
             if (!is_numeric($value)) {
                 throw new TransformationFailedException('Expected a numeric.');
             }
-            $value = (string) ($value / $this->divisor);
+
+            $value /= $this->divisor;
         }
 
         return parent::transform($value);
@@ -71,14 +72,15 @@ class MoneyToLocalizedStringTransformer extends NumberToLocalizedStringTransform
      *
      * @return int|float Normalized number
      *
-     * @throws TransformationFailedException if the given value is not a string
-     *                                       or if the value can not be transformed
+     * @throws TransformationFailedException If the given value is not a string
+     *                                       or if the value can not be transformed.
      */
     public function reverseTransform($value)
     {
         $value = parent::reverseTransform($value);
-        if (null !== $value && 1 !== $this->divisor) {
-            $value = (float) (string) ($value * $this->divisor);
+
+        if (null !== $value) {
+            $value *= $this->divisor;
         }
 
         return $value;

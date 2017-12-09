@@ -36,7 +36,7 @@ class FixedDataTransformer implements DataTransformerInterface
     {
         $result = array_search($value, $this->mapping, true);
 
-        if (false === $result) {
+        if ($result === false) {
             throw new TransformationFailedException(sprintf('No reverse mapping for value "%s"', $value));
         }
 

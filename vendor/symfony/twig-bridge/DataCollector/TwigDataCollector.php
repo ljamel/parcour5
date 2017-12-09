@@ -15,7 +15,6 @@ use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment;
 use Twig\Markup;
 use Twig\Profiler\Dumper\HtmlDumper;
 use Twig\Profiler\Profile;
@@ -28,13 +27,11 @@ use Twig\Profiler\Profile;
 class TwigDataCollector extends DataCollector implements LateDataCollectorInterface
 {
     private $profile;
-    private $twig;
     private $computed;
 
-    public function __construct(Profile $profile, Environment $twig = null)
+    public function __construct(Profile $profile)
     {
         $this->profile = $profile;
-        $this->twig = $twig;
     }
 
     /**
@@ -47,43 +44,9 @@ class TwigDataCollector extends DataCollector implements LateDataCollectorInterf
     /**
      * {@inheritdoc}
      */
-    public function reset()
-    {
-        $this->profile->reset();
-        $this->computed = null;
-        $this->data = array();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function lateCollect()
     {
         $this->data['profile'] = serialize($this->profile);
-        $this->data['template_paths'] = array();
-
-        if (null === $this->twig) {
-            return;
-        }
-
-        $templateFinder = function (Profile $profile) use (&$templateFinder) {
-            if ($profile->isTemplate()) {
-                try {
-                    $template = $this->twig->load($name = $profile->getName());
-                } catch (\Twig_Error_Loader $e) {
-                    $template = null;
-                }
-
-                if (null !== $template && '' !== $path = $template->getSourceContext()->getPath()) {
-                    $this->data['template_paths'][$name] = $path;
-                }
-            }
-
-            foreach ($profile as $p) {
-                $templateFinder($p);
-            }
-        };
-        $templateFinder($this->profile);
     }
 
     public function getTime()
@@ -94,11 +57,6 @@ class TwigDataCollector extends DataCollector implements LateDataCollectorInterf
     public function getTemplateCount()
     {
         return $this->getComputedData('template_count');
-    }
-
-    public function getTemplatePaths()
-    {
-        return $this->data['template_paths'];
     }
 
     public function getTemplates()

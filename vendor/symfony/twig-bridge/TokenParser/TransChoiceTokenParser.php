@@ -29,6 +29,8 @@ class TransChoiceTokenParser extends TransTokenParser
     /**
      * Parses a token and returns a node.
      *
+     * @param Token $token
+     *
      * @return Node
      *
      * @throws SyntaxError

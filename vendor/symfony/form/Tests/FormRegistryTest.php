@@ -11,15 +11,10 @@
 
 namespace Symfony\Component\Form\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormRegistry;
 use Symfony\Component\Form\FormTypeGuesserChain;
 use Symfony\Component\Form\ResolvedFormType;
 use Symfony\Component\Form\ResolvedFormTypeFactoryInterface;
-use Symfony\Component\Form\Tests\Fixtures\FormWithSameParentType;
-use Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeBar;
-use Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeBaz;
-use Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeFoo;
 use Symfony\Component\Form\Tests\Fixtures\FooSubType;
 use Symfony\Component\Form\Tests\Fixtures\FooType;
 use Symfony\Component\Form\Tests\Fixtures\FooTypeBarExtension;
@@ -29,7 +24,7 @@ use Symfony\Component\Form\Tests\Fixtures\TestExtension;
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-class FormRegistryTest extends TestCase
+class FormRegistryTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var FormRegistry
@@ -63,9 +58,9 @@ class FormRegistryTest extends TestCase
 
     protected function setUp()
     {
-        $this->resolvedTypeFactory = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeFactory')->getMock();
-        $this->guesser1 = $this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock();
-        $this->guesser2 = $this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock();
+        $this->resolvedTypeFactory = $this->getMock('Symfony\Component\Form\ResolvedFormTypeFactory');
+        $this->guesser1 = $this->getMock('Symfony\Component\Form\FormTypeGuesserInterface');
+        $this->guesser2 = $this->getMock('Symfony\Component\Form\FormTypeGuesserInterface');
         $this->extension1 = new TestExtension($this->guesser1);
         $this->extension2 = new TestExtension($this->guesser2);
         $this->registry = new FormRegistry(array(
@@ -161,36 +156,6 @@ class FormRegistryTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\LogicException
-     * @expectedExceptionMessage Circular reference detected for form type "Symfony\Component\Form\Tests\Fixtures\FormWithSameParentType" (Symfony\Component\Form\Tests\Fixtures\FormWithSameParentType > Symfony\Component\Form\Tests\Fixtures\FormWithSameParentType).
-     */
-    public function testFormCannotHaveItselfAsAParent()
-    {
-        $type = new FormWithSameParentType();
-
-        $this->extension2->addType($type);
-
-        $this->registry->getType(FormWithSameParentType::class);
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Form\Exception\LogicException
-     * @expectedExceptionMessage Circular reference detected for form type "Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeFoo" (Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeFoo > Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeBar > Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeBaz > Symfony\Component\Form\Tests\Fixtures\RecursiveFormTypeFoo).
-     */
-    public function testRecursiveFormDependencies()
-    {
-        $foo = new RecursiveFormTypeFoo();
-        $bar = new RecursiveFormTypeBar();
-        $baz = new RecursiveFormTypeBaz();
-
-        $this->extension2->addType($foo);
-        $this->extension2->addType($bar);
-        $this->extension2->addType($baz);
-
-        $this->registry->getType(RecursiveFormTypeFoo::class);
-    }
-
-    /**
      * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
      */
     public function testGetTypeThrowsExceptionIfTypeNotFound()
@@ -235,7 +200,7 @@ class FormRegistryTest extends TestCase
         $this->assertEquals($expectedGuesser, $this->registry->getTypeGuesser());
 
         $registry = new FormRegistry(
-            array($this->getMockBuilder('Symfony\Component\Form\FormExtensionInterface')->getMock()),
+            array($this->getMock('Symfony\Component\Form\FormExtensionInterface')),
             $this->resolvedTypeFactory
         );
 

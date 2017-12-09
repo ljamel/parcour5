@@ -32,7 +32,7 @@ class DumpExtension extends AbstractExtension
     public function __construct(ClonerInterface $cloner, HtmlDumper $dumper = null)
     {
         $this->cloner = $cloner;
-        $this->dumper = $dumper;
+        $this->dumper = $dumper ?: new HtmlDumper();
     }
 
     public function getFunctions()
@@ -73,7 +73,6 @@ class DumpExtension extends AbstractExtension
         }
 
         $dump = fopen('php://memory', 'r+b');
-        $this->dumper = $this->dumper ?: new HtmlDumper();
         $this->dumper->setCharset($env->getCharset());
 
         foreach ($vars as $value) {

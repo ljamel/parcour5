@@ -27,6 +27,8 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
     private $fields;
 
     /**
+     * Constructor.
+     *
      * @param string $inputTimezone  The input timezone
      * @param string $outputTimezone The output timezone
      * @param array  $fields         The date fields

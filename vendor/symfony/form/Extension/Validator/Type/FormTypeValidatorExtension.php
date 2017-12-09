@@ -23,7 +23,14 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class FormTypeValidatorExtension extends BaseValidatorExtension
 {
+    /**
+     * @var ValidatorInterface
+     */
     private $validator;
+
+    /**
+     * @var ViolationMapper
+     */
     private $violationMapper;
 
     public function __construct(ValidatorInterface $validator)

@@ -11,14 +11,13 @@
 
 namespace Symfony\Component\Form\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\ButtonBuilder;
 use Symfony\Component\Form\FormBuilder;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-class ButtonTest extends TestCase
+class ButtonTest extends \PHPUnit_Framework_TestCase
 {
     private $dispatcher;
 
@@ -26,8 +25,8 @@ class ButtonTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
+        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->factory = $this->getMock('Symfony\Component\Form\FormFactoryInterface');
     }
 
     /**

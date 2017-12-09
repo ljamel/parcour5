@@ -14,9 +14,8 @@ namespace Symfony\Component\Form\Tests;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\Extension\Csrf\CsrfExtension;
-use Symfony\Component\Form\Test\FormIntegrationTestCase;
 
-abstract class AbstractLayoutTest extends FormIntegrationTestCase
+abstract class AbstractLayoutTest extends \Symfony\Component\Form\Test\FormIntegrationTestCase
 {
     protected $csrfTokenManager;
     protected $testableFeatures = array();
@@ -29,7 +28,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
         \Locale::setDefault('en');
 
-        $this->csrfTokenManager = $this->getMockBuilder('Symfony\Component\Security\Csrf\CsrfTokenManagerInterface')->getMock();
+        $this->csrfTokenManager = $this->getMock('Symfony\Component\Security\Csrf\CsrfTokenManagerInterface');
 
         parent::setUp();
     }
@@ -78,13 +77,11 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
             $this->fail(sprintf(
                 "Failed asserting that \n\n%s\n\nmatches exactly %s. Matches %s in \n\n%s",
                 $expression,
-                1 == $count ? 'once' : $count.' times',
-                1 == $nodeList->length ? 'once' : $nodeList->length.' times',
+                $count == 1 ? 'once' : $count.' times',
+                $nodeList->length == 1 ? 'once' : $nodeList->length.' times',
                 // strip away <root> and </root>
                 substr($dom->saveHTML(), 6, -8)
             ));
-        } else {
-            $this->addToAssertionCount(1);
         }
     }
 
@@ -125,7 +122,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
     abstract protected function renderEnd(FormView $view, array $vars = array());
 
-    abstract protected function setTheme(FormView $view, array $themes, $useDefaultThemes = true);
+    abstract protected function setTheme(FormView $view, array $themes);
 
     public function testLabel()
     {
@@ -612,6 +609,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
     {
         $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', '&a', array(
             'choices' => array('Choice&A' => '&a', 'Choice&B' => '&b'),
+            'choices_as_values' => true,
             'multiple' => false,
             'expanded' => false,
             'attr' => array('class' => 'bar&baz'),
@@ -623,8 +621,8 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
     [@class="bar&baz"]
     [not(@required)]
     [
-        ./option[@value="&a"][@selected="selected"][.="[trans]Choice&A[/trans]"][not(@id)][not(@name)]
-        /following-sibling::option[@value="&b"][not(@class)][not(@selected)][.="[trans]Choice&B[/trans]"][not(@id)][not(@name)]
+        ./option[@value="&a"][@selected="selected"][.="[trans]Choice&A[/trans]"]
+        /following-sibling::option[@value="&b"][not(@class)][not(@selected)][.="[trans]Choice&B[/trans]"]
     ]
     [count(./option)=2]
 '
@@ -635,6 +633,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
     {
         $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', '&a', array(
             'choices' => array('Choice&A' => '&a', 'Choice&B' => '&b'),
+            'choices_as_values' => true,
             'multiple' => false,
             'expanded' => true,
             'attr' => array('class' => 'bar&baz'),
@@ -1236,7 +1235,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
     public function testDateTime()
     {
-        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', date('Y').'-02-03 04:05:06', array(
+        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', '2011-02-03 04:05:06', array(
             'input' => 'string',
             'with_seconds' => false,
         ));
@@ -1255,7 +1254,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
                     [./option[@value="3"][@selected="selected"]]
                 /following-sibling::select
                     [@id="name_date_year"]
-                    [./option[@value="'.date('Y').'"][@selected="selected"]]
+                    [./option[@value="2011"][@selected="selected"]]
             ]
         /following-sibling::div
             [@id="name_time"]
@@ -1315,7 +1314,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
     public function testDateTimeWithHourAndMinute()
     {
-        $data = array('year' => date('Y'), 'month' => '2', 'day' => '3', 'hour' => '4', 'minute' => '5');
+        $data = array('year' => '2011', 'month' => '2', 'day' => '3', 'hour' => '4', 'minute' => '5');
 
         $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', $data, array(
             'input' => 'array',
@@ -1336,7 +1335,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
                     [./option[@value="3"][@selected="selected"]]
                 /following-sibling::select
                     [@id="name_date_year"]
-                    [./option[@value="'.date('Y').'"][@selected="selected"]]
+                    [./option[@value="2011"][@selected="selected"]]
             ]
         /following-sibling::div
             [@id="name_time"]
@@ -1356,7 +1355,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
     public function testDateTimeWithSeconds()
     {
-        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', date('Y').'-02-03 04:05:06', array(
+        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', '2011-02-03 04:05:06', array(
             'input' => 'string',
             'with_seconds' => true,
         ));
@@ -1375,7 +1374,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
                     [./option[@value="3"][@selected="selected"]]
                 /following-sibling::select
                     [@id="name_date_year"]
-                    [./option[@value="'.date('Y').'"][@selected="selected"]]
+                    [./option[@value="2011"][@selected="selected"]]
             ]
         /following-sibling::div
             [@id="name_time"]
@@ -1462,7 +1461,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
     public function testDateChoice()
     {
-        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateType', date('Y').'-02-03', array(
+        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\DateType', '2011-02-03', array(
             'input' => 'string',
             'widget' => 'choice',
         ));
@@ -1478,7 +1477,7 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
             [./option[@value="3"][@selected="selected"]]
         /following-sibling::select
             [@id="name_year"]
-            [./option[@value="'.date('Y').'"][@selected="selected"]]
+            [./option[@value="2011"][@selected="selected"]]
     ]
     [count(./select)=3]
 '
@@ -2462,33 +2461,5 @@ abstract class AbstractLayoutTest extends FormIntegrationTestCase
 
         $this->assertMatchesXpath($html, '/form//input[@title="Foo"]');
         $this->assertMatchesXpath($html, '/form//input[@placeholder="Bar"]');
-    }
-
-    public function testTel()
-    {
-        $tel = '0102030405';
-        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\TelType', $tel);
-
-        $this->assertWidgetMatchesXpath($form->createView(), array(),
-            '/input
-    [@type="tel"]
-    [@name="name"]
-    [@value="0102030405"]
-'
-        );
-    }
-
-    public function testColor()
-    {
-        $color = '#0000ff';
-        $form = $this->factory->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\ColorType', $color);
-
-        $this->assertWidgetMatchesXpath($form->createView(), array(),
-            '/input
-    [@type="color"]
-    [@name="name"]
-    [@value="#0000ff"]
-'
-        );
     }
 }

@@ -15,7 +15,6 @@ use Symfony\Bridge\Twig\TokenParser\FormThemeTokenParser;
 use Symfony\Bridge\Twig\Form\TwigRendererInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
-use Symfony\Component\Form\FormView;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\InitRuntimeInterface;
@@ -55,7 +54,7 @@ class FormExtension extends AbstractExtension implements InitRuntimeInterface
     {
         if ($this->renderer instanceof TwigRendererInterface) {
             $this->renderer->setEnvironment($environment);
-        } elseif (is_array($this->renderer)) {
+        } elseif (null !== $this->renderer) {
             $this->renderer[2] = $environment;
         }
     }
@@ -85,7 +84,7 @@ class FormExtension extends AbstractExtension implements InitRuntimeInterface
             new TwigFunction('form', null, array('node_class' => 'Symfony\Bridge\Twig\Node\RenderBlockNode', 'is_safe' => array('html'))),
             new TwigFunction('form_start', null, array('node_class' => 'Symfony\Bridge\Twig\Node\RenderBlockNode', 'is_safe' => array('html'))),
             new TwigFunction('form_end', null, array('node_class' => 'Symfony\Bridge\Twig\Node\RenderBlockNode', 'is_safe' => array('html'))),
-            new TwigFunction('csrf_token', array('Symfony\Component\Form\FormRenderer', 'renderCsrfToken')),
+            new TwigFunction('csrf_token', array('Symfony\Bridge\Twig\Form\TwigRenderer', 'renderCsrfToken')),
         );
     }
 
@@ -95,7 +94,7 @@ class FormExtension extends AbstractExtension implements InitRuntimeInterface
     public function getFilters()
     {
         return array(
-            new TwigFilter('humanize', array('Symfony\Component\Form\FormRenderer', 'humanize')),
+            new TwigFilter('humanize', array('Symfony\Bridge\Twig\Form\TwigRenderer', 'humanize')),
         );
     }
 
@@ -106,7 +105,6 @@ class FormExtension extends AbstractExtension implements InitRuntimeInterface
     {
         return array(
             new TwigTest('selectedchoice', 'Symfony\Bridge\Twig\Extension\twig_is_selected_choice'),
-            new TwigTest('rootform', 'Symfony\Bridge\Twig\Extension\twig_is_root_form'),
         );
     }
 
@@ -120,7 +118,7 @@ class FormExtension extends AbstractExtension implements InitRuntimeInterface
 
             if (is_array($this->renderer)) {
                 $renderer = $this->renderer[0]->get($this->renderer[1]);
-                if (isset($this->renderer[2]) && $renderer instanceof TwigRendererInterface) {
+                if (isset($this->renderer[2])) {
                     $renderer->setEnvironment($this->renderer[2]);
                 }
                 $this->renderer = $renderer;
@@ -193,12 +191,4 @@ function twig_is_selected_choice(ChoiceView $choice, $selectedValue)
     }
 
     return $choice->value === $selectedValue;
-}
-
-/**
- * @internal
- */
-function twig_is_root_form(FormView $formView)
-{
-    return null === $formView->parent;
 }

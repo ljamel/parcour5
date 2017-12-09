@@ -11,16 +11,15 @@
 
 namespace Symfony\Component\Form\Tests\Extension\Core\EventListener;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\Extension\Core\EventListener\FixUrlProtocolListener;
 
-class FixUrlProtocolListenerTest extends TestCase
+class FixUrlProtocolListenerTest extends \PHPUnit_Framework_TestCase
 {
     public function testFixHttpUrl()
     {
         $data = 'www.symfony.com';
-        $form = $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        $form = $this->getMock('Symfony\Component\Form\Test\FormInterface');
         $event = new FormEvent($form, $data);
 
         $filter = new FixUrlProtocolListener('http');
@@ -32,7 +31,7 @@ class FixUrlProtocolListenerTest extends TestCase
     public function testSkipKnownUrl()
     {
         $data = 'http://www.symfony.com';
-        $form = $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        $form = $this->getMock('Symfony\Component\Form\Test\FormInterface');
         $event = new FormEvent($form, $data);
 
         $filter = new FixUrlProtocolListener('http');
@@ -41,28 +40,15 @@ class FixUrlProtocolListenerTest extends TestCase
         $this->assertEquals('http://www.symfony.com', $event->getData());
     }
 
-    public function provideUrlsWithSupportedProtocols()
+    public function testSkipOtherProtocol()
     {
-        return array(
-            array('ftp://www.symfony.com'),
-            array('chrome-extension://foo'),
-            array('h323://foo'),
-            array('iris.beep://foo'),
-            array('foo+bar://foo'),
-        );
-    }
-
-    /**
-     * @dataProvider provideUrlsWithSupportedProtocols
-     */
-    public function testSkipOtherProtocol($url)
-    {
-        $form = $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
-        $event = new FormEvent($form, $url);
+        $data = 'ftp://www.symfony.com';
+        $form = $this->getMock('Symfony\Component\Form\Test\FormInterface');
+        $event = new FormEvent($form, $data);
 
         $filter = new FixUrlProtocolListener('http');
         $filter->onSubmit($event);
 
-        $this->assertEquals($url, $event->getData());
+        $this->assertEquals('ftp://www.symfony.com', $event->getData());
     }
 }

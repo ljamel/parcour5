@@ -11,11 +11,10 @@
 
 namespace Symfony\Component\Form\Tests\Extension\Core\DataTransformer;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\DataTransformer\IntegerToLocalizedStringTransformer;
 use Symfony\Component\Intl\Util\IntlTestHelper;
 
-class IntegerToLocalizedStringTransformerTest extends TestCase
+class IntegerToLocalizedStringTransformerTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
@@ -88,7 +87,7 @@ class IntegerToLocalizedStringTransformerTest extends TestCase
     public function testReverseTransform()
     {
         // Since we test against "de_AT", we need the full implementation
-        IntlTestHelper::requireFullIntl($this, false);
+        IntlTestHelper::requireFullIntl($this);
 
         \Locale::setDefault('de_AT');
 
@@ -109,10 +108,10 @@ class IntegerToLocalizedStringTransformerTest extends TestCase
 
     public function testReverseTransformWithGrouping()
     {
-        // Since we test against "de_DE", we need the full implementation
-        IntlTestHelper::requireFullIntl($this, false);
+        // Since we test against "de_AT", we need the full implementation
+        IntlTestHelper::requireFullIntl($this);
 
-        \Locale::setDefault('de_DE');
+        \Locale::setDefault('de_AT');
 
         $transformer = new IntegerToLocalizedStringTransformer(null, true);
 

@@ -11,13 +11,12 @@
 
 namespace Symfony\Component\Form\Tests\Util;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Util\OrderedHashMap;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-class OrderedHashMapTest extends TestCase
+class OrderedHashMapTest extends \PHPUnit_Framework_TestCase
 {
     public function testGet()
     {
@@ -54,15 +53,6 @@ class OrderedHashMapTest extends TestCase
         $map[] = 3;
 
         $this->assertSame(array(0 => 1, 'foo' => 2, 1 => 3), iterator_to_array($map));
-    }
-
-    public function testInsertLooselyEqualKeys()
-    {
-        $map = new OrderedHashMap();
-        $map['1 as a string'] = '1 as a string';
-        $map[1] = 1;
-
-        $this->assertSame(array('1 as a string' => '1 as a string', 1 => 1), iterator_to_array($map));
     }
 
     /**
@@ -120,25 +110,11 @@ class OrderedHashMapTest extends TestCase
         $this->assertSame(array('second' => 2), iterator_to_array($map));
     }
 
-    public function testUnsetFromLooselyEqualKeysHashMap()
-    {
-        $map = new OrderedHashMap();
-        $map['1 as a string'] = '1 as a string';
-        $map[1] = 1;
-
-        unset($map[1]);
-
-        $this->assertSame(array('1 as a string' => '1 as a string'), iterator_to_array($map));
-    }
-
     public function testUnsetNonExistingSucceeds()
     {
         $map = new OrderedHashMap();
-        $map['second'] = 2;
 
         unset($map['first']);
-
-        $this->assertSame(array('second' => 2), iterator_to_array($map));
     }
 
     public function testEmptyIteration()

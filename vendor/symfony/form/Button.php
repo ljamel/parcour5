@@ -273,6 +273,8 @@ class Button implements \IteratorAggregate, FormInterface
     /**
      * Unsupported method.
      *
+     * @param FormError $error
+     *
      * @throws BadMethodCallException
      */
     public function addError(FormError $error)
@@ -367,9 +369,9 @@ class Button implements \IteratorAggregate, FormInterface
      * @param null|string $submittedData The data
      * @param bool        $clearMissing  Not used
      *
-     * @return $this
+     * @return Button The button instance
      *
-     * @throws Exception\AlreadySubmittedException if the button has already been submitted
+     * @throws Exception\AlreadySubmittedException If the button has already been submitted.
      */
     public function submit($submittedData, $clearMissing = true)
     {
