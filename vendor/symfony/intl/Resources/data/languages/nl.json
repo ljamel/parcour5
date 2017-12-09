@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "aa": "Afar",
         "ab": "Abchazisch",
@@ -12,7 +12,7 @@
         "af": "Afrikaans",
         "afh": "Afrihili",
         "agq": "Aghem",
-        "ain": "Aino",
+        "ain": "Ainu",
         "ak": "Akan",
         "akk": "Akkadisch",
         "akz": "Alabama",
@@ -306,7 +306,6 @@
         "ln": "Lingala",
         "lo": "Laotiaans",
         "lol": "Mongo",
-        "lou": "Louisiana-Creools",
         "loz": "Lozi",
         "lrc": "Noordelijk Luri",
         "lt": "Litouws",
@@ -370,7 +369,6 @@
         "nb": "Noors - Bokmål",
         "nd": "Noord-Ndebele",
         "nds": "Nedersaksisch",
-        "nds_NL": "Nederduits",
         "ne": "Nepalees",
         "new": "Newari",
         "ng": "Ndonga",

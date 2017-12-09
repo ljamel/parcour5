@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.44",
+    "Version": "2.1.32.59",
     "Names": {
         "aa": "Afar",
         "ab": "Abkhazian",
@@ -88,7 +88,6 @@
         "car": "Carib",
         "cay": "Cayuga",
         "cch": "Atsam",
-        "ccp": "Chakma",
         "ce": "Chechen",
         "ceb": "Cebuano",
         "cgg": "Chiga",
@@ -321,7 +320,6 @@
         "ln": "Lingala",
         "lo": "Lao",
         "lol": "Mongo",
-        "lou": "Louisiana Creole",
         "loz": "Lozi",
         "lrc": "Northern Luri",
         "lt": "Lithuanian",

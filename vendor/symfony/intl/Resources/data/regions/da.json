@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "AC": "Ascensionøen",
         "AD": "Andorra",
@@ -72,11 +72,10 @@
         "ER": "Eritrea",
         "ES": "Spanien",
         "ET": "Etiopien",
-        "EZ": "eurozonen",
         "FI": "Finland",
         "FJ": "Fiji",
         "FK": "Falklandsøerne",
-        "FM": "Mikronesien",
+        "FM": "Mikronesiens Forenede Stater",
         "FO": "Færøerne",
         "FR": "Frankrig",
         "GA": "Gabon",
@@ -237,7 +236,7 @@
         "UA": "Ukraine",
         "UG": "Uganda",
         "UM": "Amerikanske oversøiske øer",
-        "UN": "De Forenede Nationer",
+        "UN": "Forenede Nationer",
         "US": "USA",
         "UY": "Uruguay",
         "UZ": "Usbekistan",

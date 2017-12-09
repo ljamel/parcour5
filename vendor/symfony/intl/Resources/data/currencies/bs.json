@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.31.86",
     "Names": {
         "ADP": [
             "ADP",
@@ -240,10 +240,6 @@
         "CLP": [
             "CLP",
             "Čileanski pezos"
-        ],
-        "CNH": [
-            "CNH",
-            "Kineski juan (izvanteritorijalni)"
         ],
         "CNY": [
             "CNY",

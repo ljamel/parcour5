@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "aa": "afar",
         "ab": "abchaziska",
@@ -318,7 +318,6 @@
         "ln": "lingala",
         "lo": "laotiska",
         "lol": "mongo",
-        "lou": "louisiana-kreol",
         "loz": "lozi",
         "lrc": "nordluri",
         "lt": "litauiska",
@@ -375,11 +374,11 @@
         "mye": "myene",
         "myv": "erjya",
         "mzn": "mazanderani",
-        "na": "nauriska",
+        "na": "nauru",
         "nan": "min nan",
         "nap": "napolitanska",
         "naq": "nama",
-        "nb": "norskt bokmål",
+        "nb": "bokmål",
         "nd": "nordndebele",
         "nds": "lågtyska",
         "nds_NL": "lågsaxiska",

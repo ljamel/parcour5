@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.31.86",
     "Names": {
         "ADP": [
             "ADP",
@@ -71,7 +71,7 @@
         ],
         "ATS": [
             "ATS",
-            "ATS"
+            "Scilling Ostarach"
         ],
         "AUD": [
             "A$",
@@ -111,7 +111,7 @@
         ],
         "BEC": [
             "BEC",
-            "BEC"
+            "Franc Beilgeach (inathraithe)"
         ],
         "BEF": [
             "BEF",
@@ -119,7 +119,7 @@
         ],
         "BEL": [
             "BEL",
-            "BEL"
+            "Franc Beilgeach (airgeadúil)"
         ],
         "BGL": [
             "BGL",
@@ -249,10 +249,6 @@
             "CLP",
             "Peso na Sile"
         ],
-        "CNH": [
-            "CNH",
-            "CNH"
-        ],
         "CNY": [
             "CN¥",
             "Yuan na Síne"
@@ -299,7 +295,7 @@
         ],
         "DDM": [
             "DDM",
-            "DDM"
+            "Ostmark na hOirGhearmáine"
         ],
         "DEM": [
             "DEM",
@@ -375,7 +371,7 @@
         ],
         "FRF": [
             "FRF",
-            "FRF"
+            "Franc Francach"
         ],
         "GBP": [
             "£",
@@ -415,7 +411,7 @@
         ],
         "GQE": [
             "GQE",
-            "Ekwele Guineana na Guine Meánchiorclaí"
+            "Ekwele Guineana na Guine Meánchriosaí"
         ],
         "GRD": [
             "GRD",
@@ -581,10 +577,6 @@
             "LTT",
             "Talonas Liotuánach"
         ],
-        "LUC": [
-            "LUC",
-            "LUC"
-        ],
         "LUF": [
             "LUF",
             "Franc Lucsamburg"
@@ -595,7 +587,7 @@
         ],
         "LVR": [
             "LVR",
-            "LVR"
+            "Rúbal Laitviach"
         ],
         "LYD": [
             "LYD",
@@ -683,7 +675,7 @@
         ],
         "MXV": [
             "MXV",
-            "MXV"
+            "Unidad de Inversion (UDI) Meicsiceo"
         ],
         "MYR": [
             "MYR",
@@ -907,7 +899,7 @@
         ],
         "TMM": [
             "TMM",
-            "Manat na Tuircméanastáine (1993–2009)"
+            "Manat na An Tuircméanastáine"
         ],
         "TMT": [
             "TMT",
@@ -1059,7 +1051,7 @@
         ],
         "YUN": [
             "YUN",
-            "YUN"
+            "Dínear Inathraithe Iúgslavach"
         ],
         "YUR": [
             "YUR",

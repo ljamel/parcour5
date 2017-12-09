@@ -67,44 +67,21 @@ final class Locale extends \Locale
      */
     public static function getFallback($locale)
     {
-        if (function_exists('locale_parse')) {
-            $localeSubTags = locale_parse($locale);
-            if (1 === count($localeSubTags)) {
-                if (self::$defaultFallback === $localeSubTags['language']) {
-                    return 'root';
-                }
-
-                // Don't return default fallback for "root", "meta" or others
-                // Normal locales have two or three letters
-                if (strlen($locale) < 4) {
-                    return self::$defaultFallback;
-                }
-
-                return null;
+        if (false === $pos = strrpos($locale, '_')) {
+            if (self::$defaultFallback === $locale) {
+                return 'root';
             }
 
-            array_pop($localeSubTags);
+            // Don't return default fallback for "root", "meta" or others
+            // Normal locales have two or three letters
+            if (strlen($locale) < 4) {
+                return self::$defaultFallback;
+            }
 
-            return locale_compose($localeSubTags);
+            return;
         }
 
-        if (false !== $pos = strrpos($locale, '_')) {
-            return substr($locale, 0, $pos);
-        }
-
-        if (false !== $pos = strrpos($locale, '-')) {
-            return substr($locale, 0, $pos);
-        }
-
-        if (self::$defaultFallback === $locale) {
-            return 'root';
-        }
-
-        // Don't return default fallback for "root", "meta" or others
-        // Normal locales have two or three letters
-        if (strlen($locale) < 4) {
-            return self::$defaultFallback;
-        }
+        return substr($locale, 0, $pos);
     }
 
     /**

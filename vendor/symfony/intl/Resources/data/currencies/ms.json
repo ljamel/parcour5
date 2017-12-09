@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "AED": [
             "AED",
@@ -19,7 +19,7 @@
         ],
         "ANG": [
             "ANG",
-            "Guilder Antillen Belanda"
+            "Guilder Antillean Netherland"
         ],
         "AOA": [
             "AOA",
@@ -63,7 +63,7 @@
         ],
         "BIF": [
             "BIF",
-            "Franc Burundi"
+            "Franc Burundia"
         ],
         "BMD": [
             "BMD",
@@ -95,7 +95,7 @@
         ],
         "BYN": [
             "BYN",
-            "Rubel Belarus baharu"
+            "Rubel Belarus"
         ],
         "BYR": [
             "BYR",
@@ -120,10 +120,6 @@
         "CLP": [
             "CLP",
             "Peso Chile"
-        ],
-        "CNH": [
-            "CNH",
-            "Yuan China (luar pesisir)"
         ],
         "CNY": [
             "CN¥",
@@ -251,7 +247,7 @@
         ],
         "ILS": [
             "₪",
-            "Syekel Baharu Israel"
+            "Sheqel Baru Israel"
         ],
         "INR": [
             "₹",
@@ -383,7 +379,7 @@
         ],
         "MUR": [
             "MUR",
-            "Rupee Mauritius"
+            "Rupee Mauritia"
         ],
         "MVR": [
             "MVR",
@@ -555,7 +551,7 @@
         ],
         "TOP": [
             "TOP",
-            "Pa’anga Tonga"
+            "Tongan Paʻanga"
         ],
         "TRY": [
             "TRY",
@@ -587,7 +583,7 @@
         ],
         "UYU": [
             "UYU",
-            "Peso Uruguay"
+            "UYU"
         ],
         "UZS": [
             "UZS",

@@ -14,6 +14,7 @@ namespace Symfony\Component\Form\Extension\Core\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\DataTransformer\IntegerToLocalizedStringTransformer;
+use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class IntegerType extends AbstractType
@@ -36,9 +37,19 @@ class IntegerType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
+        $scale = function (Options $options) {
+            if (null !== $options['precision']) {
+                @trigger_error('The form option "precision" is deprecated since version 2.7 and will be removed in 3.0. Use "scale" instead.', E_USER_DEPRECATED);
+            }
+
+            return $options['precision'];
+        };
+
         $resolver->setDefaults(array(
+            // deprecated as of Symfony 2.7, to be removed in Symfony 3.0.
+            'precision' => null,
             // default scale is locale specific (usually around 3)
-            'scale' => null,
+            'scale' => $scale,
             'grouping' => false,
             // Integer cast rounds towards 0, so do the same when displaying fractions
             'rounding_mode' => IntegerToLocalizedStringTransformer::ROUND_DOWN,
@@ -56,6 +67,14 @@ class IntegerType extends AbstractType
         ));
 
         $resolver->setAllowedTypes('scale', array('null', 'int'));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->getBlockPrefix();
     }
 
     /**

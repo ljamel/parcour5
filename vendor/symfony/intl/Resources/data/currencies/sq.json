@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "AED": [
             "AED",
@@ -121,10 +121,6 @@
             "CLP",
             "Pesoja kiliane"
         ],
-        "CNH": [
-            "CNH",
-            "Juani kinez (tregu i jashtëm)"
-        ],
         "CNY": [
             "CN¥",
             "Juani kinez"
@@ -227,7 +223,7 @@
         ],
         "HKD": [
             "HK$",
-            "Dollari i Hong-Kongut"
+            "Dollari i Hong Kongut"
         ],
         "HNL": [
             "HNL",
@@ -351,7 +347,7 @@
         ],
         "MDL": [
             "MDL",
-            "Leuja moldave"
+            "Leu moldav"
         ],
         "MGA": [
             "MGA",
@@ -439,7 +435,7 @@
         ],
         "PGK": [
             "PGK",
-            "Kina e Guinesë së Re-Papua"
+            "Kina e Papua-Guineas së Re"
         ],
         "PHP": [
             "PHP",
@@ -463,7 +459,7 @@
         ],
         "RON": [
             "RON",
-            "Leuja rumune"
+            "Leu rumun"
         ],
         "RSD": [
             "RSD",

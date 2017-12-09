@@ -23,14 +23,8 @@ use Symfony\Component\Validator\ConstraintViolationInterface;
  */
 class FormDataExtractor implements FormDataExtractorInterface
 {
-    /**
-     * @var ValueExporter
-     */
     private $valueExporter;
 
-    /**
-     * Constructs a new data extractor.
-     */
     public function __construct(ValueExporter $valueExporter = null)
     {
         $this->valueExporter = $valueExporter ?: new ValueExporter();
@@ -44,6 +38,7 @@ class FormDataExtractor implements FormDataExtractorInterface
         $data = array(
             'id' => $this->buildId($form),
             'name' => $form->getName(),
+            'type' => $form->getConfig()->getType()->getName(),
             'type_class' => get_class($form->getConfig()->getType()->getInnerType()),
             'synchronized' => $this->valueExporter->exportValue($form->isSynchronized()),
             'passed_options' => array(),
@@ -184,8 +179,6 @@ class FormDataExtractor implements FormDataExtractorInterface
 
     /**
      * Recursively builds an HTML ID for a form.
-     *
-     * @param FormInterface $form The form
      *
      * @return string The HTML ID
      */

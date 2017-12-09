@@ -27,8 +27,6 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
     private $fields;
 
     /**
-     * Constructor.
-     *
      * @param string $inputTimezone  The input timezone
      * @param string $outputTimezone The output timezone
      * @param array  $fields         The date fields
@@ -51,11 +49,12 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
     /**
      * Transforms a normalized date into a localized date.
      *
-     * @param \DateTimeInterface $dateTime A DateTimeInterface object
+     * @param \DateTime|\DateTimeInterface $dateTime A DateTime object
      *
      * @return array Localized date
      *
-     * @throws TransformationFailedException If the given value is not a \DateTimeInterface
+     * @throws TransformationFailedException If the given value is not an
+     *                                       instance of \DateTime or \DateTimeInterface
      */
     public function transform($dateTime)
     {
@@ -70,8 +69,8 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
             ), array_flip($this->fields));
         }
 
-        if (!$dateTime instanceof \DateTimeInterface) {
-            throw new TransformationFailedException('Expected a \DateTimeInterface.');
+        if (!$dateTime instanceof \DateTime && !$dateTime instanceof \DateTimeInterface) {
+            throw new TransformationFailedException('Expected a \DateTime or \DateTimeInterface.');
         }
 
         if ($this->inputTimezone !== $this->outputTimezone) {

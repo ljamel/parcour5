@@ -32,6 +32,14 @@ class ResetType extends AbstractType implements ButtonTypeInterface
     /**
      * {@inheritdoc}
      */
+    public function getName()
+    {
+        return $this->getBlockPrefix();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getBlockPrefix()
     {
         return 'reset';

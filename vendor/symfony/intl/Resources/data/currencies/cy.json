@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.17",
+    "Version": "2.1.31.86",
     "Names": {
         "AED": [
             "AED",
@@ -95,15 +95,15 @@
         ],
         "BEC": [
             "BEC",
-            "Ffranc Gwlad Belg (arnewidiol)"
+            "BEC"
         ],
         "BEF": [
             "BEF",
-            "Ffranc Gwlad Belg"
+            "BEF"
         ],
         "BEL": [
             "BEL",
-            "Ffranc Gwlad Belg (ariannol)"
+            "BEL"
         ],
         "BGM": [
             "BGM",
@@ -215,7 +215,7 @@
         ],
         "CHE": [
             "CHE",
-            "Ewro WIR"
+            "CHE"
         ],
         "CHF": [
             "CHF",
@@ -223,7 +223,7 @@
         ],
         "CHW": [
             "CHW",
-            "Ffranc WIR"
+            "CHW"
         ],
         "CLE": [
             "CLE",
@@ -236,10 +236,6 @@
         "CLP": [
             "CLP",
             "Peso Chile"
-        ],
-        "CNH": [
-            "CNH",
-            "Yuan Tsieina (ar y môr)"
         ],
         "CNX": [
             "CNX",
@@ -255,7 +251,7 @@
         ],
         "COU": [
             "COU",
-            "Uned Gwir Werth Colombia"
+            "COU"
         ],
         "CRC": [
             "CRC",
@@ -283,15 +279,15 @@
         ],
         "CZK": [
             "CZK",
-            "Koruna’r Weriniaeth Tsiec"
+            "Koruna Tsiec"
         ],
         "DDM": [
             "DDM",
-            "Marc Dwyrain yr Almaen"
+            "DDM"
         ],
         "DEM": [
             "DEM",
-            "Marc yr Almaen"
+            "DEM"
         ],
         "DJF": [
             "DJF",
@@ -312,14 +308,6 @@
         "ECS": [
             "ECS",
             "Sucre Ecuador"
-        ],
-        "ECV": [
-            "ECV",
-            "Uned Gwerth Gyson Ecuador"
-        ],
-        "EEK": [
-            "EEK",
-            "Kroon Estonia"
         ],
         "EGP": [
             "EGP",
@@ -343,7 +331,7 @@
         ],
         "FIM": [
             "FIM",
-            "Markka’r Ffindir"
+            "FIM"
         ],
         "FJD": [
             "FJD",
@@ -355,7 +343,7 @@
         ],
         "FRF": [
             "FRF",
-            "Ffranc Ffrainc"
+            "FRF"
         ],
         "GBP": [
             "£",
@@ -473,10 +461,6 @@
             "IRR",
             "Rial Iran"
         ],
-        "ISJ": [
-            "ISJ",
-            "Króna Gwlad yr Iâ (1918 – 1981)"
-        ],
         "ISK": [
             "ISK",
             "Króna Gwlad yr Iâ"
@@ -575,7 +559,7 @@
         ],
         "LUF": [
             "LUF",
-            "Ffranc Lwcsembwrg"
+            "LUF"
         ],
         "LUL": [
             "LUL",
@@ -587,7 +571,7 @@
         ],
         "LVR": [
             "LVR",
-            "Rwbl Latfia"
+            "LVR"
         ],
         "LYD": [
             "LYD",
@@ -831,7 +815,7 @@
         ],
         "SHP": [
             "SHP",
-            "Punt St Helena"
+            "Punt Saint Helena"
         ],
         "SIT": [
             "SIT",
@@ -999,7 +983,7 @@
         ],
         "XEU": [
             "XEU",
-            "Uned Arian Cyfred Ewropeaidd"
+            "XEU"
         ],
         "XOF": [
             "CFA",

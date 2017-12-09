@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "ADP": [
             "ADP",
@@ -256,10 +256,6 @@
         "CLP": [
             "CLP",
             "Peso Cile"
-        ],
-        "CNH": [
-            "CNH",
-            "Yuan Tiongkok (luar negeri)"
         ],
         "CNY": [
             "CN¥",

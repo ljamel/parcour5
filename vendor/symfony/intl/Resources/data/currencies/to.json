@@ -1,9 +1,9 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.31.74",
     "Names": {
         "AUD": [
             "AUD$",
-            "Australian Dollar"
+            "AUD"
         ],
         "BRL": [
             "R$",

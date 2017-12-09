@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "aa": "afarų",
         "ab": "abchazų",
@@ -318,7 +318,6 @@
         "ln": "ngalų",
         "lo": "laosiečių",
         "lol": "mongų",
-        "lou": "Luizianos kreolų",
         "loz": "lozių",
         "lrc": "šiaurės luri",
         "lt": "lietuvių",
@@ -521,7 +520,7 @@
         "sv": "švedų",
         "sw": "suahilių",
         "sw_CD": "Kongo suahilių",
-        "swb": "Komorų",
+        "swb": "komorų",
         "syc": "klasikinė sirų",
         "syr": "sirų",
         "szl": "sileziečių",

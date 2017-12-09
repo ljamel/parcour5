@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.22",
+    "Version": "2.1.31.33",
     "Names": {
         "ARS": [
             "ARS",
@@ -69,10 +69,6 @@
             "INR",
             "roupie indienne"
         ],
-        "IRR": [
-            "IRR",
-            "rial iranien"
-        ],
         "JPY": [
             "¥",
             "yen japonais"
@@ -96,14 +92,6 @@
         "NZD": [
             "$ NZ",
             "dollar néo-zélandais"
-        ],
-        "OMR": [
-            "OMR",
-            "rial omanais"
-        ],
-        "SAR": [
-            "SAR",
-            "rial saoudien"
         ],
         "SBD": [
             "SBD",
@@ -148,10 +136,6 @@
         "XPF": [
             "XPF",
             "franc CFP"
-        ],
-        "YER": [
-            "YER",
-            "rial yéménite"
         ]
     }
 }

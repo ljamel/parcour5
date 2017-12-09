@@ -41,22 +41,9 @@ use Symfony\Component\PropertyAccess\PropertyPath;
  */
 class PropertyAccessDecorator implements ChoiceListFactoryInterface
 {
-    /**
-     * @var ChoiceListFactoryInterface
-     */
     private $decoratedFactory;
-
-    /**
-     * @var PropertyAccessorInterface
-     */
     private $propertyAccessor;
 
-    /**
-     * Decorates the given factory.
-     *
-     * @param ChoiceListFactoryInterface     $decoratedFactory The decorated factory
-     * @param null|PropertyAccessorInterface $propertyAccessor The used property accessor
-     */
     public function __construct(ChoiceListFactoryInterface $decoratedFactory, PropertyAccessorInterface $propertyAccessor = null)
     {
         $this->decoratedFactory = $decoratedFactory;
@@ -102,6 +89,25 @@ class PropertyAccessDecorator implements ChoiceListFactoryInterface
         }
 
         return $this->decoratedFactory->createListFromChoices($choices, $value);
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param array|\Traversable                $choices The choices
+     * @param null|callable|string|PropertyPath $value   The callable or path for
+     *                                                   generating the choice values
+     *
+     * @return ChoiceListInterface The choice list
+     *
+     * @deprecated Added for backwards compatibility in Symfony 2.7, to be
+     *             removed in Symfony 3.0.
+     */
+    public function createListFromFlippedChoices($choices, $value = null, $triggerDeprecationNotice = true)
+    {
+        // Property paths are not supported here, because array keys can never
+        // be objects
+        return $this->decoratedFactory->createListFromFlippedChoices($choices, $value, $triggerDeprecationNotice);
     }
 
     /**

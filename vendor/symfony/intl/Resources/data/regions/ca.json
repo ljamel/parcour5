@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.22",
+    "Version": "2.1.32.59",
     "Names": {
         "AC": "Illa de l’Ascensió",
         "AD": "Andorra",
@@ -72,7 +72,6 @@
         "ER": "Eritrea",
         "ES": "Espanya",
         "ET": "Etiòpia",
-        "EZ": "zona euro",
         "FI": "Finlàndia",
         "FJ": "Fiji",
         "FK": "Illes Malvines",
@@ -220,7 +219,7 @@
         "TA": "Tristão da Cunha",
         "TC": "Illes Turks i Caicos",
         "TD": "Txad",
-        "TF": "Territoris Australs Francesos",
+        "TF": "Territoris Francesos del Sud",
         "TG": "Togo",
         "TH": "Tailàndia",
         "TJ": "Tadjikistan",

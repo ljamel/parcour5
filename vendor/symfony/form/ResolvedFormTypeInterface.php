@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Form;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * A wrapper for a form type and its extensions.
@@ -21,16 +21,16 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 interface ResolvedFormTypeInterface
 {
     /**
-     * Returns the prefix of the template block name for this type.
+     * Returns the name of the type.
      *
-     * @return string The prefix of the template block name
+     * @return string The type name
      */
-    public function getBlockPrefix();
+    public function getName();
 
     /**
      * Returns the parent type.
      *
-     * @return ResolvedFormTypeInterface|null The parent type or null
+     * @return self|null The parent type or null
      */
     public function getParent();
 
@@ -102,7 +102,7 @@ interface ResolvedFormTypeInterface
     /**
      * Returns the configured options resolver used for this type.
      *
-     * @return OptionsResolver The options resolver
+     * @return OptionsResolverInterface The options resolver
      */
     public function getOptionsResolver();
 }

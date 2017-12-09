@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.31.86",
     "Names": {
         "ADP": [
             "ADP",
@@ -31,7 +31,7 @@
         ],
         "ANG": [
             "ANG",
-            "netherlands antilleaga guilder"
+            "nedalands antilleaga guilder"
         ],
         "AOA": [
             "AOA",
@@ -103,7 +103,7 @@
         ],
         "BBD": [
             "BBD",
-            "barbadosga dollar"
+            "barbadiaga dollar"
         ],
         "BDT": [
             "BDT",
@@ -183,7 +183,7 @@
         ],
         "BRL": [
             "R$",
-            "braziliaga real"
+            "Braziliaga real"
         ],
         "BRN": [
             "BRN",
@@ -199,7 +199,7 @@
         ],
         "BSD": [
             "BSD",
-            "bahamasga dollar"
+            "bahamiaga dollar"
         ],
         "BTN": [
             "BTN",
@@ -231,7 +231,7 @@
         ],
         "CAD": [
             "CA$",
-            "canadaga dollar"
+            "Canadaga dollar"
         ],
         "CDF": [
             "CDF",
@@ -243,7 +243,7 @@
         ],
         "CHF": [
             "CHF",
-            "switzerlandga franc"
+            "Swissga franc"
         ],
         "CHW": [
             "CHW",
@@ -259,7 +259,7 @@
         ],
         "CLP": [
             "CLP",
-            "chilega peso"
+            "tsilega peso"
         ],
         "CNX": [
             "CNX",
@@ -271,7 +271,7 @@
         ],
         "COP": [
             "COP",
-            "colombiaga peso"
+            "kolombiaga peso"
         ],
         "COU": [
             "COU",
@@ -279,7 +279,7 @@
         ],
         "CRC": [
             "CRC",
-            "costa ricaga colón"
+            "kosta rikaga kolón"
         ],
         "CSD": [
             "CSD",
@@ -291,11 +291,11 @@
         ],
         "CUC": [
             "CUC",
-            "cubaga convertible peso"
+            "kubaga convertible peso"
         ],
         "CUP": [
             "CUP",
-            "cubaga peso"
+            "kubaga peso"
         ],
         "CVE": [
             "CVE",
@@ -307,7 +307,7 @@
         ],
         "CZK": [
             "CZK",
-            "czechga koruna"
+            "tsɛk repɔblikga koruna"
         ],
         "DDM": [
             "DDM",
@@ -323,7 +323,7 @@
         ],
         "DKK": [
             "DKK",
-            "denmarkga krone"
+            "Denmarkga krone"
         ],
         "DOP": [
             "DOP",
@@ -383,7 +383,7 @@
         ],
         "FKP": [
             "FKP",
-            "falkland islands pound"
+            "falklanɖ ƒudomekpo dukɔwo ƒe ga pound"
         ],
         "FRF": [
             "FRF",
@@ -391,7 +391,7 @@
         ],
         "GBP": [
             "£",
-            "britainga pound"
+            "Britishga pound"
         ],
         "GEK": [
             "GEK",
@@ -411,7 +411,7 @@
         ],
         "GIP": [
             "GIP",
-            "gilbratarga pound"
+            "gilbrataga pound"
         ],
         "GMD": [
             "GMD",
@@ -463,7 +463,7 @@
         ],
         "HRK": [
             "HRK",
-            "croatiaga kuna"
+            "kroatiaga kuna"
         ],
         "HTG": [
             "HTG",
@@ -511,7 +511,7 @@
         ],
         "ISK": [
             "ISK",
-            "icelandga króna"
+            "aiselandga króna"
         ],
         "ITL": [
             "ITL",
@@ -519,7 +519,7 @@
         ],
         "JMD": [
             "JMD",
-            "jamaicaga dollar"
+            "dzamaikaga dollar"
         ],
         "JOD": [
             "JOD",
@@ -567,7 +567,7 @@
         ],
         "KYD": [
             "KYD",
-            "cayman islandsga dollar"
+            "kayman ƒudomekpoga dollar"
         ],
         "KZT": [
             "KZT",
@@ -655,7 +655,7 @@
         ],
         "MKD": [
             "MKD",
-            "marcedoniaga denar"
+            "makedoniaga denar"
         ],
         "MKN": [
             "MKN",
@@ -699,7 +699,7 @@
         ],
         "MXN": [
             "MX$",
-            "mexicoga peso"
+            "Mexicoga peso"
         ],
         "MYR": [
             "MYR",
@@ -715,7 +715,7 @@
         ],
         "NIO": [
             "NIO",
-            "nicaraguaga córdoba"
+            "nikaraguaga córdoba"
         ],
         "NLG": [
             "NLG",
@@ -723,7 +723,7 @@
         ],
         "NOK": [
             "NOK",
-            "norwayga krone"
+            "Norwayga krone"
         ],
         "NPR": [
             "NPR",
@@ -767,7 +767,7 @@
         ],
         "PLN": [
             "PLN",
-            "polandga zloty"
+            "polanɖga zloty"
         ],
         "PLZ": [
             "PLZ",
@@ -803,7 +803,7 @@
         ],
         "RUB": [
             "RUB",
-            "russiaga ruble"
+            "Russiaga ruble"
         ],
         "RUR": [
             "RUR",
@@ -839,7 +839,7 @@
         ],
         "SEK": [
             "SEK",
-            "swedenga krone"
+            "Swedishga krone"
         ],
         "SGD": [
             "SGD",
@@ -935,7 +935,7 @@
         ],
         "TTD": [
             "TTD",
-            "trinidad & tobagoga dollar"
+            "trinidad kple tobagoga dollar"
         ],
         "TWD": [
             "NT$",
@@ -963,7 +963,7 @@
         ],
         "USD": [
             "US$",
-            "us ga dollar"
+            "US ga dollar"
         ],
         "USN": [
             "USN",
@@ -1019,7 +1019,7 @@
         ],
         "XCD": [
             "EC$",
-            "east caribbeanga dollar"
+            "ɣedzeƒe caribbeaga dollar"
         ],
         "XEU": [
             "XEU",

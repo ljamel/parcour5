@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.60",
     "Names": {
         "AC": "Me’roj oroli",
         "AD": "Andorra",
@@ -72,7 +72,6 @@
         "ER": "Eritreya",
         "ES": "Ispaniya",
         "ET": "Efiopiya",
-        "EZ": "yevrozona",
         "FI": "Finlandiya",
         "FJ": "Fiji",
         "FK": "Folklend orollari",
@@ -186,7 +185,7 @@
         "PM": "Sen-Pyer va Mikelon",
         "PN": "Pitkern orollari",
         "PR": "Puerto-Riko",
-        "PS": "Falastin hududlari",
+        "PS": "Falastin hududi",
         "PT": "Portugaliya",
         "PW": "Palau",
         "PY": "Paragvay",
@@ -204,7 +203,7 @@
         "SG": "Singapur",
         "SH": "Muqaddas Yelena oroli",
         "SI": "Sloveniya",
-        "SJ": "Shpitsbergen va Yan-Mayen",
+        "SJ": "Svalbard va Yan-Mayen",
         "SK": "Slovakiya",
         "SL": "Syerra-Leone",
         "SM": "San-Marino",

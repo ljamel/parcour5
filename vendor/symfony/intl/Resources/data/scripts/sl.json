@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "Arab": "arabski",
         "Armi": "imperialno-aramejski",
@@ -35,7 +35,7 @@
         "Grek": "grški",
         "Gujr": "gudžaratski",
         "Guru": "gurmuki",
-        "Hanb": "Han + Bopomofo",
+        "Hanb": "Hanb",
         "Hang": "hangul",
         "Hani": "kanji",
         "Hano": "hanunski",
@@ -44,7 +44,7 @@
         "Hebr": "hebrejski",
         "Hira": "hiragana",
         "Hmng": "pahavhmonska zlogovna pisava",
-        "Hrkt": "japonska zlogovnica",
+        "Hrkt": "katakana ali hiragana",
         "Hung": "staroogrski",
         "Inds": "induški",
         "Ital": "staroitalski",
@@ -119,7 +119,6 @@
         "Xsux": "sumersko-akadski klinopis",
         "Zinh": "podedovan",
         "Zmth": "matematična znamenja",
-        "Zsye": "čustvenček",
         "Zsym": "simboli",
         "Zxxx": "nenapisano",
         "Zyyy": "splošno",

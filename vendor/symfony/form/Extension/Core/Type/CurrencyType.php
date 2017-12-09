@@ -24,6 +24,7 @@ class CurrencyType extends AbstractType
     {
         $resolver->setDefaults(array(
             'choices' => array_flip(Intl::getCurrencyBundle()->getCurrencyNames()),
+            'choices_as_values' => true,
             'choice_translation_domain' => false,
         ));
     }
@@ -34,6 +35,14 @@ class CurrencyType extends AbstractType
     public function getParent()
     {
         return __NAMESPACE__.'\ChoiceType';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->getBlockPrefix();
     }
 
     /**

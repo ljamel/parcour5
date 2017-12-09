@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.5",
+    "Version": "2.1.32.59",
     "Names": {
         "ADP": [
             "ADP",
@@ -27,7 +27,7 @@
         ],
         "ANG": [
             "ANG",
-            "Guilder Antille Hà Lan"
+            "Guilder Tây Ấn Hà Lan"
         ],
         "AOA": [
             "AOA",
@@ -256,10 +256,6 @@
         "CLP": [
             "CLP",
             "Peso Chile"
-        ],
-        "CNH": [
-            "CNH",
-            "Nhân dân tệ (hải ngoại)"
         ],
         "CNY": [
             "CN¥",

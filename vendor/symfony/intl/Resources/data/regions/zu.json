@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.31.74",
     "Names": {
         "AC": "i-Ascension Island",
         "AD": "i-Andorra",
@@ -72,7 +72,6 @@
         "ER": "i-Eritrea",
         "ES": "i-Spain",
         "ET": "i-Ethiopia",
-        "EZ": "EZ",
         "FI": "i-Finland",
         "FJ": "i-Fiji",
         "FK": "i-Falkland Islands",
@@ -253,7 +252,7 @@
         "XK": "i-Kosovo",
         "YE": "i-Yemen",
         "YT": "i-Mayotte",
-        "ZA": "iNingizimu Afrika",
+        "ZA": "i-South Africa",
         "ZM": "i-Zambia",
         "ZW": "iZimbabwe"
     }

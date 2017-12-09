@@ -56,10 +56,7 @@ abstract class AbstractLocaleDataProviderTest extends AbstractDataProviderTest
 
         sort($locales);
 
-        // We can't assert on exact list of locale, as there's too many variations.
-        // The best we can do is to make sure getNames() returns a subset of what getLocales() returns.
-        $this->assertNotEmpty($locales);
-        $this->assertEmpty(array_diff($locales, $this->getLocales()));
+        $this->assertSame($this->getLocales(), $locales);
     }
 
     public function testGetNamesDefaultLocale()

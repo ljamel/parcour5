@@ -21,11 +21,12 @@ class DateTimeToRfc3339Transformer extends BaseDateTimeTransformer
     /**
      * Transforms a normalized date into a localized date.
      *
-     * @param \DateTimeInterface $dateTime A DateTimeInterface object
+     * @param \DateTime|\DateTimeInterface $dateTime A DateTime object
      *
      * @return string The formatted date
      *
-     * @throws TransformationFailedException If the given value is not a \DateTimeInterface
+     * @throws TransformationFailedException If the given value is not an
+     *                                       instance of \DateTime or \DateTimeInterface
      */
     public function transform($dateTime)
     {
@@ -33,8 +34,8 @@ class DateTimeToRfc3339Transformer extends BaseDateTimeTransformer
             return '';
         }
 
-        if (!$dateTime instanceof \DateTimeInterface) {
-            throw new TransformationFailedException('Expected a \DateTimeInterface.');
+        if (!$dateTime instanceof \DateTime && !$dateTime instanceof \DateTimeInterface) {
+            throw new TransformationFailedException('Expected a \DateTime or \DateTimeInterface.');
         }
 
         if ($this->inputTimezone !== $this->outputTimezone) {

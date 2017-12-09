@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.31.86",
     "Names": {
         "AED": [
             "AED",
@@ -120,10 +120,6 @@
         "CLP": [
             "CLP",
             "Piso ng Chile"
-        ],
-        "CNH": [
-            "CNH",
-            "CNH"
         ],
         "CNY": [
             "CN¥",

@@ -72,11 +72,35 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
      */
     const ROUND_HALF_DOWN = \NumberFormatter::ROUND_HALFDOWN;
 
+    /**
+     * Alias for {@link self::ROUND_HALF_EVEN}.
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    const ROUND_HALFEVEN = \NumberFormatter::ROUND_HALFEVEN;
+
+    /**
+     * Alias for {@link self::ROUND_HALF_UP}.
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    const ROUND_HALFUP = \NumberFormatter::ROUND_HALFUP;
+
+    /**
+     * Alias for {@link self::ROUND_HALF_DOWN}.
+     *
+     * @deprecated since version 2.4, to be removed in 3.0.
+     */
+    const ROUND_HALFDOWN = \NumberFormatter::ROUND_HALFDOWN;
+
+    /**
+     * @deprecated since version 2.7, will be replaced by a $scale private property in 3.0.
+     */
+    protected $precision;
+
     protected $grouping;
 
     protected $roundingMode;
-
-    private $scale;
 
     public function __construct($scale = null, $grouping = false, $roundingMode = self::ROUND_HALF_UP)
     {
@@ -88,7 +112,7 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
             $roundingMode = self::ROUND_HALF_UP;
         }
 
-        $this->scale = $scale;
+        $this->precision = $scale;
         $this->grouping = $grouping;
         $this->roundingMode = $roundingMode;
     }
@@ -100,8 +124,8 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
      *
      * @return string Localized value
      *
-     * @throws TransformationFailedException If the given value is not numeric
-     *                                       or if the value can not be transformed.
+     * @throws TransformationFailedException if the given value is not numeric
+     *                                       or if the value can not be transformed
      */
     public function transform($value)
     {
@@ -133,8 +157,8 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
      *
      * @return int|float The numeric value
      *
-     * @throws TransformationFailedException If the given value is not a string
-     *                                       or if the value can not be transformed.
+     * @throws TransformationFailedException if the given value is not a string
+     *                                       or if the value can not be transformed
      */
     public function reverseTransform($value)
     {
@@ -220,8 +244,8 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
     {
         $formatter = new \NumberFormatter(\Locale::getDefault(), \NumberFormatter::DECIMAL);
 
-        if (null !== $this->scale) {
-            $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->scale);
+        if (null !== $this->precision) {
+            $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->precision);
             $formatter->setAttribute(\NumberFormatter::ROUNDING_MODE, $this->roundingMode);
         }
 
@@ -239,10 +263,11 @@ class NumberToLocalizedStringTransformer implements DataTransformerInterface
      */
     private function round($number)
     {
-        if (null !== $this->scale && null !== $this->roundingMode) {
+        if (null !== $this->precision && null !== $this->roundingMode) {
             // shift number to maintain the correct scale during rounding
-            $roundingCoef = pow(10, $this->scale);
-            $number *= $roundingCoef;
+            $roundingCoef = pow(10, $this->precision);
+            // string representation to avoid rounding errors, similar to bcmul()
+            $number = (string) ($number * $roundingCoef);
 
             switch ($this->roundingMode) {
                 case self::ROUND_CEILING:

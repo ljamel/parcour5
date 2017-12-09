@@ -26,7 +26,14 @@ use Symfony\Component\Intl\Exception\MissingResourceException;
  */
 class LanguageBundle extends LanguageDataProvider implements LanguageBundleInterface
 {
+    /**
+     * @var LocaleDataProvider
+     */
     private $localeProvider;
+
+    /**
+     * @var ScriptDataProvider
+     */
     private $scriptProvider;
 
     /**

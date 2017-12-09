@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.17",
+    "Version": "2.1.31.86",
     "Names": {
         "aa": "Affareg",
         "ab": "Abchaseg",
@@ -69,7 +69,7 @@
         "bs": "Bosnieg",
         "bss": "Acwseg",
         "bua": "Bwriateg",
-        "bug": "Bwginaeg",
+        "bug": "Buginese",
         "bum": "Bwlw",
         "byn": "Blin",
         "ca": "Catalaneg",
@@ -80,7 +80,7 @@
         "ceb": "Cebuano",
         "cgg": "Tsiga",
         "ch": "Tsiamorro",
-        "chk": "Chuukaeg",
+        "chk": "Chuukese",
         "chm": "Marieg",
         "cho": "Siocto",
         "chr": "Tsierocî",
@@ -104,7 +104,7 @@
         "de_CH": "Almaeneg Safonol y Swistir",
         "dgr": "Dogrib",
         "din": "Dinca",
-        "dje": "Sarmaeg",
+        "dje": "Zarmaeg",
         "doi": "Dogri",
         "dsb": "Sorbeg Isaf",
         "dua": "Diwaleg",
@@ -218,7 +218,7 @@
         "kac": "Kachin",
         "kaj": "Jju",
         "kam": "Camba",
-        "kbd": "Cabardieg",
+        "kbd": "Circaseg Dwyreiniol",
         "kcg": "Tyapeg",
         "kde": "Macondeg",
         "kea": "Caboferdianeg",
@@ -351,7 +351,7 @@
         "oc": "Ocsitaneg",
         "oj": "Ojibwa",
         "om": "Oromo",
-        "or": "Odia",
+        "or": "Oriya",
         "os": "Oseteg",
         "osa": "Osageg",
         "ota": "Tyrceg Otoman",
@@ -496,7 +496,7 @@
         "uga": "Wgariteg",
         "uk": "Wcreineg",
         "umb": "Umbundu",
-        "und": "Iaith anhysbys",
+        "und": "Iaith Anhysbys",
         "ur": "Wrdw",
         "uz": "Wsbeceg",
         "vai": "Faieg",
@@ -531,8 +531,8 @@
         "zh_Hans": "Tsieineeg Symledig",
         "zh_Hant": "Tsieineeg Traddodiadol",
         "zu": "Swlw",
-        "zun": "Swni",
+        "zun": "Zuni",
         "zxx": "Dim cynnwys ieithyddol",
-        "zza": "Sasäeg"
+        "zza": "Zazäeg"
     }
 }

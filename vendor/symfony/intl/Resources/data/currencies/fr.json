@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "ADP": [
             "ADP",
@@ -228,10 +228,6 @@
         "CLP": [
             "$CL",
             "peso chilien"
-        ],
-        "CNH": [
-            "CNH",
-            "yuan chinois (zone extracôtière)"
         ],
         "CNY": [
             "CNY",
@@ -467,7 +463,7 @@
         ],
         "IRR": [
             "IRR",
-            "riyal iranien"
+            "rial iranien"
         ],
         "ISK": [
             "ISK",
@@ -703,7 +699,7 @@
         ],
         "OMR": [
             "OMR",
-            "riyal omanais"
+            "rial omanais"
         ],
         "PAB": [
             "PAB",
@@ -751,7 +747,7 @@
         ],
         "QAR": [
             "QAR",
-            "riyal qatari"
+            "rial qatari"
         ],
         "RHD": [
             "$RH",
@@ -783,7 +779,7 @@
         ],
         "SAR": [
             "SAR",
-            "riyal saoudien"
+            "rial saoudien"
         ],
         "SBD": [
             "$SB",
@@ -1019,7 +1015,7 @@
         ],
         "YER": [
             "YER",
-            "riyal yéménite"
+            "rial yéménite"
         ],
         "YUD": [
             "YUD",

@@ -25,6 +25,9 @@ use Symfony\Component\Intl\Exception\MissingResourceException;
  */
 class RegionBundle extends RegionDataProvider implements RegionBundleInterface
 {
+    /**
+     * @var LocaleDataProvider
+     */
     private $localeProvider;
 
     /**

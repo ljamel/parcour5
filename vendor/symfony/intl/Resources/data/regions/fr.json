@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "AC": "Île de l’Ascension",
         "AD": "Andorre",
@@ -72,7 +72,6 @@
         "ER": "Érythrée",
         "ES": "Espagne",
         "ET": "Éthiopie",
-        "EZ": "zone euro",
         "FI": "Finlande",
         "FJ": "Fidji",
         "FK": "Îles Malouines",
@@ -213,7 +212,7 @@
         "SR": "Suriname",
         "SS": "Soudan du Sud",
         "ST": "Sao Tomé-et-Principe",
-        "SV": "Salvador",
+        "SV": "El Salvador",
         "SX": "Saint-Martin (partie néerlandaise)",
         "SY": "Syrie",
         "SZ": "Swaziland",

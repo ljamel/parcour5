@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Form;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * @author Bernhard Schussek <bschussek@gmail.com>
@@ -69,26 +69,38 @@ interface FormTypeInterface
     public function finishView(FormView $view, FormInterface $form, array $options);
 
     /**
-     * Configures the options for this type.
+     * Sets the default options for this type.
      *
-     * @param OptionsResolver $resolver The resolver for the options
+     * @param OptionsResolverInterface $resolver The resolver for the options
+     *
+     * @deprecated since version 2.7, to be renamed in 3.0.
+     *             Use the method configureOptions instead. This method will be
+     *             added to the FormTypeInterface with Symfony 3.0.
      */
-    public function configureOptions(OptionsResolver $resolver);
-
-    /**
-     * Returns the prefix of the template block name for this type.
-     *
-     * The block prefix defaults to the underscored short class name with
-     * the "Type" suffix removed (e.g. "UserProfileType" => "user_profile").
-     *
-     * @return string The prefix of the template block name
-     */
-    public function getBlockPrefix();
+    public function setDefaultOptions(OptionsResolverInterface $resolver);
 
     /**
      * Returns the name of the parent type.
      *
-     * @return string|null The name of the parent type if any, null otherwise
+     * You can also return a type instance from this method, although doing so
+     * is discouraged because it leads to a performance penalty. The support
+     * for returning type instances may be dropped from future releases.
+     *
+     * Returning a {@link FormTypeInterface} instance is deprecated since
+     * Symfony 2.8 and will be unsupported as of Symfony 3.0. Return the
+     * fully-qualified class name of the parent type instead.
+     *
+     * @return string|null|FormTypeInterface The name of the parent type if any, null otherwise
      */
     public function getParent();
+
+    /**
+     * Returns the name of this type.
+     *
+     * @return string The name of this type
+     *
+     * @deprecated Deprecated since Symfony 2.8, to be removed in Symfony 3.0.
+     *             Use the fully-qualified class name of the type instead.
+     */
+    public function getName();
 }

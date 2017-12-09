@@ -1,5 +1,5 @@
 {
-    "Version": "2.1.37.1",
+    "Version": "2.1.32.59",
     "Names": {
         "ADP": [
             "ADP",
@@ -95,7 +95,7 @@
         ],
         "BAM": [
             "BAM",
-            "Marco conversível da Bósnia e Herzegovina"
+            "Marco bósnio-herzegovino conversível"
         ],
         "BAN": [
             "BAN",
@@ -261,10 +261,6 @@
             "CLP",
             "Peso chileno"
         ],
-        "CNH": [
-            "CNH",
-            "Yuan (offshore)"
-        ],
         "CNX": [
             "CNX",
             "Dólar do Banco Popular da China"
@@ -323,7 +319,7 @@
         ],
         "DJF": [
             "DJF",
-            "Franco djiboutiano"
+            "Franco djibutiense"
         ],
         "DKK": [
             "DKK",
@@ -395,7 +391,7 @@
         ],
         "GBP": [
             "£",
-            "Libra esterlina"
+            "Libra britânica"
         ],
         "GEK": [
             "GEK",
@@ -439,7 +435,7 @@
         ],
         "GTQ": [
             "GTQ",
-            "Quetzal guatemalteco"
+            "Quetzal guatemalense"
         ],
         "GWE": [
             "GWE",
@@ -475,7 +471,7 @@
         ],
         "HUF": [
             "HUF",
-            "Florim húngaro"
+            "Forint húngaro"
         ],
         "IDR": [
             "IDR",
@@ -547,7 +543,7 @@
         ],
         "KMF": [
             "KMF",
-            "Franco comoriano"
+            "Franco comorense"
         ],
         "KPW": [
             "KPW",
@@ -571,7 +567,7 @@
         ],
         "KYD": [
             "KYD",
-            "Dólar das Ilhas Cayman"
+            "Dólar das Ilhas Caiman"
         ],
         "KZT": [
             "KZT",
@@ -631,7 +627,7 @@
         ],
         "MAD": [
             "MAD",
-            "Dirham marroquino"
+            "Dirrã marroquino"
         ],
         "MAF": [
             "MAF",
@@ -703,7 +699,7 @@
         ],
         "MWK": [
             "MWK",
-            "Kwacha malauiana"
+            "Kwacha malawiana"
         ],
         "MXN": [
             "MX$",
@@ -771,7 +767,7 @@
         ],
         "PAB": [
             "PAB",
-            "Balboa panamenho"
+            "Balboa panamenha"
         ],
         "PEI": [
             "PEI",

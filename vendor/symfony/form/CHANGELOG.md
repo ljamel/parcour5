@@ -1,16 +1,6 @@
 CHANGELOG
 =========
 
-3.0.0
------
-
- * removed `FormTypeInterface::setDefaultOptions()` method
- * removed `AbstractType::setDefaultOptions()` method
- * removed `FormTypeExtensionInterface::setDefaultOptions()` method
- * removed `AbstractTypeExtension::setDefaultOptions()` method
- * added `FormTypeInterface::configureOptions()` method
- * added `FormTypeExtensionInterface::configureOptions()` method
-
 2.8.0
 -----
 
@@ -21,6 +11,11 @@ CHANGELOG
    with the Valid constraint
  * moved data trimming logic of TrimListener into StringUtil
  * [BC BREAK] When registering a type extension through the DI extension, the tag alias has to match the actual extended type.
+
+2.7.38
+------
+
+ * [BC BREAK] the `isFileUpload()` method was added to the `RequestHandlerInterface`
 
 2.7.0
 -----

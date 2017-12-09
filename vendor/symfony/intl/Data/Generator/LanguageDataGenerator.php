@@ -28,6 +28,8 @@ class LanguageDataGenerator extends AbstractDataGenerator
 {
     /**
      * Source: http://www-01.sil.org/iso639-3/codes.asp.
+     *
+     * @var array
      */
     private static $preferredAlpha2ToAlpha3Mapping = array(
         'ak' => 'aka',
@@ -157,20 +159,20 @@ class LanguageDataGenerator extends AbstractDataGenerator
         return array(
             'Version' => $rootBundle['Version'],
             'Languages' => $this->languageCodes,
-            'Aliases' => array_map(function (\ResourceBundle $bundle) {
-                return $bundle['replacement'];
-            }, iterator_to_array($metadataBundle['alias']['language'])),
+            'Aliases' => $metadataBundle['languageAlias'],
             'Alpha2ToAlpha3' => $this->generateAlpha2ToAlpha3Mapping($metadataBundle),
         );
     }
 
     private function generateAlpha2ToAlpha3Mapping(ArrayAccessibleResourceBundle $metadataBundle)
     {
-        $aliases = iterator_to_array($metadataBundle['alias']['language']);
+        // Data structure has changed in ICU 5.5 from "languageAlias" to "alias->language"
+        $aliases = $metadataBundle['languageAlias'] ?: $metadataBundle['alias']['language'];
         $alpha2ToAlpha3 = array();
 
         foreach ($aliases as $alias => $language) {
-            $language = $language['replacement'];
+            // $language is a string before ICU 5.5
+            $language = is_string($language) ? $language : $language['replacement'];
             if (2 === strlen($language) && 3 === strlen($alias)) {
                 if (isset(self::$preferredAlpha2ToAlpha3Mapping[$language])) {
                     // Validate to prevent typos
@@ -184,7 +186,7 @@ class LanguageDataGenerator extends AbstractDataGenerator
                     }
 
                     $alpha3 = self::$preferredAlpha2ToAlpha3Mapping[$language];
-                    $alpha2 = $aliases[$alpha3]['replacement'];
+                    $alpha2 = is_string($aliases[$alpha3]) ? $aliases[$alpha3] : $aliases[$alpha3]['replacement'];
 
                     if ($language !== $alpha2) {
                         throw new RuntimeException(
