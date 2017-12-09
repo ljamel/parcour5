@@ -81,13 +81,14 @@ class CommentDAO extends DAO
     }
 
     public function save(Comment $comment) {
+
         $commentData = array(
             'signale' => "1",
             'com_content' => $comment->getContent(),
             'art_id' => $comment->getLoisir()->getId(),
-            'usr_id' => $comment->getAuthor()->getId(),
+            'usr_id' => "1",
         );
-        var_dump($commentData);
+
         if ($comment->getId()) {
             // The comment has already been saved : update it
             $this->getDb()->update('t_comment', $commentData, array('com_id' => $comment->getId()));
@@ -142,7 +143,9 @@ class CommentDAO extends DAO
     }
 
     public function deleteAllByUser($userId) {
-        $this->getDb()->delete('t_comment', array('usr_id' => $userId));
+        if ($userId > 1) {
+            $this->getDb()->delete('t_comment', array('usr_id' => $userId));
+        }
     }
 
     public function signale($id) {

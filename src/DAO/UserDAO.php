@@ -116,8 +116,12 @@ class UserDAO extends DAO implements UserProviderInterface
      * @param @param integer $id The user id.
      */
     public function delete($id) {
-        // Delete the user
-        $this->getDb()->delete('t_user', array('usr_id' => $id));
+        if($id > 1) {
+            // Delete the user
+            $this->getDb()->delete('t_user', array('usr_id' => $id));
+        } else {
+            echo "L'admin ne peut être supprimer";
+        }
     }
 
 }

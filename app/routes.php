@@ -28,12 +28,10 @@ $app->get('/', function () use ($app) {
 $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
     $loisir = $app['dao.loisir']->find($id);
     $commentFormView = null;
-    if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
         // A user is fully authenticated : he can add comments
         $comment = new Comment();
         $comment->setLoisir($loisir);
         $user = $app['user'];
-        $comment->setAuthor($user);
         $commentForm = $app['form.factory']->create(CommentType::class, $comment);
         $commentForm->handleRequest($request);
         if ($commentForm->isSubmitted() && $commentForm->isValid()) {
@@ -41,7 +39,7 @@ $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
             $app['session']->getFlashBag()->add('success', 'Your comment was successfully added.');
         }
         $commentFormView = $commentForm->createView();
-    }
+
     $comments = $app['dao.comment']->findAllByLoisir($id);
 
     return $app['twig']->render('frontend/unique.html.twig', array(
@@ -115,7 +113,7 @@ $app->match('/admin/loisir/{id}/edit', function($id, Request $request) use ($app
     $loisirForm->handleRequest($request);
     if ($loisirForm->isSubmitted() && $loisirForm->isValid()) {
         $app['dao.loisir']->save($loisir);
-        $app['session']->getFlashBag()->add('success', 'The losir was successfully updated.');
+        $app['session']->getFlashBag()->add('success', 'The loisir was successfully updated.');
     }
     return $app['twig']->render('backend/loisir_form.html.twig', array(
         'title' => 'Edit loisir',
