@@ -27,6 +27,12 @@
             <li><a id="blue-menu2"  href="/liste"> Idée loisirs </a></li>
             <li><a id="blue-menu3"  href=""> Contact </a></li>
             <li><a id="blue-menu4"  href=""> Aide </a></li>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+            <li><a id="blue-menu4"  href="/admin"> Administration </a></li>
+            {% else %}
+            <li><a id="blue-menu4"  href="/loisir/add"> Proposer une activiter </a></li>
+            <li><a id="blue-menu4"  href="/user/add"> Inscription </a></li>
+            {% endif %}
         </ul>
     </nav>
 </div>
@@ -55,7 +61,6 @@
         <div id="copyright"> copyright 2017 progfacil.com | <a href="https://www.progfacil.com/condition.html" target="_blank" class="white">Mention légales</a> </div>
     </section>
 </div>
-
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

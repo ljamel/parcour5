@@ -95,7 +95,7 @@ class UserDAO extends DAO implements UserProviderInterface
             'usr_name' => $user->getUsername(),
             'usr_salt' => $user->getSalt(),
             'usr_password' => $user->getPassword(),
-            'usr_role' => $user->getRole()
+            'usr_role' => 'ROLE_USER' // Pour l'instant je peut definir un admin que depuis la base phpmyadmin
         );
 
         if ($user->getId()) {

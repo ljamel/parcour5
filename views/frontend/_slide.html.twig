@@ -27,12 +27,9 @@
 </div>
 
 <div id="formulaire-recherche">
-    <form action="liste/" method="get">
+    <form action="result/" method="get">
         <p class="queFaire">QUE FAIRE</p>
-        <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-map.jpg"> </a>  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
-        <input type="hidden"  name="page" value="2" >
-
-        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
+        <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-bebe.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-famille.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-ager.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-map.jpg"> </a>  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
 
         <span class="custom-dropdown custom-dropdown--white">
         <select placeholder="Budget" name="budget" class="custom-dropdown__select custom-dropdown__select--white">
@@ -44,6 +41,10 @@
             <option value="9999999">Voir tous</option>
         </select>
         </span>
+
+        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
+        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Périmètre" name="distance">
+
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="datepicker" id="from" name="from" placeholder="Du">
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="to" name="to" placeholder="Au">
 

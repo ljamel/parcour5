@@ -10,20 +10,23 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
-<img src="{{ loisir.image }}">
+
     <div class="well">
         {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
-        <div class="form-group">
-            {{ form_label(loisirForm.etat, null, { 'label_attr':  {
-                'class': 'col-sm-4 control-label'
-            }}) }}
-            <div class="col-sm-6">
-                {{ form_errors(loisirForm.etat) }}
-                {{ form_widget(loisirForm.etat, { 'attr':  {
-                    'class': 'form-control'
+        <!-- restreindre l'accéer au autre utilisateur -->
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+            <div class="form-group">
+                {{ form_label(loisirForm.etat, null, { 'label_attr':  {
+                    'class': 'col-sm-4 control-label'
                 }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(loisirForm.etat) }}
+                    {{ form_widget(loisirForm.etat, { 'attr':  {
+                        'class': 'checkbox'
+                    }}) }}
+                </div>
             </div>
-        </div>
+        {% endif %}
         <div class="form-group">
             {{ form_label(loisirForm.title, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
@@ -53,7 +56,7 @@
             <div class="col-sm-6">
                 {{ form_errors(loisirForm.image) }}
                 {{ form_widget(loisirForm.image, { 'attr':  {
-                    'class': 'form-control'
+                    'class': 'btn btn-primary'
                 }}) }}
             </div>
         </div>
@@ -83,7 +86,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-3">
-                <input type="submit" class="btn btn-primary" value="Save" />
+                <input type="submit" class="btn btn-primary" value="Save"/>
             </div>
         </div>
         {{ form_end(loisirForm) }}

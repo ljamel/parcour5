@@ -27,6 +27,10 @@ class Loisir
 
     private $position;
 
+    private $positionLAT;
+
+    private $positionLNG;
+
     private $image;
 
     private $prix;
@@ -75,6 +79,23 @@ class Loisir
 
     public function setPosition($position) {
         $this->position = $position;
+        return $this;
+    }
+
+    public function getPositionLAT(){
+        return $this->positionLAT;
+    }
+
+    public function setPositionLAT($positionLAT) {
+        $this->positionLAT = $positionLAT;
+        return $this;
+    }
+    public function getPositionLNG(){
+        return $this->positionLNG;
+    }
+
+    public function setPositionLNG($positionLNG) {
+        $this->positionLNG = $positionLNG;
         return $this;
     }
 

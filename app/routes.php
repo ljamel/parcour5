@@ -6,6 +6,7 @@ use MicroCMS\Domain\Loisir;
 use MicroCMS\Domain\User;
 use MicroCMS\Form\Type\CommentType;
 use MicroCMS\Form\Type\LoisirType;
+use MicroCMS\Form\Type\LoisirTypeAdd;
 use MicroCMS\Form\Type\UserType;
 
 // Login form
@@ -54,6 +55,12 @@ $app->get('/liste/', function () use ($app) {
     return $app['twig']->render('frontend/liste.html.twig', array('loisir' => $loisirs));
 })->bind('liste/');
 
+// Resultat de recherche
+$app->get('/result/', function () use ($app) {
+    $loisir = $app['dao.loisir']->findResult();
+    return $app['twig']->render('frontend/result.html.twig', array('loisir' => $loisir));
+})->bind('result/?budget=');
+
 // loisir details with comments
 $app->get('/geoloc', function () use ($app) {
     $loisirs = $app['dao.loisir']->findAllMap();
@@ -79,6 +86,11 @@ $app->get('/clustersAll/', function () use ($app) {
     return $app['twig']->render('map/clustersAll.html.twig', array('loisirs' => $loisirs));
 })->bind('clusters/');
 
+$app->get('/clustersResult/', function () use ($app) {
+    $loisirs = $app['dao.loisir']->findResult();
+    return $app['twig']->render('map/clustersResult.html.twig', array('loisirs' => $loisirs));
+})->bind('clustersResult/');
+
 
 // Admin home page
 $app->get('/admin', function() use ($app) {
@@ -92,15 +104,15 @@ $app->get('/admin', function() use ($app) {
 })->bind('admin');
 
 
-$app->match('/admin/loisir/add', function(Request $request) use ($app) {
+$app->match('/loisir/add', function(Request $request) use ($app) {
     $loisir = new Loisir();
-    $loisirForm = $app['form.factory']->create(LoisirType::class, $loisir);
+    $loisirForm = $app['form.factory']->create(LoisirTypeAdd::class, $loisir);
     $loisirForm->handleRequest($request);
     if ($loisirForm->isSubmitted() && $loisirForm->isValid()) {
         $app['dao.loisir']->save($loisir);
         $app['session']->getFlashBag()->add('success', 'The loisir was successfully created.');
     }
-    return $app['twig']->render('backend/loisir_form.html.twig', array(
+    return $app['twig']->render('backend/loisir_add_form.html.twig', array(
         'title' => 'New loisir',
         'loisirForm' => $loisirForm->createView()));
 })->bind('admin_loisir_add');
@@ -161,7 +173,7 @@ $app->get('/comment/{id}/signale/', function($id, Request $request) use ($app) {
 })->bind('signale');
 
 // Add a user
-$app->match('/admin/user/add', function(Request $request) use ($app) {
+$app->match('/user/add', function(Request $request) use ($app) {
     $user = new User();
     $userForm = $app['form.factory']->create(UserType::class, $user);
     $userForm->handleRequest($request);

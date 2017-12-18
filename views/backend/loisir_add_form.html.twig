@@ -1,9 +1,9 @@
 {% extends '/layout.html.twig' %}
-{% set adminMenu = true %}
 
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <h2 class="text-center">{{ block('title') }}</h2>
     {% for flashMessage in app.session.flashbag.get('success') %}
         <div class="alert alert-success">
@@ -13,20 +13,7 @@
 
     <div class="well">
         {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
-        <!-- restreindre l'accéer au autre utilisateur -->
-        {% if app.user and is_granted('ROLE_ADMIN') %}
-            <div class="form-group">
-                {{ form_label(loisirForm.etat, null, { 'label_attr':  {
-                    'class': 'col-sm-4 control-label'
-                }}) }}
-                <div class="col-sm-6">
-                    {{ form_errors(loisirForm.etat) }}
-                    {{ form_widget(loisirForm.etat, { 'attr':  {
-                        'class': 'checkbox'
-                    }}) }}
-                </div>
-            </div>
-        {% endif %}
+
         <div class="form-group">
             {{ form_label(loisirForm.title, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
@@ -89,6 +76,6 @@
                 <input type="submit" class="btn btn-primary" value="Save"/>
             </div>
         </div>
-        {{ form_end(loisirForm) }}
     </div>
+{% endif %}
 {% endblock %}

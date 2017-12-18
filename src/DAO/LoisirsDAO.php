@@ -59,6 +59,24 @@ class LoisirsDAO extends DAO
         return $loisirs;
     }
 
+    // Resultat de recherche
+    public function findResult() {
+
+        // requête preparer qui evite les injections SQL
+        $loisirs = array();
+        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix");
+        $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));
+
+        if ($stmt->execute()) {
+            while ($row = $stmt->fetch()) {
+                $loisirId = $row['art_id'];
+                $loisirs[$loisirId] = $this->buildDomainObject($row);
+            }
+        }
+
+        return $loisirs;
+    }
+
     /**
      * Creates an loisir object based on a DB row.
      *
@@ -77,6 +95,8 @@ class LoisirsDAO extends DAO
         $loisir->setNote($row['note']);
         $loisir->setEtat($row['etat']);
         $loisir->setLien($row['lien']);
+        $loisir->setPositionLAT($row['position_LAT']);
+        $loisir->setPositionLNG($row['position_LNG']);
         return $loisir;
     }
 
@@ -91,12 +111,25 @@ class LoisirsDAO extends DAO
     }
 
     public function save(Loisir $article) {
+
+
+        $md5 = md5(uniqid(rand(1, 100000), true));
+        $name = $md5 . $_FILES['loisir']['name']['image'];
+
         $loisirData = array(
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
-            'art_image' => $article->getImage(),
+            'art_image' => $name,
             'etat' => $article->getEtat(),
+            'art_position' => $article->getPosition(),
+        );
+
+        $loisirDataAdd = array(
+            'art_title' => $article->getTitle(),
+            'art_content' => $article->getContent(),
+            'lien' => $article->getLien(),
+            'art_image' => $name,
             'art_position' => $article->getPosition(),
         );
 
@@ -105,10 +138,19 @@ class LoisirsDAO extends DAO
             $this->getDb()->update('t_loisirs', $loisirData, array('art_id' => $article->getId()));
         } else {
             // The article has never been saved : insert it
-            $this->getDb()->insert('t_loisirs', $loisirData);
+            $this->getDb()->insert('t_loisirs', $loisirDataAdd);
             // Get the id of the newly created article and set it on the entity.
             $id = $this->getDb()->lastInsertId();
             $article->setId($id);
+        }
+
+        $extensions_valides = array('jpg', 'jpeg', 'gif', 'png', 'ico', 'psd', 'pdf');
+        $extension_upload = strtolower(substr(strrchr($_FILES['loisir']['name']['image'], '.'), 1));
+        if (in_array($extension_upload, $extensions_valides)) {
+            // Upload l'image dans un fichiers Web/images
+            $uploads_dir = dirname(dirname(dirname(dirname(__FILE__)))) . '/parcour-5/web/images';
+            $tmp_name = $_FILES['loisir']['tmp_name']['image'];
+            move_uploaded_file($tmp_name, "$uploads_dir/$name");
         }
     }
 

@@ -1,4 +1,4 @@
-function initMap() {
+function res() {
     var paris1 = {
         lat: 48.866667,
         lng: 2.333333
@@ -9,10 +9,27 @@ function initMap() {
         center: paris1
     });
 
+    function $_GET(param) {
+        var vars = {};
+        window.location.href.replace( location.hash, '' ).replace(
+            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+            function( m, key, value ) { // callback
+                vars[key] = value !== undefined ? value : '';
+            }
+        );
+
+        if ( param ) {
+            return vars[param] ? vars[param] : null;
+        }
+        return vars;
+    }
+
+    var budget = "/clustersResult/?budget=" + $_GET('budget');
+
     // Modifi le cluster
     var image = 'http://localhost/parcour-5/web/images/cycles.png';
     var image1 = '../images/Calque0.png';
-    ajaxGet("http://parcour-5/clustersAll/", function (reponse) {
+    ajaxGet(budget, function (reponse) {
 
         // Transforme la rÃ©ponse en un tableau d'adresses
         var objects = JSON.parse(reponse);
