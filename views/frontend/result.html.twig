@@ -2,23 +2,7 @@
 
 {% block content %}
     <div class="title-show">
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+
         {% for loisirs in loisir %}
 
             {{ loisirs.title }}
@@ -31,10 +15,11 @@
         <div id="infoLoisirs">essai</div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <!-- script qui appel la map -->
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=res"></script>
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
     <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
     <script src="http://localhost/parcour-5/web/js/map-result.js"></script>
     <script src="http://localhost/parcour-5/web/js/menu.js"></script>

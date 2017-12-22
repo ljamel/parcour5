@@ -18,7 +18,7 @@ $app->get('/login', function(Request $request) use ($app) {
 })->bind('login');
 
 // Home page
-$app->get('/', function () use ($app) {
+$app->match('/', function () use ($app) {
     $loisirs = $app['dao.loisir']->findAllIndex();
     // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
     $loisir = $app['dao.loisir']->find(1);
@@ -55,11 +55,11 @@ $app->get('/liste/', function () use ($app) {
     return $app['twig']->render('frontend/liste.html.twig', array('loisir' => $loisirs));
 })->bind('liste/');
 
-// Resultat de recherche
-$app->get('/result/', function () use ($app) {
-    $loisir = $app['dao.loisir']->findResult();
+// Resultat de recherche methode match accepte get et post
+$app->match('/result/', function (Request $request) use ($app) {
+    $loisir = $app['dao.loisir']->findResult($request);
     return $app['twig']->render('frontend/result.html.twig', array('loisir' => $loisir));
-})->bind('result/?budget=');
+})->bind('result/');
 
 // loisir details with comments
 $app->get('/geoloc', function () use ($app) {
@@ -86,7 +86,7 @@ $app->get('/clustersAll/', function () use ($app) {
     return $app['twig']->render('map/clustersAll.html.twig', array('loisirs' => $loisirs));
 })->bind('clusters/');
 
-$app->get('/clustersResult/', function () use ($app) {
+$app->match('/clustersResult/', function () use ($app) {
     $loisirs = $app['dao.loisir']->findResult();
     return $app['twig']->render('map/clustersResult.html.twig', array('loisirs' => $loisirs));
 })->bind('clustersResult/');

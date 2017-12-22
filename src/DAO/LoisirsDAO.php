@@ -14,6 +14,8 @@ class LoisirsDAO extends DAO
      */
     public function findAllIndex() {
 
+
+
         if(isset($_GET["page"])){} else { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
 
         $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
@@ -62,10 +64,12 @@ class LoisirsDAO extends DAO
     // Resultat de recherche
     public function findResult() {
 
-        // requête preparer qui evite les injections SQL
         $loisirs = array();
-        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix");
+        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance");
         $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));
+        $stmt->bindValue(':lat', htmlspecialchars($_GET['lat']));
+        $stmt->bindValue(':lng', htmlspecialchars($_GET['lng']));
+        $stmt->bindValue(':Distance', htmlspecialchars($_GET['Distance']));
 
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {

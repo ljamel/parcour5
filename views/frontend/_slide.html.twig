@@ -32,9 +32,9 @@
         <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-bebe.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-famille.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-ager.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-map.jpg"> </a>  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
 
         <span class="custom-dropdown custom-dropdown--white">
-        <select placeholder="Budget" name="budget" class="custom-dropdown__select custom-dropdown__select--white">
+        <select name="budget" class="custom-dropdown__select custom-dropdown__select--white">
             <option value="0">GRATUIT</option>
-            <option value="50">Moins de 50 €</option>
+            <option value="20">Moins de 20 €</option>
             <option value="100">Moins de 100 €</option>
             <option value="200">Moins de 200 €</option>
             <option value="400">Moins de 400 €</option>
@@ -42,13 +42,24 @@
         </select>
         </span>
 
-        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Départ" name="depart">
-        <i class="fa fa-map-marker fa-min ico-recherche" aria-hidden="true" title="Loisirs"></i><input id="pac-input" placeholder="Périmètre" name="distance">
+        <!-- Ville de départ pour position du curseur -->
+        <i class="fa fa-map-marker fa-min ico-recherche" title="Loisirs"></i><input  id="address" placeholder="Départ" name="depart" value="Ville"> <span  id="position"></span>
+
+        <span class="custom-dropdown custom-dropdown--white">
+        <select name="Distance" class="custom-dropdown__select custom-dropdown__select--white">
+            <option value="0.07">7 kms</option>
+            <option value="0.2">20 kms</option>
+            <option value="0.30">30 kms</option>
+            <option value="0.56">56 kms</option>
+            <option value="1.10">110 kms</option>
+        </select>
+        </span>
 
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="datepicker" id="from" name="from" placeholder="Du">
         <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i><input type="text" id="to" name="to" placeholder="Au">
 
-        <input class="recherche" type="submit" value="Chercher" type="button">
+
+        <input id="pac-input" class="recherche" type="submit" value="Chercher" disabled>
     </form>
 </div>
 
