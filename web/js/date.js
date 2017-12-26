@@ -1,7 +1,7 @@
 $(function () {
-    $("#datepicker").datepicker({minDate: 0, maxDate: "+5M +10D"}, $.datepicker.regional["fr"]);
+    $("#loisir_dateDebut").datepicker({minDate: 0, maxDate: "+5M +10D"}, $.datepicker.regional["fr"]);
     $("#locale").on("change", function () {
-        $("#datepicker").datepicker("option",
+        $("#loisir_dateDebut").datepicker("option",
             $.datepicker.regional[$(this).val()]);
     });
 });
@@ -22,7 +22,7 @@ jQuery(function ($) {
         dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
         dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
         weekHeader: 'Sm',
-        dateFormat: 'dd-mm-yy',
+        dateFormat: 'mm, dd, yy',
         firstDay: 1,
         isRTL: false,
         showMonthAfterYear: false,
@@ -36,8 +36,8 @@ jQuery(function ($) {
 });
 
 $(function () {
-    var dateFormat = "dd/mm/yy",
-        from = $("#from")
+    var dateFormat = "mm, dd, yy",
+        from = $("#loisir_dateDebut")
             .datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
@@ -46,7 +46,7 @@ $(function () {
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this));
             }),
-        to = $("#to").datepicker({
+        to = $("#loisir_dateFin").datepicker({
             defaultDate: "+1w",
             changeMonth: true,
             numberOfMonths: 3

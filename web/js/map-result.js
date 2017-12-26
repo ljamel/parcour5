@@ -14,11 +14,16 @@ function result() {
         }
         return vars;
     }
-    console.log(localStorage.getItem(('geocode')))
-    var geo = localStorage.getItem(('geocode'));
+    console.log(localStorage.getItem(('geocode')));
+
+    if($_GET('Distance') == 0.07) { var zoom = 12}
+    if($_GET('Distance') == 0.20) { var zoom = 10}
+    if($_GET('Distance') == 0.56) { var zoom = 9}
+    if($_GET('Distance') == 1.10) { var zoom = 8}
+
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
+        zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: {   lat: parseFloat($_GET('lat')),
                     lng: parseFloat($_GET('lng'))
@@ -52,14 +57,13 @@ function result() {
                     position: paris,
                     icon: image,
                     map: map,
-                    title: 'Location vÃ©lib',
+                    title: 'Mes loisirs',
                     zIndex: 2000
                 });
 
                 // affiche les infos de la station au clique
                 marker.addListener('click', function () {
 
-                    console.log('ok');
                     if (window.matchMedia("(max-width: 700px)").matches) {
                         // Mobile
                         document.getElementById('map').style.width = 100 + "%";
@@ -97,5 +101,4 @@ function result() {
 
 
 }
-
 var locations = []

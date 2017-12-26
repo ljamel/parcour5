@@ -12,11 +12,15 @@ class LoisirsDAO extends DAO
      *
      * @return array A list of all loisirs.
      */
-    public function findAllIndex() {
+    public function findAllIndex()
+    {
 
 
-
-        if(isset($_GET["page"])){} else { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
+        if (isset($_GET["page"])) {
+        } else {
+            $_GET["page"] = 0;
+            $_GET["pageSuivant"] = 6;
+        }
 
         $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
@@ -30,9 +34,11 @@ class LoisirsDAO extends DAO
         return $loisirs;
     }
 
-    public function findAllMap() {
+    public function findAllMap()
+    {
 
-        $debut = 0; $limit = 60;
+        $debut = 0;
+        $limit = 60;
 
         $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
@@ -46,7 +52,8 @@ class LoisirsDAO extends DAO
         return $loisirs;
     }
 
-    public function findAll() {
+    public function findAll()
+    {
 
 
         $sql = 'SELECT * FROM t_loisirs  ORDER BY art_id DESC ';
@@ -62,18 +69,34 @@ class LoisirsDAO extends DAO
     }
 
     // Resultat de recherche
-    public function findResult() {
-
+    public function findResult()
+    {
         $loisirs = array();
-        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance");
+        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time");
         $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));
         $stmt->bindValue(':lat', htmlspecialchars($_GET['lat']));
         $stmt->bindValue(':lng', htmlspecialchars($_GET['lng']));
         $stmt->bindValue(':Distance', htmlspecialchars($_GET['Distance']));
+        $stmt->bindValue(':time', time());
 
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {
                 $loisirId = $row['art_id'];
+
+
+                $lat_a_degre = $_GET['lat'];
+                $lon_a_degre = $_GET['lng'];
+                $lat_b_degre = $row['position_LAT'];
+                $lon_b_degre = $row['position_LNG'];
+                $R = 6378000; //Rayon de la terre en mètre
+                $lat_a = (pi() * $lat_a_degre) / 180;
+                $lon_a = (pi() * $lon_a_degre) / 180;
+                $lat_b = (pi() * $lat_b_degre) / 180;
+                $lon_b = (pi() * $lon_b_degre) / 180;
+                $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
+                $row['distance'] = intval($distance);
+                $this->buildDomainObject($row);
+
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
             }
         }
@@ -87,7 +110,8 @@ class LoisirsDAO extends DAO
      * @param array $row The DB row containing loisir data.
      * @return \MicroCMS\Domain\Loisir
      */
-    protected function buildDomainObject(array $row) {
+    protected function buildDomainObject(array $row)
+    {
         $loisir = new Loisir();
         $loisir->setId($row['art_id']);
         $loisir->setTitle($row['art_title']);
@@ -101,10 +125,13 @@ class LoisirsDAO extends DAO
         $loisir->setLien($row['lien']);
         $loisir->setPositionLAT($row['position_LAT']);
         $loisir->setPositionLNG($row['position_LNG']);
+        $loisir->setDistance($row['distance']);
+
         return $loisir;
     }
 
-    public function find($id) {
+    public function find($id)
+    {
         $sql = "select * from t_loisirs where art_id=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id));
 
@@ -114,25 +141,39 @@ class LoisirsDAO extends DAO
             throw new \Exception("No loisir matching id " . $id);
     }
 
-    public function save(Loisir $article) {
+    public function save(Loisir $article)
+    {
 
 
         $md5 = md5(uniqid(rand(1, 100000), true));
         $name = $md5 . $_FILES['loisir']['name']['image'];
 
+        $dateD = $article->getDateDebut();
+        $dateDe = explode(",", $dateD);
+        $dateDebut = mktime(20, 12, 20, $dateDe[0], $dateDe[1], $dateDe[2]);
+
+        $dateF = $article->getDateFin();
+        $dateFe = explode(",", $dateF);
+        $dateFin = mktime(20, 12, 20, $dateFe[0], $dateFe[1], $dateFe[2]);
+
         $loisirData = array(
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
+            'date_debut' => $dateDebut,
+            'date_fin' => $dateFin,
             'art_image' => $name,
             'etat' => $article->getEtat(),
             'art_position' => $article->getPosition(),
         );
 
+
         $loisirDataAdd = array(
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
+            'date_debut' => $dateDebut,
+            'date_fin' => $dateFin,
             'art_image' => $name,
             'art_position' => $article->getPosition(),
         );
@@ -163,7 +204,8 @@ class LoisirsDAO extends DAO
      *
      * @param integer $id The article id.
      */
-    public function delete($id) {
+    public function delete($id)
+    {
         // Delete the article
         $this->getDb()->delete('t_loisirs', array('art_id' => $id));
     }

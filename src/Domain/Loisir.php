@@ -41,6 +41,12 @@ class Loisir
 
     private $lien;
 
+    private $distance;
+
+    private $date_debut;
+
+    private $date_fin;
+
     /*
      * $etat Permet de savoir l'etat du loisirs poster 0 = en attente, 1 = publier, 3 = signaler
      */
@@ -144,6 +150,30 @@ class Loisir
     }
     public function setLien($lien) {
         $this->lien = $lien;
+        return $this;
+    }
+
+    public function getDistance()  {
+        return $this->distance;
+    }
+    public function setDistance($distance) {
+        $this->distance = $distance;
+        return $this;
+    }
+
+    public function getDateDebut() {
+        return $this->date_debut;
+    }
+    public function setDateDebut($date_debut) {
+        $this->date_debut = $date_debut;
+        return $this;
+    }
+
+    public function getDateFin() {
+        return $this->date_fin;
+    }
+    public function setDateFin($date_fin) {
+        $this->date_fin = $date_fin;
         return $this;
     }
 }

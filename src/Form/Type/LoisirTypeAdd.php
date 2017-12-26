@@ -22,6 +22,9 @@ class LoisirTypeAdd extends AbstractType
             ->add('position', TextType::class)
             ->add('image', FileType::class)
 
+            ->add('dateDebut', textType::class)
+            ->add('dateFin', textType::class)
+
             ->add('content', TextareaType::class);
     }
 

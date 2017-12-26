@@ -62,6 +62,30 @@
         </div>
 
         <div class="form-group">
+            {{ form_label(loisirForm.dateDebut, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.dateDebut) }}
+                {{ form_widget(loisirForm.dateDebut, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(loisirForm.dateFin, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.dateFin) }}
+                {{ form_widget(loisirForm.dateFin, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
             {{ form_label(loisirForm.lien, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
