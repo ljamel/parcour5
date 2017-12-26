@@ -74,8 +74,8 @@ class LoisirsDAO extends DAO
         $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time");
         $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));
-        $stmt->bindValue(':lat', htmlspecialchars($_GET['lat']));
-        $stmt->bindValue(':lng', htmlspecialchars($_GET['lng']));
+        $stmt->bindValue(':lat', htmlspecialchars($_GET['loisirpositionLat']));
+        $stmt->bindValue(':lng', htmlspecialchars($_GET['loisirpositionLng']));
         $stmt->bindValue(':Distance', htmlspecialchars($_GET['Distance']));
         $stmt->bindValue(':time', time());
 
@@ -84,8 +84,8 @@ class LoisirsDAO extends DAO
                 $loisirId = $row['art_id'];
 
 
-                $lat_a_degre = $_GET['lat'];
-                $lon_a_degre = $_GET['lng'];
+                $lat_a_degre = $_GET['loisirpositionLat'];
+                $lon_a_degre = $_GET['loisirpositionLng'];
                 $lat_b_degre = $row['position_LAT'];
                 $lon_b_degre = $row['position_LNG'];
                 $R = 6378000; //Rayon de la terre en mètre
@@ -172,6 +172,8 @@ class LoisirsDAO extends DAO
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
+            'position_LAT' => $article->getPositionLAT(),
+            'position_LNG' => $article->getPositionLNG(),
             'date_debut' => $dateDebut,
             'date_fin' => $dateFin,
             'art_image' => $name,

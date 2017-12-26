@@ -4,13 +4,10 @@
     <list default="true" id="22429915-698c-4db8-843e-c9c21f51e4e1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" afterPath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Domain/Loisir.php" afterPath="$PROJECT_DIR$/src/Domain/Loisir.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" afterPath="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" afterPath="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/backend/loisir_form.html.twig" afterPath="$PROJECT_DIR$/views/backend/loisir_form.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/_slide.html.twig" afterPath="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/result.html.twig" afterPath="$PROJECT_DIR$/views/frontend/result.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/date.js" afterPath="$PROJECT_DIR$/web/js/date.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/index.html.twig" afterPath="$PROJECT_DIR$/views/frontend/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/geocode.js" afterPath="$PROJECT_DIR$/web/js/geocode.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map-result.js" afterPath="$PROJECT_DIR$/web/js/map-result.js" />
     </list>
@@ -23,31 +20,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LoisirsDAO.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoisirsDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="86" column="44" lean-forward="true" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
               <folding>
-                <marker date="1514279999814" expanded="true" signature="425:548" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="1002:1087" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="1002:1119" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="1515:1560" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="1515:1561" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="2026:2199" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="2026:2208" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="2026:2252" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514279999814" expanded="true" signature="4471:4509" ph="select * fro... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="425:548" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="1002:1087" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="1002:1119" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="1515:1560" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="1515:1561" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="2026:2199" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="2026:2208" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="2026:2252" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514295900186" expanded="true" signature="4527:4565" ph="select * fro... t_loisirs" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loisir_form.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/backend/loisir_form.html.twig">
+      <file leaf-file-name="map-result.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/map-result.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state relative-caret-position="297">
+              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -56,8 +73,8 @@
       <file leaf-file-name="Loisir.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Domain/Loisir.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="172" column="31" lean-forward="true" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="31" />
+            <state relative-caret-position="232">
+              <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -66,8 +83,8 @@
       <file leaf-file-name="LoisirTypeAdd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state relative-caret-position="260">
+              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -76,38 +93,28 @@
       <file leaf-file-name="loisir_add_form.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/backend/loisir_add_form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="79" column="33" lean-forward="false" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+            <state relative-caret-position="377">
+              <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/date.js">
+      <file leaf-file-name="geocode.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/geocode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="243">
+              <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/frontend/index.html.twig">
+      <file leaf-file-name="result.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/frontend/result.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="-54">
+              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -116,8 +123,8 @@
       <file leaf-file-name="_slide.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/frontend/_slide.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-162">
-              <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+            <state relative-caret-position="98">
+              <caret line="45" column="184" lean-forward="true" selection-start-line="45" selection-start-column="184" selection-end-line="45" selection-end-column="184" />
               <folding />
             </state>
           </provider>
@@ -143,6 +150,8 @@
       <find>pac</find>
       <find>markerC</find>
       <find>markers</find>
+      <find>address</find>
+      <find>lat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,20 +174,20 @@
         <option value="$PROJECT_DIR$/web/js/auto-complete.js" />
         <option value="$PROJECT_DIR$/web/js/map.js" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
-        <option value="$PROJECT_DIR$/views/frontend/index.html.twig" />
         <option value="$PROJECT_DIR$/../essai.php" />
-        <option value="$PROJECT_DIR$/web/js/geocode.js" />
-        <option value="$PROJECT_DIR$/web/js/map-result.js" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/views/frontend/result.html.twig" />
         <option value="$PROJECT_DIR$/src/Domain/Loisir.php" />
         <option value="$PROJECT_DIR$/views/backend/loisir_form.html.twig" />
-        <option value="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" />
-        <option value="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" />
-        <option value="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
         <option value="$PROJECT_DIR$/web/js/date.js" />
         <option value="$USER_HOME$/Desktop/coordonnees.js" />
+        <option value="$PROJECT_DIR$/views/frontend/index.html.twig" />
+        <option value="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
+        <option value="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" />
+        <option value="$PROJECT_DIR$/web/js/geocode.js" />
         <option value="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
+        <option value="$PROJECT_DIR$/web/js/map-result.js" />
       </list>
     </option>
   </component>
@@ -359,12 +368,12 @@
       <workItem from="1513241311891" duration="1877000" />
       <workItem from="1513273903084" duration="42190000" />
       <workItem from="1513703713122" duration="52452000" />
-      <workItem from="1514027112901" duration="28547000" />
+      <workItem from="1514027112901" duration="35170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157822000" />
+    <option name="totallyTimeSpent" value="164445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -577,6 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" column="3" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="19" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -598,14 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -673,50 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/geocode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="59" column="55" lean-forward="true" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/map-result.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="96" column="11" lean-forward="true" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../essai.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="57" column="54" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/frontend/result.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Loisir.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="172" column="31" lean-forward="true" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -729,42 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/frontend/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/backend/loisir_add_form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="79" column="33" lean-forward="false" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/frontend/_slide.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-162">
-          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -785,21 +715,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/frontend/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/frontend/_slide.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="45" column="184" lean-forward="true" selection-start-line="45" selection-start-column="184" selection-end-line="45" selection-end-column="184" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/frontend/result.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/backend/loisir_add_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/Loisir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/geocode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="86" column="44" lean-forward="true" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
           <folding>
-            <marker date="1514279999814" expanded="true" signature="425:548" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="1002:1087" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="1002:1119" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="1515:1560" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="1515:1561" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="2026:2199" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="2026:2208" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="2026:2252" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514279999814" expanded="true" signature="4471:4509" ph="select * fro... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="425:548" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="1002:1087" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="1002:1119" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="1515:1560" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="1515:1561" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="2026:2199" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="2026:2208" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="2026:2252" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514295900186" expanded="true" signature="4527:4565" ph="select * fro... t_loisirs" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/map-result.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

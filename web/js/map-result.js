@@ -25,13 +25,13 @@ function result() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: {   lat: parseFloat($_GET('lat')),
-                    lng: parseFloat($_GET('lng'))
+        center: {   lat: parseFloat($_GET('loisirpositionLat')),
+                    lng: parseFloat($_GET('loisirpositionLng'))
                 }
     });
 
 
-    var budget = "/clustersResult/?budget=" + $_GET('budget')+"&lat="+$_GET('lat')+"&lng="+$_GET('lng')+"&Distance="+$_GET('Distance');
+    var budget = "/clustersResult/?budget=" + $_GET('budget')+"&lat="+$_GET('loisirpositionLat')+"&lng="+$_GET('loisirpositionLng')+"&loisirpositionLat="+$_GET('loisirpositionLat')+"&loisirpositionLng="+$_GET('loisirpositionLng')+"&Distance="+$_GET('Distance');
 
     // Modifi le cluster
     var image = 'http://localhost/parcour-5/web/images/cycles.png';

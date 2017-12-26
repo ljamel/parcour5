@@ -13,7 +13,7 @@ function initAutocomplete() {
 
 // Create the search box and link it to the UI element.
 // j'ai été obliger de rassembler autocomplete avec géocode pour les faire fonctionner les deux
-    var input = document.getElementById('address');
+    var input = document.getElementById('loisir_position');
     var searchBox = new google.maps.places.SearchBox(input);
 
 
@@ -62,7 +62,7 @@ function initAutocomplete() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('address').value;
+    var address = document.getElementById('loisir_position').value;
     geocoder.geocode({'address': address}, function (results, status) {
         if (status === 'OK') {
 
@@ -77,13 +77,18 @@ function geocodeAddress(geocoder, resultsMap) {
             console.log("Valeur = " + localStorage.getItem('geocode'));
 
             var geo = localStorage.getItem('geocode');
-            var essai = geo.replace(/([^])/, '<input  type=text class=none name=lat value=');
-            var geo2 = essai.replace(',', ' ><input type=text class=none name=lng value=');
+            var essai = geo.replace(/([^])/, '<input  type=text class=none name=loisir[positionLat] value=');
+            var geo2 = essai.replace(',', ' ><input type=text class=none name=loisir[positionLng] value=');
             var geo3 = geo2.replace(/([)$])/, ' >');
 
-            localStorage.setItem('geocode', geo3);
+            var geo4 = localStorage.getItem('geocode');
+            var essai4 = geo4.replace(/([^])/, '<input  type=text class=none name=loisirpositionLat value=');
+            var geo24 = essai4.replace(',', ' ><input type=text class=none name=loisirpositionLng value=');
+            var geo34 = geo24.replace(/([)$])/, ' >');
 
-            document.getElementById('position').innerHTML = geo3;
+            localStorage.setItem('geocode', geo34);
+
+            document.getElementById('position').innerHTML = geo3 + geo34;
 
             console.log(geo3);
         } else {
