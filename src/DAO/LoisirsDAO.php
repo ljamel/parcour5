@@ -67,11 +67,6 @@ class LoisirsDAO extends DAO
     // Resultat de recherche
     public function findResult()
     {
-        if (isset($_GET["loisirpositionLat"]) === false ) {
-            header('Location: /geoloc');
-            die;
-        }
-
         $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
         $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));

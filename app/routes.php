@@ -57,7 +57,12 @@ $app->get('/liste/', function () use ($app) {
 
 // Resultat de recherche methode match accepte get et post
 $app->match('/result/', function (Request $request) use ($app) {
-    $loisir = $app['dao.loisir']->findResult($request);
+    if (isset($_GET["loisirpositionLat"]) === false ) {
+        header('Location: /geoloc');
+        return $app['twig']->render('frontend/geoloc.html.twig');
+    } else {
+        $loisir = $app['dao.loisir']->findResult($request);
+    }
     return $app['twig']->render('frontend/result.html.twig', array('loisir' => $loisir));
 })->bind('result/');
 
