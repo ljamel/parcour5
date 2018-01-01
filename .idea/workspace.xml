@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22429915-698c-4db8-843e-c9c21f51e4e1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore/JetBrains.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gitignore/JetBrains.gitignore" afterPath="$PROJECT_DIR$/gitignore/JetBrains.gitignore" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -99,8 +99,8 @@
       <file leaf-file-name="JetBrains.gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gitignore/JetBrains.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="599">
+              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -323,12 +323,12 @@
       <workItem from="1513241311891" duration="1877000" />
       <workItem from="1513273903084" duration="42190000" />
       <workItem from="1513703713122" duration="52452000" />
-      <workItem from="1514027112901" duration="89071000" />
+      <workItem from="1514027112901" duration="89187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218346000" />
+    <option name="totallyTimeSpent" value="218462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -789,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gitignore/JetBrains.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="599">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
