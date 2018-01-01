@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22429915-698c-4db8-843e-c9c21f51e4e1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/pin.png" afterPath="$PROJECT_DIR$/web/images/pin.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.php" afterPath="$PROJECT_DIR$/app/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" afterPath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Domain/Loisir.php" afterPath="$PROJECT_DIR$/src/Domain/Loisir.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/Type/LoisirType.php" afterPath="$PROJECT_DIR$/src/Form/Type/LoisirType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" afterPath="$PROJECT_DIR$/src/Form/Type/LoisirTypeAdd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" afterPath="$PROJECT_DIR$/views/backend/loisir_add_form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/_slide.html.twig" afterPath="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/geoloc.html.twig" afterPath="$PROJECT_DIR$/views/frontend/geoloc.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/index.html.twig" afterPath="$PROJECT_DIR$/views/frontend/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/liste.html.twig" afterPath="$PROJECT_DIR$/views/frontend/liste.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/result.html.twig" afterPath="$PROJECT_DIR$/views/frontend/result.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.html.twig" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/map/clusters.html.twig" afterPath="$PROJECT_DIR$/views/map/clusters.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/map/clustersAll.html.twig" afterPath="$PROJECT_DIR$/views/map/clustersAll.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/map/clustersResult.html.twig" afterPath="$PROJECT_DIR$/views/map/clustersResult.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/geocode.js" afterPath="$PROJECT_DIR$/web/js/geocode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map-liste.js" afterPath="$PROJECT_DIR$/web/js/map-liste.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map-result.js" afterPath="$PROJECT_DIR$/web/js/map-result.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map.js" afterPath="$PROJECT_DIR$/web/js/map.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,23 +74,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoisirsDAO.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoisirsDAO.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="405">
+              <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
               <folding>
-                <marker date="1514758154292" expanded="true" signature="385:448" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="385:508" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="1029:1126" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="1029:1158" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="1554:1599" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="1554:1600" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="2194:2367" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="2194:2376" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="2194:2420" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="2194:2433" ph="SELECT * FRO... t_loisirs" />
-                <marker date="1514758154292" expanded="true" signature="4765:4803" ph="select * fro... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="386:449" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="386:509" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="1031:1128" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="1031:1160" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="1556:1601" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="1556:1602" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="2196:2369" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="2196:2378" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="2196:2422" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="2196:2435" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1514803910810" expanded="true" signature="4767:4805" ph="select * fro... t_loisirs" />
               </folding>
             </state>
           </provider>
@@ -137,7 +116,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="194">
@@ -214,7 +193,6 @@
         <option value="$PROJECT_DIR$/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/js/geocode.js" />
         <option value="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
-        <option value="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/web/js/map-result.js" />
         <option value="$PROJECT_DIR$/views/map/clustersAll.html.twig" />
@@ -222,6 +200,7 @@
         <option value="$PROJECT_DIR$/web/js/map.js" />
         <option value="$PROJECT_DIR$/views/frontend/geoloc.html.twig" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
       </list>
     </option>
   </component>
@@ -402,12 +381,12 @@
       <workItem from="1513241311891" duration="1877000" />
       <workItem from="1513273903084" duration="42190000" />
       <workItem from="1513703713122" duration="52452000" />
-      <workItem from="1514027112901" duration="84451000" />
+      <workItem from="1514027112901" duration="87721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213726000" />
+    <option name="totallyTimeSpent" value="216996000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -789,26 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <marker date="1514758154292" expanded="true" signature="385:448" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="385:508" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="1029:1126" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="1029:1158" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="1554:1599" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="1554:1600" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="2194:2367" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="2194:2376" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="2194:2420" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="2194:2433" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1514758154292" expanded="true" signature="4765:4803" ph="select * fro... t_loisirs" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -870,6 +829,26 @@
         <state relative-caret-position="194">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+          <folding>
+            <marker date="1514803910810" expanded="true" signature="386:449" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="386:509" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="1031:1128" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="1031:1160" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="1556:1601" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="1556:1602" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="2196:2369" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="2196:2378" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="2196:2422" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="2196:2435" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1514803910810" expanded="true" signature="4767:4805" ph="select * fro... t_loisirs" />
+          </folding>
         </state>
       </provider>
     </entry>

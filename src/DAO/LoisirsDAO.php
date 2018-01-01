@@ -15,7 +15,7 @@ class LoisirsDAO extends DAO
     public function findAllIndex()
     {
 
-        if (isset($_GET["page"]) == false ) { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
+        if (isset($_GET["page"]) === false ) { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
 
         $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
@@ -32,7 +32,7 @@ class LoisirsDAO extends DAO
     public function findAllMap()
     {
 
-        if (isset($_GET["cat"]) == false ) { $_GET["cat"] = "1" ;}
+        if (isset($_GET["cat"]) === false ) { $_GET["cat"] = "1" ;}
         $debut = 0;
         $limit = 60;
 
@@ -67,9 +67,9 @@ class LoisirsDAO extends DAO
     // Resultat de recherche
     public function findResult()
     {
-        if (isset($_GET["loisirpositionLat"]) == false ) {
+        if (isset($_GET["loisirpositionLat"]) === false ) {
             header('Location: /geoloc');
-            exit;
+            die;
         }
 
         $loisirs = array();
