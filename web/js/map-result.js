@@ -16,7 +16,7 @@ function result() {
     }
     console.log(localStorage.getItem(('geocode')));
 
-    if($_GET('Distance') == 0.07) { var zoom = 12}
+    if($_GET('Distance') <= 0.10) { var zoom = 12}
     if($_GET('Distance') == 0.20) { var zoom = 10}
     if($_GET('Distance') == 0.56) { var zoom = 9}
     if($_GET('Distance') == 1.10) { var zoom = 8}
@@ -31,12 +31,12 @@ function result() {
     });
 
 
-    var budget = "/clustersResult/?budget=" + $_GET('budget')+"&lat="+$_GET('loisirpositionLat')+"&lng="+$_GET('loisirpositionLng')+"&loisirpositionLat="+$_GET('loisirpositionLat')+"&loisirpositionLng="+$_GET('loisirpositionLng')+"&Distance="+$_GET('Distance');
+    var url = "/clustersResult/?budget=" + $_GET('budget')+"&lat="+$_GET('loisirpositionLat')+"&lng="+$_GET('loisirpositionLng')+"&loisirpositionLat="+$_GET('loisirpositionLat')+"&loisirpositionLng="+$_GET('loisirpositionLng')+"&Distance="+$_GET('Distance');
 
     // Modifi le cluster
     var image = 'http://localhost/parcour-5/web/images/cycles.png';
     var image1 = '../images/Calque0.png';
-    ajaxGet(budget, function (reponse) {
+    ajaxGet(url, function (reponse) {
 
         // Transforme la rÃ©ponse en un tableau d'adresses
         var objects = JSON.parse(reponse);
@@ -72,6 +72,9 @@ function result() {
                         document.getElementById('map').style.width = 65 + "%";
                     }
 
+                    document.getElementById('infoLoisirs').style.display = "block";
+                    document.getElementById('infoLoisirs').innerHTML = object.name + "<img src="+ object.image + "alt=" + object.name + ">";
+
                 });
             });
             // position pour groupe de clusters
@@ -96,9 +99,7 @@ function result() {
             imagePath: 'http://localhost/parcour-5/web/images/m'
         });
 
-
     });
-
 
 }
 var locations = []

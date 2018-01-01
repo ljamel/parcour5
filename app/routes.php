@@ -63,8 +63,7 @@ $app->match('/result/', function (Request $request) use ($app) {
 
 // loisir details with comments
 $app->get('/geoloc', function () use ($app) {
-    $loisirs = $app['dao.loisir']->findAllMap();
-    return $app['twig']->render('frontend/geoloc.html.twig', array('loisir' => $loisirs));
+    return $app['twig']->render('frontend/geoloc.html.twig');
 })->bind('geoloc');
 
 
@@ -82,7 +81,7 @@ $app->get('/clusters/', function () use ($app) {
 })->bind('api/');
 
 $app->get('/clustersAll/', function () use ($app) {
-    $loisirs = $app['dao.loisir']->findAllMAp();
+    $loisirs = $app['dao.loisir']->findResult();
     return $app['twig']->render('map/clustersAll.html.twig', array('loisirs' => $loisirs));
 })->bind('clusters/');
 
@@ -126,7 +125,7 @@ $app->match('/admin/loisir/{id}/edit', function($id, Request $request) use ($app
         $app['dao.loisir']->save($loisir);
         $app['session']->getFlashBag()->add('success', 'The loisir was successfully updated.');
     }
-    return $app['twig']->render('backend/loisir_form.html.twig', array(
+    return $app['twig']->render('backend/loisir_add_form.html.twig', array(
         'title' => 'Edit loisir',
         'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));

@@ -17,10 +17,19 @@ class LoisirType extends AbstractType
         $builder
             ->add('etat', ChoiceType::class, array(
                 'choices' => array('0' => 'En attente', '1' => 'Publier', '3' => 'Refuser' ) ))
+
+            ->add('type', ChoiceType::class, array(
+                'choices' => array('0' => 'bebe', '1' => 'toutes la famille', '2' => 'senior') ))
             ->add('title', TextType::class)
             ->add('lien', TextType::class)
             ->add('position', TextType::class)
+            ->add('positionLat', TextType::class)
+            ->add('positionLng', TextType::class)
+            ->add('imageModif', FileType::class)
             ->add('image', TextType::class)
+
+            ->add('dateDebut', textType::class)
+            ->add('dateFin', textType::class)
 
             ->add('content', TextareaType::class);
     }

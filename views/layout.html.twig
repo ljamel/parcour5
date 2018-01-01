@@ -30,8 +30,11 @@
             {% if app.user and is_granted('ROLE_ADMIN') %}
             <li><a id="blue-menu4"  href="/admin"> Administration </a></li>
             {% else %}
-            <li><a id="blue-menu4"  href="/loisir/add"> Proposer une activiter </a></li>
             <li><a id="blue-menu4"  href="/user/add"> Inscription </a></li>
+            {% endif %}
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a id="blue-menu4"  href="/loisir/add"> Proposer une activiter </a></li>
             {% endif %}
         </ul>
     </nav>

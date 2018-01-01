@@ -36,6 +36,7 @@ body {
 
 #mapInfo {
     display: flex;
+    margin-top: 70px;
 }
 
 #infoLoisirs {
@@ -225,6 +226,15 @@ nav {
     position: relative;
 }
 
+.sous-cat-plans {
+    display: none;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    background-color: honeydew;
+    position: relative;
+}
+
 .img-sous-menu {
     width: 110px;
 }
@@ -234,6 +244,14 @@ nav {
 }
 
 .fa.fa-bicycle.fa-min.fa-cat:hover + .sous-cat {
+    display: block;
+}
+
+.sous-cat-plans:hover {
+    display: block;
+}
+
+.fa.fa-map-o.fa-min.fa-cat:hover + .sous-cat-plans {
     display: block;
 }
 
@@ -502,6 +520,9 @@ img.liste-main-unique {
     background-color: #F6F7F8;
     margin-left: 10%;
     margin-right: 71px;
+    margin-top: 60px;
+    height: 251px;
+    overflow: hidden;
 }
 
 .promo-acceuil {
@@ -523,7 +544,9 @@ img.liste-main-unique {
     text-align: right;
     color: #00BFFF;
 }
-
+.articleTitle {
+    display: grid;
+}
 div#page {
     display: flex;
     justify-content: space-between;

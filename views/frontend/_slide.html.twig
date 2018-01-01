@@ -29,7 +29,12 @@
 <div id="formulaire-recherche">
     <form action="result/" method="get">
         <p class="queFaire">QUE FAIRE</p>
-        <a class="fa fa-bicycle fa-min fa-cat"></a><a class="sous-cat"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-bebe.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-famille.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-ager.jpg"> <img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-map.jpg"> </a>  <a href="geoloc" title="PLANS"><i class="fa fa-map-o fa-min fa-cat" aria-hidden="true" title="Plans"></i></a> <i class="fa fa-map-signs fa-min fa-cat" aria-hidden="true" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+        <span class="fa fa-bicycle fa-min fa-cat" title="loisirs"></span><span class="sous-cat"><a href="/liste/?cat=1" title="enfants"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-bebe.jpg"></a> <a href="/liste/?cat=2" title="toutes la famille"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-famille.jpg"></a> <a href="/liste/?cat=3" title="senior"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-ager.jpg"></a>  </span>
+            <i class="fa fa-map-o fa-min fa-cat" title="Plans"></i> <span class="sous-cat-plans">
+            <a href="geoloc" title="PLANS"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/00cde0651656ce487431d1f49f74b094cat-map.jpg" alt="Me géolocaliser"></a> <a href="http://parcour-5/result/?budget=2&depart=Normandie%2C+France&loisir%5BpositionLat%5D=48.87987039999999&loisir%5BpositionLng%5D=0.17125290000001314&loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314&Distance=0.2&from=&to=" title="PLANS"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg" alt="Normandie"></a>
+            <a href="http://parcour-5/result/?budget=2&depart=Normandie%2C+France&loisir%5BpositionLat%5D=48.87987039999999&loisir%5BpositionLng%5D=0.17125290000001314&loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314&Distance=0.2&from=&to=" title="PLANS"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg" alt="Normandie"></a>
+        </span>
+        <i class="fa fa-map-signs fa-min fa-cat" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
 
         <span class="custom-dropdown custom-dropdown--white">
         <select name="budget" class="custom-dropdown__select custom-dropdown__select--white">
@@ -47,7 +52,7 @@
 
         <span class="custom-dropdown custom-dropdown--white">
         <select name="Distance" class="custom-dropdown__select custom-dropdown__select--white">
-            <option value="0.07">7 kms</option>
+            <option value="0.10">10 kms</option>
             <option value="0.2">20 kms</option>
             <option value="0.56">56 kms</option>
             <option value="1.10">110 kms</option>

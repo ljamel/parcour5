@@ -15,12 +15,7 @@ class LoisirsDAO extends DAO
     public function findAllIndex()
     {
 
-
-        if (isset($_GET["page"])) {
-        } else {
-            $_GET["page"] = 0;
-            $_GET["pageSuivant"] = 6;
-        }
+        if (isset($_GET["page"]) == false ) { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
 
         $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
@@ -37,10 +32,11 @@ class LoisirsDAO extends DAO
     public function findAllMap()
     {
 
+        if (isset($_GET["cat"]) == false ) { $_GET["cat"] = "1" ;}
         $debut = 0;
         $limit = 60;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . (int)$_GET["cat"] . ' AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -71,8 +67,13 @@ class LoisirsDAO extends DAO
     // Resultat de recherche
     public function findResult()
     {
+        if (isset($_GET["loisirpositionLat"]) == false ) {
+            header('Location: /geoloc');
+            exit;
+        }
+
         $loisirs = array();
-        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time");
+        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
         $stmt->bindValue(':prix', htmlspecialchars($_GET['budget']));
         $stmt->bindValue(':lat', htmlspecialchars($_GET['loisirpositionLat']));
         $stmt->bindValue(':lng', htmlspecialchars($_GET['loisirpositionLng']));
@@ -83,7 +84,7 @@ class LoisirsDAO extends DAO
             while ($row = $stmt->fetch()) {
                 $loisirId = $row['art_id'];
 
-
+                // formule pour calculer la distance
                 $lat_a_degre = $_GET['loisirpositionLat'];
                 $lon_a_degre = $_GET['loisirpositionLng'];
                 $lat_b_degre = $row['position_LAT'];
@@ -119,7 +120,7 @@ class LoisirsDAO extends DAO
         $loisir->setPosition($row['art_position']);
         $loisir->setImage($row['art_image']);
         $loisir->setPrix($row['prix']);
-        $loisir->setType($row['type']);
+        $loisir->setCategorie($row['type']);
         $loisir->setNote($row['note']);
         $loisir->setEtat($row['etat']);
         $loisir->setLien($row['lien']);
@@ -144,9 +145,21 @@ class LoisirsDAO extends DAO
     public function save(Loisir $article)
     {
 
+        if (isset($_FILES['loisir']['name']['image'])) {
+            $md5 = md5(uniqid(rand(1, 100000), true));
+            $name = $md5 . $_FILES['loisir']['name']['image'];
 
-        $md5 = md5(uniqid(rand(1, 100000), true));
-        $name = $md5 . $_FILES['loisir']['name']['image'];
+            $extensions_valides = array('jpg', 'jpeg', 'gif', 'png', 'ico', 'psd', 'pdf');
+            $extension_upload = strtolower(substr(strrchr($_FILES['loisir']['name']['image'], '.'), 1));
+            if (in_array($extension_upload, $extensions_valides)) {
+                // Upload l'image dans un fichiers Web/images
+                $uploads_dir = dirname(dirname(dirname(dirname(__FILE__)))) . '/parcour-5/web/images';
+                $tmp_name = $_FILES['loisir']['tmp_name']['image'];
+                move_uploaded_file($tmp_name, "$uploads_dir/$name");
+            }
+        } else {
+            $name = $article->getImageModif();
+        }
 
         $dateD = $article->getDateDebut();
         $dateDe = explode(",", $dateD);
@@ -156,15 +169,17 @@ class LoisirsDAO extends DAO
         $dateFe = explode(",", $dateF);
         $dateFin = mktime(20, 12, 20, $dateFe[0], $dateFe[1], $dateFe[2]);
 
+        // pour des raison de sécuriter j'ai mi deux array ci dessous afin d'empecher l'accer a la validation 'etat' coter utilisateur
         $loisirData = array(
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
             'date_debut' => $dateDebut,
             'date_fin' => $dateFin,
-            'art_image' => $name,
+            'art_image' => $article->getImage(),
             'etat' => $article->getEtat(),
             'art_position' => $article->getPosition(),
+            'type' => $article->getCategorie(),
         );
 
 
@@ -178,6 +193,7 @@ class LoisirsDAO extends DAO
             'date_fin' => $dateFin,
             'art_image' => $name,
             'art_position' => $article->getPosition(),
+            'type' => $article->getCategorie(),
         );
 
         if ($article->getId()) {
@@ -191,14 +207,7 @@ class LoisirsDAO extends DAO
             $article->setId($id);
         }
 
-        $extensions_valides = array('jpg', 'jpeg', 'gif', 'png', 'ico', 'psd', 'pdf');
-        $extension_upload = strtolower(substr(strrchr($_FILES['loisir']['name']['image'], '.'), 1));
-        if (in_array($extension_upload, $extensions_valides)) {
-            // Upload l'image dans un fichiers Web/images
-            $uploads_dir = dirname(dirname(dirname(dirname(__FILE__)))) . '/parcour-5/web/images';
-            $tmp_name = $_FILES['loisir']['tmp_name']['image'];
-            move_uploaded_file($tmp_name, "$uploads_dir/$name");
-        }
+
     }
 
     /**

@@ -7,17 +7,17 @@
 
         <div class="liste-main shadow-none">
             <a class="articleTitle"
-               href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.position|replace({",": "&positionN=", '%that%':80}) }}">
-                <img class="liste-main" src="{{ loisir.image }}">
+               href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
+                <img class="liste-main" src="http://localhost/parcour-5/web/images/{{ loisir.image }}">
                 <h2><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}">{{ loisir.title }}</a>
-                    <span class="type">{{ loisir.type|upper }}</span></h2>
+                    <span class="type">{{ loisir.categorie|upper }}</span></h2>
                 <p>{{ loisir.content[:178] }}... </p>
                 <div class="display">
                     <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position }}
                     </P>
                     <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }}</P>
                 </div>
-                <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.position|replace({",": "&positionN=", '%that%':80}) }}">
+                <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
                     <p class="reserver">Plus d'info</p></a>
             </a>
         </div>

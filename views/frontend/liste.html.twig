@@ -2,15 +2,37 @@
 
 {% block content %}
 
-<div id="mapInfo">
-    <div id="map"></div>
-    <div id="infoLoisirs">essai</div>
-</div>
+    {% for loisirs in loisir %}
 
-<!-- script qui appel la map -->
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap"></script>
-<script src="http://localhost/parcour-5/web/js/ajax.js"></script>
-<script src="http://localhost/parcour-5/web/js/map-liste.js"></script>
-<script src="http://localhost/parcour-5/web/js/menu.js"></script>
+
+        <div class="liste-resultat">
+            <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
+                <img class="promo-acceuil" src="{{ loisirs.image }}">
+            </a>
+
+            <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
+            <p>Distance {{ loisirs.distance }} Mètres</p>
+            <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Plans</P>
+                <P class="prix">{{ loisirs.prix|replace({0: "GRATUIT"}) }}</P>
+            </a>
+        </div>
+
+    {% endfor %}
+
+
+    <div id="mapInfo">
+        <div id="map"></div>
+        <div id="infoLoisirs">essai</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- script qui appel la map -->
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
+
+    <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
+    <script src="http://localhost/parcour-5/web/js/map-result.js"></script>
+    <script src="http://localhost/parcour-5/web/js/menu.js"></script>
 {% endblock %}

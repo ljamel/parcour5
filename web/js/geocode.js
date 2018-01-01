@@ -68,8 +68,7 @@ function geocodeAddress(geocoder, resultsMap) {
 
             console.log(results[0].geometry.location);
 
-            document.getElementById("pac-input").disabled = false;
-            document.getElementById("pac-input").style.backgroundColor = "#23527c";
+            document.getElementById("pac-input").innerHTML = "<input id=pac-input class=recherche type=submit value=Chercher>";
 
 
             localStorage.setItem('geocode', results[0].geometry.location);

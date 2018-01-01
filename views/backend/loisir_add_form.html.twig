@@ -11,9 +11,38 @@
         </div>
     {% endfor %}
 
+
+
     <div class="well">
+
         {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
 
+        <!-- restreindre l'accéer au autre utilisateur -->
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+            <div class="form-group">
+                {{ form_label(loisirForm.etat, null, { 'label_attr':  {
+                    'class': 'col-sm-4 control-label'
+                }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(loisirForm.etat) }}
+                    {{ form_widget(loisirForm.etat, { 'attr':  {
+                        'class': 'checkbox'
+                    }}) }}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="form-group">
+            {{ form_label(loisirForm.categorie, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.categorie) }}
+                {{ form_widget(loisirForm.categorie, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
         <div class="form-group">
             {{ form_label(loisirForm.title, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
@@ -50,6 +79,18 @@
         </div>
 
         <div class="form-group">
+            {{ form_label(loisirForm.imageModif, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.imageModif) }}
+                {{ form_widget(loisirForm.imageModif, { 'attr':  {
+                    'class': 'btn btn-primary'
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
             {{ form_label(loisirForm.lien, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
@@ -69,6 +110,7 @@
                 {{ form_errors(loisirForm.dateDebut) }}
                 {{ form_widget(loisirForm.dateDebut, { 'attr':  {
                     'class': 'form-control',
+                    'value': '12, 31, 2017',
                     'id': 'datepicker'
                 }}) }}
             </div>
@@ -82,7 +124,7 @@
                 {{ form_errors(loisirForm.dateFin) }}
                 {{ form_widget(loisirForm.dateFin, { 'attr':  {
                     'class': 'form-control',
-                    'value': '2147483647',
+                    'value': '12, 31, 2030',
                     'id': 'to'
                 }}) }}
             </div>

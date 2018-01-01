@@ -6,6 +6,7 @@ function map() {
     });
 
 
+    var image = 'http://localhost/parcour-5/web/images/cycles.png';
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
 
@@ -48,9 +49,10 @@ function map() {
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+            var urlLocalisation = "http://parcour-5/clustersAll/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10";
 
             // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map
-            ajaxGet("http://parcour-5/clustersAll/", function (reponse) {
+            ajaxGet(urlLocalisation, function (reponse) {
 
                 // Transforme la réponse en un tableau d'adresses
                 var objects = JSON.parse(reponse);
@@ -65,6 +67,7 @@ function map() {
                     var marker = new google.maps.Marker({
                         position: paris,
                         map: map,
+                        icon:image,
                         zIndex: 2000
                     });
 

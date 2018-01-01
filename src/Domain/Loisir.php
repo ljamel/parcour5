@@ -35,7 +35,7 @@ class Loisir
 
     private $prix;
 
-    private $type;
+    private $categorie;
 
     private $note;
 
@@ -46,6 +46,9 @@ class Loisir
     private $date_debut;
 
     private $date_fin;
+
+    private $imageModif;
+
 
     /*
      * $etat Permet de savoir l'etat du loisirs poster 0 = en attente, 1 = publier, 3 = signaler
@@ -113,6 +116,14 @@ class Loisir
         return $this;
     }
 
+    public function getImageModif() {
+        return $this->imageModif;
+    }
+    public function setImageModif($imageModif) {
+        $this->imageModif = $imageModif;
+        return $this;
+    }
+
     public function getPrix() {
         return $this->prix;
     }
@@ -121,11 +132,11 @@ class Loisir
         return $this;
     }
 
-    public function getType() {
-        return $this->type;
+    public function getCategorie() {
+        return $this->categorie;
     }
-    public function setType($type) {
-        $this->type = $type;
+    public function setCategorie($categorie) {
+        $this->categorie = $categorie;
         return $this;
     }
 
@@ -176,4 +187,5 @@ class Loisir
         $this->date_fin = $date_fin;
         return $this;
     }
+
 }
