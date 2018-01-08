@@ -10,6 +10,10 @@ function initAutocomplete() {
         geocodeAddress(geocoder, map);
     });
 
+    document.getElementById('pac-input').addEventListener('touchstart', function() {
+        geocodeAddress(geocoder, map);
+    });
+
 
 // Create the search box and link it to the UI element.
 // j'ai été obliger de rassembler autocomplete avec géocode pour les faire fonctionner les deux
@@ -96,4 +100,8 @@ function geocodeAddress(geocoder, resultsMap) {
     });
 
 
+}
+function outilsrecherche(){
+    console.log("menue activer");
+    document.getElementById('outils-recherche').style.display = "contents";
 }

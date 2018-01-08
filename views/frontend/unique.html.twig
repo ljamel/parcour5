@@ -5,14 +5,9 @@
     <div class="title-show">
         <div>
             <h2>{{ loisir.title }}</h2>
-            <img class="liste-main-unique" src="{{ loisir.image }}">
-            <p class="texte-show">{{ loisir.content }}</p>
-        </div>
-        <div class="info-unique">
-            NOTE : {{ loisir.note }}/10 <br />
-            <a href="#map"> Voire sur le plans </a>
+            <img class="liste-main-unique" src="http://localhost/parcour-5/web/images/{{ loisir.image }}">
 
-
+            <div class="text-show">
             <h3>Commentaires</h3>
             {% for comment in comments %}
                 <strong>{{ comment.author.username }}</strong> : {{ comment.content }} <a href="/comment/{{ comment.id }}/signale">: Signaler le commentaire</a><br>
@@ -23,24 +18,33 @@
 
             <h3>Ajouter un commentaire</h3>
 
-                {{ form_start(commentForm) }}
-                <div class="form-group">
-                    {{ form_errors(commentForm.content) }}
-                    {{ form_widget(commentForm.content, { 'attr':  {
-                        'rows': '4',
-                        'class': 'form-control',
-                        'placeholder': 'Enter your comment'
-                    }}) }}
+            {{ form_start(commentForm) }}
+            <div class="form-group">
+                {{ form_errors(commentForm.content) }}
+                {{ form_widget(commentForm.content, { 'attr':  {
+                    'rows': '4',
+                    'class': 'form-control',
+                    'placeholder': 'Enter your comment'
+                }}) }}
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Publier" />
+            </div>
+            {{ form_end(commentForm) }}
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div class="alert alert-success">
+                    {{ flashMessage }}
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Publier" />
-                </div>
-                {{ form_end(commentForm) }}
-                {% for flashMessage in app.session.flashbag.get('success') %}
-                    <div class="alert alert-success">
-                        {{ flashMessage }}
-                    </div>
-                {% endfor %}
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="info-unique">
+            <p>NOTE : {{ loisir.note }}/10 </p>
+            <p>{{ loisir.content }}</p>
+            <p>Adresse {{ loisir.position }}</p>
+            <p><a href="#map"> Voire sur le plans </a></p>
+
 
         </div>
     </div>

@@ -49,6 +49,8 @@ function map() {
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+            console.log("http://parcour-5/clustersAll/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10");
+
             var urlLocalisation = "http://parcour-5/clustersAll/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10";
 
             // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map

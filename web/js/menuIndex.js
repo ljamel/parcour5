@@ -36,13 +36,22 @@ function Menu() {
         document.getElementById('menu-close').style.display = "none";
     };
 
+    this.openDate = function () {
+        console.log("menue activer");
+        document.getElementById('outils-recherche').style.display = "initial";
+        document.getElementById('date-open').style.display = "none";
+
+    };
+
 }
 
 var menuAccueil = new Menu();
+var menuOpen = new Menu();
 
-window.addEventListener('scroll', menuAccueil.scroll, false);
+menuAccueil.scroll();
 document.getElementById('menu-mobile').addEventListener('click', menuAccueil.mobile, false);
 document.getElementById('menu-close').addEventListener('click', menuAccueil.closeMenu, false);
+addEventListener('scroll', menuOpen.scroll, false);
 
 
 

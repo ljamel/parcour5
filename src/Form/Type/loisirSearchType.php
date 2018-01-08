@@ -11,17 +11,18 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
-
-class LoisirTypeAdd extends AbstractType
+// modifier en LeisureAddType
+class loisirSearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
         $builder
-            ->add('etat', ChoiceType::class, array(
-                'choices' => array('0' => 'En attente') ))
-            ->add('categorie', ChoiceType::class, array(
-                'choices' => array('1' => 'toutes la famille', '0' => 'bebe',  '2' => 'senior') ))
+            ->add('prix', ChoiceType::class, array(
+                'choices' => array('1' => 'GRATUIT', '20' => ' 20 €',  '100' => ' 100 €', '999999' => 'Tous voir') ))
+            ->add('Distance', ChoiceType::class, array(
+                'choices' => array('0.10' => '10 Kms', '0.20' => '20 Kms',  '0.56' => '56 Kms', '1.10' => '110 Kms') ))
+
             ->add('title', TextType::class)
             ->add('lien', TextType::class)
             ->add('position', TextType::class)

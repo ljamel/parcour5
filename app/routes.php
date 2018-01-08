@@ -6,7 +6,8 @@ use MicroCMS\Domain\Loisir;
 use MicroCMS\Domain\User;
 use MicroCMS\Form\Type\CommentType;
 use MicroCMS\Form\Type\LoisirType;
-use MicroCMS\Form\Type\LoisirTypeAdd;
+use MicroCMS\Form\Type\LoisirAddType;
+use MicroCMS\Form\Type\loisirSearchType;
 use MicroCMS\Form\Type\UserType;
 
 // Login form
@@ -18,12 +19,35 @@ $app->get('/login', function(Request $request) use ($app) {
 })->bind('login');
 
 // Home page
-$app->match('/', function () use ($app) {
-    $loisirs = $app['dao.loisir']->findAllIndex();
+$app->match('/', function (Request $request) use ($app) {
+
+    $loisirss = $app['dao.loisir']->findAllIndex();
+    $loisirs = new Loisir();
+    $loisirForm = $app['form.factory']->create(loisirSearchType::class, $loisirs);
+    $loisirForm->handleRequest($request);
     // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
     $loisir = $app['dao.loisir']->find(1);
-    return $app['twig']->render('frontend/index.html.twig', array('loisirs' => $loisirs, 'loisir' => $loisir));
+    return $app['twig']->render('frontend/index.html.twig', array('loisirs' => $loisirss, 'loisir' => $loisir,
+        'title' => 'New loisir',
+        'loisirForm' => $loisirForm->createView()));;
 })->bind('home');
+
+
+// Resultat de recherche methode match accepte get et post
+$app->match('/result/{id}', function ($id, Request $request) use ($app) {
+    $loisir = $app['dao.loisir']->findResult($request);
+    if ($id < 1) { $url = 'frontend/result.html.twig'; } else { $url = 'map/clustersResult.html.twig';}
+
+    return $app['twig']->render($url, array('loisir' => $loisir));
+})->bind('result/');
+
+// Resultat de recherche methode match accepte get et post
+$app->match('/api/', function () use ($app) {
+
+    $app['dao.loisir']->api();
+    return $app['twig']->render('default.html.twig');
+
+})->bind('/api/');
 
 // Loisir details with comments
 $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
@@ -55,16 +79,6 @@ $app->get('/liste/', function () use ($app) {
     return $app['twig']->render('frontend/liste.html.twig', array('loisir' => $loisirs));
 })->bind('liste/');
 
-// Resultat de recherche methode match accepte get et post
-$app->match('/result/', function (Request $request) use ($app) {
-    if (isset($_GET["loisirpositionLat"]) === false ) {
-        header('Location: /geoloc');
-        return $app['twig']->render('frontend/geoloc.html.twig');
-    } else {
-        $loisir = $app['dao.loisir']->findResult($request);
-    }
-    return $app['twig']->render('frontend/result.html.twig', array('loisir' => $loisir));
-})->bind('result/');
 
 // loisir details with comments
 $app->get('/geoloc', function () use ($app) {
@@ -85,8 +99,8 @@ $app->get('/clusters/', function () use ($app) {
     return $app['twig']->render('map/clusters.html.twig', array('loisirs' => $loisirs));
 })->bind('api/');
 
-$app->get('/clustersAll/', function () use ($app) {
-    $loisirs = $app['dao.loisir']->findResult();
+$app->match('/clustersAll/', function () use ($app) {
+    $loisirs = $app['dao.loisir']->geoloc();
     return $app['twig']->render('map/clustersAll.html.twig', array('loisirs' => $loisirs));
 })->bind('clusters/');
 
@@ -110,7 +124,7 @@ $app->get('/admin', function() use ($app) {
 
 $app->match('/loisir/add', function(Request $request) use ($app) {
     $loisir = new Loisir();
-    $loisirForm = $app['form.factory']->create(LoisirTypeAdd::class, $loisir);
+    $loisirForm = $app['form.factory']->create(LoisirAddType::class, $loisir);
     $loisirForm->handleRequest($request);
     if ($loisirForm->isSubmitted() && $loisirForm->isValid()) {
         $app['dao.loisir']->save($loisir);
@@ -118,6 +132,7 @@ $app->match('/loisir/add', function(Request $request) use ($app) {
     }
     return $app['twig']->render('backend/loisir_add_form.html.twig', array(
         'title' => 'New loisir',
+        'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));
 })->bind('admin_loisir_add');
 

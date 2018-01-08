@@ -1,0 +1,81 @@
+<div id="formulaire-recherche">
+
+    <p class="queFaire">QUE FAIRE</p>
+    <span class="fa fa-bicycle fa-min fa-cat" title="loisirs"></span><span class="sous-cat"><a href="/liste/?cat=1" title="enfants"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-bebe.jpg"></a> <a href="/liste/?cat=2" title="toutes la famille"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-famille.jpg"></a> <a href="/liste/?cat=3" title="senior"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/cat-loisir-ager.jpg"></a>  </span>
+    <i class="fa fa-map-o fa-min fa-cat" title="Plans"></i> <span class="sous-cat-plans">
+        <a href="geoloc" title="Me localiser"><div class="img-sous-menu geoloc"><span class="title-cat">Me localiser</span> </div></a>
+        <a href="/result/0?loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314&budget=20&Distance=0.20" title="Normandie"><div class="img-sous-menu geoloc"><span class="title-cat">Normandie</span> </div></a>
+        <a href="/result/?budget=2&depart=Normandie%2C+France&loisir%5BpositionLat%5D=48.87987039999999&loisir%5BpositionLng%5D=0.17125290000001314&loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314&Distance=0.2&from=&to=" title="PLANS"><img class="img-sous-menu" src="http://localhost/parcour-5/web/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg" alt="Normandie"></a>
+    </span>
+    <i class="fa fa-map-signs fa-min fa-cat" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+
+
+    <form action="result/0" method="post">
+
+        {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
+
+        <span class="custom-dropdown custom-dropdown--white">
+            {{ form_label(loisirForm.prix, NULL, { 'label_attr':  {
+                'class': 'col-sm-4 control-label none'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.prix) }}
+                {{ form_widget(loisirForm.prix, { 'attr':  {
+                    'class':'custom-dropdown__select custom-dropdown__select--white'
+                }}) }}
+            </div>
+        </span>
+
+        <span class="custom-dropdown custom-dropdown--white">
+            {{ form_label(loisirForm.Distance, NULL, { 'label_attr':  {
+                'class': 'col-sm-4 control-label none'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.Distance) }}
+                {{ form_widget(loisirForm.Distance, { 'attr':  {
+                    'class':'custom-dropdown__select custom-dropdown__select--white'
+                }}) }}
+            </div>
+        </span>
+
+        <i class="fa fa-map-marker fa-min ico-recherche" title="Loisirs"></i>
+        {{ form_label(loisirForm.position, NULL, { 'label_attr':  {
+            'class': 'col-sm-4 control-label none'
+        }}) }}
+        {{ form_errors(loisirForm.position) }}
+        {{ form_widget(loisirForm.position, { 'attr':  {
+            'class':'custom-dropdown__select custom-dropdown__select--white',
+        }}) }}
+
+        <!-- Ville de départ pour position du curseur --><span  id="position"></span>
+
+        <i id="date-open" class="fa fa-calendar recherche-mobile icone-date" aria-hidden="true" onclick="menuOpen.openDate()"></i>
+
+        <span id="outils-recherche">
+            <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i>
+
+            {{ form_label(loisirForm.dateDebut, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label none'
+            }}) }}
+                {{ form_errors(loisirForm.dateDebut) }}
+                {{ form_widget(loisirForm.dateDebut, { 'attr':  {
+
+                    'value': '12, 31, 2017',
+                    'id': 'datepicker'
+                }}) }}
+            <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i>
+
+            {{ form_label(loisirForm.dateFin, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label none'
+            }}) }}
+                {{ form_errors(loisirForm.dateFin) }}
+                {{ form_widget(loisirForm.dateFin, { 'attr':  {
+
+                    'value': '12, 31, 2030',
+                    'id': 'to'
+                }}) }}
+        </span>
+
+        <input id="pac-input" class="recherche" type="submit" value="Chercher">
+    </form>
+</div>

@@ -43,9 +43,9 @@ class Loisir
 
     private $distance;
 
-    private $date_debut;
+    private $dateDebut;
 
-    private $date_fin;
+    private $dateFin;
 
     private $imageModif;
 
@@ -173,18 +173,18 @@ class Loisir
     }
 
     public function getDateDebut() {
-        return $this->date_debut;
+        return $this->dateDebut;
     }
-    public function setDateDebut($date_debut) {
-        $this->date_debut = $date_debut;
+    public function setDateDebut($dateDebut) {
+        $this->dateDebut = $dateDebut;
         return $this;
     }
 
     public function getDateFin() {
-        return $this->date_fin;
+        return $this->dateFin;
     }
-    public function setDateFin($date_fin) {
-        $this->date_fin = $date_fin;
+    public function setDateFin($dateFin) {
+        $this->dateFin = $dateFin;
         return $this;
     }
 

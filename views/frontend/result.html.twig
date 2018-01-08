@@ -7,7 +7,7 @@
 
             <div class="liste-resultat">
                 <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
-                    <img class="promo-acceuil" src="{{ loisirs.image }}">
+                    <img class="promo-acceuil" src="http://localhost/parcour-5/web/images/{{ loisirs.image }}">
                 </a>
 
                 <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
@@ -33,6 +33,6 @@
             src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
 
     <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
-    <script src="http://localhost/parcour-5/web/js/map-result.js"></script>
+    <script src="http://localhost/parcour-5/web/js/map-result.js?budget=20"></script>
     <script src="http://localhost/parcour-5/web/js/menu.js"></script>
 {% endblock %}

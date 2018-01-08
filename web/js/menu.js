@@ -31,6 +31,7 @@ function Menu() {
 }
 
 var menuAccueil = new Menu();
+var menuOpen = new Menu();
 
 menuAccueil.scroll();
 document.getElementById('menu-mobile').addEventListener('click', menuAccueil.mobile, false);
