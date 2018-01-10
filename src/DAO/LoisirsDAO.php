@@ -176,9 +176,6 @@ class LoisirsDAO extends DAO
         $loisir->setPositionLNG($row['position_LNG']);
         $loisir->setDistance($row['distance']);
 
-       /* $array = ["distance" => $row['distance'], "title" => $row['art_title']];
-        echo json_encode($array, JSON_PRETTY_PRINT);
-*/
         return $loisir;
     }
 
@@ -280,8 +277,6 @@ class LoisirsDAO extends DAO
                 'type' => $article->getCategorie(),
             );
         }
-
-        var_dump($article->getImage());
 
         $loisirDataAdd = array(
             'art_title' => $article->getTitle(),

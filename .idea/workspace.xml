@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22429915-698c-4db8-843e-c9c21f51e4e1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/frontend/result-ville.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/map-ville.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" afterPath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/backend/admin.html.twig" afterPath="$PROJECT_DIR$/views/backend/admin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/backend/login.html.twig" afterPath="$PROJECT_DIR$/views/backend/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/_search.html.twig" afterPath="$PROJECT_DIR$/views/frontend/_search.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/geocode.js" afterPath="$PROJECT_DIR$/web/js/geocode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/map-result.js" afterPath="$PROJECT_DIR$/web/js/map-result.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,20 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserDAO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAO/UserDAO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-              <folding>
-                <marker date="1515498540117" expanded="true" signature="636:671" ph="select * fro... t_user" />
-                <marker date="1515498540117" expanded="true" signature="998:1035" ph="select * fro... t_user" />
-                <marker date="1515498540117" expanded="true" signature="2336:2384" ph="select * fro... t_user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,6 +21,24 @@
               <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="8" />
               <folding>
                 <element signature="e#7#52#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoisirsDAO.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1431">
+              <caret line="278" column="9" lean-forward="false" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
+              <folding>
+                <marker date="1515575515978" expanded="true" signature="391:515" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="1040:1170" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="1566:1611" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="2411:2650" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="4185:4424" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="6777:7016" ph="SELECT * FRO... t_loisirs" />
+                <marker date="1515575515978" expanded="true" signature="8867:8905" ph="select * fro... t_loisirs" />
               </folding>
             </state>
           </provider>
@@ -82,13 +78,13 @@
         <entry file="file://$PROJECT_DIR$/app/config/prod.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -112,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/../essai.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,7 +184,6 @@
         <option value="$PROJECT_DIR$/web/js/map-liste.js" />
         <option value="$PROJECT_DIR$/views/frontend/liste.html.twig" />
         <option value="$PROJECT_DIR$/app/app.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/views/map/clusters.html.twig" />
         <option value="$PROJECT_DIR$/views/frontend/geoloc.html.twig" />
         <option value="$PROJECT_DIR$/gitignore/JetBrains.gitignore" />
@@ -222,11 +217,12 @@
         <option value="$PROJECT_DIR$/views/frontend/_search.html.twig" />
         <option value="$PROJECT_DIR$/src/DAO/UserDAO.php" />
         <option value="$PROJECT_DIR$/views/backend/admin.html.twig" />
-        <option value="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/views/backend/login.html.twig" />
         <option value="$PROJECT_DIR$/../essai.php" />
         <option value="$PROJECT_DIR$/app/config/prod.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
       </list>
     </option>
   </component>
@@ -244,9 +240,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="8" />
-    <option name="y" value="-10" />
     <option name="width" value="1400" />
     <option name="height" value="990" />
   </component>
@@ -356,7 +351,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../portfolio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sources_TP_App" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -404,12 +399,12 @@
       <workItem from="1514027112901" duration="104961000" />
       <workItem from="1515001401432" duration="54112000" />
       <workItem from="1515358024350" duration="22909000" />
-      <workItem from="1515454826679" duration="17319000" />
+      <workItem from="1515454826679" duration="22231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328576000" />
+    <option name="totallyTimeSpent" value="333488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,7 +416,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1546724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -758,26 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="281" column="8" lean-forward="false" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
-          <folding>
-            <marker date="1515497723755" expanded="true" signature="391:515" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="1040:1170" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="1566:1611" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="2411:2650" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="4185:4424" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="6916:7155" ph="SELECT * FRO... t_loisirs" />
-            <marker date="1515497723755" expanded="true" signature="9006:9044" ph="select * fro... t_loisirs" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/UserDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="123" column="9" lean-forward="true" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
+          <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
           <folding>
             <marker date="1515498540117" expanded="true" signature="636:671" ph="select * fro... t_user" />
             <marker date="1515498540117" expanded="true" signature="998:1035" ph="select * fro... t_user" />
@@ -831,7 +810,7 @@
     <entry file="file://$PROJECT_DIR$/../essai.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -847,7 +826,7 @@
     <entry file="file://$PROJECT_DIR$/app/config/prod.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -857,6 +836,22 @@
         <state relative-caret-position="189">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/LoisirsDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1431">
+          <caret line="278" column="9" lean-forward="false" selection-start-line="278" selection-start-column="9" selection-end-line="278" selection-end-column="9" />
+          <folding>
+            <marker date="1515575515978" expanded="true" signature="391:515" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="1040:1170" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="1566:1611" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="2411:2650" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="4185:4424" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="6777:7016" ph="SELECT * FRO... t_loisirs" />
+            <marker date="1515575515978" expanded="true" signature="8867:8905" ph="select * fro... t_loisirs" />
+          </folding>
         </state>
       </provider>
     </entry>
