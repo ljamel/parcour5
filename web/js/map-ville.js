@@ -16,18 +16,23 @@ function result() {
     }
     console.log(localStorage.getItem(('geocodeMap')));
 
-    if(localStorage.getItem(('geocodeMap')) !== 'undefined') {
-        var url = "http://parcour-5/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
-    } else {
-        var url = "http://parcour-5/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
-    }
 
+
+    var url = "http://parcour-5/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
 
     if($_GET('Distance') <= 0.10) { var zoom = 12}
     if($_GET('Distance') == 0.20) { var zoom = 10}
     if($_GET('Distance') == 0.56) { var zoom = 9}
     if($_GET('Distance') == 1.10) { var zoom = 8}
 
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: zoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: {   lat: parseFloat($_GET('loisirpositionLat')),
+            lng: parseFloat($_GET('loisirpositionLng'))
+        }
+    });
 
     // Modifi le cluster
     var image = 'http://localhost/parcour-5/web/images/cycles.png';
@@ -65,26 +70,9 @@ function result() {
 
             });
 
-            localStorage.setItem('geocodeLat', object.position.lat);
-            localStorage.setItem('geocodeLng', object.position.lng);
         });
 
 
-
-    });
-    if($_GET('loisirpositionLat') !== 'undefined') {
-         var lat = localStorage.getItem('geocodeLat');
-         var lng = localStorage.getItem('geocodeLng');
-    } else {
-        var lat = $_GET('loisirpositionLat');
-        var lng = $_GET('loisirpositionLng');
-    }
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: zoom,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        center: {   lat: parseFloat(lat),
-                    lng: parseFloat(lng)
-        }
     });
 }
 var locations = []

@@ -29,7 +29,7 @@ $app->match('/', function (Request $request) use ($app) {
     $loisir = $app['dao.loisir']->find(1);
     return $app['twig']->render('frontend/index.html.twig', array('loisirs' => $loisirss, 'loisir' => $loisir,
         'title' => 'New loisir',
-        'loisirForm' => $loisirForm->createView()));;
+        'loisirForm' => $loisirForm->createView()));
 })->bind('home');
 
 
@@ -40,6 +40,13 @@ $app->match('/result/{id}', function ($id, Request $request) use ($app) {
 
     return $app['twig']->render($url, array('loisir' => $loisir));
 })->bind('result/');
+
+// Resultat de recherche methode match accepte get et post
+$app->match('/ville/', function ( Request $request) use ($app) {
+    $loisir = $app['dao.loisir']->findResult($request);
+
+    return $app['twig']->render('frontend/result-ville.html.twig', array('loisir' => $loisir));
+})->bind('ville/');
 
 // Resultat de recherche methode match accepte get et post
 $app->match('/api/', function () use ($app) {

@@ -107,8 +107,6 @@ class LoisirsDAO extends DAO
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
             }
         }
-        /* echo json_encode($loisirs, JSON_PRETTY_PRINT); */
-
 
 
         return $loisirs;
@@ -117,10 +115,7 @@ class LoisirsDAO extends DAO
 
     public function geoloc()
     {
-        if (isset($_GET["loisirpositionLat"]) === false ) {
-            header('Location: /geoloc');
-            sleep(0);
-        }
+
 
         $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
@@ -151,7 +146,6 @@ class LoisirsDAO extends DAO
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
             }
         }
-        /* echo json_encode($loisirs, JSON_PRETTY_PRINT); */
 
 
 
@@ -190,7 +184,6 @@ class LoisirsDAO extends DAO
 
     public function api() {
 
-        $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
         $stmt->bindValue(':prix', htmlspecialchars(20));
         $stmt->bindValue(':lat', htmlspecialchars($_GET['loisirpositionLat']));
@@ -200,7 +193,6 @@ class LoisirsDAO extends DAO
         echo "[";
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {
-                $loisirId = $row['art_id'];
 
                 // formule pour calculer la distance
                 $lat_a_degre = $_GET['loisirpositionLat'];
@@ -216,14 +208,12 @@ class LoisirsDAO extends DAO
                 $row['distance'] = intval($distance);
                 $this->buildDomainObject($row);
 
-                $loisirs[$loisirId] = $this->buildDomainObject($row);
                 $array = ['position' => ['lat' =>  $row['position_LAT'], 'lng' => $row['position_LNG']], "distance" => $row['distance'], "name" => $row['art_title']] ;
-
 
                 echo json_encode($array, JSON_PRETTY_PRINT); echo ",";
             }
         }
-        echo '{"number":31705,"name":"31705 - CHAMPEAUX (BAGNOLET)","address":"RUE DES CHAMPEAUX (PRES DE LA GARE ROUTIERE) - 93170 BAGNOLET","position":{"lat":48.8645278209514,"lng":2.416170724425901},"banking":true,"bonus":true,"status":"OPEN","contract_name":"Paris","bike_stands":50,"available_bike_stands":46,"available_bikes":4,"last_update":1511264149000}]';
+        echo '{"number":31705,"name":"31705 - CHAMPEAUX (BAGNOLET)","address":"RUE DES CHAMPEAUX (PRES DE LA GARE ROUTIERE) - 93170 BAGNOLET","position":{},"banking":true,"bonus":true,"status":"OPEN","contract_name":"Paris","bike_stands":50,"available_bike_stands":46,"available_bikes":4,"last_update":1511264149000}]';
 
     }
 
@@ -266,18 +256,32 @@ class LoisirsDAO extends DAO
         $dateFin = mktime(20, 12, 20, $dateFe[0], $dateFe[1], $dateFe[2]);
 
         // pour des raison de sécuriter j'ai mi deux array ci dessous afin d'empecher l'accer a la validation 'etat' coter utilisateur
-        $loisirData = array(
-            'art_title' => $article->getTitle(),
-            'art_content' => $article->getContent(),
-            'lien' => $article->getLien(),
-            'date_debut' => $dateDebut,
-            'date_fin' => $dateFin,
-            'art_image' => $name,
-            'etat' => $article->getEtat(),
-            'art_position' => $article->getPosition(),
-            'type' => $article->getCategorie(),
-        );
+        if($article->getImage() == null) {
+            $loisirData = array(
+                'art_title' => $article->getTitle(),
+                'art_content' => $article->getContent(),
+                'lien' => $article->getLien(),
+                'date_debut' => $dateDebut,
+                'date_fin' => $dateFin,
+                'etat' => $article->getEtat(),
+                'art_position' => $article->getPosition(),
+                'type' => $article->getCategorie(),
+            );
+        } else {
+            $loisirData = array(
+                'art_title' => $article->getTitle(),
+                'art_content' => $article->getContent(),
+                'lien' => $article->getLien(),
+                'date_debut' => $dateDebut,
+                'date_fin' => $dateFin,
+                'art_image' => $name,
+                'etat' => $article->getEtat(),
+                'art_position' => $article->getPosition(),
+                'type' => $article->getCategorie(),
+            );
+        }
 
+        var_dump($article->getImage());
 
         $loisirDataAdd = array(
             'art_title' => $article->getTitle(),

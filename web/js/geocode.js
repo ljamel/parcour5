@@ -89,11 +89,21 @@ function geocodeAddress(geocoder, resultsMap) {
             var geo24 = essai4.replace(',', ' ><input type=text class=none name=loisirpositionLng value=');
             var geo34 = geo24.replace(/([)$])/, ' >');
 
-            localStorage.setItem('geocode', geo34);
+            var geomap = localStorage.getItem('geocode');
+            var essaimap4 = geomap.replace(/([^])/, "?loisirpositionLat=");
+            var geomap24 = essaimap4.replace(',', "&loisirpositionLng=");
+            var geoMap = geomap24.replace(/([)$])/, ' ');
+
+
+
+            localStorage.setItem('geocode', geoMap);
+
+            localStorage.setItem('geocodeMap', geoMap);
 
             document.getElementById('position').innerHTML = geo3 + geo34;
 
             console.log(geo3);
+
         } else {
             console.log('Geocode was not successful for the following reason: ' + status);
         }
