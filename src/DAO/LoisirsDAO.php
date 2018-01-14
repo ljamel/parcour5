@@ -34,11 +34,11 @@ class LoisirsDAO extends DAO
     public function findAllMap()
     {
 
-        if (isset($_POST["cat"]) === false ) { $_POST["cat"] = "1" ;}
+        if (isset($_GET["cat"]) === false ) { $_GET["cat"] = "1" ;}
         $debut = 0;
         $limit = 60;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . (int)$_POST["cat"] . ' AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . (int)$_GET["cat"] . ' AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -236,7 +236,7 @@ class LoisirsDAO extends DAO
             $extension_upload = strtolower(substr(strrchr($_FILES['loisir']['name']['image'], '.'), 1));
             if (in_array($extension_upload, $extensions_valides)) {
                 // Upload l'image dans un fichiers Web/images
-                $uploads_dir = dirname(dirname(dirname(dirname(__FILE__)))) . '/parcour-5/web/images';
+                $uploads_dir = dirname(dirname(dirname(dirname(__FILE__)))) . '/html/web/images';
                 $tmp_name = $_FILES['loisir']['tmp_name']['image'];
                 move_uploaded_file($tmp_name, "$uploads_dir/$name");
             }

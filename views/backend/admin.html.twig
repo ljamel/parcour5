@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "views/layout.html.twig" %}
 {% set adminMenu = true %}
 
 {% block title %}Administration{% endblock %}
@@ -143,7 +143,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ path('admin_user_edit', { 'id': user.id }) }}" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-                                    <a href="/admin/user/{{ user.id }}/delete">dd</a>
+                                    <a href="/admin/user/{{ user.id }}/delete"> Supprimer</a>
 
                                     <div class="modal fade" id="userDialog {{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">

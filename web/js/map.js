@@ -6,7 +6,7 @@ function map() {
     });
 
 
-    var image = 'http://localhost/parcour-5/web/images/cycles.png';
+    var image = '/images/cycles.png';
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
 

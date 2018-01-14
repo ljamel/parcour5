@@ -21,7 +21,7 @@ class LoisirAddType extends AbstractType
             ->add('etat', ChoiceType::class, array(
                 'choices' => array('0' => 'En attente') ))
             ->add('categorie', ChoiceType::class, array(
-                'choices' => array('1' => 'toutes la famille', '0' => 'bebe',  '2' => 'senior') ))
+                'choices' => array('0' => 'toutes la famille', '1' => 'bebe',  '2' => 'senior') ))
             ->add('title', TextType::class)
             ->add('lien', TextType::class)
             ->add('position', TextType::class)

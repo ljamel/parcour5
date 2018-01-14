@@ -10,7 +10,7 @@ function initMap() {
     });
 
     // Modifi le cluster
-    var image = 'http://localhost/parcour-5/web/images/cycles.png';
+    var image = '/images/cycles.png';
     var image1 = '../images/Calque0.png';
     ajaxGet("http://parcour-5/clustersAll/", function (reponse) {
 
@@ -71,7 +71,7 @@ function initMap() {
 
         });
         var markerCluster = new MarkerClusterer(map, markers, {
-            imagePath: 'http://localhost/parcour-5/web/images/m'
+            imagePath: 'images/m'
         });
 
 

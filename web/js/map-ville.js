@@ -18,7 +18,7 @@ function result() {
 
 
 
-    var url = "http://parcour-5/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
+    var url = "/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
 
     if($_GET('Distance') <= 0.10) { var zoom = 12}
     if($_GET('Distance') == 0.20) { var zoom = 10}
@@ -35,7 +35,7 @@ function result() {
     });
 
     // Modifi le cluster
-    var image = 'http://localhost/parcour-5/web/images/cycles.png';
+    var image = '/images/cycles.png';
     var image1 = '../images/Calque0.png';
     ajaxGet(url, function (reponse) {
 

@@ -12,7 +12,7 @@ use MicroCMS\Form\Type\UserType;
 
 // Login form
 $app->get('/login', function(Request $request) use ($app) {
-    return $app['twig']->render('backend/login.html.twig', array(
+    return $app['twig']->render('views/backend/login.html.twig', array(
         'error'         => $app['security.last_error']($request),
         'last_username' => $app['session']->get('_security.last_username'),
     ));
@@ -27,7 +27,7 @@ $app->match('/', function (Request $request) use ($app) {
     $loisirForm->handleRequest($request);
     // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
     $loisir = $app['dao.loisir']->find(1);
-    return $app['twig']->render('frontend/index.html.twig', array('loisirs' => $loisirss, 'loisir' => $loisir,
+    return $app['twig']->render('views/frontend/index.html.twig', array('loisirs' => $loisirss, 'loisir' => $loisir,
         'title' => 'New loisir',
         'loisirForm' => $loisirForm->createView()));
 })->bind('home');
@@ -36,7 +36,7 @@ $app->match('/', function (Request $request) use ($app) {
 // Resultat de recherche methode match accepte get et post
 $app->match('/result/{id}', function ($id, Request $request) use ($app) {
     $loisir = $app['dao.loisir']->findResult($request);
-    if ($id < 1) { $url = 'frontend/result.html.twig'; } else { $url = 'map/clustersResult.html.twig';}
+    if ($id < 1) { $url = 'views/frontend/result.html.twig'; } else { $url = 'views/map/clustersResult.html.twig';}
 
     return $app['twig']->render($url, array('loisir' => $loisir));
 })->bind('result/');
@@ -45,14 +45,14 @@ $app->match('/result/{id}', function ($id, Request $request) use ($app) {
 $app->match('/ville/', function ( Request $request) use ($app) {
     $loisir = $app['dao.loisir']->findResult($request);
 
-    return $app['twig']->render('frontend/result-ville.html.twig', array('loisir' => $loisir));
+    return $app['twig']->render('views/frontend/result-ville.html.twig', array('loisir' => $loisir));
 })->bind('ville/');
 
 // Resultat de recherche methode match accepte get et post
 $app->match('/api/', function () use ($app) {
 
     $app['dao.loisir']->api();
-    return $app['twig']->render('default.html.twig');
+    return $app['twig']->render('views/default.html.twig');
 
 })->bind('/api/');
 
@@ -73,47 +73,46 @@ $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
 
     $comments = $app['dao.comment']->findAllByLoisir($id);
 
-    return $app['twig']->render('frontend/unique.html.twig', array(
+    return $app['twig']->render('views/frontend/unique.html.twig', array(
         'loisir' => $loisir,
         'comments' => $comments,
         'commentForm' => $commentFormView));
 })->bind('sejours/');
 
 
-// loisir details with comments
 $app->get('/liste/', function () use ($app) {
     $loisirs = $app['dao.loisir']->findAllMap();
-    return $app['twig']->render('frontend/liste.html.twig', array('loisir' => $loisirs));
+    return $app['twig']->render('views/frontend/liste.html.twig', array('loisir' => $loisirs));
 })->bind('liste/');
 
 
 // loisir details with comments
 $app->get('/geoloc', function () use ($app) {
-    return $app['twig']->render('frontend/geoloc.html.twig');
+    return $app['twig']->render('views/frontend/geoloc.html.twig');
 })->bind('geoloc');
 
 
 // loisir details with comments
 $app->get('/admin', function () use ($app) {
 
-    return $app['twig']->render('backend/admin.html.twig');
+    return $app['twig']->render('views/backend/admin.html.twig');
 })->bind('admin');
 
 
 
 $app->get('/clusters/', function () use ($app) {
     $loisirs = $app['dao.loisir']->findAllIndex();
-    return $app['twig']->render('map/clusters.html.twig', array('loisirs' => $loisirs));
+    return $app['twig']->render('views/map/clusters.html.twig', array('loisirs' => $loisirs));
 })->bind('api/');
 
 $app->match('/clustersAll/', function () use ($app) {
     $loisirs = $app['dao.loisir']->geoloc();
-    return $app['twig']->render('map/clustersAll.html.twig', array('loisirs' => $loisirs));
+    return $app['twig']->render('views/map/clustersAll.html.twig', array('loisirs' => $loisirs));
 })->bind('clusters/');
 
 $app->match('/clustersResult/', function () use ($app) {
     $loisirs = $app['dao.loisir']->findResult();
-    return $app['twig']->render('map/clustersResult.html.twig', array('loisirs' => $loisirs));
+    return $app['twig']->render('views/map/clustersResult.html.twig', array('loisirs' => $loisirs));
 })->bind('clustersResult/');
 
 
@@ -122,7 +121,7 @@ $app->get('/admin', function() use ($app) {
     $loisirs = $app['dao.loisir']->findAll();
     $comments = $app['dao.comment']->findAll();
     $users = $app['dao.user']->findAll();
-    return $app['twig']->render('backend/admin.html.twig', array(
+    return $app['twig']->render('views/backend/admin.html.twig', array(
         'loisirs' => $loisirs,
         'comments' => $comments,
         'users' => $users));
@@ -137,7 +136,7 @@ $app->match('/loisir/add', function(Request $request) use ($app) {
         $app['dao.loisir']->save($loisir);
         $app['session']->getFlashBag()->add('success', 'The loisir was successfully created.');
     }
-    return $app['twig']->render('backend/loisir_add_form.html.twig', array(
+    return $app['twig']->render('views/backend/loisir_add_form.html.twig', array(
         'title' => 'New loisir',
         'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));
@@ -152,7 +151,7 @@ $app->match('/admin/loisir/{id}/edit', function($id, Request $request) use ($app
         $app['dao.loisir']->save($loisir);
         $app['session']->getFlashBag()->add('success', 'The loisir was successfully updated.');
     }
-    return $app['twig']->render('backend/loisir_add_form.html.twig', array(
+    return $app['twig']->render('views/backend/loisir_add_form.html.twig', array(
         'title' => 'Edit loisir',
         'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));
@@ -179,7 +178,7 @@ $app->match('/admin/comment/{id}/edit', function($id, Request $request) use ($ap
         $app['dao.comment']->save($comment);
         $app['session']->getFlashBag()->add('success', 'The comment was successfully updated.');
     }
-    return $app['twig']->render('backend/comment_form.html.twig', array(
+    return $app['twig']->render('views/backend/comment_form.html.twig', array(
         'title' => 'Edit comment',
         'commentForm' => $commentForm->createView()));
 })->bind('admin_comment_edit');
@@ -216,7 +215,7 @@ $app->match('/user/add', function(Request $request) use ($app) {
         $app['dao.user']->save($user);
         $app['session']->getFlashBag()->add('success', 'The user was successfully created.');
     }
-    return $app['twig']->render('backend/user_form.html.twig', array(
+    return $app['twig']->render('views/backend/user_form.html.twig', array(
         'title' => 'New user',
         'userForm' => $userForm->createView()));
 })->bind('admin_user_add');
@@ -236,7 +235,7 @@ $app->match('/admin/user/{id}/edit', function($id, Request $request) use ($app) 
         $app['dao.user']->save($user);
         $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
     }
-    return $app['twig']->render('backend/user_form.html.twig', array(
+    return $app['twig']->render('views/backend/user_form.html.twig', array(
         'title' => 'Edit user',
         'userForm' => $userForm->createView()));
 })->bind('admin_user_edit');
@@ -251,3 +250,8 @@ $app->get('/admin/user/{id}/delete', function($id, Request $request) use ($app) 
     // Redirect to admin home page
     return $app->redirect($app['url_generator']->generate('admin'));
 })->bind('admin_user_delete');
+
+// redirection pour le CSS
+
+
+

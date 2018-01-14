@@ -19,7 +19,7 @@ class LoisirType extends AbstractType
                 'choices' => array('0' => 'En attente', '1' => 'Publier', '3' => 'Refuser' ) ))
 
             ->add('categorie', ChoiceType::class, array(
-                'choices' => array('0' => 'bebe', '1' => 'toutes la famille', '2' => 'senior') ))
+                'choices' => array('0' => 'toutes la famille', '1' => 'bebe', '2' => 'senior') ))
             ->add('title', TextType::class)
             ->add('lien', TextType::class)
             ->add('position', TextType::class)

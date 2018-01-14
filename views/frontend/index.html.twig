@@ -1,17 +1,17 @@
-{% extends "/layout.html.twig" %}
+{% extends "views/layout.html.twig" %}
 
 
 {% block content %}
-    {{ include('frontend/_slide.html.twig') }}
+    {{ include('views/frontend/_slide.html.twig') }}
     <div id="main">
-        <div class="display"><h1> BON PLANS </h1> <P><a href="http://parcour-5/geoloc" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+        <div class="display"><h1> BON PLANS </h1> <P><a href="/geoloc" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
 
         {% for loisir in loisirs %}
 
             <div class="liste-main shadow-none">
                 <a class="articleTitle"
                    href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
-                    <img class="liste-main" src="http://localhost/parcour-5/web/images/{{ loisir.image }}">
+                    <img class="liste-main" src="https://www.cadito.fr/web/images/{{ loisir.image }}">
                     <h2><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}">{{ loisir.title }}</a>
                         <span class="type">{{ loisir.categorie|upper }}</span></h2>
                     <p>{{ loisir.content[:178] }}... </p>
@@ -32,7 +32,7 @@
 
     </div>
     <div class="liste-resultat">
-        <img class="promo-acceuil" src="{{ loisir.image }}">
+        <img class="promo-acceuil" src="https://www.cadito.fr/web/{{ loisir.image }}">
         <P>{{ loisir.title }}</P>
         <P>{{ loisir.content }}</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Voir sur le plans</P>
@@ -45,13 +45,13 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
-    <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
-    <script src="http://localhost/parcour-5/web/js/geocode.js"></script>
+    <script src="https://www.cadito.fr/web/js/ajax.js"></script>
+    <script src="https://www.cadito.fr/web/js/geocode.js"></script>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
             async defer></script>
 
-    <script src="http://localhost/parcour-5/web/js/menuIndex.js"></script>
+    <script src="https://www.cadito.fr/web/js/menuIndex.js"></script>
 
-    <script src="http://localhost/parcour-5/web/js/slide.js"></script>
+    <script src="https://www.cadito.fr/web/js/slide.js"></script>
 {% endblock %}

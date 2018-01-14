@@ -1,25 +1,13 @@
 function result() {
 
-    function $_GET(param) {
-        var vars = {};
-        window.location.href.replace(location.hash, '').replace(
-            /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-            function (m, key, value) { // callback
-                vars[key] = value !== undefined ? value : '';
-            }
-        );
-
-        if (param) {
-            return vars[param] ? vars[param] : null;
-        }
-        return vars;
-    }
     console.log(localStorage.getItem(('geocodeMap')));
 
     if(localStorage.getItem(('geocodeMap')) !== 'undefined') {
         var url = "http://parcour-5/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
+        console.log("http://parcour-5/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10");
     } else {
-        var url = "http://parcour-5/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
+        console.log('get');
+        var url = "/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
     }
 
 
@@ -28,15 +16,16 @@ function result() {
     if($_GET('Distance') == 0.56) { var zoom = 9}
     if($_GET('Distance') == 1.10) { var zoom = 8}
 
-
+    var premiercurser = 0;
     // Modifi le cluster
-    var image = 'http://localhost/parcour-5/web/images/cycles.png';
+    var image = '/images/cycles.png';
     var image1 = '../images/Calque0.png';
     ajaxGet(url, function (reponse) {
 
         // Transforme la réponse en un tableau d'adresses
         var objects = JSON.parse(reponse);
         objects.forEach(function (object) {
+
 
             var paris = {
                 lat: parseFloat(object.position.lat),
@@ -65,26 +54,50 @@ function result() {
 
             });
 
-            localStorage.setItem('geocodeLat', object.position.lat);
-            localStorage.setItem('geocodeLng', object.position.lng);
+            if(premiercurser < 1) {
+                premiercurser++;
+                localStorage.setItem('geocodeLat', object.position.lat);
+                localStorage.setItem('geocodeLng', object.position.lng);
+                console.log(object.position.lat);
+            }
         });
 
 
 
     });
-    if($_GET('loisirpositionLat') !== 'undefined') {
-         var lat = localStorage.getItem('geocodeLat');
-         var lng = localStorage.getItem('geocodeLng');
-    } else {
-        var lat = $_GET('loisirpositionLat');
-        var lng = $_GET('loisirpositionLng');
-    }
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         center: {   lat: parseFloat(lat),
-                    lng: parseFloat(lng)
+            lng: parseFloat(lng)
         }
     });
+
+    var locations = []
 }
-var locations = []
+
+function $_GET(param) {
+    var vars = {};
+    window.location.href.replace(location.hash, '').replace(
+        /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+        function (m, key, value) { // callback
+            vars[key] = value !== undefined ? value : '';
+        }
+    );
+
+    if (param) {
+        return vars[param] ? vars[param] : null;
+    }
+    return vars;
+}
+
+console.log(localStorage.getItem('geocodeLat'));
+
+if($_GET('loisirpositionLat') !== 'undefined') {
+    var lat = localStorage.getItem('geocodeLat');
+    var lng = localStorage.getItem('geocodeLng');
+} else {
+    var lat = $_GET('loisirpositionLat');
+    var lng = $_GET('loisirpositionLng');
+}

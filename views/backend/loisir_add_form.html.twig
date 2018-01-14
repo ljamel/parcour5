@@ -1,4 +1,4 @@
-{% extends '/layout.html.twig' %}
+{% extends 'views/layout.html.twig' %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -71,7 +71,7 @@
                 'class': 'col-sm-4 control-label'
             }}) }}
 
-            <div class="col-sm-6"><img src="http://localhost/parcour-5/web/images/{{ loisir.image }}" alt="{{ loisir.title }}"><br />
+            <div class="col-sm-6"><img src"/images/{{ loisir.image }}" alt="{{ loisir.title }}"><br />
                 <div class="fileUpload btn btn-primary">
                     <span>Upload</span>
                     <input  name="loisir[image]"  type="file" class="upload" />
@@ -141,9 +141,9 @@
     <div id="map"></div>
 {% endif %}
 
-    <script src="http://localhost/parcour-5/web/js/ajax.js"></script>
-    <script src="http://localhost/parcour-5/web/js/geocode.js"></script>
+    <script src"/js/ajax.js"></script>
+    <script src"/js/geocode.js"></script>
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
+            src"https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
             async defer></script>
 {% endblock %}
