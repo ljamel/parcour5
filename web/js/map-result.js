@@ -3,11 +3,11 @@ function result() {
     console.log(localStorage.getItem(('geocodeMap')));
 
     if(localStorage.getItem(('geocodeMap')) !== 'undefined') {
-        var url = "http://parcour-5/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
-        console.log("http://parcour-5/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10");
+        var url = "https://www.cadito.fr/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
+        console.log("https://www.cadito.fr/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10");
     } else {
         console.log('get');
-        var url = "/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
+        var url = "https://www.cadito.fr/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
     }
 
 
@@ -18,8 +18,8 @@ function result() {
 
     var premiercurser = 0;
     // Modifi le cluster
-    var image = '/images/cycles.png';
-    var image1 = '../images/Calque0.png';
+    var image = '/web/images/cycles.png';
+    var image1 = '/web/images/Calque0.png';
     ajaxGet(url, function (reponse) {
 
         // Transforme la réponse en un tableau d'adresses
@@ -94,7 +94,7 @@ function $_GET(param) {
 
 console.log(localStorage.getItem('geocodeLat'));
 
-if($_GET('loisirpositionLat') !== 'undefined') {
+if($_GET('loisirpositionLat') !== 'undefined' && $_GET('loisirpositionLng') !== 'undefined') {
     var lat = localStorage.getItem('geocodeLat');
     var lng = localStorage.getItem('geocodeLng');
 } else {

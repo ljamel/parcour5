@@ -489,6 +489,10 @@ select {
     max-width: 800px;
 }
 
+.adress {
+    font-size: 17px;
+}
+
 .title-show {
     text-align: justify;
     display: flex;
@@ -575,6 +579,7 @@ img.liste-main-unique {
 .prix {
     text-align: right;
     color: #00BFFF;
+    width: 120px;
 }
 .articleTitle {
     display: grid;

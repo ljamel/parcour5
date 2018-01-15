@@ -101,7 +101,8 @@ class LoisirsDAO extends DAO
                 $lat_b = (pi() * $lat_b_degre) / 180;
                 $lon_b = (pi() * $lon_b_degre) / 180;
                 $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
-                $row['distance'] = intval($distance);
+                $row['distance'] = intval($distance) / 1000;
+                $row['distance'] = floor($row['distance']);
                 $this->buildDomainObject($row);
 
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
@@ -227,8 +228,8 @@ class LoisirsDAO extends DAO
 
     public function save(Loisir $article)
     {
-
-        if (isset($_FILES['loisir']['name']['image'])) {
+        // Verifi si l'image a été ajouter trouver une solution pour quelle ne dépasse pas 1,4 Mo
+        if ($_FILES['loisir']['name']['image'] !== "" ) {
             $md5 = md5(uniqid(rand(1, 100000), true));
             $name = $md5 . $_FILES['loisir']['name']['image'];
 
@@ -241,7 +242,7 @@ class LoisirsDAO extends DAO
                 move_uploaded_file($tmp_name, "$uploads_dir/$name");
             }
         } else {
-            $name = $article->getImageModif();
+            $name = "imageDefault.jpg";
         }
 
         $dateD = $article->getDateDebut();
@@ -253,11 +254,12 @@ class LoisirsDAO extends DAO
         $dateFin = mktime(20, 12, 20, $dateFe[0], $dateFe[1], $dateFe[2]);
 
         // pour des raison de sécuriter j'ai mi deux array ci dessous afin d'empecher l'accer a la validation 'etat' coter utilisateur
-        if($article->getImage() == null) {
+        if($article->getImage() === null) {
             $loisirData = array(
                 'art_title' => $article->getTitle(),
                 'art_content' => $article->getContent(),
                 'lien' => $article->getLien(),
+                'prix' => $article->getPrix(),
                 'date_debut' => $dateDebut,
                 'date_fin' => $dateFin,
                 'etat' => $article->getEtat(),
@@ -269,6 +271,7 @@ class LoisirsDAO extends DAO
                 'art_title' => $article->getTitle(),
                 'art_content' => $article->getContent(),
                 'lien' => $article->getLien(),
+                'prix' => $article->getPrix(),
                 'date_debut' => $dateDebut,
                 'date_fin' => $dateFin,
                 'art_image' => $name,
@@ -282,6 +285,7 @@ class LoisirsDAO extends DAO
             'art_title' => $article->getTitle(),
             'art_content' => $article->getContent(),
             'lien' => $article->getLien(),
+            'prix' => $article->getPrix(),
             'position_LAT' => $article->getPositionLAT(),
             'position_LNG' => $article->getPositionLNG(),
             'date_debut' => $dateDebut,

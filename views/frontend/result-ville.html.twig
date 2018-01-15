@@ -7,7 +7,7 @@
 
             <div class="liste-resultat">
                 <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
-                    <img class="promo-acceuil" src"/images/{{ loisirs.image }}">
+                    <img class="promo-acceuil" src="https://www.cadito.fr/web/images/{{ loisirs.image }}">
                 </a>
 
                 <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
@@ -25,14 +25,14 @@
         <div id="infoLoisirs">essai</div>
     </div>
 
-    <script src"https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <!-- script qui appel la map -->
 
-    <script src"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer
-            src"https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
 
-    <script src"/js/ajax.js"></script>
-    <script src"/js/map-ville.js?budget=20"></script>
-    <script src"/js/menu.js"></script>
+    <script src="https://www.cadito.fr/web/js/ajax.js"></script>
+    <script src="https://www.cadito.fr/web/js/map-ville.js?budget=20"></script>
+    <script src="https://www.cadito.fr/web/js/menu.js"></script>
 {% endblock %}

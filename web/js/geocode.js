@@ -92,13 +92,15 @@ function geocodeAddress(geocoder, resultsMap) {
             var geomap = localStorage.getItem('geocode');
             var essaimap4 = geomap.replace(/([^])/, "?loisirpositionLat=");
             var geomap24 = essaimap4.replace(',', "&loisirpositionLng=");
-            var geoMap = geomap24.replace(/([)$])/, ' ');
+            var geoMap245 = geomap24.replace(/([)$])/, '');
+            var geoMap = geoMap245.replace(' ', '');
 
 
 
             localStorage.setItem('geocode', geoMap);
 
             localStorage.setItem('geocodeMap', geoMap);
+            console.log(localStorage.getItem('geocodeMap'));
 
             document.getElementById('position').innerHTML = geo3 + geo34;
 

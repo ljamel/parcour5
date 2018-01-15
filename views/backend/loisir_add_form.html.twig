@@ -71,7 +71,7 @@
                 'class': 'col-sm-4 control-label'
             }}) }}
 
-            <div class="col-sm-6"><img src"/images/{{ loisir.image }}" alt="{{ loisir.title }}"><br />
+            <div class="col-sm-6"><img src="images/{{ loisir.image }}" alt="{{ loisir.title }}"><br />
                 <div class="fileUpload btn btn-primary">
                     <span>Upload</span>
                     <input  name="loisir[image]"  type="file" class="upload" />
@@ -88,6 +88,18 @@
             <div class="col-sm-6">
                 {{ form_errors(loisirForm.lien) }}
                 {{ form_widget(loisirForm.lien, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(loisirForm.prix, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(loisirForm.prix) }}
+                {{ form_widget(loisirForm.prix, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
@@ -141,9 +153,9 @@
     <div id="map"></div>
 {% endif %}
 
-    <script src"/js/ajax.js"></script>
-    <script src"/js/geocode.js"></script>
+    <script src="https://www.cadito.fr/web/js/ajax.js"></script>
+    <script src="https://www.cadito.fr/web/js/geocode.js"></script>
     <script type="text/javascript"
-            src"https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
             async defer></script>
 {% endblock %}

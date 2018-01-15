@@ -26,6 +26,7 @@ class LoisirAddType extends AbstractType
             ->add('lien', TextType::class)
             ->add('position', TextType::class)
             ->add('positionLat', TextType::class)
+            ->add('prix', TextType::class)
             ->add('positionLng', TextType::class)
             ->add('image', FileType::class)
             ->add('imageModif', FileType::class)

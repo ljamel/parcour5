@@ -5,16 +5,17 @@
         {% for loisirs in loisir %}
 
 
-            <div class="liste-resultat">
+            <div class="liste-resultat" >
                 <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
-                    <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
+                    <img class="promo-acceuil" src="https://www.cadito.fr/web/images/{{ loisirs.image }}">
                 </a>
 
                 <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
-                <p>Distance {{ loisirs.distance }} Mètres</p>
-                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Plans</P>
-                    <P class="prix">{{ loisirs.prix|replace({0: "GRATUIT"}) }}</P>
-                </a>
+                <p>Distance {{ loisirs.distance[:2] }} Kms</p>
+                <span class="articleTitle">
+                    <a  href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Plans</P></a>
+                    <span ><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix|replace({0: "GRATUIT"}) }}</a></span>
+                </span>
             </div>
 
         {% endfor %}
@@ -32,7 +33,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=result"></script>
 
-    <script src="/js/ajax.js"></script>
-    <script src="/js/map-result.js?budget=20"></script>
-    <script src="/js/menu.js"></script>
+    <script src="https://www.cadito.fr/web/js/ajax.js"></script>
+    <script src="https://www.cadito.fr/web/js/map-result.js?budget=20"></script>
+    <script src="https://www.cadito.fr/web/js/menu.js"></script>
 {% endblock %}
