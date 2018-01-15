@@ -11,8 +11,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
-// modifier en LeisureAddType
-class loisirSearchType extends AbstractType
+// modifier en LoisirSearchType si problème remetre le primer L en minuscule
+class LoisirSearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
