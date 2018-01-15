@@ -18,8 +18,8 @@ function result() {
 
     var premiercurser = 0;
     // Modifi le cluster
-    var image = '/web/images/cycles.png';
-    var image1 = '/web/images/Calque0.png';
+    var image = '/images/cycles.png';
+    var image1 = '/images/Calque0.png';
     ajaxGet(url, function (reponse) {
 
         // Transforme la réponse en un tableau d'adresses
