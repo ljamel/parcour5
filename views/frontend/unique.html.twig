@@ -5,7 +5,7 @@
     <div class="title-show">
         <div>
             <h2>{{ loisir.title }}</h2>
-            <img class="liste-main-unique" src="https://www.cadito.fr/web/images/{{ loisir.image }}">
+            <img class="liste-main-unique" src="/images/{{ loisir.image }}">
 
             <div class="text-show">
             <h3>Commentaires</h3>
@@ -56,7 +56,7 @@
 <!-- script qui appel la map -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap&posi=lat:{{ loisir.position|replace({",": ", lng: ", '%that%': 48}) }}"></script>
-<script src="https://www.cadito.fr/web/js/ajax.js"></script>
-<script src="https://www.cadito.fr/web/js/map-unique.js"></script>
-<script src="https://www.cadito.fr/web/js/menu.js"></script>
+<script src="/js/ajax.js"></script>
+<script src="/js/map-unique.js"></script>
+<script src="/js/menu.js"></script>
 {% endblock %}

@@ -11,7 +11,7 @@
             <div class="liste-main shadow-none">
                 <a class="articleTitle"
                    href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
-                    <img class="liste-main" src="https://www.cadito.fr/web/images/{{ loisir.image }}">
+                    <img class="liste-main" src="/images/{{ loisir.image }}">
                     <h2><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">{{ loisir.title }}</a>
                         <span class="type">{{ loisir.categorie|upper }}</span></h2>
                     <p>{{ loisir.content[:178] }}... </p>
@@ -46,13 +46,13 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
-    <script src="https://www.cadito.fr/web/js/ajax.js"></script>
-    <script src="https://www.cadito.fr/web/js/geocode.js"></script>
+    <script src="/js/ajax.js"></script>
+    <script src="/js/geocode.js"></script>
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
             async defer></script>
 
-    <script src="https://www.cadito.fr/web/js/menuIndex.js"></script>
+    <script src="/js/menuIndex.js"></script>
 
-    <script src="https://www.cadito.fr/web/js/slide.js"></script>
+    <script src="/js/slide.js"></script>
 {% endblock %}
