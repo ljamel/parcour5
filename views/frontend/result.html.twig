@@ -1,24 +1,30 @@
 {% extends "/views/layout.html.twig" %}
 
 {% block content %}
+    {% set resultNB = 0 %}
+    {% for loisirs in loisir %}
 
-        {% for loisirs in loisir %}
+        <div class="liste-resultat">
+            <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
+                <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
+            </a>
 
+            <P>{{ loisirs.title }} <br/> {{ loisirs.content }}</P>
+            <p>Distance {{ loisirs.distance[:2] }} Kms</p>
+            <span class="articleTitle">
+                <a href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P></a>
+                <span><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix|replace({0: "GRATUIT"}) }} €</a></span>
+            </span>
+        </div>
+        {% set resultNB = resultNB + 1 %}
+    {% endfor %}
 
-            <div class="liste-resultat" >
-                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
-                    <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
-                </a>
-
-                <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
-                <p>Distance {{ loisirs.distance[:2] }} Kms</p>
-                <span class="articleTitle">
-                    <a  href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Plans</P></a>
-                    <span ><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix|replace({0: "GRATUIT"}) }}</a></span>
-                </span>
-            </div>
-
-        {% endfor %}
+    {% if resultNB == 0 %}
+        <div class="liste-resultat">
+            <h2>Désolé nous n'avons trouvé aucun résultat. Mais l'administrateur a été prévenu afin que d'autre loisirs soit ajouté</h2>
+        </div>
+        {% else %}Nous avons trouvé {{ resultNB }} activités.
+    {% endif %}
 
 
     <div id="mapInfo">

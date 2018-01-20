@@ -86,18 +86,15 @@ $app->get('/liste/', function () use ($app) {
 })->bind('liste/');
 
 
-// loisir details with comments
 $app->get('/geoloc', function () use ($app) {
     return $app['twig']->render('views/frontend/geoloc.html.twig');
 })->bind('geoloc');
 
 
-// loisir details with comments
 $app->get('/admin', function () use ($app) {
 
     return $app['twig']->render('views/backend/admin.html.twig');
 })->bind('admin');
-
 
 
 $app->get('/clusters/', function () use ($app) {

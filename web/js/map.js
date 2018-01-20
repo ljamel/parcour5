@@ -49,9 +49,9 @@ function map() {
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            console.log("http://parcour-5/clustersAll/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10");
+            console.log("/api/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10");
 
-            var urlLocalisation = "http://parcour-5/clustersAll/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10";
+            var urlLocalisation = "/api/?loisirpositionLat=" +  position.coords.latitude + "&loisirpositionLng=" + position.coords.longitude + "&budget=20" + "&Distance=0.10";
 
             // Appel ajax avec une boucle foreach pour affiche la listes des activités sur google map
             ajaxGet(urlLocalisation, function (reponse) {
@@ -61,8 +61,8 @@ function map() {
                 objects.forEach(function (object) {
 
                     var paris = {
-                        lat: object.position.lat,
-                        lng: object.position.lng
+                        lat: parseFloat(object.position.lat),
+                        lng: parseFloat(object.position.lng)
                     }
 
 
@@ -77,7 +77,7 @@ function map() {
                         console.log(object.name);
                         document.getElementById('infoLoisirs').style.display = "block";
                         document.getElementById('map').style.width = "80%";
-                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=' + object.image + ' alt=Aperçu><br />' + object.address + object.name;
+                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=/images/' + object.image + ' alt=Aperçu><br />' + '<h4>' + object.name + '</h4>' + object.content;
                     });
 
                     // la fonction push me ser a exporter des données pour qui puisse être réutiliser.

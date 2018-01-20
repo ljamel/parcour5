@@ -34,11 +34,11 @@ class LoisirsDAO extends DAO
     public function findAllMap()
     {
 
-        if (isset($_GET["cat"]) === false ) { $_GET["cat"] = "1" ;}
+        if (isset($_GET["cat"]) === false ) { $_GET["cat"] = 0 ;}
         $debut = 0;
         $limit = 60;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . (int)$_GET["cat"] . ' AND etat = 1  ORDER BY art_id DESC   LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs WHERE type = 0 AND etat = 1  ORDER BY art_id ASC  LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -70,13 +70,6 @@ class LoisirsDAO extends DAO
     public function findResult()
     {
 
-        // Pour la géolocalisation
-        if(isset($_GET['loisirpositionLat'])) {
-            $_POST['loisir']['prix'] = 20;
-            $_POST['loisir']['positionLat'] = $_GET['loisirpositionLat'];
-            $_POST['loisir']['positionLng'] = $_GET['loisirpositionLng'];
-            $_POST['loisir']['Distance'] = 0.2;
-        }
 
         $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
@@ -85,6 +78,8 @@ class LoisirsDAO extends DAO
         $stmt->bindValue(':lng', htmlspecialchars($_POST['loisir']['positionLng']));
         $stmt->bindValue(':Distance', htmlspecialchars($_POST['loisir']['Distance']));
         $stmt->bindValue(':time', time());
+
+
 
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {
@@ -103,7 +98,8 @@ class LoisirsDAO extends DAO
                 $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
                 $row['distance'] = intval($distance) / 1000;
                 $row['distance'] = floor($row['distance']);
-                $this->buildDomainObject($row);
+
+
 
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
             }
@@ -186,27 +182,15 @@ class LoisirsDAO extends DAO
         $stmt->bindValue(':prix', htmlspecialchars(20));
         $stmt->bindValue(':lat', htmlspecialchars($_GET['loisirpositionLat']));
         $stmt->bindValue(':lng', htmlspecialchars($_GET['loisirpositionLng']));
-        $stmt->bindValue(':Distance', htmlspecialchars(0.20));
+        $stmt->bindValue(':Distance', htmlspecialchars(0.10));
         $stmt->bindValue(':time', time());
         echo "[";
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {
 
-                // formule pour calculer la distance
-                $lat_a_degre = $_GET['loisirpositionLat'];
-                $lon_a_degre = $_GET['loisirpositionLng'];
-                $lat_b_degre = $row['position_LAT'];
-                $lon_b_degre = $row['position_LNG'];
-                $R = 6378000; //Rayon de la terre en mètre
-                $lat_a = (pi() * $lat_a_degre) / 180;
-                $lon_a = (pi() * $lon_a_degre) / 180;
-                $lat_b = (pi() * $lat_b_degre) / 180;
-                $lon_b = (pi() * $lon_b_degre) / 180;
-                $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
-                $row['distance'] = intval($distance);
                 $this->buildDomainObject($row);
 
-                $array = ['position' => ['lat' =>  $row['position_LAT'], 'lng' => $row['position_LNG']], "distance" => $row['distance'], "name" => $row['art_title']] ;
+                $array = ['position' => ['lat' =>  $row['position_LAT'], 'lng' => $row['position_LNG']], "name" => $row['art_title'], "image" => $row['art_image'], "content" => $row['art_content']] ;
 
                 echo json_encode($array, JSON_PRETTY_PRINT); echo ",";
             }
@@ -260,6 +244,8 @@ class LoisirsDAO extends DAO
                 'art_content' => $article->getContent(),
                 'lien' => $article->getLien(),
                 'prix' => $article->getPrix(),
+                'position_LAT' => $article->getPositionLAT(),
+                'position_LNG' => $article->getPositionLNG(),
                 'date_debut' => $dateDebut,
                 'date_fin' => $dateFin,
                 'etat' => $article->getEtat(),
@@ -272,6 +258,8 @@ class LoisirsDAO extends DAO
                 'art_content' => $article->getContent(),
                 'lien' => $article->getLien(),
                 'prix' => $article->getPrix(),
+                'position_LAT' => $article->getPositionLAT(),
+                'position_LNG' => $article->getPositionLNG(),
                 'date_debut' => $dateDebut,
                 'date_fin' => $dateFin,
                 'art_image' => $name,

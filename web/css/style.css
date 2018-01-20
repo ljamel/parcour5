@@ -26,6 +26,14 @@ body {
     justify-content: space-between;
 }
 
+.leg {
+    position: fixed;
+    font-size: 11px;
+    bottom: 0;
+    width: 83px;
+    background-color: #eaf0f6;
+}
+
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
@@ -222,6 +230,23 @@ nav {
     position: relative;
 }
 
+
+.sous-cat:hover {
+    display: flex;
+}
+
+.fa.fa-bicycle.fa-min.fa-cat:hover + .sous-cat {
+    display: flex;
+}
+
+.sous-cat-plans:hover {
+    display: flex;
+}
+
+.fa.fa-map-o.fa-min.fa-cat:hover + .sous-cat-plans {
+    display: flex;
+}
+
 .sous-cat-plans {
     display: none;
     padding: 20px;
@@ -229,26 +254,6 @@ nav {
     padding-bottom: 80px;
     background-color: honeydew;
     position: relative;
-}
-
-.img-sous-menu {
-    width: 110px;
-}
-
-.sous-cat:hover {
-    display: block;
-}
-
-.fa.fa-bicycle.fa-min.fa-cat:hover + .sous-cat {
-    display: block;
-}
-
-.sous-cat-plans:hover {
-    display: block;
-}
-
-.fa.fa-map-o.fa-min.fa-cat:hover + .sous-cat-plans {
-    display: block;
 }
 
 #bouton-slide-left {
@@ -282,17 +287,77 @@ nav {
     position: relative;
     left: 35px;
 }
+.img-sous-menu {
+    background:url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+.img-sous-menu-enfants {
+    background:url("/images/cat-loisir-bebe.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+.img-sous-menu-famille {
+    background:url("/images/cat-loisir-famille.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+.img-sous-menu-senior {
+    background:url("/images/cat-loisir-ager.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
 
 .geoloc {
-    background:url("https://www.cadito.fr/web/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
-    height: 76px;
-    background-size: 104px 70px;
+    background:url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background-size: 104px ;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
 }
+
+.normandie {
+    background:url("/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg") no-repeat;
+    background-size: 104px ;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
 
 .title-cat {
     margin-top: 32px;
     display: inline-block;
-    color: black;
+    font-size: 18px;
+
+}
+
+.age {
+    display: table-caption;
+    position: relative;
+    margin-left: 29px;
+    margin-bottom: -30px;
+    font-size: 20px;
 }
 
 #formulaire-recherche {

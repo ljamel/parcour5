@@ -12,8 +12,8 @@
                 <a class="articleTitle"
                    href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
                     <img class="liste-main" src="/images/{{ loisir.image }}">
-                    <h2><a class="loisirTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">{{ loisir.title }}</a>
-                        <span class="type">{{ loisir.categorie|upper }}</span></h2>
+                    <h2><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}" class="loisirTitle" >{{ loisir.title }}</a>
+                        <span class="type">{{ loisir.categorie|replace({0: "Pour tous", 1: "Enfants", 2: "Senior"}) }}</span></h2>
                     <p>{{ loisir.content[:178] }}... </p>
                     <div class="display">
                         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position }}
@@ -21,8 +21,7 @@
                         <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €</P>
 
                     </div>
-                    <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
-                        <p class="reserver">Plus d'info</p></a>
+                    <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><p class="reserver">Plus d'info</p></a>
                 </a>
             </div>
 
@@ -33,15 +32,18 @@
 
     </div>
     <div class="liste-resultat">
-        <img class="promo-acceuil" src="https://www.cadito.fr/web/{{ loisir.image }}">
-        <P>{{ loisir.title }}</P>
+        <img class="promo-acceuil" src="/images/{{ loisir.image }}">
+        <P><h4>{{ loisir.title }}</h4></P>
         <P>{{ loisir.content }}</P>
-        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> Voir sur le plans</P>
-        <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }}</P>
+        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}#map"> Voir sur le plans </a></P>
+
+            <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €<br /><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><span class="reserver">Plus d'info</span></a></P>
+
+
     </div>
 
 
-    <div id="map"></div>
+    <div id="map" class="none"></div>
 
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

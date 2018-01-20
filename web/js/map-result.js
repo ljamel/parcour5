@@ -3,11 +3,11 @@ function result() {
     console.log(localStorage.getItem(('geocodeMap')));
 
     if(localStorage.getItem(('geocodeMap')) !== 'undefined') {
-        var url = "https://www.cadito.fr/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
-        console.log("https://www.cadito.fr/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10");
+        var url = "/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10";
+        console.log("/api/" + localStorage.getItem(('geocodeMap')) + "&budget=20" + "&Distance=0.10");
     } else {
         console.log('get');
-        var url = "https://www.cadito.fr/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
+        var url = "/api/?loisirpositionLat=" +  $_GET('loisirpositionLat') + "&loisirpositionLng=" + $_GET('loisirpositionLng') + "&budget=20" + "&Distance=0.10";
     }
 
 
