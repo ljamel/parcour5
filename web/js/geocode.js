@@ -10,7 +10,8 @@ function initAutocomplete() {
         geocodeAddress(geocoder, map);
     });
 
-    document.getElementById('pac-input').addEventListener('touchstart', function() {
+    // revoir la fonction touchtart qui fonctionne un peut pret
+    document.getElementById('pac-input').addEventListener('touchleave', function() {
         geocodeAddress(geocoder, map);
     });
 

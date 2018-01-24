@@ -79,6 +79,13 @@ h2 {
     color: white;
 }
 
+.promo-bouton {
+    background-color: #07C18E;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
 .reserver:hover {
     background-color: #00FFC2;
     cursor: pointer;
@@ -110,7 +117,6 @@ h1 {
 }
 
 .suivant {
-    display: flex;
 }
 
 a {
@@ -132,7 +138,7 @@ li {
     margin: 5px;
 }
 
-li a:hover {
+li a:hover:not(.suivant) {
     border-top-color: #00BFFF;
     border-top-style: solid;
     padding-top: 13px;
@@ -374,11 +380,11 @@ nav {
 .fa-cat {
     display: initial;
     padding: 9px;
-    padding-right: 13px;
+    padding-right: 11px;
     padding-bottom: 5px;
     background-color: white;
     width: 19px;
-    margin-left: 5px;
+    margin-left: 19px;
     color: black;
     font-size: 20px;
     border-radius: 3px;
@@ -464,7 +470,8 @@ select {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        margin-left: 20px;
+        margin-left: 4px;
+        width: 138px;
     }
 
     .custom-dropdown::before,
@@ -562,6 +569,7 @@ select {
     text-align: justify;
     display: flex;
     margin: 70px;
+    align-items: flex-start;
 }
 
 .texte-show {
@@ -644,7 +652,7 @@ img.liste-main-unique {
 .prix {
     text-align: right;
     color: #00BFFF;
-    width: 120px;
+    width: 84px;
 }
 .articleTitle {
     display: grid;
@@ -704,6 +712,12 @@ div#page {
     display: block;
 }
 
+.scroll-top-inner {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #00BFFF;
+}
 /*Formats mobile*/
 @media screen and (max-width: 780px) {
 
@@ -716,7 +730,8 @@ div#page {
         display: none;
     }
     .recherche {
-        width: 270px;
+        width: 299px;
+        margin-left: 19px;
     }
     nav {
         position: fixed;
@@ -771,7 +786,8 @@ div#page {
     }
 
     input {
-        width: 288px;
+        width: 299px;
+        margin-top: 8px;
     }
 
     ul#deroul-menu {
@@ -806,7 +822,7 @@ div#page {
     }
 
     .liste-main {
-        max-width: 300px;
+        max-width: 100%;
         margin-right: 0px;
     }
 
@@ -815,14 +831,30 @@ div#page {
     }
 
     .liste-resultat {
-        display: inline-block;
-        max-width: 260px;
+        display: table;
+        width: 100%;
         margin: 0px;
+        /* margin-bottom: 10px; */
+        margin-top: 55px;
     }
 
     .queFaire {
         margin-bottom: 0px;
         display: table-column;
+    }
+
+    .pager {
+        display: none;
+    }
+
+    .title-show {
+        display: block;
+        margin: 0;
+    }
+
+    img.liste-main-unique {
+        width: 100%;
+        margin-left: 0;
     }
 
 }

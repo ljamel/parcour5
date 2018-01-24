@@ -37,18 +37,48 @@ class CommentDAO extends DAO
 
         // art_id is not selected by the SQL query
         // The loisir won't be retrieved during domain objet construction
-        $sql = "select * from t_comment where art_id=? order by com_id";
-        $result = $this->getDb()->fetchAll($sql, array($loisirId));
+        $sqlAll = "select * from t_comment where art_id=? order by com_id";
+        $resultAll = $this->getDb()->fetchAll($sqlAll, array($loisirId));
 
-        // Convert query result to an array of domain objects
         $comments = array();
-        foreach ($result as $row) {
+        foreach ($resultAll as $row) {
+
+            $row['moyenne'] = 0;
             $comId = $row['com_id'];
             $comment = $this->buildDomainObject($row);
             // The associated loisir is defined for the constructed comment
             $comment->setLoisir($loisir);
             $comments[$comId] = $comment;
         }
+        return $comments;
+    }
+
+    // méthode pour recuprer toutes les notes d'es utiliser afin d'avoir une moyenne
+    public function findAllByLoisirMoyenne($loisirId) {
+        // The associated loisir is retrieved only once
+        $loisir = $this->LoisirDAO->find($loisirId);
+
+        // art_id is not selected by the SQL query
+        // The loisir won't be retrieved during domain objet construction
+        $sql = "select com_id, com_author, com_content, art_id, usr_id, signale, note, AVG(note) from t_comment where art_id=? order by com_id";
+        $result = $this->getDb()->fetchAll($sql, array($loisirId));
+
+
+        // Convert query result to an array of domain objects
+        $comments = array();
+        foreach ($result as $row) {
+            $row['moyenne'] =  $row['AVG(note)'];
+
+            $comId = $row['com_id'];
+            if($row['com_id'] != null) {
+                    $comment = $this->buildDomainObject($row);
+                    // The associated loisir is defined for the constructed comment
+                    $comment->setLoisir($loisir);
+                    $comments[$comId] = $comment;
+                }
+        }
+
+
         return $comments;
     }
 
@@ -63,6 +93,8 @@ class CommentDAO extends DAO
         $comment->setId($row['com_id']);
         $comment->setContent($row['com_content']);
         $comment->setSignale($row['signale']);
+        $comment->setNote($row['note']);
+        $comment->setMoyenne($row['moyenne']);
 
         if (array_key_exists('art_id', $row)) {
             // Find and set the associated
@@ -87,6 +119,7 @@ class CommentDAO extends DAO
             'com_content' => $comment->getContent(),
             'art_id' => $comment->getLoisir()->getId(),
             'usr_id' => "1",
+            'note' => $comment->getNote(),
         );
 
         if ($comment->getId()) {
@@ -124,6 +157,19 @@ class CommentDAO extends DAO
         $sql = "select * from t_comment where com_id=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id));
 
+        if ($row) {
+
+            return $this->buildDomainObject($row);
+            }
+        else
+            throw new \Exception("No comment matching id " . $id);
+    }
+
+    // pour retrouver le loisirs correspondant a la note
+    public function findLoisirs($id) {
+        $sql = "select * from t_comment where art_id=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
         if ($row)
             return $this->buildDomainObject($row);
         else
@@ -155,4 +201,5 @@ class CommentDAO extends DAO
         );
         $this->getDb()->update('t_comment', $commentData, array('com_id' => $id));
     }
+
 }

@@ -1,3 +1,5 @@
+
+
 {% extends "/views/layout.html.twig" %}
 
 {% block content %}
@@ -7,7 +9,7 @@
 
             <div class="liste-resultat">
                 <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
-                    <img class="promo-acceuil" src=/images/{{ loisirs.image }}">
+                    <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
                 </a>
 
                 <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>

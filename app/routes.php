@@ -73,9 +73,12 @@ $app->match('/sejours/{id}', function ($id, Request $request) use ($app) {
 
     $comments = $app['dao.comment']->findAllByLoisir($id);
 
+    $commentsNote = $app['dao.comment']->findAllByLoisirMoyenne($id);
+
     return $app['twig']->render('views/frontend/unique.html.twig', array(
         'loisir' => $loisir,
         'comments' => $comments,
+        'commentsNote' => $commentsNote,
         'commentForm' => $commentFormView));
 })->bind('sejours/');
 
@@ -191,8 +194,15 @@ $app->get('/admin/comment/{id}/delete', function($id, Request $request) use ($ap
 $app->get('/comment/{id}/signale/', function($id, Request $request) use ($app) {
     $app['dao.comment']->signale($id);
     $app['session']->getFlashBag()->add('success', 'Commentaire signalé.');
-    return $app->redirect($app['url_generator']->generate('home'));
+    return $app->redirect('/');
 })->bind('signale');
+
+$app->get('/note/{id}/loisir/', function($id, Request $request) use ($app) {
+    $app['dao.comment']->note($id);
+    $app['session']->getFlashBag()->add('success', 'Noté.');
+    return $app->redirect('/');
+})->bind('notePlus');
+
 
 // Add a user
 $app->match('/user/add', function(Request $request) use ($app) {

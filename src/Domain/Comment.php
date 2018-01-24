@@ -41,6 +41,10 @@ class Comment
      */
     private $loisir;
 
+    private $note;
+
+    private $moyenne;
+
     public function getId() {
         return $this->id;
     }
@@ -82,6 +86,22 @@ class Comment
     }
     public function setSignale($signale) {
         $this->signale = $signale;
+        return $this;
+    }
+
+    public function getNote(){
+        return $this->note;
+    }
+    public function setNote($note){
+        $this->note = $note;
+        return $this;
+    }
+
+    public function getMoyenne(){
+        return $this->moyenne;
+    }
+    public function setMoyenne($moyenne){
+        $this->moyenne = $moyenne;
         return $this;
     }
 }

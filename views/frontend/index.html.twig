@@ -1,5 +1,9 @@
 {% extends "views/layout.html.twig" %}
 
+{% block meta %}
+    <title>Idées loisirs</title>
+    <meta name="description" content="Divertissement pour toutes la familles. Découvrez les loisirs, lieux touristiques et séjours. Une liste de suggestion de loisirs et vacances via le lien ci dessous." />
+{% endblock %}
 
 {% block content %}
     {{ include('views/frontend/_slide.html.twig') }}
@@ -12,11 +16,11 @@
                 <a class="articleTitle"
                    href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
                     <img class="liste-main" src="/images/{{ loisir.image }}">
-                    <h2><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}" class="loisirTitle" >{{ loisir.title }}</a>
-                        <span class="type">{{ loisir.categorie|replace({0: "Pour tous", 1: "Enfants", 2: "Senior"}) }}</span></h2>
+                    <h2><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}" class="loisirTitle" >{{ loisir.title[:19] }}</a>
+                        <span class="type">{{ loisir.categorie|replace({0: "Famille", 1: "Enfants", 2: "Senior"}) }}</span></h2>
                     <p>{{ loisir.content[:178] }}... </p>
                     <div class="display">
-                        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position }}
+                        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position[:30] }}
                         </P>
                         <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €</P>
 
@@ -28,7 +32,13 @@
         {% endfor %}
 
         {% set page, pageSuivant = 6, 12 %}
-        <a href="?page={{ page }}&pageSuivant={{ pageSuivant }}&#main" class="suivant">Page suivante >> </a>
+
+        <nav aria-label="navigation">
+            <ul class="pager">
+                <li class="previous disabled"><a href="#" title="Précédent" class="suivant">Précédent</a></li>
+                <li class="next"><a href="?page={{ page }}&pageSuivant={{ pageSuivant }}&#main" class="suivant">Page suivante >> </a></li>
+            </ul>
+        </nav>
 
     </div>
     <div class="liste-resultat">
@@ -36,10 +46,7 @@
         <P><h4>{{ loisir.title }}</h4></P>
         <P>{{ loisir.content }}</P>
         <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}#map"> Voir sur le plans </a></P>
-
-            <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €<br /><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><span class="reserver">Plus d'info</span></a></P>
-
-
+        <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €<br /><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><span class="reserver">l Plus d'info</span></a></P>
     </div>
 
 

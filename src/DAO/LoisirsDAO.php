@@ -17,9 +17,9 @@ class LoisirsDAO extends DAO
     public function findAllIndex()
     {
 
-        if (isset($_POST["page"]) === false ) { $_POST["page"] = 0; $_POST["pageSuivant"] = 6; }
+        if (isset($_GET["page"]) === false ) { $_GET["page"] = 0; $_GET["pageSuivant"] = 6; }
 
-        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_POST["page"] . ' ,  ' . (int)$_POST["pageSuivant"];
+        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 2 AND etat = 1 ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -71,6 +71,13 @@ class LoisirsDAO extends DAO
     {
 
 
+        if(isset($_GET['loisirpositionLat'])) {
+            $_POST['loisir']['prix'] = 20;
+            $_POST['loisir']['positionLat'] = $_GET['loisirpositionLat'];
+            $_POST['loisir']['positionLng'] = $_GET['loisirpositionLng'];
+            $_POST['loisir']['Distance'] = 0.2;
+        }
+
         $loisirs = array();
         $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
         $stmt->bindValue(':prix', htmlspecialchars($_POST['loisir']['prix']));
@@ -78,8 +85,6 @@ class LoisirsDAO extends DAO
         $stmt->bindValue(':lng', htmlspecialchars($_POST['loisir']['positionLng']));
         $stmt->bindValue(':Distance', htmlspecialchars($_POST['loisir']['Distance']));
         $stmt->bindValue(':time', time());
-
-
 
         if ($stmt->execute()) {
             while ($row = $stmt->fetch()) {
@@ -98,8 +103,6 @@ class LoisirsDAO extends DAO
                 $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
                 $row['distance'] = intval($distance) / 1000;
                 $row['distance'] = floor($row['distance']);
-
-
 
                 $loisirs[$loisirId] = $this->buildDomainObject($row);
             }
@@ -307,4 +310,5 @@ class LoisirsDAO extends DAO
         // Delete the article
         $this->getDb()->delete('t_loisirs', array('art_id' => $id));
     }
+
 }
