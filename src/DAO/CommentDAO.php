@@ -70,7 +70,7 @@ class CommentDAO extends DAO
             $row['moyenne'] =  $row['AVG(note)'];
 
             $comId = $row['com_id'];
-            if($row['com_id'] != null) {
+            if($row['com_id'] !== null) {
                     $comment = $this->buildDomainObject($row);
                     // The associated loisir is defined for the constructed comment
                     $comment->setLoisir($loisir);

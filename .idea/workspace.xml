@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39709f87-4806-4a92-b9d4-3d2fabb3e8f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/CommentDAO.php" afterPath="$PROJECT_DIR$/src/DAO/CommentDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" afterPath="$PROJECT_DIR$/src/DAO/LoisirsDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Domain/Comment.php" afterPath="$PROJECT_DIR$/src/Domain/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/Type/CommentType.php" afterPath="$PROJECT_DIR$/src/Form/Type/CommentType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/_search.html.twig" afterPath="$PROJECT_DIR$/views/frontend/_search.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/_slide.html.twig" afterPath="$PROJECT_DIR$/views/frontend/_slide.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/geoloc.html.twig" afterPath="$PROJECT_DIR$/views/frontend/geoloc.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/index.html.twig" afterPath="$PROJECT_DIR$/views/frontend/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/liste.html.twig" afterPath="$PROJECT_DIR$/views/frontend/liste.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/result-ville.html.twig" afterPath="$PROJECT_DIR$/views/frontend/result-ville.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/result.html.twig" afterPath="$PROJECT_DIR$/views/frontend/result.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/frontend/unique.html.twig" afterPath="$PROJECT_DIR$/views/frontend/unique.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.html.twig" afterPath="$PROJECT_DIR$/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/geocode.js" afterPath="$PROJECT_DIR$/web/js/geocode.js" />
+    <list default="true" id="903e1268-2755-469c-bdad-2f1dcfc403b9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +15,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="856" column="22" lean-forward="false" selection-start-line="856" selection-start-column="22" selection-end-line="856" selection-end-column="22" />
+            <state relative-caret-position="420">
+              <caret line="859" column="1" lean-forward="true" selection-start-line="859" selection-start-column="1" selection-end-line="859" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -179,11 +164,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="8" />
-    <option name="width" value="1400" />
-    <option name="height" value="990" />
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -305,20 +285,10 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="eaa6e735-8a3a-4e0a-90f8-5655e1796e83" name="Default" comment="" />
-      <created>1516364595005</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1516364595005</updated>
-      <workItem from="1516364611371" duration="3590000" />
-      <workItem from="1516452368691" duration="1584000" />
-      <workItem from="1516457985096" duration="49145000" />
-    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75719000" />
+    <option name="totallyTimeSpent" value="1032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -342,9 +312,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19931664" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -757,11 +724,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="856" column="22" lean-forward="false" selection-start-line="856" selection-start-column="22" selection-end-line="856" selection-end-column="22" />
+        <state relative-caret-position="420">
+          <caret line="859" column="1" lean-forward="true" selection-start-line="859" selection-start-column="1" selection-end-line="859" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
   </component>
 </project>
+
