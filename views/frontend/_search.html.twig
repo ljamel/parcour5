@@ -49,9 +49,10 @@
         {{ form_errors(loisirForm.position) }}
         {{ form_widget(loisirForm.position, { 'attr':  {
             'class':'',
+            'placeholder':'adresse',
         }}) }}
 
-        <!-- Ville de départ pour position du curseur --><span  id="position"></span>
+        <--! Ville de départ pour position du curseur --><span  id="position"></span>
 
         <i id="date-open" class="fa fa-calendar recherche-mobile icone-date" aria-hidden="true" onclick="menuOpen.openDate()"></i>
 

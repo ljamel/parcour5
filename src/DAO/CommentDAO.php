@@ -140,10 +140,12 @@ class CommentDAO extends DAO
         $sql = "select * from t_comment order by com_id desc";
         $result = $this->getDb()->fetchAll($sql);
 
+
         // Convert query result to an array of domain objects
         $entities = array();
         foreach ($result as $row) {
             $id = $row['com_id'];
+            $row['moyenne'] = 10;
             $entities[$id] = $this->buildDomainObject($row);
         }
         return $entities;

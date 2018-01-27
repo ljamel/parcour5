@@ -50,7 +50,7 @@
             <div class="col-sm-6">
                 {{ form_errors(loisirForm.title) }}
                 {{ form_widget(loisirForm.title, { 'attr':  {
-                    'class': 'form-control'
+                    'class': 'form-control',
                 }}) }}
             </div>
         </div>
@@ -71,7 +71,7 @@
                 'class': 'col-sm-4 control-label'
             }}) }}
 
-            <div class="col-sm-6"><img src="/images/{{ loisir.image }}" alt="{{ loisir.title }}"><br />
+            <div class="col-sm-6"><img src="/images/{{ loisir.image }}" alt="{{ loisir.title }}" class="liste-main"><br />
                 <div class="fileUpload btn btn-primary">
                     <span>Upload</span>
                     <input  name="loisir[image]"  type="file" class="upload" />

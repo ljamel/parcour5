@@ -11,7 +11,7 @@ function initAutocomplete() {
     });
 
     // revoir la fonction touchtart qui fonctionne un peut pret
-    document.getElementById('pac-input').addEventListener('touchleave', function() {
+    document.getElementById('loisir_position').addEventListener('touchsleave', function() {
         geocodeAddress(geocoder, map);
     });
 

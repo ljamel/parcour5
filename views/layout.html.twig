@@ -24,8 +24,8 @@
 
         <ul id="deroul-menu">
             <li><a id="blue-menu" href="/"> Accueil </a></li>
-            <li><a id="blue-menu2"  href="/liste"> Idée loisirs </a></li>
-            <li><a id="blue-menu3"  href=""> Contact </a></li>
+            <li><a id="blue-menu2"  href="/geoloc"> Idée loisirs </a></li>
+            <li><a id="blue-menu3"  href="/contact"> Contact </a></li>
             <li><a id="blue-menu4"  href=""> Aide </a></li>
             {% if app.user and is_granted('ROLE_ADMIN') %}
             <li><a id="blue-menu4"  href="/admin"> Administration </a></li>
@@ -43,8 +43,6 @@
 
 {% block content %}{% endblock %}
 
-
-<div class="leg"> En poursuivant votre navigation, vous acceptez l’utilisation de Cookies pour réaliser des statistiques de visites.</div>
 
 <section id="footer">
     <div class="texte-footer"><h2>Remerciement</h2><p>Site web réaliser avec l'aide <a href="https://openclassrooms.com/referral/lamlaam" class="white" title="Formation de professionnelle en ligne"> d'OpenClassrooms </a></p> <p> Grâce à OpenClassroom j'ai pu réaliser mon rêve, de devenir développeur d'applications web.</p> </div>
@@ -66,7 +64,7 @@
     {% if app.user and is_granted('ROLE_ADMIN') %}
         <a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a>
     {% endif %}
-    <div id="copyright"> copyright 2017 progfacil.com | <a href="https://www.progfacil.com/condition.html" target="_blank" class="white">Mention légales</a> </div>
+    <div id="copyright"> copyright 2018 cadito.fr | <a href="https://www.progfacil.com/condition.html" target="_blank" class="white">Mention légales</a> </div>
 </section>
 </div>
 <div class="scroll-top-wrapper ">

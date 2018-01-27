@@ -20,19 +20,19 @@ class LoisirType extends AbstractType
 
             ->add('categorie', ChoiceType::class, array(
                 'choices' => array('0' => 'toutes la famille', '1' => 'bebe', '2' => 'senior') ))
-            ->add('title', TextType::class)
-            ->add('lien', TextType::class)
-            ->add('prix', TextType::class)
-            ->add('position', TextType::class)
+            ->add('title', TextType::class, array('label' => 'Titre'))
+            ->add('lien', TextType::class, array('label' => 'Lien'))
+            ->add('prix', TextType::class, array('label' => 'Prix'))
+            ->add('position', TextType::class, array('label' => 'Adresse'))
             ->add('positionLat', TextType::class)
             ->add('positionLng', TextType::class)
             ->add('imageModif', FileType::class)
             ->add('image', TextType::class)
 
-            ->add('dateDebut', textType::class)
-            ->add('dateFin', textType::class)
+            ->add('dateDebut', textType::class, array('label' => 'Debut'))
+            ->add('dateFin', textType::class, array('label' => 'Fin'))
 
-            ->add('content', TextareaType::class);
+            ->add('content', TextareaType::class, array('label' => 'Description'));
     }
 
     public function getName()

@@ -42,10 +42,8 @@ function result() {
 
             marker.addListener('click', function () {
                 console.log(object.name);
-                document.getElementById('infoLoisirs').style.display = "block";
-                document.getElementById('map').style.width = "80%";
-                document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=' + object.image + ' alt=Aperçu><br />' + object.address + object.name;
-            });
+                    window.location = '#' + object.name;
+                   });
 
             // la fonction push me ser a exporter des données pour qui puisse être réutiliser.
             locations.push({

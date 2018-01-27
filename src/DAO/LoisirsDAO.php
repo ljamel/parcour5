@@ -38,7 +38,7 @@ class LoisirsDAO extends DAO
         $debut = 0;
         $limit = 60;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE type = 0 AND etat = 1  ORDER BY art_id ASC  LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . $_GET["cat"] . ' AND etat = 1  ORDER BY art_id ASC  LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -193,7 +193,7 @@ class LoisirsDAO extends DAO
 
                 $this->buildDomainObject($row);
 
-                $array = ['position' => ['lat' =>  $row['position_LAT'], 'lng' => $row['position_LNG']], "name" => $row['art_title'], "image" => $row['art_image'], "content" => $row['art_content']] ;
+                $array = ['position' => ['lat' =>  $row['position_LAT'], 'lng' => $row['position_LNG']], "name" => $row['art_title'], "image" => $row['art_image'], "content" => $row['art_content'], "id" => $row['art_id']] ;
 
                 echo json_encode($array, JSON_PRETTY_PRINT); echo ",";
             }

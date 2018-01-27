@@ -278,6 +278,7 @@ nav {
     padding: 10px;
     width: 102px;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 .rectangle:hover {
@@ -285,7 +286,9 @@ nav {
     cursor: pointer;
     color: white;
 }
-
+.margin-result {
+    margin: 30px;
+}
 /* Formulaire de recherche section 2 */
 
 
@@ -395,7 +398,7 @@ input {
     margin-left: 7px;
     padding: 7px;
     text-align: center;
-    width: 140px;
+    width: 146px;
     border-color: #cbcbcbb3;
     border-style: none;
 }
@@ -570,6 +573,40 @@ select {
     display: flex;
     margin: 70px;
     align-items: flex-start;
+    border: 1px solid gainsboro;
+}
+#comment_note {
+    border-style: solid;
+}
+
+.alert {
+    padding: 5px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
 }
 
 .texte-show {
@@ -581,7 +618,7 @@ select {
 }
 
 .text-show {
-    margin-left: 14px;
+    margin-left: 85px;
 }
 
 .type {
@@ -614,6 +651,10 @@ img.liste-main-unique {
     width: 400px;
 }
 
+.form-control {
+    width: 500px;
+}
+
 .shadow-none:hover {
     box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
 }
@@ -633,7 +674,7 @@ img.liste-main-unique {
     background-color: #F6F7F8;
     margin-left: 10%;
     margin-right: 71px;
-    margin-top: 60px;
+    margin-top: 50px;
     height: 251px;
     overflow: hidden;
 }
@@ -654,6 +695,11 @@ img.liste-main-unique {
     color: #00BFFF;
     width: 84px;
 }
+
+.prix-unique {
+    color: #00BFFF;
+}
+
 .articleTitle {
     display: grid;
 }
@@ -732,6 +778,7 @@ div#page {
     .recherche {
         width: 299px;
         margin-left: 19px;
+        margin-top: 10px;
     }
     nav {
         position: fixed;
@@ -739,6 +786,18 @@ div#page {
         left: 0;
         right: 0;
         height: 48px;
+    }
+
+    p {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    h2 {
+        margin-left: 0;
+        margin-top: 12px;
+        text-align: center;
     }
 
     .texte-slide1 {
@@ -785,9 +844,10 @@ div#page {
         color: white;
     }
 
-    input {
+    input:not(.btn-primary) {
         width: 299px;
-        margin-top: 8px;
+        margin-top: 0;
+        margin-left: 19px;
     }
 
     ul#deroul-menu {
@@ -812,10 +872,17 @@ div#page {
     /* formulaire de recherche */
     #formulaire-recherche {
         height: 156px;
-        max-width: 330px;
+        max-width: 100%;
         margin-top: 104px;
     }
 
+    .ico-recherche {
+        position: relative;
+        left: 25px;
+        top: 34px;
+        display: block;
+        width: 100px;
+    }
 
     #main {
         margin-left: 0px;
@@ -827,7 +894,8 @@ div#page {
     }
 
     .reserver {
-        margin-left: 200px;
+        margin-left: 0px;
+        padding: 5px;
     }
 
     .liste-resultat {
@@ -852,9 +920,21 @@ div#page {
         margin: 0;
     }
 
+    .text-show {
+        margin-left: 0;
+    }
+
     img.liste-main-unique {
         width: 100%;
         margin-left: 0;
+    }
+
+    .promo-acceuil {
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
     }
 
 }

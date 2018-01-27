@@ -32,6 +32,11 @@ $app->match('/', function (Request $request) use ($app) {
         'loisirForm' => $loisirForm->createView()));
 })->bind('home');
 
+$app->match('/contact', function () use ($app) {
+
+    return $app['twig']->render('views/frontend/contact.html.twig');
+
+})->bind('/contact');
 
 // Resultat de recherche methode match accepte get et post
 $app->match('/result/{id}', function ($id, Request $request) use ($app) {

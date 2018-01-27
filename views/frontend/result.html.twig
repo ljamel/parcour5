@@ -3,14 +3,16 @@
 
 {% block content %}
     {% set resultNB = 0 %}
-    {% for loisirs in loisir %}
 
-        <div class="liste-resultat">
+    {% for loisirs in loisir %}
+        <p id="{{ loisirs.title }}" class="margin-result">.</p>
+        <div class="liste-resultat" >
+
             <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
                 <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
             </a>
 
-            <P>{{ loisirs.title }} <br/> {{ loisirs.content }}</P>
+            <div class="result-text"><h2>{{ loisirs.title }}</h2> <p>{{ loisirs.content }}</P></div>
             <p>Distance {{ loisirs.distance[:2] }} Kms</p>
             <span class="articleTitle">
                 <a href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P></a>
@@ -24,7 +26,7 @@
         <div class="liste-resultat">
             <h2>Désolé nous n'avons trouvé aucun résultat. Mais l'administrateur a été prévenu afin que d'autre loisirs soit ajouté</h2>
         </div>
-        {% else %}Nous avons trouvé {{ resultNB }} activités.
+    {% else %}Nous avons trouvé {{ resultNB }} activités.
     {% endif %}
 
 
