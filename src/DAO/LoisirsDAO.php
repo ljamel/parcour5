@@ -77,39 +77,44 @@ class LoisirsDAO extends DAO
             $_POST['loisir']['positionLng'] = $_GET['loisirpositionLng'];
             $_POST['loisir']['Distance'] = 0.2;
         }
+        if(isset($_POST['loisir']['positionLat']) === false){
+            header("Refresh:0; url=/geoloc");
 
-        $loisirs = array();
-        $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
-        $stmt->bindValue(':prix', htmlspecialchars($_POST['loisir']['prix']));
-        $stmt->bindValue(':lat', htmlspecialchars($_POST['loisir']['positionLat']));
-        $stmt->bindValue(':lng', htmlspecialchars($_POST['loisir']['positionLng']));
-        $stmt->bindValue(':Distance', htmlspecialchars($_POST['loisir']['Distance']));
-        $stmt->bindValue(':time', time());
+        } else {
 
-        if ($stmt->execute()) {
-            while ($row = $stmt->fetch()) {
-                $loisirId = $row['art_id'];
+            $loisirs = array();
+            $stmt = $this->getDb()->prepare("SELECT * FROM t_loisirs where prix < :prix AND position_LAT < :lat +:Distance AND position_LAT > :lat -:Distance AND position_LNG < :lng +:Distance AND position_lng > :lng -:Distance AND date_debut < :time AND date_fin > :time AND etat = 1");
+            $stmt->bindValue(':prix', htmlspecialchars($_POST['loisir']['prix']));
+            $stmt->bindValue(':lat', htmlspecialchars($_POST['loisir']['positionLat']));
+            $stmt->bindValue(':lng', htmlspecialchars($_POST['loisir']['positionLng']));
+            $stmt->bindValue(':Distance', htmlspecialchars($_POST['loisir']['Distance']));
+            $stmt->bindValue(':time', time());
 
-                // formule pour calculer la distance
-                $lat_a_degre = $_POST['loisir']['positionLat'];
-                $lon_a_degre = $_POST['loisir']['positionLng'];
-                $lat_b_degre = $row['position_LAT'];
-                $lon_b_degre = $row['position_LNG'];
-                $R = 6378000; //Rayon de la terre en mètre
-                $lat_a = (pi() * $lat_a_degre) / 180;
-                $lon_a = (pi() * $lon_a_degre) / 180;
-                $lat_b = (pi() * $lat_b_degre) / 180;
-                $lon_b = (pi() * $lon_b_degre) / 180;
-                $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
-                $row['distance'] = intval($distance) / 1000;
-                $row['distance'] = floor($row['distance']);
+            if ($stmt->execute()) {
+                while ($row = $stmt->fetch()) {
+                    $loisirId = $row['art_id'];
 
-                $loisirs[$loisirId] = $this->buildDomainObject($row);
+                    // formule pour calculer la distance
+                    $lat_a_degre = $_POST['loisir']['positionLat'];
+                    $lon_a_degre = $_POST['loisir']['positionLng'];
+                    $lat_b_degre = $row['position_LAT'];
+                    $lon_b_degre = $row['position_LNG'];
+                    $R = 6378000; //Rayon de la terre en mètre
+                    $lat_a = (pi() * $lat_a_degre) / 180;
+                    $lon_a = (pi() * $lon_a_degre) / 180;
+                    $lat_b = (pi() * $lat_b_degre) / 180;
+                    $lon_b = (pi() * $lon_b_degre) / 180;
+                    $distance = $R * (pi() / 2 - asin(sin($lat_b) * sin($lat_a) + cos($lon_b - $lon_a) * cos($lat_b) * cos($lat_a)));
+                    $row['distance'] = intval($distance) / 1000;
+                    $row['distance'] = floor($row['distance']);
+
+                    $loisirs[$loisirId] = $this->buildDomainObject($row);
+                }
             }
+
+
+            return $loisirs;
         }
-
-
-        return $loisirs;
     }
 
 

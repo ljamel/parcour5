@@ -16,7 +16,7 @@
             <p>Distance {{ loisirs.distance[:2] }} Kms</p>
             <span class="articleTitle">
                 <a href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P></a>
-                <span><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix|replace({0: "GRATUIT"}) }} €</a></span>
+                <span><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix }} €</a></span>
             </span>
         </div>
         {% set resultNB = resultNB + 1 %}

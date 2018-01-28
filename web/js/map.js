@@ -77,7 +77,12 @@ function map() {
                         console.log(object.name);
                         document.getElementById('infoLoisirs').style.display = "block";
                         document.getElementById('map').style.width = "80%";
-                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=/images/' + object.image + ' alt=Aperçu><br />' + '<h4>' + object.name + '</h4>' + object.content + '<br />' + '<a href="https://www.cadito.fr/sejours/' + object.id + '?positionL=' + object.position.lat + '&positionN=' + object.position.lng + '" >' + '<p class="reserver">Plus d\'info</p>' + '</a>';
+                        if(window.innerWidth < 700 ) {
+                            document.getElementById('map').style.width = "100%";
+                            document.getElementById('infoLoisirs').style.width = "100%";
+                        }
+                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=/images/' + object.image + ' alt=Aperçu><br />' + '<h4>' + object.name + '</h4>' + '<br />' + '<a href="https://www.cadito.fr/sejours/' + object.id + '?positionL=' + object.position.lat + '&positionN=' + object.position.lng + '" >' + '<p class="reserver">Plus d\'info</p>' + '</a>';
+
                     });
 
                     // la fonction push me ser a exporter des données pour qui puisse être réutiliser.

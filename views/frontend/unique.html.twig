@@ -11,21 +11,29 @@
 
         <div>
             <h2>{{ loisir.title }}</h2>
-            <img class="liste-main-unique" src="/images/{{ loisir.image }}">
+            <!-- Button trigger modal -->
+            <button type="button" data-toggle="modal" data-target="#exampleModal">
+                <img class="liste-main-unique" src="/images/{{ loisir.image }}">
+            </button>
         </div>
 
         <div class="info-unique">
-            <p>NOTE :
+            <p>
+                NOTE :
                 {% for commentNote in commentsNote %}
                 {{ commentNote.moyenne|round(2, 'floor') }}
             {% else %}
                 Soyez le premier a noté ce lieu
-                {% endfor %}/10 </p>
+                {% endfor %}/10
+            </p>
             <p>{{ loisir.content }}</p>
             <p class="adress">Adresse: <br/>{{ loisir.position }}</p>
-            <p><a href="#map"> Voire sur le plans </a></p>
-            <p class="prix-unique"> Prix {{ loisir.prix }} €</p>
-            <p><A href="{{ loisir.lien }}"> Lien du site</a></p>
+            <p><a href="#map" class="prix-unique"> Voire sur le plans </a></p>
+            {% if loisir.prix == 0 %}
+            {% else %}
+                <p class="prix-unique"> Prix {{ loisir.prix }} €</p>
+            {% endif %}
+            <p><A href="{{ loisir.lien }}" class="prix-unique"> Lien du site</a></p>
 
         </div>
 
@@ -35,6 +43,7 @@
     <div class="text-show">
         <h3>Commentaires</h3>
         {% for comment in comments %}
+            <hr>
             Note {{ comment.note }} <strong> {{ comment.author.username }} </strong> : {{ comment.content }} <a
                 href="/comment/{{ comment.id }}/signale"> : Signaler le commentaire</a><br>
 
@@ -48,7 +57,7 @@
         {{ form_start(commentForm) }}
         <div class="form-group">
             {{ form_label(commentForm.note, null, { 'label_attr':  {
-                'class': 'col-sm-4 control-label'
+                'class': 'col-sm-4 control-label col-sm-4-note'
             }}) }}
             <div class="col-sm-6">
                 {{ form_errors(commentForm.note) }}
@@ -75,6 +84,24 @@
     </div>
 
 
+
+    <!-- Modal pour agrandir l'image -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{ loisir.title }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/{{ loisir.image }}" alt="{{ loisir.title }}" class="modla-img">
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="map"></div>
 
 

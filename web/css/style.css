@@ -69,6 +69,7 @@ h2 {
     margin-left: 15px;
     margin-top: 1px;
     margin-bottom: 10px;
+    color: #129FFA;
 }
 
 .reserver {
@@ -236,7 +237,6 @@ nav {
     position: relative;
 }
 
-
 .sous-cat:hover {
     display: flex;
 }
@@ -286,18 +286,20 @@ nav {
     cursor: pointer;
     color: white;
 }
+
 .margin-result {
     margin: 30px;
 }
-/* Formulaire de recherche section 2 */
 
+/* Formulaire de recherche section 2 */
 
 .ico-recherche {
     position: relative;
     left: 35px;
 }
+
 .img-sous-menu {
-    background:url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background: url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
     background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
@@ -305,8 +307,9 @@ nav {
     width: 104px;
     margin: 5px;
 }
+
 .img-sous-menu-enfants {
-    background:url("/images/cat-loisir-bebe.jpg") no-repeat;
+    background: url("/images/cat-loisir-bebe.jpg") no-repeat;
     background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
@@ -314,8 +317,9 @@ nav {
     width: 104px;
     margin: 5px;
 }
+
 .img-sous-menu-famille {
-    background:url("/images/cat-loisir-famille.jpg") no-repeat;
+    background: url("/images/cat-loisir-famille.jpg") no-repeat;
     background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
@@ -323,8 +327,9 @@ nav {
     width: 104px;
     margin: 5px;
 }
+
 .img-sous-menu-senior {
-    background:url("/images/cat-loisir-ager.jpg") no-repeat;
+    background: url("/images/cat-loisir-ager.jpg") no-repeat;
     background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
@@ -334,8 +339,8 @@ nav {
 }
 
 .geoloc {
-    background:url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
-    background-size: 104px ;
+    background: url("/images/00cde0651656ce487431d1f49f74b094cat-map.jpg") no-repeat;
+    background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
     height: 80px;
@@ -344,15 +349,14 @@ nav {
 }
 
 .normandie {
-    background:url("/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg") no-repeat;
-    background-size: 104px ;
+    background: url("/images/carte-normandie-anne-olivia-messana-clio-de-fregon-1000.jpg") no-repeat;
+    background-size: 104px;
     box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
     color: white;
     height: 80px;
     width: 104px;
     margin: 5px;
 }
-
 
 .title-cat {
     margin-top: 32px;
@@ -411,6 +415,7 @@ input {
     filter: alpha(opacity=0);
     margin-bottom: -20px;
 }
+
 select {
     margin-top: 10px;
     margin-left: 15px;
@@ -571,10 +576,11 @@ select {
 .title-show {
     text-align: justify;
     display: flex;
-    margin: 70px;
+    margin: 137px;
     align-items: flex-start;
     border: 1px solid gainsboro;
 }
+
 #comment_note {
     border-style: solid;
 }
@@ -590,9 +596,17 @@ select {
     bottom: 0;
 }
 
-.alert.success {background-color: #4CAF50;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.info {
+    background-color: #2196F3;
+}
+
+.alert.warning {
+    background-color: #ff9800;
+}
 
 .closebtn {
     margin-left: 15px;
@@ -614,11 +628,13 @@ select {
 }
 
 .info-unique {
-    margin-top: 38px;
+    font-size: 19px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.69);
 }
 
 .text-show {
-    margin-left: 85px;
+    margin-left: 137px;
 }
 
 .type {
@@ -685,7 +701,6 @@ img.liste-main-unique {
     height: 250px;
 }
 
-
 .liste-resultat:hover {
     background-color: rgba(0, 0, 0, 0.13);
 }
@@ -697,12 +712,13 @@ img.liste-main-unique {
 }
 
 .prix-unique {
-    color: #00BFFF;
+    color: #129FFA;
 }
 
 .articleTitle {
     display: grid;
 }
+
 div#page {
     display: flex;
     justify-content: space-between;
@@ -764,6 +780,36 @@ div#page {
     right: 0;
     color: #00BFFF;
 }
+
+hr {
+    margin: 5px 5px 5px 0px;;
+    width: 50%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none; /*on supprime le style par défaut*/
+}
+
+.col-sm-4-note {
+    width: 0;
+}
+#comment_content {
+    width: 50%;
+}
+button {
+    background-color: white;
+    border: none;
+    padding: 0;
+}
+
+.modal-dialog {
+    width: 80%;
+}
+
+.modla-img {
+    max-width: 100%;
+    max-height: 570px;
+}
+
 /*Formats mobile*/
 @media screen and (max-width: 780px) {
 
@@ -775,11 +821,13 @@ div#page {
     .recherche-mobile {
         display: none;
     }
+
     .recherche {
         width: 299px;
         margin-left: 19px;
         margin-top: 10px;
     }
+
     nav {
         position: fixed;
         top: 0;
@@ -937,6 +985,20 @@ div#page {
         width: 100%;
     }
 
+    #mapInfo {
+        display: block;
+        width: 100%;
+    }
+
+    #infoLoisirs {
+        width: 100%;
+    }
+    #map {
+        width: 100%;
+    }
+    #comment_content {
+        width: 100%;
+    }
 }
 
 
