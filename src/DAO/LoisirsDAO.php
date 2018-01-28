@@ -38,7 +38,7 @@ class LoisirsDAO extends DAO
         $debut = 0;
         $limit = 60;
 
-        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . $_GET["cat"] . ' AND etat = 1  ORDER BY art_id ASC  LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
+        $sql = 'SELECT * FROM t_loisirs WHERE type = ' . intval($_GET["cat"]) . ' AND etat = 1  ORDER BY art_id ASC  LIMIT ' . (int)$debut . ' ,  ' . (int)$limit;
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
