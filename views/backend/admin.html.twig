@@ -1,6 +1,8 @@
 {% extends "views/layout.html.twig" %}
 {% set adminMenu = true %}
-
+{% block meta %}
+    <title>Administration</title>
+{% endblock %}
 {% block title %}Administration{% endblock %}
 
 {% block content %}
@@ -14,8 +16,8 @@
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#loisirs" data-toggle="tab">loisirs</a></li>
-                <li><a href="#comments" data-toggle="tab">Comments</a></li>
-                <li><a href="#users" data-toggle="tab">Users</a></li>
+                <li><a href="#comments" data-toggle="tab">Commentaires</a></li>
+                <li><a href="#users" data-toggle="tab">Utilisateurs</a></li>
             </ul>
         </div>
     </div>
@@ -26,8 +28,8 @@
                     <table class="table table-hover table-condensed">
                         <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Content</th>
+                            <th>Titre</th>
+                            <th>Déscription</th>
                             <th>Liens</th>
                             <th>Etat</th>
                         </tr>
@@ -115,7 +117,7 @@
                     </table>
                 </div>
             {% else %}
-                <div class="alert alert-warning">No comments found.</div>
+                <div class="alert alert-warning">Aucun commentaire trouvé.</div>
             {% endif %}
 
         </div>
@@ -126,7 +128,7 @@
                     <table class="table table-hover table-condensed">
                         <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom</th>
                             <th>Role</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
@@ -138,7 +140,7 @@
                                     {% if user.role == 'ROLE_ADMIN' %}
                                         Admin
                                     {% else %}
-                                        User
+                                        Utilisateur
                                     {% endif %}
                                 </td>
                                 <td>
@@ -168,7 +170,7 @@
                     </table>
                 </div>
             {% else %}
-                <div class="alert alert-warning">No users found.</div>
+                <div class="alert alert-warning">Aucun utilisateur.</div>
             {% endif %}
             <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add user</button></a>
 

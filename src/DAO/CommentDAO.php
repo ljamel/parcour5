@@ -160,7 +160,7 @@ class CommentDAO extends DAO
         $row = $this->getDb()->fetchAssoc($sql, array($id));
 
         if ($row) {
-
+            $row['moyenne'] = 10;
             return $this->buildDomainObject($row);
             }
         else

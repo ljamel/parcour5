@@ -7,7 +7,7 @@ use MicroCMS\Domain\User;
 use MicroCMS\Form\Type\CommentType;
 use MicroCMS\Form\Type\LoisirType;
 use MicroCMS\Form\Type\LoisirAddType;
-use MicroCMS\Form\Type\loisirSearchType;
+use MicroCMS\Form\Type\LoisirSearchType;
 use MicroCMS\Form\Type\UserType;
 
 // Login form
@@ -23,7 +23,7 @@ $app->match('/', function (Request $request) use ($app) {
 
     $loisirss = $app['dao.loisir']->findAllIndex();
     $loisirs = new Loisir();
-    $loisirForm = $app['form.factory']->create(loisirSearchType::class, $loisirs);
+    $loisirForm = $app['form.factory']->create(LoisirSearchType::class, $loisirs);
     $loisirForm->handleRequest($request);
     // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
     $loisir = $app['dao.loisir']->find(1);
@@ -142,7 +142,7 @@ $app->match('/loisir/add', function(Request $request) use ($app) {
         $app['session']->getFlashBag()->add('success', 'The loisir was successfully created.');
     }
     return $app['twig']->render('views/backend/loisir_add_form.html.twig', array(
-        'title' => 'New loisir',
+        'title' => 'Nouveau loisir',
         'loisir' => $loisir,
         'loisirForm' => $loisirForm->createView()));
 })->bind('admin_loisir_add');

@@ -13,7 +13,7 @@
             <h2>{{ loisir.title }}</h2>
             <!-- Button trigger modal -->
             <button type="button" data-toggle="modal" data-target="#exampleModal">
-                <img class="liste-main-unique" src="/images/{{ loisir.image }}">
+                <img class="liste-main-unique" src="/images/{{ loisir.image }}" alt="{{ loisir.title }}">
             </button>
         </div>
 
@@ -44,8 +44,7 @@
         <h3>Commentaires</h3>
         {% for comment in comments %}
             <hr>
-            Note {{ comment.note }} <strong> {{ comment.author.username }} </strong> : {{ comment.content }} <a
-                href="/comment/{{ comment.id }}/signale"> : Signaler le commentaire</a><br>
+            Note {{ comment.note }} <strong> Anonyme </strong> : {{ comment.content }} <a href="/comment/{{ comment.id }}/signale"> : Signaler le commentaire</a><br>
 
         {% else %}
             Aucun commentaire trouvez.
@@ -69,7 +68,7 @@
             {{ form_widget(commentForm.content, { 'attr':  {
                 'rows': '4',
                 'class': 'form-control',
-                'placeholder': 'Enter your comment'
+                'placeholder': 'Entrer votre commentaire'
             }}) }}
         </div>
         <div class="form-group">
@@ -108,7 +107,7 @@
     <!-- script qui appel la map -->
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap&posi=lat:{{ loisir.position|replace({",": ", lng: ", '%that%': 48}) }}"></script>
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&callback=initMap"></script>
     <script src="/js/ajax.js"></script>
     <script src="/js/map-unique.js"></script>
     <script src="/js/menu.js"></script>

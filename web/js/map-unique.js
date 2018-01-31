@@ -1,4 +1,8 @@
 function initMap() {
+
+
+    var image = '/images/cycles.png';
+
     // Fonction qui récupère les variables GET dans une url
     // Permet d'afficher le resultat de toute la base de données via google map
     function $_GET(param) {
@@ -22,13 +26,15 @@ function initMap() {
     var latt = Number(latP);
     var lngg = Number(lngP);
 
-    var uluru = {lat: latt, lng: lngg};
+    var position = {lat: latt, lng: lngg};
     var map = new google.maps.Map(document.getElementById('map'), {
+        icone:image,
         zoom: 15,
-        center: uluru
+        center: position
     });
     var marker = new google.maps.Marker({
-        position: uluru,
+        icone:image,
+        position: position,
         map: map
     });
 }

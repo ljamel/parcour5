@@ -102,6 +102,21 @@ h2 {
     display: none;
 }
 
+.dropdown-menu > li > a:hover {
+    background-color: transparent;
+}
+
+.btn.btn-default.btn-lg.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+}
+.dropdown-menu {
+    width: 177px;
+    left: 6px;
+}
+
+
 .title {
     margin: 15px;
     margin-left: 40px;
@@ -139,8 +154,7 @@ li {
     margin: 5px;
 }
 
-li a:hover:not(.suivant) {
-    border-top-color: #00BFFF;
+li a:hover:not(.suivant.dropdown-menu) {
     border-top-style: solid;
     padding-top: 13px;
 }
@@ -149,7 +163,9 @@ a:focus, a:hover {
     color: #23527c;
     text-decoration: none;
 }
-
+.connect  {
+    margin: 18px;
+}
 #menu-header {
     display: flex;
     justify-content: space-between;
@@ -161,8 +177,7 @@ a:focus, a:hover {
 }
 
 nav {
-    display: contents;
-    margin-top: 16px;
+    display: flex;
 }
 
 /* Section 1 */
@@ -374,7 +389,7 @@ nav {
 }
 
 #formulaire-recherche {
-    margin-top: 127px;
+    margin-top: 130px;
     margin-bottom: 35px;
     background-color: rgba(255, 255, 255, 0.59);
     height: 100px;
@@ -470,7 +485,7 @@ select {
         vertical-align: middle;
         margin-bottom: 2px;
         z-index: 0;
-        width: 157px;
+        width: 112px;
     }
 
     .custom-dropdown__select {
@@ -479,7 +494,7 @@ select {
         -moz-appearance: none;
         appearance: none;
         margin-left: 4px;
-        width: 138px;
+        width: 101px;
     }
 
     .custom-dropdown::before,
@@ -495,8 +510,8 @@ select {
         height: 1em;
         font-size: .625em;
         line-height: 1;
-        right: 1.2em;
-        top: 50%;
+        right: 0;
+        top: 20px;
         margin-top: -.5em;
     }
 
@@ -520,7 +535,6 @@ select {
     .custom-dropdown--white::before {
         top: .5em;
         bottom: .5em;
-        background-color: #fff;
         border-left: 1px solid rgba(0, 0, 0, .1);
     }
 
@@ -579,6 +593,7 @@ select {
     margin: 137px;
     align-items: flex-start;
     border: 1px solid gainsboro;
+    background-color: #FEFEFE;
 }
 
 #comment_note {
@@ -808,6 +823,14 @@ button {
 .modla-img {
     max-width: 100%;
     max-height: 570px;
+    min-width: 720px;
+}
+.btn.btn-default.btn-primary {
+    margin-left: 9px;
+}
+
+#loisir_position {
+    width: 230px;
 }
 
 /*Formats mobile*/
@@ -826,6 +849,18 @@ button {
         width: 299px;
         margin-left: 19px;
         margin-top: 10px;
+    }
+
+    #loisir_position {
+        width: 230px;
+        background-color: transparent;
+        color: transparent;
+        display: ruby-base-container;
+    }
+
+    .custom-dropdown {
+        margin: 20px;
+        margin-bottom: 0px;
     }
 
     nav {
@@ -895,7 +930,7 @@ button {
     input:not(.btn-primary) {
         width: 299px;
         margin-top: 0;
-        margin-left: 19px;
+        margin-left: 16px;
     }
 
     ul#deroul-menu {
@@ -925,11 +960,7 @@ button {
     }
 
     .ico-recherche {
-        position: relative;
-        left: 25px;
-        top: 34px;
-        display: block;
-        width: 100px;
+        display: none;
     }
 
     #main {

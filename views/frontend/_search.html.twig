@@ -1,45 +1,42 @@
 <div id="formulaire-recherche">
 
-    <p class="queFaire">QUE FAIRE</p>
+    <p class="queFaire">Que faire</p>
     <span class="fa fa-bicycle fa-min fa-cat" title="loisirs"></span>
     <span class="sous-cat">
-        <a href="/liste/?cat=1" title="enfants"><div class="img-sous-menu-enfants" ><span class="age">Enfant</span></div></a>
-        <a href="/liste/?cat=0" title="toutes la famille"><div class="img-sous-menu-famille" ><span class="age">Toutes la famille</span></div></a>
-        <a href="/liste/?cat=2" title="senior"><div class="img-sous-menu-senior" ><span class="age">Senior</span></div></a>
+        <a href="/liste/?cat=1" title="enfants"><span class="img-sous-menu-enfants age">Enfant</span></a>
+        <a href="/liste/?cat=0" title="toutes la famille"><span class="img-sous-menu-famille age">Toutes la famille</span></a>
+        <a href="/liste/?cat=2" title="senior"><span class="img-sous-menu-senior age">Senior</span></a>
     </span>
     <i class="fa fa-map-o fa-min fa-cat" title="Plans"></i> <span class="sous-cat-plans">
-        <a href="geoloc" title="Me localiser"><div class="img-sous-menu geoloc"><span class="title-cat">Me localiser</span> </div></a>
-        <a href="/ville/?loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314" title="Normandie"><div class="img-sous-menu normandie"><span class="title-cat">Normandie</span> </div></a>
+        <a href="geoloc" title="Me localiser"><span class="img-sous-menu geoloc title-cat">Me localiser</span></a>
+        <a href="/ville/?loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314" title="Normandie"><span class="img-sous-menu normandie title-cat">Normandie</span></a>
     </span>
-    <i class="fa fa-map-signs fa-min fa-cat" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i> </p>
+    <i class="fa fa-map-signs fa-min fa-cat" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i>
 
 
     <form action="result/0" method="post">
-
-        {{ form_start(loisirForm, { 'attr': {'class': 'form-horizontal'} }) }}
-
         <span class="custom-dropdown custom-dropdown--white">
             {{ form_label(loisirForm.prix, NULL, { 'label_attr':  {
                 'class': 'col-sm-4 control-label none'
             }}) }}
-            <div class="col-sm-6">
+            <span class="col-sm-6">
                 {{ form_errors(loisirForm.prix) }}
                 {{ form_widget(loisirForm.prix, { 'attr':  {
                     'class':'custom-dropdown__select custom-dropdown__select--white'
                 }}) }}
-            </div>
+            </span>
         </span>
 
         <span class="custom-dropdown custom-dropdown--white">
             {{ form_label(loisirForm.Distance, NULL, { 'label_attr':  {
                 'class': 'col-sm-4 control-label none'
             }}) }}
-            <div class="col-sm-6">
+            <span class="col-sm-6">
                 {{ form_errors(loisirForm.Distance) }}
                 {{ form_widget(loisirForm.Distance, { 'attr':  {
-                    'class':'custom-dropdown__select custom-dropdown__select--white'
+                    'class':'custom-dropdown__select custom-dropdown__select--white',
                 }}) }}
-            </div>
+            </span>
         </span>
 
         <i class="fa fa-map-marker fa-min ico-recherche" title="Loisirs"></i>
@@ -49,10 +46,11 @@
         {{ form_errors(loisirForm.position) }}
         {{ form_widget(loisirForm.position, { 'attr':  {
             'class':'',
-            'placeholder':'adresse',
+            'value':'Adresse de départ',
+            'required':'False',
         }}) }}
 
-        <--! Ville de départ pour position du curseur --><span  id="position"></span>
+        <span  id="position"></span>
 
         <i id="date-open" class="fa fa-calendar recherche-mobile icone-date" aria-hidden="true" onclick="menuOpen.openDate()"></i>
 
@@ -66,7 +64,7 @@
                 {{ form_widget(loisirForm.dateDebut, { 'attr':  {
 
                     'value': '12, 31, 2017',
-                    'id': 'datepicker'
+
                 }}) }}
             <i class="fa fa-calendar fa-min ico-recherche" aria-hidden="true"></i>
 
@@ -77,7 +75,7 @@
                 {{ form_widget(loisirForm.dateFin, { 'attr':  {
 
                     'value': '12, 31, 2030',
-                    'id': 'to'
+
                 }}) }}
         </span>
 

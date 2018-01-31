@@ -1,4 +1,3 @@
-
 {% extends "/views/layout.html.twig" %}
 
 {% block content %}
@@ -6,17 +5,24 @@
 
     {% for loisirs in loisir %}
         <p id="{{ loisirs.title }}" class="margin-result">.</p>
-        <div class="liste-resultat" >
+        <div class="liste-resultat">
 
             <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
                 <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
             </a>
 
-            <div class="result-text"><h2>{{ loisirs.title }}</h2> <p>{{ loisirs.content }}</P></div>
+            <div class="result-text"><h2>{{ loisirs.title }}</h2>
+                <p>{{ loisirs.content }}</P></div>
             <p>Distance {{ loisirs.distance[:2] }} Kms</p>
             <span class="articleTitle">
                 <a href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P></a>
-                <span><A class="prix" href="{{ loisirs.lien }}"> {{ loisirs.prix }} €</a></span>
+
+                {% if loisirs.prix == 0 %}
+                    <span><A class="prix" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">En savoir plus</a></span>
+                {% else %}
+                    <span><A class="prix" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">{{ loisirs.prix }} €</a></span>
+                {% endif %}
+
             </span>
         </div>
         {% set resultNB = resultNB + 1 %}
@@ -24,7 +30,8 @@
 
     {% if resultNB == 0 %}
         <div class="liste-resultat">
-            <h2>Désolé nous n'avons trouvé aucun résultat. Mais l'administrateur a été prévenu afin que d'autre loisirs soit ajouté</h2>
+            <h2>Désolé nous n'avons trouvé aucun résultat. Mais l'administrateur a été prévenu afin que d'autre loisirs
+                soit ajouté</h2>
         </div>
     {% else %}Nous avons trouvé {{ resultNB }} activités.
     {% endif %}

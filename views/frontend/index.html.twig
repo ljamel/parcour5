@@ -2,31 +2,34 @@
 
 {% block meta %}
     <title>Idées loisirs</title>
-    <meta name="description" content="Divertissement pour toutes la familles. Découvrez les loisirs, lieux touristiques et séjours. Une liste de suggestion de loisirs et vacances via le lien ci dessous." />
+    <meta name="description"
+          content="Divertissement pour toutes la familles. Découvrez les loisirs, lieux touristiques et séjours. Une liste de suggestion de loisirs et vacances via le lien ci dessous."/>
 {% endblock %}
 
 {% block content %}
     {{ include('views/frontend/_slide.html.twig') }}
     <div id="main">
-        <div class="display"><h1> BON PLANS </h1> <P><a href="/geoloc" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen" aria-hidden="true"></i> </a></P> </div>
+        <div class="display"><h1> BON PLANS </h1>
+            <p><a href="/geoloc" TITLE="Liste des loisirs"> VOIR TOUT <i class="fa fa-angle-double-right fa-moyen"
+                                                                         aria-hidden="true"></i> </a></p></div>
 
         {% for loisir in loisirs %}
 
             <div class="liste-main shadow-none">
-                <a class="articleTitle"
-                   href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
-                    <img class="liste-main" src="/images/{{ loisir.image }}">
-                    <h2><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}" class="loisirTitle" >{{ loisir.title[:19] }}</a>
-                        <span class="type">{{ loisir.categorie|replace({0: "Famille", 1: "Enfants", 2: "Senior"}) }}</span></h2>
-                    <p>{{ loisir.content[:178] }}... </p>
-                    <div class="display">
-                        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position[:30] }}
-                        </P>
-                        <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €</P>
+                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
+                    <img class="liste-main" src="/images/{{ loisir.image }}" alt="{{ loisir.title }}"></a>
+                <h2>{{ loisir.title[:19] }}
+                    <span class="type">{{ loisir.categorie|replace({0: "Famille", 1: "Enfants", 2: "Senior"}) }}</span>
+                </h2>
+                <p>{{ loisir.content[:178] }}... </p>
+                <div class="display">
+                    <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i> {{ loisir.position[:30] }}
+                    </p>
+                    <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €</P>
 
-                    </div>
-                    <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><p class="reserver">Plus d'info</p></a>
-                </a>
+                </div>
+                <a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}">
+                    <p class="reserver">Plus d'info</p></a>
             </div>
 
         {% endfor %}
@@ -36,36 +39,32 @@
         <nav aria-label="navigation">
             <ul class="pager">
                 <li class="previous disabled"><a href="#" title="Précédent" class="suivant">Précédent</a></li>
-                <li class="next"><a href="?page={{ page }}&pageSuivant={{ pageSuivant }}&#main" class="suivant">Page suivante >> </a></li>
+                <li class="next"><a href="?page={{ page }}&pageSuivant={{ pageSuivant }}#main" class="suivant">Pagesuivante >> </a></li>
             </ul>
         </nav>
 
     </div>
     <div class="liste-resultat">
-        <img class="promo-acceuil" src="/images/{{ loisir.image }}">
-        <P><h4>{{ loisir.title }}</h4></P>
-        <P>{{ loisir.content }}</P>
-        <P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}#map"> Voir sur le plans </a></P>
-        <P class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €<br /><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><span class="reserver">l Plus d'info</span></a></P>
+        <img class="promo-acceuil" src="/images/{{ loisir.image }}" alt="{{ loisir.title }}">
+        <h4>{{ loisir.title }}</h4>
+        <p>{{ loisir.content }}</p>
+        <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}#map">Voir sur le plans </a></p>
+        <p class="prix">{{ loisir.prix|replace({0: "GRATUIT"}) }} €<br/><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><span class="reserver">l Plus d'info</span></a></p>
     </div>
 
     <div class="alert info">
         <span class="closebtn">&times;</span>
-        En poursuivant votre navigation, vous acceptez l’utilisation de Cookies pour réaliser des statistiques de visites.
+        En poursuivant votre navigation, vous acceptez l’utilisation de Cookies pour réaliser des statistiques de
+        visites.
     </div>
     <div id="map" class="none"></div>
-
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
     <script src="/js/ajax.js"></script>
     <script src="/js/geocode.js"></script>
     <script src="/js/alert-cookies.js"></script>
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&"
-            async defer></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&" async defer></script>
     <script src="/js/menuIndex.js"></script>
-
     <script src="/js/slide.js"></script>
 {% endblock %}
