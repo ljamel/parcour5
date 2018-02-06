@@ -21,7 +21,7 @@ class LoisirsDAO extends DAO
 
         $time = time();
 
-        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 30 AND etat = 1 And date_debut < ' . $time . ' ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
+        $sql = 'SELECT * FROM t_loisirs WHERE prix BETWEEN 0 AND 30 AND etat = 1 And date_debut < ' . (int)$time . ' ORDER BY art_id DESC   LIMIT ' . (int)$_GET["page"] . ' ,  ' . (int)$_GET["pageSuivant"];
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -72,7 +72,7 @@ class LoisirsDAO extends DAO
     public function findResult()
     {
 
-        if(isset($_POST['loisir']['positionLat']) === false or $_POST['loisir']['prix'] === false){
+        if(isset($_POST['loisir']['positionLat']) === false || $_POST['loisir']['prix'] === false){
             $_POST['loisir']['positionLat'] = $_GET['loisirpositionLat'];
             $_POST['loisir']['positionLng'] = $_GET['loisirpositionLng'];
             $_POST['loisir']['prix'] = 30;

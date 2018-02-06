@@ -8,8 +8,6 @@
  */
 session_start();
 
-ini_set('display_errors',1);
-
 // Envoie de mail
 if ($_POST['name'] != "" && $_POST['email'] != "" && strlen($_POST['message']) > 10) {
 
