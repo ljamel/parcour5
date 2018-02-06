@@ -28,23 +28,28 @@ $app->match('/', function (Request $request) use ($app) {
     // la méthode find me permet d'afficher un loisir en particulier ex: find(1) ou find($id)
     $loisir = $app['dao.loisir']->find(1);
     return $app['twig']->render('views/frontend/index.html.twig', array('loisirs' => $loisirss, 'loisir' => $loisir,
-        'title' => 'New loisir',
+        'title' => 'Accueil',
         'loisirForm' => $loisirForm->createView()));
 })->bind('home');
+
+
+// Resultat de recherche methode match accepte get et post
+$app->match('/result', function (Request $request) use ($app) {
+    $loisir = $app['dao.loisir']->findResult($request);
+    return $app['twig']->render('views/frontend/result.html.twig', array('loisir' => $loisir));
+})->bind('result/');
+
+// pour afficher les cluster
+$app->match('/result/1', function (Request $request) use ($app) {
+    $loisir = $app['dao.loisir']->findResult($request);
+    return $app['twig']->render('views/map/clustersResult.html.twig', array('loisir' => $loisir));
+})->bind('result/1');
 
 $app->match('/contact', function () use ($app) {
 
     return $app['twig']->render('views/frontend/contact.html.twig');
 
 })->bind('/contact');
-
-// Resultat de recherche methode match accepte get et post
-$app->match('/result/{id}', function ($id, Request $request) use ($app) {
-    $loisir = $app['dao.loisir']->findResult($request);
-    if ($id < 1) { $url = 'views/frontend/result.html.twig'; } else { $url = 'views/map/clustersResult.html.twig';}
-
-    return $app['twig']->render($url, array('loisir' => $loisir));
-})->bind('result/');
 
 // Resultat de recherche methode match accepte get et post
 $app->match('/ville/', function ( Request $request) use ($app) {
@@ -196,10 +201,11 @@ $app->get('/admin/comment/{id}/delete', function($id, Request $request) use ($ap
     return $app->redirect($app['url_generator']->generate('admin'));
 })->bind('admin_comment_delete');
 
-$app->get('/comment/{id}/signale/', function($id, Request $request) use ($app) {
+$app->get('/comment/{id}/signale/{postId}', function($id, $postId, Request $request) use ($app) {
     $app['dao.comment']->signale($id);
     $app['session']->getFlashBag()->add('success', 'Commentaire signalé.');
-    return $app->redirect('/');
+    $url = '/sejours/' . $postId;
+    return $app->redirect($url);
 })->bind('signale');
 
 $app->get('/note/{id}/loisir/', function($id, Request $request) use ($app) {

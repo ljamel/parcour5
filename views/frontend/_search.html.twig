@@ -9,12 +9,13 @@
     </span>
     <i class="fa fa-map-o fa-min fa-cat" title="Plans"></i> <span class="sous-cat-plans">
         <a href="geoloc" title="Me localiser"><span class="img-sous-menu geoloc title-cat">Me localiser</span></a>
+        <a href="/ville/?loisirpositionLat=48.856614&loisirpositionLng=2.3522219000000177" title="Paris"><span class="img-sous-menu paris title-cat">Paris</span></a>
         <a href="/ville/?loisirpositionLat=48.87987039999999&loisirpositionLng=0.17125290000001314" title="Normandie"><span class="img-sous-menu normandie title-cat">Normandie</span></a>
     </span>
     <i class="fa fa-map-signs fa-min fa-cat" title="circuit. Voyage avec guide"></i> <i class="fa fa-cutlery fa-min fa-cat" aria-hidden="true" title="Restaurant, fast food et epiceries"></i> <i class="fa fa-bed fa-min fa-cat" aria-hidden="true" title="hôtel, gîte et camping"></i>
 
 
-    <form action="result/0" method="post">
+    <form action="result" method="post">
         <span class="custom-dropdown custom-dropdown--white">
             {{ form_label(loisirForm.prix, NULL, { 'label_attr':  {
                 'class': 'col-sm-4 control-label none'
@@ -47,7 +48,6 @@
         {{ form_widget(loisirForm.position, { 'attr':  {
             'class':'',
             'value':'Adresse de départ',
-            'required':'False',
         }}) }}
 
         <span  id="position"></span>
@@ -81,4 +81,5 @@
 
         <input id="pac-input" class="recherche" type="submit" value="Chercher">
     </form>
+    <a href="/geoloc" class="recherche-mobile none">Me localiser</a>
 </div>

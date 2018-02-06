@@ -8,17 +8,26 @@
 
         {% for loisirs in loisir %}
 
-
+            <p id="{{ loisirs.title }}" class="margin-result">.</p>
             <div class="liste-resultat">
+
                 <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">
                     <img class="promo-acceuil" src="/images/{{ loisirs.image }}">
                 </a>
 
-                <P>{{ loisirs.title }} <br /> {{ loisirs.content }}</P>
-                <p>Distance {{ loisirs.distance }} Mètres</p>
-                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P>
-                    <P class="prix">{{ loisirs.prix|replace({0: "GRATUIT"}) }}</P>
-                </a>
+                <div class="result-text"><h2>{{ loisirs.title }}</h2>
+                    <p>{{ loisirs.content }}</P></div>
+                <p>Distance {{ loisirs.distance[:2] }} Kms</p>
+                <span class="articleTitle">
+                <a href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}#map"><P class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true">Plans</i> </P></a>
+
+                    {% if loisirs.prix == 0 %}
+                        <span><A class="prix" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">En savoir plus</a></span>
+                {% else %}
+                        <span><A class="prix" href="{{ path('sejours/', { 'id': loisirs.id }) }}?positionL={{ loisirs.positionLat }}&positionN={{ loisirs.positionLng }}">{{ loisirs.prix }} €</a></span>
+                    {% endif %}
+
+            </span>
             </div>
 
         {% endfor %}

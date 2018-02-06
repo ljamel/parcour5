@@ -1,4 +1,3 @@
-
 {% extends "/views/layout.html.twig" %}
 
 {% block meta %}
@@ -6,15 +5,43 @@
 {% endblock %}
 
 {% block content %}
+    <div class="liste-resultat contact">
 
-    <div class="liste-resultat">
-        <h2>Me contacter</h2>
-        <P>
-            Email<br/>
-            djamallamri@yahoo.fr
-        </P>
+        <h2>Me contacter</h2><br />
+
+        <form method="post" action="src/DAO/contact.php">
+
+            <div class="form-group"> <!-- Name field -->
+                <label class="control-label " for="name">Nom</label>
+                <input class="form-control" id="name" name="name" type="text"/>
+            </div>
+
+            <div class="form-group"> <!-- Email field -->
+                <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+                <input class="form-control" id="email" name="email" type="text"/>
+            </div>
+
+            <div class="form-group"> <!-- Subject field -->
+                <label class="control-label " for="subject">Sujet</label>
+                <input class="form-control" id="subject" name="subject" type="text"/>
+            </div>
+
+            <div class="form-group"> <!-- Message field -->
+                <label class="control-label " for="message">Message</label>
+                <textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary " name="submit" type="submit">Envoyer un message</button>
+            </div>
+
+        </form>
+
     </div>
-
+    <P>
+        Email<br/>
+        djamallamri@yahoo.fr
+    </P>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="/js/ajax.js"></script>
     <script src="/js/map.js"></script>

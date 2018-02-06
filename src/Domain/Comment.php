@@ -45,6 +45,17 @@ class Comment
 
     private $moyenne;
 
+    private $hobbies;
+
+    public function getHobbies() {
+        return $this->hobbies;
+    }
+
+    public function setHobbies($hobbies) {
+        $this->hobbies = $hobbies;
+        return $this;
+    }
+
     public function getId() {
         return $this->id;
     }

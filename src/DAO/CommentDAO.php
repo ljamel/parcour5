@@ -91,6 +91,7 @@ class CommentDAO extends DAO
     protected function buildDomainObject(array $row) {
         $comment = new Comment();
         $comment->setId($row['com_id']);
+        $comment->setHobbies($row['art_id']);
         $comment->setContent($row['com_content']);
         $comment->setSignale($row['signale']);
         $comment->setNote($row['note']);

@@ -7,6 +7,7 @@
     {% block meta %}{% endblock %}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
@@ -15,7 +16,7 @@
 <div id="haut"></div>
 <div id="menu-header">
     <h1>
-        <a id="blue-menu5" class="title" href="/">Loisirs et Vacances</a>
+        <a id="blue-menu5" class="title" href="/">Loisirs et sortie culturelle</a>
     </h1>
     <nav>
 
@@ -40,13 +41,13 @@
 
                     {% if app.user and is_granted('ROLE_ADMIN') %}
                         <li><a class="white" href="/admin"> Administration </a></li>
-                    {% else %}
-                        <li><a class="white" href="/user/add"> Inscription </a></li>
                     {% endif %}
 
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a class="white" href="/loisir/add"> Ajouter une activité </a></li>
                         <li><a href="{{ path('logout') }}">Se déconnecter</a></li>
+                    {% else %}
+                        <li><a class="white" href="/user/add"> Inscription </a></li>
                     {% endif %}
 
                 </ul>
@@ -101,10 +102,18 @@
         </span>
     </a>
 </div>
+<div id="fb-root"></div>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/js/date.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.12';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

@@ -9,7 +9,6 @@ function Menu() {
             document.getElementById('blue-menu').style.color = "rgb(18, 159, 250)";
             document.getElementById('blue-menu2').style.color = "rgb(18, 159, 250)";
             document.getElementById('blue-menu3').style.color = "rgb(18, 159, 250)";
-            document.getElementById('blue-menu4').style.color = "rgb(18, 159, 250)";
             document.getElementById('blue-menu5').style.color = "rgb(18, 159, 250)";
 
         }

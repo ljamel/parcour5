@@ -63,6 +63,8 @@ p {
     margin-right: 15px;
     margin-top: 5px;
     text-align: justify;
+    font-family: 'Philosopher', sans-serif;
+    min-width: 96px;
 }
 
 h2 {
@@ -111,11 +113,11 @@ h2 {
     border: none;
     margin: 5px;
 }
+
 .dropdown-menu {
     width: 177px;
     left: 6px;
 }
-
 
 .title {
     margin: 15px;
@@ -163,9 +165,11 @@ a:focus, a:hover {
     color: #23527c;
     text-decoration: none;
 }
-.connect  {
+
+.connect {
     margin: 18px;
 }
+
 #menu-header {
     display: flex;
     justify-content: space-between;
@@ -373,6 +377,16 @@ nav {
     margin: 5px;
 }
 
+.paris {
+    background: url("/images/cartedeparisfr.jpg") no-repeat;
+    background-size: 104px;
+    box-shadow: inset 2050px 0 0 rgba(0, 0, 0, 0.26);
+    color: white;
+    height: 80px;
+    width: 104px;
+    margin: 5px;
+}
+
 .title-cat {
     margin-top: 32px;
     display: inline-block;
@@ -381,7 +395,7 @@ nav {
 }
 
 .age {
-    display: table-caption;
+    display: flex;
     position: relative;
     margin-left: 29px;
     margin-bottom: -30px;
@@ -406,7 +420,7 @@ nav {
     padding-bottom: 5px;
     background-color: white;
     width: 19px;
-    margin-left: 19px;
+    margin-left: 25px;
     color: black;
     font-size: 20px;
     border-radius: 3px;
@@ -686,12 +700,12 @@ img.liste-main-unique {
     width: 500px;
 }
 
-.shadow-none:hover {
+.shadow-none {
     box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
 }
 
-.liste-main:hover {
-    background-color: rgba(0, 0, 0, 0.13);
+.shadow-none:hover {
+    box-shadow: none;
 }
 
 .liste-main-resultat {
@@ -710,6 +724,11 @@ img.liste-main-unique {
     overflow: hidden;
 }
 
+.liste-resultat.contact {
+    height: 900px;
+    margin-top: 112px;
+}
+
 .promo-acceuil {
     display: inline-block;
     background-color: #F6F7F8;
@@ -722,8 +741,11 @@ img.liste-main-unique {
 
 .prix {
     text-align: right;
-    color: #00BFFF;
-    width: 84px;
+    color: white;
+    width: 112px;
+    padding: 12px;
+    background-color: #07C18E;
+    height: 38px;
 }
 
 .prix-unique {
@@ -807,9 +829,11 @@ hr {
 .col-sm-4-note {
     width: 0;
 }
+
 #comment_content {
     width: 50%;
 }
+
 button {
     background-color: white;
     border: none;
@@ -825,12 +849,24 @@ button {
     max-height: 570px;
     min-width: 720px;
 }
+
 .btn.btn-default.btn-primary {
     margin-left: 9px;
 }
 
 #loisir_position {
     width: 230px;
+}
+
+.fb-like.fb_iframe_widget {
+    width: 20px;
+    margin-left: 15px;
+}
+._51mx:last-child > ._51m- {
+
+    display: inline-flex;
+    justify-content: center;
+    margin: 4px;
 }
 
 /*Formats mobile*/
@@ -841,14 +877,25 @@ button {
         display: none;
     }
 
-    .recherche-mobile {
+    form {
         display: none;
     }
 
-    .recherche {
-        width: 299px;
-        margin-left: 19px;
-        margin-top: 10px;
+    .recherche-mobile {
+        background-color: #00BFFF;
+        color: white;
+        padding: 30px;
+        margin-left: 95px;
+        display: flex;
+        justify-content: baseline;
+        margin-right: 110px;
+        margin-top: 46px;
+    }
+
+    .liste-main.shadow-none {
+        margin: 6px;
+        width: 97%;
+        box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.3);
     }
 
     #loisir_position {
@@ -997,10 +1044,15 @@ button {
     .title-show {
         display: block;
         margin: 0;
+        margin-top: 50px;
     }
 
     .text-show {
         margin-left: 0;
+    }
+
+    .text-center {
+        margin-top: 50px;
     }
 
     img.liste-main-unique {
@@ -1024,11 +1076,17 @@ button {
     #infoLoisirs {
         width: 100%;
     }
+
     #map {
         width: 100%;
     }
+
     #comment_content {
         width: 100%;
+    }
+
+    .connect {
+        display: none;
     }
 }
 

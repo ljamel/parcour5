@@ -103,6 +103,7 @@ function map() {
     } else {
         // Browser doesn't support Geolocation
         document.getElementById('infoLoisirs').innerHTML = "La géolocalisation n'est pas supporter par votre navigateur";
+        document.getElementById('infoLoisirs').innerHTML = '<p class="reserver">Activer le GPS</p>';
     }
 
 }

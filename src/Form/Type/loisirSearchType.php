@@ -28,11 +28,8 @@ class LoisirSearchType extends AbstractType
             ->add('position', TextType::class)
             ->add('positionLat', TextType::class)
             ->add('positionLng', TextType::class)
-            ->add('image', FileType::class)
-            ->add('imageModif', FileType::class)
             ->add('dateDebut', textType::class)
             ->add('dateFin', textType::class)
-
             ->add('content', TextareaType::class);
     }
 
