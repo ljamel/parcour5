@@ -28,7 +28,7 @@ class LogoutUrlGenerator
     private $requestStack;
     private $router;
     private $tokenStorage;
-    private $listeners = array();
+    private $listeners = [];
     private $currentFirewall;
 
     public function __construct(RequestStack $requestStack = null, UrlGeneratorInterface $router = null, TokenStorageInterface $tokenStorage = null)
@@ -41,29 +41,28 @@ class LogoutUrlGenerator
     /**
      * Registers a firewall's LogoutListener, allowing its URL to be generated.
      *
-     * @param string                         $key              The firewall key
-     * @param string                         $logoutPath       The path that starts the logout process
-     * @param string                         $csrfTokenId      The ID of the CSRF token
-     * @param string                         $csrfParameter    The CSRF token parameter name
-     * @param CsrfTokenManagerInterface|null $csrfTokenManager A CsrfTokenManagerInterface instance
-     * @param string|null                    $context          The listener context
+     * @param string      $key           The firewall key
+     * @param string      $logoutPath    The path that starts the logout process
+     * @param string|null $csrfTokenId   The ID of the CSRF token
+     * @param string|null $csrfParameter The CSRF token parameter name
+     * @param string|null $context       The listener context
      */
     public function registerListener($key, $logoutPath, $csrfTokenId, $csrfParameter, CsrfTokenManagerInterface $csrfTokenManager = null/*, string $context = null*/)
     {
-        if (func_num_args() >= 6) {
+        if (\func_num_args() >= 6) {
             $context = func_get_arg(5);
         } else {
-            if (__CLASS__ !== get_class($this)) {
+            if (__CLASS__ !== static::class) {
                 $r = new \ReflectionMethod($this, __FUNCTION__);
                 if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
-                    @trigger_error(sprintf('Method %s() will have a sixth `string $context = null` argument in version 4.0. Not defining it is deprecated since 3.3.', __METHOD__), E_USER_DEPRECATED);
+                    @trigger_error(sprintf('The "%s()" method will have a 6th `string $context = null` argument in version 4.0. Not defining it is deprecated since Symfony 3.3.', __METHOD__), E_USER_DEPRECATED);
                 }
             }
 
             $context = null;
         }
 
-        $this->listeners[$key] = array($logoutPath, $csrfTokenId, $csrfParameter, $csrfTokenManager, $context);
+        $this->listeners[$key] = [$logoutPath, $csrfTokenId, $csrfParameter, $csrfTokenManager, $context];
     }
 
     /**
@@ -96,7 +95,7 @@ class LogoutUrlGenerator
      */
     public function setCurrentFirewall($key, $context = null)
     {
-        $this->currentFirewall = array($key, $context);
+        $this->currentFirewall = [$key, $context];
     }
 
     /**
@@ -115,7 +114,7 @@ class LogoutUrlGenerator
             throw new \LogicException('Unable to generate the logout URL without a path.');
         }
 
-        $parameters = null !== $csrfTokenManager ? array($csrfParameter => (string) $csrfTokenManager->getToken($csrfTokenId)) : array();
+        $parameters = null !== $csrfTokenManager ? [$csrfParameter => (string) $csrfTokenManager->getToken($csrfTokenId)] : [];
 
         if ('/' === $logoutPath[0]) {
             if (!$this->requestStack) {
@@ -127,7 +126,7 @@ class LogoutUrlGenerator
             $url = UrlGeneratorInterface::ABSOLUTE_URL === $referenceType ? $request->getUriForPath($logoutPath) : $request->getBaseUrl().$logoutPath;
 
             if (!empty($parameters)) {
-                $url .= '?'.http_build_query($parameters);
+                $url .= '?'.http_build_query($parameters, '', '&');
             }
         } else {
             if (!$this->router) {

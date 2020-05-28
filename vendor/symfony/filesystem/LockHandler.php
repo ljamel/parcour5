@@ -15,7 +15,7 @@ use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\Lock\Store\SemaphoreStore;
 
-@trigger_error(sprintf('The %s class is deprecated since version 3.4 and will be removed in 4.0. Use %s or %s instead.', LockHandler::class, SemaphoreStore::class, FlockStore::class), E_USER_DEPRECATED);
+@trigger_error(sprintf('The %s class is deprecated since Symfony 3.4 and will be removed in 4.0. Use %s or %s instead.', LockHandler::class, SemaphoreStore::class, FlockStore::class), E_USER_DEPRECATED);
 
 /**
  * LockHandler class provides a simple abstraction to lock anything by means of
@@ -81,12 +81,12 @@ class LockHandler
             $error = $msg;
         });
 
-        if (!$this->handle = fopen($this->file, 'r')) {
+        if (!$this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r')) {
             if ($this->handle = fopen($this->file, 'x')) {
-                chmod($this->file, 0444);
-            } elseif (!$this->handle = fopen($this->file, 'r')) {
+                chmod($this->file, 0666);
+            } elseif (!$this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r')) {
                 usleep(100); // Give some time for chmod() to complete
-                $this->handle = fopen($this->file, 'r');
+                $this->handle = fopen($this->file, 'r+') ?: fopen($this->file, 'r');
             }
         }
         restore_error_handler();

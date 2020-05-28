@@ -6,7 +6,7 @@ function map() {
     });
 
 
-    var image = '/images/cycles.png';
+    var image = '/web/images/cycles.png';
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
 
@@ -81,7 +81,7 @@ function map() {
                             document.getElementById('map').style.width = "100%";
                             document.getElementById('infoLoisirs').style.width = "100%";
                         }
-                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=/images/' + object.image + ' alt=Aperçu><br />' + '<h4>' + object.name + '</h4>' + '<br />' + '<a href="https://www.cadito.fr/sejours/' + object.id + '?positionL=' + object.position.lat + '&positionN=' + object.position.lng + '" >' + '<p class="reserver">Plus d\'info</p>' + '</a>';
+                        document.getElementById('infoLoisirs').innerHTML = '<img id="imageMap" src=/web/images/' + object.image + ' alt=Aperçu><br />' + '<h4>' + object.name + '</h4>' + '<br />' + '<a href="https://www.cadito.fr/sejours/' + object.id + '?positionL=' + object.position.lat + '&positionN=' + object.position.lng + '" >' + '<p class="reserver">Plus d\'info</p>' + '</a>';
 
                     });
 

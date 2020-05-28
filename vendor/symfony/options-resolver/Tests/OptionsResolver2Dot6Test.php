@@ -29,10 +29,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->resolver = new OptionsResolver();
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // resolve()
-    ////////////////////////////////////////////////////////////////////////////
-
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
      * @expectedExceptionMessage The option "foo" does not exist. Defined options are: "a", "z".
@@ -68,10 +64,6 @@ class OptionsResolver2Dot6Test extends TestCase
 
         $this->resolver->resolve();
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // setDefault()/hasDefault()
-    ////////////////////////////////////////////////////////////////////////////
 
     public function testSetDefaultReturnsThis()
     {
@@ -114,10 +106,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->resolver->setDefault('foo', null);
         $this->assertTrue($this->resolver->hasDefault('foo'));
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // lazy setDefault()
-    ////////////////////////////////////////////////////////////////////////////
 
     public function testSetLazyReturnsThis()
     {
@@ -232,10 +220,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertSame(2, $calls);
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // setRequired()/isRequired()/getRequiredOptions()
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testSetRequiredReturnsThis()
     {
         $this->assertSame($this->resolver, $this->resolver->setRequired('foo'));
@@ -330,10 +314,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertSame(array('foo', 'bar'), $this->resolver->getRequiredOptions());
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // isMissing()/getMissingOptions()
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testIsMissingIfNotSet()
     {
         $this->assertFalse($this->resolver->isMissing('foo'));
@@ -372,10 +352,6 @@ class OptionsResolver2Dot6Test extends TestCase
 
         $this->assertSame(array('bar'), $this->resolver->getMissingOptions());
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // setDefined()/isDefined()/getDefinedOptions()
-    ////////////////////////////////////////////////////////////////////////////
 
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
@@ -474,10 +450,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertFalse($this->resolver->isDefined('foo'));
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // setAllowedTypes()
-    ////////////////////////////////////////////////////////////////////////////
-
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
@@ -568,10 +540,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertNotEmpty($this->resolver->resolve());
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // addAllowedTypes()
-    ////////////////////////////////////////////////////////////////////////////
-
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
@@ -653,10 +621,6 @@ class OptionsResolver2Dot6Test extends TestCase
 
         $this->assertNotEmpty($this->resolver->resolve());
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // setAllowedValues()
-    ////////////////////////////////////////////////////////////////////////////
 
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
@@ -809,10 +773,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertEquals(array('foo' => 'bar'), $this->resolver->resolve());
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // addAllowedValues()
-    ////////////////////////////////////////////////////////////////////////////
-
     /**
      * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
@@ -928,10 +888,6 @@ class OptionsResolver2Dot6Test extends TestCase
 
         $this->assertEquals(array('foo' => 'bar'), $this->resolver->resolve());
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // setNormalizer()
-    ////////////////////////////////////////////////////////////////////////////
 
     public function testSetNormalizerReturnsThis()
     {
@@ -1184,10 +1140,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertEmpty($this->resolver->resolve());
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // setDefaults()
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testSetDefaultsReturnsThis()
     {
         $this->assertSame($this->resolver, $this->resolver->setDefaults(array('foo', 'bar')));
@@ -1221,10 +1173,6 @@ class OptionsResolver2Dot6Test extends TestCase
 
         $this->resolver->resolve();
     }
-
-    ////////////////////////////////////////////////////////////////////////////
-    // remove()
-    ////////////////////////////////////////////////////////////////////////////
 
     public function testRemoveReturnsThis()
     {
@@ -1314,10 +1262,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertNotNull($this->resolver->remove('foo'));
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // clear()
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testClearReturnsThis()
     {
         $this->assertSame($this->resolver, $this->resolver->clear());
@@ -1404,10 +1348,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->assertEmpty($this->resolver->resolve());
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // ArrayAccess
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testArrayAccess()
     {
         $this->resolver->setDefault('default1', 0);
@@ -1419,12 +1359,12 @@ class OptionsResolver2Dot6Test extends TestCase
         });
 
         $this->resolver->setDefault('lazy2', function (Options $options) {
-            Assert::assertTrue(isset($options['default1']));
-            Assert::assertTrue(isset($options['default2']));
-            Assert::assertTrue(isset($options['required']));
-            Assert::assertTrue(isset($options['lazy1']));
-            Assert::assertTrue(isset($options['lazy2']));
-            Assert::assertFalse(isset($options['defined']));
+            Assert::assertArrayHasKey('default1', $options);
+            Assert::assertArrayHasKey('default2', $options);
+            Assert::assertArrayHasKey('required', $options);
+            Assert::assertArrayHasKey('lazy1', $options);
+            Assert::assertArrayHasKey('lazy2', $options);
+            Assert::assertArrayNotHasKey('defined', $options);
 
             Assert::assertSame(0, $options['default1']);
             Assert::assertSame(42, $options['default2']);
@@ -1522,10 +1462,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->resolver->resolve();
     }
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Countable
-    ////////////////////////////////////////////////////////////////////////////
-
     public function testCount()
     {
         $this->resolver->setDefault('default', 0);
@@ -1554,6 +1490,6 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->resolver->setDefined('bar');
         $this->resolver->setDefault('lazy1', function () {});
 
-        count($this->resolver);
+        \count($this->resolver);
     }
 }

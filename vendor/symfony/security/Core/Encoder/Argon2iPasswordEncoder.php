@@ -22,9 +22,11 @@ class Argon2iPasswordEncoder extends BasePasswordEncoder implements SelfSaltingE
 {
     public static function isSupported()
     {
-        return (\PHP_VERSION_ID >= 70200 && \defined('PASSWORD_ARGON2I'))
-            || \function_exists('sodium_crypto_pwhash_str')
-            || \extension_loaded('libsodium');
+        if (\PHP_VERSION_ID >= 70200 && \defined('PASSWORD_ARGON2I')) {
+            return true;
+        }
+
+        return version_compare(\extension_loaded('sodium') ? SODIUM_LIBRARY_VERSION : phpversion('libsodium'), '1.0.9', '>=');
     }
 
     /**
@@ -54,12 +56,14 @@ class Argon2iPasswordEncoder extends BasePasswordEncoder implements SelfSaltingE
      */
     public function isPasswordValid($encoded, $raw, $salt)
     {
-        if (\PHP_VERSION_ID >= 70200 && \defined('PASSWORD_ARGON2I')) {
+        // If $encoded was created via "sodium_crypto_pwhash_str()", the hashing algorithm may be "argon2id" instead of "argon2i".
+        // In this case, "password_verify()" cannot be used.
+        if (\PHP_VERSION_ID >= 70200 && \defined('PASSWORD_ARGON2I') && (false === strpos($encoded, '$argon2id$'))) {
             return !$this->isPasswordTooLong($raw) && password_verify($raw, $encoded);
         }
         if (\function_exists('sodium_crypto_pwhash_str_verify')) {
-            $valid = !$this->isPasswordTooLong($raw) && \sodium_crypto_pwhash_str_verify($encoded, $raw);
-            \sodium_memzero($raw);
+            $valid = !$this->isPasswordTooLong($raw) && sodium_crypto_pwhash_str_verify($encoded, $raw);
+            sodium_memzero($raw);
 
             return $valid;
         }
@@ -75,17 +79,17 @@ class Argon2iPasswordEncoder extends BasePasswordEncoder implements SelfSaltingE
 
     private function encodePasswordNative($raw)
     {
-        return password_hash($raw, \PASSWORD_ARGON2I);
+        return password_hash($raw, PASSWORD_ARGON2I);
     }
 
     private function encodePasswordSodiumFunction($raw)
     {
-        $hash = \sodium_crypto_pwhash_str(
+        $hash = sodium_crypto_pwhash_str(
             $raw,
-            \SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE,
-            \SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE
+            SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE,
+            SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE
         );
-        \sodium_memzero($raw);
+        sodium_memzero($raw);
 
         return $hash;
     }

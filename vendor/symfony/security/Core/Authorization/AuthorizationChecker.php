@@ -31,7 +31,6 @@ class AuthorizationChecker implements AuthorizationCheckerInterface
     private $alwaysAuthenticate;
 
     /**
-     * @param TokenStorageInterface          $tokenStorage
      * @param AuthenticationManagerInterface $authenticationManager An AuthenticationManager instance
      * @param AccessDecisionManagerInterface $accessDecisionManager An AccessDecisionManager instance
      * @param bool                           $alwaysAuthenticate
@@ -59,8 +58,8 @@ class AuthorizationChecker implements AuthorizationCheckerInterface
             $this->tokenStorage->setToken($token = $this->authenticationManager->authenticate($token));
         }
 
-        if (!is_array($attributes)) {
-            $attributes = array($attributes);
+        if (!\is_array($attributes)) {
+            $attributes = [$attributes];
         }
 
         return $this->accessDecisionManager->decide($token, $attributes, $subject);

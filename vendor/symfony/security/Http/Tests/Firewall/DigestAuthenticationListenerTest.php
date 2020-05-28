@@ -34,7 +34,7 @@ class DigestAuthenticationListenerTest extends TestCase
             'response="'.$serverDigest.'"'
         ;
 
-        $request = new Request(array(), array(), array(), array(), array(), array('PHP_AUTH_DIGEST' => $digestData));
+        $request = new Request([], [], [], [], [], ['PHP_AUTH_DIGEST' => $digestData]);
 
         $entryPoint = new DigestAuthenticationEntryPoint($realm, $secret);
 
@@ -47,7 +47,7 @@ class DigestAuthenticationListenerTest extends TestCase
         $tokenStorage
             ->expects($this->once())
             ->method('getToken')
-            ->will($this->returnValue(null))
+            ->willReturn(null)
         ;
         $tokenStorage
             ->expects($this->once())
@@ -64,7 +64,7 @@ class DigestAuthenticationListenerTest extends TestCase
         $event
             ->expects($this->any())
             ->method('getRequest')
-            ->will($this->returnValue($request))
+            ->willReturn($request)
         ;
 
         $listener->handle($event);

@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\Security\Http\Logout;
 
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 /**
  * This handler clears the passed cookies when a user logs out.
@@ -38,7 +38,7 @@ class CookieClearingLogoutHandler implements LogoutHandlerInterface
     public function logout(Request $request, Response $response, TokenInterface $token)
     {
         foreach ($this->cookies as $cookieName => $cookieData) {
-            $response->headers->clearCookie($cookieName, $cookieData['path'], $cookieData['domain']);
+            $response->headers->clearCookie($cookieName, $cookieData['path'], $cookieData['domain'], isset($cookieData['secure']) ? $cookieData['secure'] : false, true, isset($cookieData['samesite']) ? $cookieData['samesite'] : null);
         }
     }
 }

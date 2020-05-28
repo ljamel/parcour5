@@ -15,7 +15,7 @@
         {% for loisir in loisirs %}
 
             <div class="liste-main shadow-none">
-                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><img class="liste-main" src="/images/{{ loisir.image }}" alt="{{ loisir.title }}"></a>
+                <a class="articleTitle" href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}"><img class="liste-main" src="/web/images/{{ loisir.image }}" alt="{{ loisir.title }}"></a>
                 <h2>{{ loisir.title[:15]|capitalize }}...
                     <span class="type">{{ loisir.categorie|replace({0: "Famille", 1: "Enfants", 2: "Senior"}) }}</span>
                 </h2>
@@ -43,7 +43,7 @@
 
     </div>
     <div class="liste-resultat">
-        <img class="promo-acceuil" src="/images/{{ loisir.image }}" alt="{{ loisir.title }}">
+        <img class="promo-acceuil" src="/web/images/{{ loisir.image }}" alt="{{ loisir.title }}">
         <h4>{{ loisir.title }}</h4>
         <p>{{ loisir.content }}</p>
         <p class="fa-min"><i class="fa fa-map-marker fa-min" aria-hidden="true"></i><a href="{{ path('sejours/', { 'id': loisir.id }) }}?positionL={{ loisir.positionLat }}&positionN={{ loisir.positionLng }}#map">Voir sur le plans </a></p>
@@ -59,10 +59,10 @@
 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
-    <script src="/js/ajax.js"></script>
-    <script src="/js/geocode.js"></script>
-    <script src="/js/alert-cookies.js"></script>
+    <script src="/web/js/ajax.js"></script>
+    <script src="/web/js/geocode.js"></script>
+    <script src="/web/js/alert-cookies.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLCyZdCatCyO348_1vXQr4yEQkDheyQ3A&libraries=places&callback=initAutocomplete&" async defer></script>
-    <script src="/js/menuIndex.js"></script>
-    <script src="/js/slide.js"></script>
+    <script src="/web/js/menuIndex.js"></script>
+    <script src="/web/js/slide.js"></script>
 {% endblock %}
